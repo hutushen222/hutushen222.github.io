@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Zim介绍 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="Zim是我目前使用的且十分喜欢的一个树状笔记软件，也是一个桌面wiki系统（a desktop wiki）。Zim界面展示【我今天也是第一次看，发现不少新东西，又一次见识了Zim的强大】
+WIKI是什么？ Wiki是一种在网络上开放、可供多人协同创作的超文本系统，由沃德·坎宁安于1995年首先开发。沃德·坎宁安将Wiki定义为“一种允许一群用户通过简单的描述来创建和连接一组网页的社会计算系统”。……基本上，Wiki包含一套能简易制作、修改HTML网页的系统，再加上一套记录和编排所有改变的系统，并且提供还原改变的功能。via – 维基百科
+ZIM与WIKI 按照wiki的定义，Zim并不能算是一个wiki系统，只是一个应用了一些wiki的语法规则的笔记软件。
+ZIM的功能 使用Zim可以做些什么呢？
+创建笔记，记录重要的想法 开会或听讲座时进行记录 组织任务列表 保存博客或邮件的草稿 进行头脑风暴 …… 还不止这些：
+你可以使用Zim写日记，Zim日历（Calendar）插件可以帮助你很好的管理它们 你可以使用Zim实践GTD时间管理，Zim的Task List插件以及标签功能可以帮助你【我会介绍下我的GTD经验】 你可以使用Zim组织管理自己的其他文档，如PDF，DOC等等【这个我也要特别介绍下】 你可以使用Zim……，只要你想的到！！！ ZIM安装 Zim是跨平台的，支持Windows和Linux（Ubuntu）平台。【这也是我选择它的原因之一。】
+Ubuntu Ubuntu软件中心 打开Ubuntu软件中心，搜索Zim，选择安装。我就是这么安装的，但通过这种方法和apt-get方式安装的Zim版本为0.43，想安装最新版本请使用其他两种方法。
+apt-get安装 一行命令：sudo apt-get install zim
+下载deb包安装 所有版本deb包下载页面｜点击下载Zim 0.50
+源码编译安装 所有版本源码下载页面｜点击下载Zim 0.50
+Windows 由于目前很少使用Windows，虽然下载了安装文件，但我还没有在Windows下安装Zim呢。所有版本下载页面｜点击下载 Zim 0.50
+安装过程就不用我来教了吧 😉 。据说可以选择安装Portable版，也就是一般所说的绿色版，放在U盘中随身携带。
+Windows下Zim的汉化问题【不知道新版本还有木有这个问题】
+中文界面设置 我安装Zim在linux下或用wine运行都是中文界面，但在windows （xp）里就是英文的。 特意去发邮件问中文译者tolbKni，他说： “Windows下的Zim其实利用了mingw32模拟Linux环境，在Linux界面的语言是由locale决定的，所以你可以利用这个方法解决。 最简单的方法，我的电脑（计算机）右键属性里的环境变量里增加一个变量，变量名为 “LANG”，值为 “zh_CN.UTF-8″，皆不带引号。 你也可以写个简单的批处理文件在启动Zim之前定义这个变量。” 我已用添加环境变量的方法搞定了中文界面。 via 小众软件
+ZIM现状 刚才在善用佳软上看到了另一个wiki风格笔记软件——wikidpad，访问其主页发现更新频率挺高的，突然担心Zim现在是否还在维护更新。看了下，还好，官方最新版本为0.50，前一段时间刚发布的，同时Zim的发布频率还是很高的，我现在使用的Zim版本为0.43，改天升级一下。
+感谢Zim的作者和其他的开发者、贡献者！
+PS：在写这篇文章的时候，发现已经有文章介绍了Zim，分别是小众软件和译言，但还是决定写下来，因为后续还会写一些文章，关于使用Zim＋Dropbox进行知识管理和GTD时间管理。
+PPS：今天就先写这些，关于Zim的使用技巧以及注意事项，我在另一篇文章里进行介绍吧。
+PPPS：如果你是个软件控，想试用各种各样的实用软件、笔记软件等，推荐你逛逛善用佳软，如笔记软件列表。
+Gonna Sailing 😉 ==END==">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2011/04/09/about_zim/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Zim介绍" />
+<meta property="og:description" content="Zim是我目前使用的且十分喜欢的一个树状笔记软件，也是一个桌面wiki系统（a desktop wiki）。Zim界面展示【我今天也是第一次看，发现不少新东西，又一次见识了Zim的强大】
+WIKI是什么？ Wiki是一种在网络上开放、可供多人协同创作的超文本系统，由沃德·坎宁安于1995年首先开发。沃德·坎宁安将Wiki定义为“一种允许一群用户通过简单的描述来创建和连接一组网页的社会计算系统”。……基本上，Wiki包含一套能简易制作、修改HTML网页的系统，再加上一套记录和编排所有改变的系统，并且提供还原改变的功能。via – 维基百科
+ZIM与WIKI 按照wiki的定义，Zim并不能算是一个wiki系统，只是一个应用了一些wiki的语法规则的笔记软件。
+ZIM的功能 使用Zim可以做些什么呢？
+创建笔记，记录重要的想法 开会或听讲座时进行记录 组织任务列表 保存博客或邮件的草稿 进行头脑风暴 …… 还不止这些：
+你可以使用Zim写日记，Zim日历（Calendar）插件可以帮助你很好的管理它们 你可以使用Zim实践GTD时间管理，Zim的Task List插件以及标签功能可以帮助你【我会介绍下我的GTD经验】 你可以使用Zim组织管理自己的其他文档，如PDF，DOC等等【这个我也要特别介绍下】 你可以使用Zim……，只要你想的到！！！ ZIM安装 Zim是跨平台的，支持Windows和Linux（Ubuntu）平台。【这也是我选择它的原因之一。】
+Ubuntu Ubuntu软件中心 打开Ubuntu软件中心，搜索Zim，选择安装。我就是这么安装的，但通过这种方法和apt-get方式安装的Zim版本为0.43，想安装最新版本请使用其他两种方法。
+apt-get安装 一行命令：sudo apt-get install zim
+下载deb包安装 所有版本deb包下载页面｜点击下载Zim 0.50
+源码编译安装 所有版本源码下载页面｜点击下载Zim 0.50
+Windows 由于目前很少使用Windows，虽然下载了安装文件，但我还没有在Windows下安装Zim呢。所有版本下载页面｜点击下载 Zim 0.50
+安装过程就不用我来教了吧 😉 。据说可以选择安装Portable版，也就是一般所说的绿色版，放在U盘中随身携带。
+Windows下Zim的汉化问题【不知道新版本还有木有这个问题】
+中文界面设置 我安装Zim在linux下或用wine运行都是中文界面，但在windows （xp）里就是英文的。 特意去发邮件问中文译者tolbKni，他说： “Windows下的Zim其实利用了mingw32模拟Linux环境，在Linux界面的语言是由locale决定的，所以你可以利用这个方法解决。 最简单的方法，我的电脑（计算机）右键属性里的环境变量里增加一个变量，变量名为 “LANG”，值为 “zh_CN.UTF-8″，皆不带引号。 你也可以写个简单的批处理文件在启动Zim之前定义这个变量。” 我已用添加环境变量的方法搞定了中文界面。 via 小众软件
+ZIM现状 刚才在善用佳软上看到了另一个wiki风格笔记软件——wikidpad，访问其主页发现更新频率挺高的，突然担心Zim现在是否还在维护更新。看了下，还好，官方最新版本为0.50，前一段时间刚发布的，同时Zim的发布频率还是很高的，我现在使用的Zim版本为0.43，改天升级一下。
+感谢Zim的作者和其他的开发者、贡献者！
+PS：在写这篇文章的时候，发现已经有文章介绍了Zim，分别是小众软件和译言，但还是决定写下来，因为后续还会写一些文章，关于使用Zim＋Dropbox进行知识管理和GTD时间管理。
+PPS：今天就先写这些，关于Zim的使用技巧以及注意事项，我在另一篇文章里进行介绍吧。
+PPPS：如果你是个软件控，想试用各种各样的实用软件、笔记软件等，推荐你逛逛善用佳软，如笔记软件列表。
+Gonna Sailing 😉 ==END==" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2011/04/09/about_zim/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2011-04-09T21:36:19+08:00" />
+<meta property="article:modified_time" content="2011-04-09T21:36:19+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Zim介绍"/>
+<meta name="twitter:description" content="Zim是我目前使用的且十分喜欢的一个树状笔记软件，也是一个桌面wiki系统（a desktop wiki）。Zim界面展示【我今天也是第一次看，发现不少新东西，又一次见识了Zim的强大】
+WIKI是什么？ Wiki是一种在网络上开放、可供多人协同创作的超文本系统，由沃德·坎宁安于1995年首先开发。沃德·坎宁安将Wiki定义为“一种允许一群用户通过简单的描述来创建和连接一组网页的社会计算系统”。……基本上，Wiki包含一套能简易制作、修改HTML网页的系统，再加上一套记录和编排所有改变的系统，并且提供还原改变的功能。via – 维基百科
+ZIM与WIKI 按照wiki的定义，Zim并不能算是一个wiki系统，只是一个应用了一些wiki的语法规则的笔记软件。
+ZIM的功能 使用Zim可以做些什么呢？
+创建笔记，记录重要的想法 开会或听讲座时进行记录 组织任务列表 保存博客或邮件的草稿 进行头脑风暴 …… 还不止这些：
+你可以使用Zim写日记，Zim日历（Calendar）插件可以帮助你很好的管理它们 你可以使用Zim实践GTD时间管理，Zim的Task List插件以及标签功能可以帮助你【我会介绍下我的GTD经验】 你可以使用Zim组织管理自己的其他文档，如PDF，DOC等等【这个我也要特别介绍下】 你可以使用Zim……，只要你想的到！！！ ZIM安装 Zim是跨平台的，支持Windows和Linux（Ubuntu）平台。【这也是我选择它的原因之一。】
+Ubuntu Ubuntu软件中心 打开Ubuntu软件中心，搜索Zim，选择安装。我就是这么安装的，但通过这种方法和apt-get方式安装的Zim版本为0.43，想安装最新版本请使用其他两种方法。
+apt-get安装 一行命令：sudo apt-get install zim
+下载deb包安装 所有版本deb包下载页面｜点击下载Zim 0.50
+源码编译安装 所有版本源码下载页面｜点击下载Zim 0.50
+Windows 由于目前很少使用Windows，虽然下载了安装文件，但我还没有在Windows下安装Zim呢。所有版本下载页面｜点击下载 Zim 0.50
+安装过程就不用我来教了吧 😉 。据说可以选择安装Portable版，也就是一般所说的绿色版，放在U盘中随身携带。
+Windows下Zim的汉化问题【不知道新版本还有木有这个问题】
+中文界面设置 我安装Zim在linux下或用wine运行都是中文界面，但在windows （xp）里就是英文的。 特意去发邮件问中文译者tolbKni，他说： “Windows下的Zim其实利用了mingw32模拟Linux环境，在Linux界面的语言是由locale决定的，所以你可以利用这个方法解决。 最简单的方法，我的电脑（计算机）右键属性里的环境变量里增加一个变量，变量名为 “LANG”，值为 “zh_CN.UTF-8″，皆不带引号。 你也可以写个简单的批处理文件在启动Zim之前定义这个变量。” 我已用添加环境变量的方法搞定了中文界面。 via 小众软件
+ZIM现状 刚才在善用佳软上看到了另一个wiki风格笔记软件——wikidpad，访问其主页发现更新频率挺高的，突然担心Zim现在是否还在维护更新。看了下，还好，官方最新版本为0.50，前一段时间刚发布的，同时Zim的发布频率还是很高的，我现在使用的Zim版本为0.43，改天升级一下。
+感谢Zim的作者和其他的开发者、贡献者！
+PS：在写这篇文章的时候，发现已经有文章介绍了Zim，分别是小众软件和译言，但还是决定写下来，因为后续还会写一些文章，关于使用Zim＋Dropbox进行知识管理和GTD时间管理。
+PPS：今天就先写这些，关于Zim的使用技巧以及注意事项，我在另一篇文章里进行介绍吧。
+PPPS：如果你是个软件控，想试用各种各样的实用软件、笔记软件等，推荐你逛逛善用佳软，如笔记软件列表。
+Gonna Sailing 😉 ==END=="/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Zim介绍",
+      "item": "https://milkythinking.com/blog/2011/04/09/about_zim/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Zim介绍",
+  "name": "Zim介绍",
+  "description": "Zim是我目前使用的且十分喜欢的一个树状笔记软件，也是一个桌面wiki系统（a desktop wiki）。Zim界面展示【我今天也是第一次看，发现不少新东西，又一次见识了Zim的强大】\nWIKI是什么？ Wiki是一种在网络上开放、可供多人协同创作的超文本系统，由沃德·坎宁安于1995年首先开发。沃德·坎宁安将Wiki定义为“一种允许一群用户通过简单的描述来创建和连接一组网页的社会计算系统”。……基本上，Wiki包含一套能简易制作、修改HTML网页的系统，再加上一套记录和编排所有改变的系统，并且提供还原改变的功能。via – 维基百科\nZIM与WIKI 按照wiki的定义，Zim并不能算是一个wiki系统，只是一个应用了一些wiki的语法规则的笔记软件。\nZIM的功能 使用Zim可以做些什么呢？\n创建笔记，记录重要的想法 开会或听讲座时进行记录 组织任务列表 保存博客或邮件的草稿 进行头脑风暴 …… 还不止这些：\n你可以使用Zim写日记，Zim日历（Calendar）插件可以帮助你很好的管理它们 你可以使用Zim实践GTD时间管理，Zim的Task List插件以及标签功能可以帮助你【我会介绍下我的GTD经验】 你可以使用Zim组织管理自己的其他文档，如PDF，DOC等等【这个我也要特别介绍下】 你可以使用Zim……，只要你想的到！！！ ZIM安装 Zim是跨平台的，支持Windows和Linux（Ubuntu）平台。【这也是我选择它的原因之一。】\nUbuntu Ubuntu软件中心 打开Ubuntu软件中心，搜索Zim，选择安装。我就是这么安装的，但通过这种方法和apt-get方式安装的Zim版本为0.43，想安装最新版本请使用其他两种方法。\napt-get安装 一行命令：sudo apt-get install zim\n下载deb包安装 所有版本deb包下载页面｜点击下载Zim 0.50\n源码编译安装 所有版本源码下载页面｜点击下载Zim 0.50\nWindows 由于目前很少使用Windows，虽然下载了安装文件，但我还没有在Windows下安装Zim呢。所有版本下载页面｜点击下载 Zim 0.50\n安装过程就不用我来教了吧 😉 。据说可以选择安装Portable版，也就是一般所说的绿色版，放在U盘中随身携带。\nWindows下Zim的汉化问题【不知道新版本还有木有这个问题】\n中文界面设置 我安装Zim在linux下或用wine运行都是中文界面，但在windows （xp）里就是英文的。 特意去发邮件问中文译者tolbKni，他说： “Windows下的Zim其实利用了mingw32模拟Linux环境，在Linux界面的语言是由locale决定的，所以你可以利用这个方法解决。 最简单的方法，我的电脑（计算机）右键属性里的环境变量里增加一个变量，变量名为 “LANG”，值为 “zh_CN.UTF-8″，皆不带引号。 你也可以写个简单的批处理文件在启动Zim之前定义这个变量。” 我已用添加环境变量的方法搞定了中文界面。 via 小众软件\nZIM现状 刚才在善用佳软上看到了另一个wiki风格笔记软件——wikidpad，访问其主页发现更新频率挺高的，突然担心Zim现在是否还在维护更新。看了下，还好，官方最新版本为0.50，前一段时间刚发布的，同时Zim的发布频率还是很高的，我现在使用的Zim版本为0.43，改天升级一下。\n感谢Zim的作者和其他的开发者、贡献者！\nPS：在写这篇文章的时候，发现已经有文章介绍了Zim，分别是小众软件和译言，但还是决定写下来，因为后续还会写一些文章，关于使用Zim＋Dropbox进行知识管理和GTD时间管理。\nPPS：今天就先写这些，关于Zim的使用技巧以及注意事项，我在另一篇文章里进行介绍吧。\nPPPS：如果你是个软件控，想试用各种各样的实用软件、笔记软件等，推荐你逛逛善用佳软，如笔记软件列表。\nGonna Sailing 😉 ==END==",
+  "keywords": [
+    
+  ],
+  "articleBody": "Zim是我目前使用的且十分喜欢的一个树状笔记软件，也是一个桌面wiki系统（a desktop wiki）。Zim界面展示【我今天也是第一次看，发现不少新东西，又一次见识了Zim的强大】\nWIKI是什么？ Wiki是一种在网络上开放、可供多人协同创作的超文本系统，由沃德·坎宁安于1995年首先开发。沃德·坎宁安将Wiki定义为“一种允许一群用户通过简单的描述来创建和连接一组网页的社会计算系统”。……基本上，Wiki包含一套能简易制作、修改HTML网页的系统，再加上一套记录和编排所有改变的系统，并且提供还原改变的功能。via – 维基百科\nZIM与WIKI 按照wiki的定义，Zim并不能算是一个wiki系统，只是一个应用了一些wiki的语法规则的笔记软件。\nZIM的功能 使用Zim可以做些什么呢？\n创建笔记，记录重要的想法 开会或听讲座时进行记录 组织任务列表 保存博客或邮件的草稿 进行头脑风暴 …… 还不止这些：\n你可以使用Zim写日记，Zim日历（Calendar）插件可以帮助你很好的管理它们 你可以使用Zim实践GTD时间管理，Zim的Task List插件以及标签功能可以帮助你【我会介绍下我的GTD经验】 你可以使用Zim组织管理自己的其他文档，如PDF，DOC等等【这个我也要特别介绍下】 你可以使用Zim……，只要你想的到！！！ ZIM安装 Zim是跨平台的，支持Windows和Linux（Ubuntu）平台。【这也是我选择它的原因之一。】\nUbuntu Ubuntu软件中心 打开Ubuntu软件中心，搜索Zim，选择安装。我就是这么安装的，但通过这种方法和apt-get方式安装的Zim版本为0.43，想安装最新版本请使用其他两种方法。\napt-get安装 一行命令：sudo apt-get install zim\n下载deb包安装 所有版本deb包下载页面｜点击下载Zim 0.50\n源码编译安装 所有版本源码下载页面｜点击下载Zim 0.50\nWindows 由于目前很少使用Windows，虽然下载了安装文件，但我还没有在Windows下安装Zim呢。所有版本下载页面｜点击下载 Zim 0.50\n安装过程就不用我来教了吧 😉 。据说可以选择安装Portable版，也就是一般所说的绿色版，放在U盘中随身携带。\nWindows下Zim的汉化问题【不知道新版本还有木有这个问题】\n中文界面设置 我安装Zim在linux下或用wine运行都是中文界面，但在windows （xp）里就是英文的。 特意去发邮件问中文译者tolbKni，他说： “Windows下的Zim其实利用了mingw32模拟Linux环境，在Linux界面的语言是由locale决定的，所以你可以利用这个方法解决。 最简单的方法，我的电脑（计算机）右键属性里的环境变量里增加一个变量，变量名为 “LANG”，值为 “zh_CN.UTF-8″，皆不带引号。 你也可以写个简单的批处理文件在启动Zim之前定义这个变量。” 我已用添加环境变量的方法搞定了中文界面。 via 小众软件\nZIM现状 刚才在善用佳软上看到了另一个wiki风格笔记软件——wikidpad，访问其主页发现更新频率挺高的，突然担心Zim现在是否还在维护更新。看了下，还好，官方最新版本为0.50，前一段时间刚发布的，同时Zim的发布频率还是很高的，我现在使用的Zim版本为0.43，改天升级一下。\n感谢Zim的作者和其他的开发者、贡献者！\nPS：在写这篇文章的时候，发现已经有文章介绍了Zim，分别是小众软件和译言，但还是决定写下来，因为后续还会写一些文章，关于使用Zim＋Dropbox进行知识管理和GTD时间管理。\nPPS：今天就先写这些，关于Zim的使用技巧以及注意事项，我在另一篇文章里进行介绍吧。\nPPPS：如果你是个软件控，想试用各种各样的实用软件、笔记软件等，推荐你逛逛善用佳软，如笔记软件列表。\nGonna Sailing 😉 ==END==\n",
+  "wordCount" : "69",
+  "inLanguage": "en",
+  "datePublished": "2011-04-09T21:36:19+08:00",
+  "dateModified": "2011-04-09T21:36:19+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2011/04/09/about_zim/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Zim介绍
+    </h1>
+    <div class="post-meta"><span title='2011-04-09 21:36:19 +0800 CST'>April 9, 2011</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><a href="http://zim-wiki.org/index.html">Zim</a>是我目前使用的且十分喜欢的一个树状笔记软件，也是一个桌面wiki系统（a desktop wiki）。<a href="http://zim-wiki.org/screenshots.html">Zim界面展示</a>【我今天也是第一次看，发现不少新东西，又一次见识了Zim的强大】</p>
+<h3 id="wiki是什么">WIKI是什么？<a hidden class="anchor" aria-hidden="true" href="#wiki是什么">#</a></h3>
+<blockquote>
+<p><strong>Wiki</strong>是一种在网络上开放、可供多人协同创作的超文本系统，由<a href="http://zh.wikipedia.org/wiki/%E6%B2%83%E5%BE%B7%C2%B7%E5%9D%8E%E5%AE%81%E5%AE%89">沃德·坎宁安</a>于1995年首先开发。沃德·坎宁安将Wiki定义为“一种允许一群用户通过简单的描述来创建和连接一组网页的社会计算系统”。……基本上，Wiki包含一套能简易制作、修改HTML网页的系统，再加上一套记录和编排所有改变的系统，并且提供还原改变的功能。via – <a href="http://zh.wikipedia.org/zh-cn/Wiki">维基百科</a></p>
+</blockquote>
+<h3 id="zim与wiki">ZIM与WIKI<a hidden class="anchor" aria-hidden="true" href="#zim与wiki">#</a></h3>
+<p>按照wiki的定义，Zim并不能算是一个wiki系统，只是一个应用了一些wiki的语法规则的笔记软件。</p>
+<h3 id="zim的功能">ZIM的功能<a hidden class="anchor" aria-hidden="true" href="#zim的功能">#</a></h3>
+<p>使用Zim可以做些什么呢？</p>
+<ul>
+<li>创建笔记，记录重要的想法</li>
+<li>开会或听讲座时进行记录</li>
+<li>组织任务列表</li>
+<li>保存博客或邮件的草稿</li>
+<li>进行头脑风暴</li>
+<li>……</li>
+</ul>
+<p>还不止这些：</p>
+<ul>
+<li>你可以使用Zim写日记，Zim日历（Calendar）插件可以帮助你很好的管理它们</li>
+<li>你可以使用Zim实践GTD时间管理，Zim的Task List插件以及标签功能可以帮助你【我会介绍下我的GTD经验】</li>
+<li>你可以使用Zim组织管理自己的其他文档，如PDF，DOC等等【这个我也要特别介绍下】</li>
+<li>你可以使用Zim……，只要你想的到！！！</li>
+</ul>
+<h3 id="zim安装">ZIM安装<a hidden class="anchor" aria-hidden="true" href="#zim安装">#</a></h3>
+<p>Zim是跨平台的，支持Windows和Linux（Ubuntu）平台。【这也是我选择它的原因之一。】</p>
+<h4 id="ubuntu">Ubuntu<a hidden class="anchor" aria-hidden="true" href="#ubuntu">#</a></h4>
+<h5 id="ubuntu软件中心">Ubuntu软件中心<a hidden class="anchor" aria-hidden="true" href="#ubuntu软件中心">#</a></h5>
+<p>打开Ubuntu软件中心，搜索Zim，选择安装。我就是这么安装的，但通过这种方法和apt-get方式安装的Zim版本为0.43，想安装最新版本请使用其他两种方法。</p>
+<h5 id="apt-get安装">apt-get安装<a hidden class="anchor" aria-hidden="true" href="#apt-get安装">#</a></h5>
+<p>一行命令：sudo apt-get install zim</p>
+<h5 id="下载deb包安装">下载deb包安装<a hidden class="anchor" aria-hidden="true" href="#下载deb包安装">#</a></h5>
+<p><a href="http://zim-wiki.org/downloads/">所有版本deb包下载页面</a>｜<a href="http://zim-wiki.org/downloads/zim_0.50_all.deb">点击下载Zim 0.50</a></p>
+<h5 id="源码编译安装">源码编译安装<a hidden class="anchor" aria-hidden="true" href="#源码编译安装">#</a></h5>
+<p><a href="http://zim-wiki.org/downloads/">所有版本源码下载页面</a>｜<a href="http://zim-wiki.org/downloads/zim-0.50.tar.gz">点击下载Zim 0.50</a></p>
+<h4 id="windows">Windows<a hidden class="anchor" aria-hidden="true" href="#windows">#</a></h4>
+<p>由于目前很少使用Windows，虽然下载了安装文件，但我还没有在Windows下安装Zim呢。所有版本下载页面｜<a href="http://www.glump.net/content/zim/Zim-setup-0.50_2011-02-17.exe">点击下载 Zim 0.50</a></p>
+<p>安装过程就不用我来教了吧 😉 。据说可以选择安装Portable版，也就是一般所说的绿色版，放在U盘中随身携带。</p>
+<p>Windows下Zim的汉化问题【不知道新版本还有木有这个问题】</p>
+<blockquote>
+<p>中文界面设置 我安装Zim在linux下或用wine运行都是中文界面，但在windows （xp）里就是英文的。 特意去发邮件问中文译者tolbKni，他说： “Windows下的Zim其实利用了mingw32模拟Linux环境，在Linux界面的语言是由locale决定的，所以你可以利用这个方法解决。 最简单的方法，我的电脑（计算机）右键属性里的环境变量里增加一个变量，变量名为 “LANG”，值为 “zh_CN.UTF-8″，皆不带引号。 你也可以写个简单的批处理文件在启动Zim之前定义这个变量。” 我已用添加环境变量的方法搞定了中文界面。 via <a href="http://www.appinn.com/zim-wiki/">小众软件</a></p>
+</blockquote>
+<h3 id="zim现状">ZIM现状<a hidden class="anchor" aria-hidden="true" href="#zim现状">#</a></h3>
+<p>刚才在善用佳软上看到了另一个wiki风格笔记软件——<a href="http://xbeta.info/wikidpad-2.htm">wikidpad</a>，访问其主页发现更新频率挺高的，突然担心Zim现在是否还在维护更新。看了下，还好，官方最新版本为0.50，前一段时间刚发布的，同时Zim的发布频率还是很高的，我现在使用的Zim版本为0.43，改天升级一下。</p>
+<p>感谢Zim的作者和其他的开发者、贡献者！</p>
+<p>PS：在写这篇文章的时候，发现已经有文章介绍了Zim，分别是<a href="http://www.appinn.com/zim-wiki/">小众软件</a>和<a href="http://article.yeeyan.org/view/38592/16468">译言</a>，但还是决定写下来，因为后续还会写一些文章，关于使用Zim＋Dropbox进行知识管理和GTD时间管理。</p>
+<p>PPS：今天就先写这些，关于Zim的使用技巧以及注意事项，我在另一篇文章里进行介绍吧。</p>
+<p>PPPS：如果你是个软件控，想试用各种各样的实用软件、笔记软件等，推荐你逛逛<a href="http://xbeta.info/">善用佳软</a>，如<a href="http://xbeta.info/category/office-work/pkm-pim-notes-manager">笔记软件列表</a>。</p>
+<p>Gonna Sailing 😉<!-- raw HTML omitted -->
+==END==</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

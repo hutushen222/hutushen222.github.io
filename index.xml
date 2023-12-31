@@ -1,0 +1,1632 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Milky Thinking</title>
+    <link>https://milkythinking.com/</link>
+    <description>Recent content on Milky Thinking</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Jul 2018 23:49:06 +0800</lastBuildDate>
+    <atom:link href="https://milkythinking.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Chrome 开发者工具校验 XPath</title>
+      <link>https://milkythinking.com/blog/2018/07/10/verify-xpath-with-chrome-devtools/</link>
+      <pubDate>Tue, 10 Jul 2018 23:49:06 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2018/07/10/verify-xpath-with-chrome-devtools/</guid>
+      <description>使用 XPath 提取页面内容时，如何快速校验规则有效性呢？
+此前曾尝试找寻相关的插件，但是使用的体验很糟糕，于是便使用 PHP 调试校验。
+最近发现原来 Chrome 开发者工具自带 XPath 校验功能。
+方案一：元素面板的查询功能支持 XPath 规则 方案二：控制台中使用内置函数 $x(xpath[, startNode]) 来源：Stack Overflow</description>
+    </item>
+    <item>
+      <title>人生的意义-20160616</title>
+      <link>https://milkythinking.com/blog/2016/06/16/meaning-of-life-20160616/</link>
+      <pubDate>Thu, 16 Jun 2016 14:28:33 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2016/06/16/meaning-of-life-20160616/</guid>
+      <description>早上骑行上班的路上，听了「流行通信」的「#47 留学和世界眼光——四人醉聊」，其中有听到「人生的意义」这个词汇，四位主播中的「刘佳」是哥大天文系的博士生，也是困惑于这样的问题，在转到天文系前，尝试了很多的专业方向，《圣经》也无法提供寄托，最终觉得天文学对于宇宙的研究可能会帮助解答自己的困惑，以及对天文学感兴趣，进而转系。
+端午节前，在上海逗留了几天，期间和刘白光、Larry Zhao 聊了聊，因缘际会翻看了刘白光在简书的文章，对于「意义」，他也在不停地思考。他的「关于意义」一文汇总了过去几年中，他对于意义的思考。
+前段时间，看了《世界为何存在》前几章，该书对「为什么存在万物而非一无所有？」这个问题进行了探讨。第一章中介绍了不同领域的巨人对于这个问题的看法，并没有一个统一的解答。
+综上，一个终极的准确的解答目前是不存在的。宇宙之谜、生物之谜、存在之谜、知识的边界等等，仍需人们进一步探索、发现和总结。
+在此之前，我们不能因为没有找到答案，而陷入「虚无」（虚无用在这里是否准确不得而知），不要极端、不要轻生、不要颓废，以积极的心态面对生活。
+Don’t Panic
+在这样的背景下，对于意义的探讨将回归到个人，保持好奇心和开放的心态，去「跨过山和大海」，去「穿过人山人海」。
+最后，以胡适在「人生有何意义」中的一句话结尾：
+生命本没有意义，你要能给他什么意义，他就有什么意义。与其终日冥想人生有何意义，不如试用此生作点有意义的事……
+-EOF-</description>
+    </item>
+    <item>
+      <title>Git – 合并冲突时，撤销合并</title>
+      <link>https://milkythinking.com/blog/2016/03/20/git-undo-merge-conflict/</link>
+      <pubDate>Wed, 30 Mar 2016 16:59:09 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2016/03/20/git-undo-merge-conflict/</guid>
+      <description>执行合并操作时，遇到冲突，暂时又不想解决冲突，可以通过以下命令撤销合并：
+最新版本时：
+git merge --abort 版本早于 1.7.4 时：
+git reset --merge 版本早于 1.6.2 时：
+git reset --hard 注： git merge --abort is equivalent to git reset --merge when MERGE_HEAD is present.
+参考链接 StackOverflow – How to undo a git merge with conflicts Pro Git – Reset Demystified </description>
+    </item>
+    <item>
+      <title>Composer 版本号</title>
+      <link>https://milkythinking.com/blog/2016/02/28/composer-versions/</link>
+      <pubDate>Sun, 28 Feb 2016 19:09:08 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2016/02/28/composer-versions/</guid>
+      <description>我们在开发过程中使用到许多第三方库，需要在composer.json中指明依赖库版本规则来安装恰当的包。
+Composer 推荐的版本规则是语义化版本，版本格式：主版本号.次版本号.修订号，版本号递增规则如下：
+主版本号：当你做了不兼容的 API 修改 次版本号：当你做了向下兼容的功能性新增 修订号：当你做了向下兼容的问题修正 基本约束 具体版本 安装指明的具体版本，如果其他依赖包需要不同的版本，安装或更新过程将失败。
+1.2.3 范围 使用比较运算符指明有效版本范围。可用操作符如下：&amp;gt;、&amp;gt;=、&amp;lt;、&amp;lt;=、!=。
+可以定义多个范围，使用空格（ ）或者逗号（,）分隔的范围当做逻辑与操作，使用双管道（||）分隔的范围当做逻辑或操作。
+&amp;gt;=1.0 &amp;gt;=1.0 &amp;lt;2.0 &amp;gt;=1.0 &amp;lt;1.1 || &amp;gt;=1.2 带连字符的范围 非完整的版本号会用通配符补全，比如 2.0 补全为 2.0.*。
+1.0 - 2.0 等价于 &amp;gt;=1.0 &amp;lt;2.1 1.0.0 - 2.1.0 等价于 &amp;gt;=1.0.0 &amp;lt;=2.1.0 通配符 可以在版本号中使用通配符（*）。
+1.0.* 等价于 &amp;gt;=1.0 &amp;lt;1.1 下一个重要版本 对于遵循语义化版本的项目，波浪号和脱字符提供更加简介的表达。
+波浪号（~） 波浪号常用于标记依赖包的最小版本。可以理解为波浪号标记依赖包的最低版本，并允许版本号最后一位数字增加（不适用于主版本号）。
+~1.2 等价于 &amp;gt;=1.2 &amp;lt;2.0.0 ~1.2.3 等价于 &amp;gt;=1.2.3 &amp;lt;1.3.0 脱字符（^） 脱字符的行为和波浪号类似，但更强调语义化版本，总是允许向后兼容的更新。
+^1.2.3 等价于 &amp;gt;=1.2.3 &amp;lt;2.0.0 不过，对于早于1.0的版本，脱字符处理逻辑如下：
+^0.3 等价于 &amp;gt;=0.3 &amp;lt;0.4 注：为了最大化互操作性，对于库类型的项目，推荐使用脱字符声明依赖包的版本。</description>
+    </item>
+    <item>
+      <title>Git Tagging</title>
+      <link>https://milkythinking.com/blog/2016/02/25/git-tagging/</link>
+      <pubDate>Thu, 25 Feb 2016 21:51:08 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2016/02/25/git-tagging/</guid>
+      <description>标签是什么？ 标签通常用于标记历史上一些重要的时刻，通常用于记录发布新版本。
+列出所有的标签 git tag 列出匹配模式的标签 使用 Shell 通配符模式
+git tag -l &amp;#39;v1.*&amp;#39; 标签的2种类型与创建 轻量级标签（lightweight） 含注解标签（annotated）推荐 创建轻量级标签 git tag v1.2 创建含注解标签 git tag -a v1.3 -m &amp;#34;commit message&amp;#34; 查看标签详情 git show v1.3 创建指向提交的标签 有时忘记打标签了，不要怕，还有补救的方法。
+git tag -a v1.3.1 &amp;lt;commit&amp;gt; 推送标签至远程仓库 推送单个标签
+git push origin v1.3.1 推送全部标签
+git push origin --tags 删除本地标签 git tag -d v1.3.1 删除远程标签 git push origin --delete tag v1.3.1 git push origin :refs/tags/v1.3.1 重命名标签 将 old 标签重命名为 new</description>
+    </item>
+    <item>
+      <title>日志分析时，如何获取匹配行和其后若干行的内容？</title>
+      <link>https://milkythinking.com/blog/2016/02/25/grep-context-line-control/</link>
+      <pubDate>Thu, 25 Feb 2016 21:05:58 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2016/02/25/grep-context-line-control/</guid>
+      <description>使用 grep 提供行上下文控制（Context Line Control）参数，可以轻松实现上述目标。
+-A NUM, –after-context=NUM
+Print NUM lines of trailing context after matching lines. Places a line containing a group separator (–) between contiguous groups of matches. With the -o or –only-matching option, this has no effect and a warning is given.
+-B NUM, –before-context=NUM
+Print NUM lines of leading context before matching lines. Places a line containing a group separator (–) between contiguous groups of matches. With the -o or –only-matching option, this has no effect and a warning is given.</description>
+    </item>
+    <item>
+      <title>Quotes About Meaning Of Life</title>
+      <link>https://milkythinking.com/blog/2015/04/11/quotes-about-meaning-of-life/</link>
+      <pubDate>Sat, 11 Apr 2015 16:55:35 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2015/04/11/quotes-about-meaning-of-life/</guid>
+      <description>“You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.” ― Albert Camus
+“Life has no meaning. Each of us has meaning and we bring it to life. It is a waste to be asking the question when you are the answer.” ― Joseph Campbell
+“I go to seek a Great Perhaps.” ― François Rabelais</description>
+    </item>
+    <item>
+      <title>systemd</title>
+      <link>https://milkythinking.com/blog/2014/12/03/systemd/</link>
+      <pubDate>Wed, 03 Dec 2014 23:44:54 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2014/12/03/systemd/</guid>
+      <description>systemd 是专为 Linux 内核设计和开发的一组系统管理守护进程、类库和工具。systemd 的开发者们将其定位为操作系统的基础构造单元。
+在使用它的操作系统中，守护进程 systemd 是 Linux 启动过程中用户态执行的第一个进程。因此 systemd 是用户态进程树的根进程。
+命名上，systemd 延续了 Unix 惯例，以 d 结尾来标识守护进程。
+References systemd /wikipedia </description>
+    </item>
+    <item>
+      <title>WordPress 再次初体验</title>
+      <link>https://milkythinking.com/blog/2014/12/01/wordpress-re-experience/</link>
+      <pubDate>Mon, 01 Dec 2014 00:08:46 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2014/12/01/wordpress-re-experience/</guid>
+      <description>最近，利用些许业余时间帮助朋友的创业网站搭建网站。在评估基于 Laravel 从零搭建、基于 WordPress、Drupal 等 CMS 进行搭建等多种方案后，最终选择 WordPress 这个平台。
+虽然此前自己做过一段时间 Drupal 定制开发，但是我一直认为其主题开发方面比较坑，D8 在这方面有没有改进，也没有进行关注，即使改进了，也需要自己学习很多新东西。而基于 Laravel 从零搭建，管理后台的搭建就需要耗费太多的精力，如果想要实现较好的交互体验，还需要强力的前端支持，开发成本过高。鉴于朋友的网站是媒体性质的网站，WordPress 比较适合该类型的站点，其具有功能强大的管理后台、丰富的功能插件、够用内容发布流程和较为华丽的主题，最终决定选型 WordPress。
+为了能够按时保质保量完成任务，这一次真心投入精力去学习去了解这个系统，阅读 Codex 文档[1]，阅读 WordPress 英文电子书，编写实验代码了解插件、主题开发。也许是伴随着快速的版本迭代演进，WordPress 变得越来越强大了，底层的结构也变得比较优雅（也许是因为我以前就没有用心去看懂的缘故 -_-!!!）。
+另外，伴随着对 WordPress 的一些概念的理解和实战，更正了自己此前的一些偏见，重新认识了该平台。
+观念一：自己写不写东西，其实和自己使用的是 WordPress、Ghost 亦或者 Jekyll 等等完全没有关系，关键在于自己想不想写，愿不愿意写。 观念二：不是所有的代码都需要自己手动完成，适量投入一些金钱，购买一些优秀的插件，能够帮你节省更多的时间和金钱。 观念三：不要建立太复杂的分类结构，简单的组织一些，写下去就好。以前那些花里胡哨的分类我现在都不知道是为什么创建的了，囧。 最终决定写下这篇文章，并希望以后能够经常记录一些内容，比如学习笔记、生活感悟、WordPress 新认知等。
+[1]： Dash 大赞</description>
+    </item>
+    <item>
+      <title>开启daemon模式：nohup vs. screen</title>
+      <link>https://milkythinking.com/blog/2014/04/12/%E5%BC%80%E5%90%AFdaemon%E6%A8%A1%E5%BC%8Fnohup-vs-screen/</link>
+      <pubDate>Sat, 12 Apr 2014 23:36:58 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2014/04/12/%E5%BC%80%E5%90%AFdaemon%E6%A8%A1%E5%BC%8Fnohup-vs-screen/</guid>
+      <description>通常我们的服务器上一些任务，如邮件发送服务，需要以daemon模式运行。使用nohup和screen都可以实现这个目的，但它们的实现机制是不一样的。
+nohup通过让子进程忽略SIGHUP信号实现。screen通过开启一个新会话实现。因为screen的父进程是初始化进程init（pid=1），所以当我们断开服务器连接时，screen中开启的任务不会收到HUP信号，还会继续运行。
+下面，我们通过一个具体的例子进行演示：首先，写一个死循环脚本（loop.sh）；然后，分别使用nohup和screen实现daemon模式运行；最后，使用命令：ps xafo pid,ppid,command，查看进程的实际运行情况。
+loop.sh代码如下：
+#!/bin/bash while true do echo `date` sleep 1 done nohup 启用命令：
+$ nohup bash loop.sh &amp;amp; 进程信息：
+6458 678 \_ sshd: vagrant [priv] 6475 6458 | \_ sshd: vagrant@pts/1 6476 6475 | \_ -bash 11185 6476 | \_ bash loop.sh screen 启用命令：
+$ screen # &amp;lt;— 开启会话 $ bash loop.sh # &amp;lt;— 运行进程 使用 Ctrl+a d 退出会话。
+进程信息：
+9051 1 SCREEN 9052 9051 \_ /bin/bash 9110 9052 \_ bash loop.</description>
+    </item>
+    <item>
+      <title>记一次磁盘清理的过程</title>
+      <link>https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Sat, 12 Apr 2014 10:03:14 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/</guid>
+      <description>缘起 我们测试环境中的一台Job机器磁盘空间使用率一直很高（VM 40G），最近经常遇到磁盘空间已满，导致一些任务无法正常运行，比如新项目的代码无法部署，影响正常的开发流程。几天前为赶项目进度，我们采用临时清理一些日志文件的方式，仅仅空出几G的空间，只能缓解一时，隔天又满了。总是这样就也太坑了，我决定花些时间彻底解决一下，不管采用什么办法。早晨起床后，我在Doit.im中创建了项目，并进行一些规划，列出一些需要进行的任务。
+我对这台机器的职责并不熟悉，我猜测会否是该机器上部署了太多的服务导致，如果是这样，就将它们迁移出去；如果是因为机器配置太低的原因，则切换到配置更高的机器；迁移的话就需要对该机器上运行的任务进行梳理……
+实战 到公司后，又听到该机器磁盘已满，又是临时的清理了些空间。我跑去测试环境的维护人员哪里，督促他解决这个问题，之后就待在那里和他一起解决。
+首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G+的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？
+使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） </description>
+    </item>
+    <item>
+      <title>My Toolkit Hub</title>
+      <link>https://milkythinking.com/blog/2013/09/13/my-toolkit-hub/</link>
+      <pubDate>Fri, 13 Sep 2013 09:25:55 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2013/09/13/my-toolkit-hub/</guid>
+      <description>SimpleHtmlDom – PHP HTML Parser
+Home: http://simplehtmldom.sourceforge.net
+Idiorm &amp;amp; Paris – PHP ORM &amp;amp; ActiveRecord Home: http://j4mie.github.io/idiormandparis/
+Docs: Idiorm &amp;amp; Paris
+Phinx – PHP Database Migrations
+Home: http://phinx.org/
+Docs: http://docs.phinx.org/en/latest/</description>
+    </item>
+    <item>
+      <title>PHP is_array()</title>
+      <link>https://milkythinking.com/blog/2013/03/13/php-is_array/</link>
+      <pubDate>Wed, 13 Mar 2013 00:23:32 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2013/03/13/php-is_array/</guid>
+      <description>同事维护的站点遇到一个SQL注入漏洞，最后发现是由于对in_array()的理解错误（一直以为是绝对匹配才会返回true），同时拼接SQL语句时也没有使用Prepared Statement导致。代码中使用in_array($var, $white_set)判断从Query String获得的变量是否符合要求，参见下面示例代码（$var为一整型变量，取用时没有使用intval($var)或者(int)$var强制转换为整型）。
+$white_set = array(11, 13, 16); $var = $_GET[&amp;#39;var&amp;#39;]; if (in_array($var, $white_set)) { $query = ‘ … column = ‘ . $var . ‘ … ‘; … } 访问 http://www.example.com/path/to?var=16′ and ‘x’=&#39; 时，$var=16′ and ‘x’=&#39;，使用in_array($var, $white_set) 判断会得到 true，因为 in_array 的第三个参数默认为 false，此时在依次比较 $var 和 $white_set 中的元素会进行类型转换，相当于使用 == 进行比较；如果第三个参数为 true，则相当于使用 === 进行比较，两个变量只有完全一致才会返回 true。
+总结：in_array() 第三个参数决定变量和数组中元素如何进行比较。 值为 false 时（默认），相当于 ==；值为true时，相当于 ===。</description>
+    </item>
+    <item>
+      <title>程序员的职业素养 01</title>
+      <link>https://milkythinking.com/blog/2012/12/23/the-clean-coder-01/</link>
+      <pubDate>Sun, 23 Dec 2012 21:37:53 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/12/23/the-clean-coder-01/</guid>
+      <description>今天，大辉请了《程序员的职业素养》的译者之一余晟给我们进行了一次分享。
+原本大辉在邮件中说邀请余晟分享正则表达式相关的内容，但是因时间仓促，而且正则也没太多好分享的。于是，余晟就结合其大学和工作上的经历给我们分享了程序员的职业素养这一话题。
+余晟分享了“面向接口编程”、“学生式编程”，程序员个人努力，探究事物本质的习惯、基础学科的重要性、中美软件开发管理的差异、盛大创新院的经历、降级论等，最后总结了程序员职业素养的3个方面。
+面向接口编程 某些程序员遇到有挑战性的问题，交给“高手”实现，自己仅仅是使用封装好的功能，不愿意去深究本质。
+学生式编程 只考虑理想情况，对于异常情况没有进行处理，导致程序遇到异常时就罢工。
+程序员的个人努力与探究事物本质的习惯 余晟第一份工作两个月就成长为Team Leader与其努力和探究事物本质的习惯是分不开的。
+中美软件开发管理的差异 余晟认为中美程序员的个人实力上没有什么差距，但美国程序员开发出了很多优秀的产品，在开源领域独领风骚，而中国程序员却没有太多的表现的主要原因是国人在软件开发管理方面做的不够好，规范的流程让一群普通人能够创建较为成功的项目。
+他以一个在雅虎和百度工作过的朋友的经历作为说明：雅虎的项目具有完善的流程规范，一个项目讨论过程中形成的文档，聚合导出后会发现其如论文一样规整；百度，最终则会获得各种文件格式和各种书写风格的文件。
+还举了波音飞机的流水线转配，工人使用木锤安装机翼上的某个零件，这样细致规范的工作打造了复杂先进的飞机。
+（这个观点我持怀疑态度。虽然规范很重要，但顶尖程序员创造更多的价值。另外欧美在开源领域做的比较好是一部分也是由于国情的原因：语言、理想主义 vs. 现实主义。相信国人在开源领域也会越做越好的。）
+盛大创新院的经历 其在盛大创新院时基于Lucene开发的搜索引擎，根据业务场景，实现自定义分词系统，最终因感觉代码不规范，不好意思贡献给社区，产品也没有得到太多的使用。
+（我认为这种做法是不可取的，直接贡献出去不久可以了。惭愧的是到目前我只是说说，还没有贡献过，接下来我会尝试贡献一些Drupal的代码，为Drupal社区的发展贡献自己的一些力量。）
+降级论 互联网与传统行业结合能够创造更大的价值。
+程序员职业素养的3个方面 扎实的基础，探究事物本质的习惯 基础是自我提升的保证。
+提升自己的开发效率，自动化 程序员应该善于给自己开发各种实用的小工具来提升自己的开发效率。另外，不仅仅给自己用，还应该尝试给其他人开发工具，自用和给他人用所面临的问题会有很大的差异。
+产品意识 程序员的苦逼有一部分原始是自己造成的。程序员应当具备产品意识，开发处更人性化更好的产品，减少使用者的困惑。虽然这些东西看似属于产品经理的职责，但产品经理并不能够面面俱到，另外好的产品经理属于少数。举例：1）其公司某仓库的手持扫描仪因为网络没有连接，却给出“无法解析域名”的提示，导致使用者的困惑；2）某程序修改配置后，需要重新加载配置才能够生效，按钮的文字使用“生效”而不是“加载配置”让使用者能够更加容易理解。</description>
+    </item>
+    <item>
+      <title>骑行绍兴</title>
+      <link>https://milkythinking.com/blog/2012/11/18/riding-to-shaoxing/</link>
+      <pubDate>Sun, 18 Nov 2012 23:34:59 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/11/18/riding-to-shaoxing/</guid>
+      <description>上次骑行临安后，听同事提及绍兴，就提议11月中旬骑行绍兴。这个提议得到公司里很多同事的响应。我们的人品十分不错，虽然16号下了一天的雨，我们还在担心17号会否继续，但17号和18号却都是晴好天气。
+除了部分同事因出差等原因未能成行，17号，在公司的办公楼前合影纪念后，一个12人的队伍浩浩荡荡的出发了。赶去绍兴的路线选择的不是很好，虽然走104国道，但是多绕了一些，全程骑行了60公里，4个小时后，我们到达了之前预定的鲁迅故里青年旅社。
+还是第一次住青年旅社，外面感觉很小，里面却曲径通幽，别有洞天。旅社房间外面是木质的建筑，整个旅社分了好几个小院，小院里种了很多花草，水池中还有几只鱼儿在游荡，，墙壁上写满了过往旅人的印迹和涂鸦（请原谅我弱爆了的文字功底）。我这个伪旅人就不凑这份热闹了。
+房间是六人间，上下铺；洗漱用品要自备；拖鞋、吹风机可以租借；卫生间、洗澡间、洗漱区是公用的；乒乓球、台球、图书需要去登记租借才能玩。看墙上贴的公告晚上还会放电影什么的，我这次没有去参加。旅社的无线网络还是不错的，至少刷微薄什么的速度还是很快的。
+房间安定下来后，和同事一起出去吃了顿大餐。然后很几位同时逛了逛鲁迅故居所在的街道，不过我却对这种却没有太多的感觉，带着一种我来过了的心态匆匆逛了几个地方，不过由于时间较晚一些地方已经关门了。
+接着就返回旅社，洗漱休息了下，等待晚上的活动。
+晚上大家很没有创意的找了家KTV去唱歌，自从N年前被打击之后，几乎不去KTV的我，这次也拿着麦唱了几首，还是一如既往的烂呐。出来后大家去沙县吃拌面，去吃烧烤喝啤酒，聊天，然后回去睡觉。
+第二天，我较早爬起来，出去吃了早饭。大家都起床后，洗漱完毕，退房，在旁边的餐馆吃了中餐后，又在故居小街上稍作停留，就出发返回杭州了。回来的时候直接上104国道，一路走了下来，只要50+就完成了返程。
+各回各家，冲完澡后，我就不想走出家门了，推了分开前说的一起去吃饭，叫起了常吃的外卖。
+以上就是我的绍兴骑行。
+-EOF-</description>
+    </item>
+    <item>
+      <title>2012.10.31月末小记</title>
+      <link>https://milkythinking.com/blog/2012/10/31/2012-10-31-monthly-notes/</link>
+      <pubDate>Wed, 31 Oct 2012 22:13:05 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/10/31/2012-10-31-monthly-notes/</guid>
+      <description>今晚出去跑了两小圈，约1500米吧，跑完后慢走了段距离，到小区的锻炼器材上做了一些运动。
+回想上周六打篮球，2v2，一段时间后，感觉很累，场边休息时感觉头晕胸闷的说，怀疑应当是身体出了点毛病，健康状况有些糟糕，迫切需要加强锻炼，终于再今天开始了久违的跑步。
+洗澡时突然意识到，今天是10.31，明天就是新的月份，是个不错的开始。另外，计划将跑步的时间调整到早上，这样我就需要早睡早起的说，有心情的时候还可以自己做早饭XD。
+坚持！</description>
+    </item>
+    <item>
+      <title>滑板少年</title>
+      <link>https://milkythinking.com/blog/the-boy-is-skateboarding/</link>
+      <pubDate>Sat, 28 Jul 2012 21:55:47 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/the-boy-is-skateboarding/</guid>
+      <description>教学资源 著名滑手王汇丰中文滑板教学 What’sUp 滑板入门教学视频 44:41 James Craig20个滑板基本招教学 其他资源 KickerClub Record Skateboard Everyday / 记录中国滑板每一天 中国滑板网 滑板人的家园 风子滑板 我购买滑板的淘宝店 </description>
+    </item>
+    <item>
+      <title>About Me</title>
+      <link>https://milkythinking.com/blog/about/</link>
+      <pubDate>Thu, 12 Jul 2012 08:52:13 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/about/</guid>
+      <description>Web Developer、Geek、Hacker、PHPer 伪球迷、骚年、V2EXer
+Timeline 2011.07 – Now 丁香园 » PHP程序员
+2011.03 – 2011.05 丁香园 » PHP程序员（实习）
+2007.09 – 2011.06 西北工业大学 » 软件与微电子学院 » 软件工程</description>
+    </item>
+    <item>
+      <title>天寓书友会第一次线上活动记事</title>
+      <link>https://milkythinking.com/blog/2012/06/30/first-online-event-of-tianyu-book-club/</link>
+      <pubDate>Sat, 30 Jun 2012 23:09:41 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/30/first-online-event-of-tianyu-book-club/</guid>
+      <description>死宅了很久，觉得周末需要找些事情做，主要是要走出去多和他人交流，免得到时候连交流都不会了，找不到妹子的原因一定出在自己身上（即使现在不找，将来也是要找的嘛）。
+于是昨天逛了逛豆瓣同城，希望找到个活动参与进去。虽然有不少小组比较有意思，比如不以婚姻为目的的去爱，但哥是个闷骚的人，不好意思去参加。另外，我对书友会比较情有独钟，于是最终选择了天寓书友会（因为地址是滨江），加入了QQ群（161667557，管理员 @camomile 是名老师的说）。基于上面提及的原因，我的内心火热起来了，破例登陆了很久不大用的QQ，并长时间保持登陆（当然隐身是肯定的）。
+今天和 @camomile 一起交流如何组织活动，最终决定先尝试下线上“直播”的方式，以后有机会在组织线下活动。虽然我感觉这种文字直播是一种很怪异的方式，成员之间如何互动呢？写一篇读书笔记不就可以了吗？不过既然是尝试，看具体的效果吧。于是就晚上8点的时候直播进行了。
+@camomile 今天分享的是《寻路中国》，我没有看过，豆瓣上评分高达9.1的说，可见很值得值得一看的说。这是一篇外国人从普通国人的视角对中国改革开放以来的发展以及中国的一些传统的的看法。这不是一本游记，是一本社会纪实书籍，类似的书有《巨流河》和《夹边沟记事》，《巨流河》我看过两章，《夹边沟记事》看过阮一峰的书摘。感觉有时间这种类型的书还是值得一读的。在 @camomile 分享的过程中 @肖遥 也穿插着不少有价值的言论，让阅读量很少的浅薄的我自惭形秽啊。
+第一次现场直播已经结束后，感觉还是不错的，我想如果大家积极些，也许排期要排很久的说。总的来说还是比较期待以后有机会组织线下的交流活动。我预定了下一次直播，主题是间隔年（Gap Year）。届时我会分享《我睡了81个人的沙发》和《迟到的间隔年》这两本书的内容。
+Gap Year是一个舶来的概念，在国外的表达形式往往是不同阶段之间的旅游，这又分两种：1）是已经结束的上一段和已经确定的下一段时间存在Gap，2）是已经结束的上一段和未知的未来之间的Gap。-by- @肖遥
+第一种Gap是自然发生的，比如暑假，第二种Gap是人为营造的。好吧，我已经没有自然发生的Gap，只好到时准备下自己的迟到的间隔年，不过能够实际成行还要看到时我的状态，因为我认为：如果知道了自己想要什么，也许就不用这个过程了。
+总结：感觉这种活动还是很不错的，可以促进我去读更多的书，更多的和他人进行交流，结识更多的人。希望我能够保持热情的说，找个口好吧：为了妹子，哇咔咔 😉 ！
+PS：其实目前我认为自己最喜欢的是小型的技术交流活动，但是不知道那里能够找到附近组织或者分舵。
+PPS：也许过段时间我可以尝试自己组织些技术交流活动的说，不过时间需要进行协调的说。</description>
+    </item>
+    <item>
+      <title>ZF :: 自动加载自定义的Action Helper</title>
+      <link>https://milkythinking.com/blog/2012/06/11/zend-framework-autoloading-custom-action-helper/</link>
+      <pubDate>Mon, 11 Jun 2012 23:59:44 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/11/zend-framework-autoloading-custom-action-helper/</guid>
+      <description>项目中需要自定义Action Helper。虽然可以将Action Helper放置在自定义的类库目录下解决Autoloading问题，但是由于该类只在当前项目中使用到，因此更希望实现如下路径：
+application/ controllers/ helpers/ Acl.php IndexController.php Bootstrap.php 最终在StackOverflow上找到了解决办法，移除不必要的代码，具体实现如下：
+类名：Application_Controller_Action_Helper_Acl
+只要在Bootstrap.php中添加如下方法即可：
+protected function _initActionHelpers() { Zend_Controller_Action_HelperBroker::addPath( APPLICATION_PATH . &amp;#39;/controllers/helpers&amp;#39;, &amp;#39;Application_Controller_Action_Helper_&amp;#39; ); } 如果该Action Helper可以在多个项目中使用，那么将其放置在自定义类库目录下的路径是个不错的选择，如下：
+library/ My/ Controller/ Action/ Helper/ Acl.php 类名如下：My_Controller_Action_Helper_Acl
+首先，在application/configs/application.ini中添加如下配置：
+autoloaderNamespaces.my = &amp;#34;My_&amp;#34; 或者
+autoloaderNamespaces[] = &amp;#34;My_&amp;#34; 然后，在Bootstrap.php中添加如下方法来加载Helper类：
+protected function _initActionHelpers() { Zend_Controller_Action_HelperBroker::addHelper( new My_Controller_Action_Helper_Acl() ); } 以上就是两种不同的实现Action Helper自动加载的方法。起初由于对ZF的Resource Autoloading不熟悉，被StackOverflow上的解决方法迷惑了，最后发现其实实质内容都是一样的。
+PS：其实Action Helper的用处我还没有搞清楚，目前只是照葫芦画瓢的说，囧！</description>
+    </item>
+    <item>
+      <title>一个人 vs. 两个人</title>
+      <link>https://milkythinking.com/blog/2012/06/09/one-vs-two/</link>
+      <pubDate>Sat, 09 Jun 2012 21:37:15 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/09/one-vs-two/</guid>
+      <description>某日工位相邻的同事去见丈母娘去了，午饭时和其他同事在电梯里的聊天记录如下：
+…… 我：感觉一个人挺好的 同事：两个人会更好 是不是这样呢？要不要知足常乐呢？……
+最近看了古典的《拆掉思维里的墙》，其中有一节——“不要只和要结婚的人谈恋爱”[1]。感觉这节开始部分的故事里的类比很有意思：
+天真到认为可以一见钟情的小男生 &amp;lt;-&amp;gt; 天真懵懂，刚刚毕业，觉得自己会在一家公司干一辈子的员工； 觉得结婚就行的老男人 &amp;lt;-&amp;gt; 身心疲惫，希望自己随便找一家公司干下去的“老油条”； 觉得反正承偌又不上税的大忽悠 &amp;lt;-&amp;gt; 觉得反正先干着，大不了付一点违约金的员工； 抱着“只和可以结婚的人谈恋爱”的想法和“我只选择做要从事一辈子的工作”的心智模式一样。后者我知道自己的答案是什么，虽然我的目标是找到可以从事一辈子的工作，但是实际上知道目前我还在不断摸索中，改变着。类推到前者我大致知道了答案。
+对于个人兴趣方面，我的观点是多尝试才能够找到真正喜欢的。**尝试总是冒险的，而不尝试是最大的冒险。**感情方面应该也是一样的，看来我应该转变观念，大胆尝试一下的说。
+从哪里开始呢？
+[1]：我买这本书的原因之一就是被这个标题吸引了，不过买回来之后发现就只有那么一节。</description>
+    </item>
+    <item>
+      <title>Weekly Digest #3</title>
+      <link>https://milkythinking.com/blog/2012/06/09/weekly-digest-3/</link>
+      <pubDate>Sat, 09 Jun 2012 00:10:51 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/09/weekly-digest-3/</guid>
+      <description>Weekly Digest是一个文摘系列，分享一些我最近阅读的文章以及我的观点，每周五发布。
+学生创业团队靠谱吗？ -by- 36氪 本文转载了天使湾创始人庞小伟的观点：大部分国内的学生创业团队是不太靠谱的，这与国内的教育制度和创新生态环境有很大的关系；创业是一种生活方式，是一部分人的人生取向；创业不是开发产品，更关键在于持续的经营和管理；创业需要更快的学习和迭代能力。
+总是有异类存在的，比如：猛犸浏览器的创造者季逸超，前一段时间接受了徐小平的投资创办Peak Labs；原摆摆书架的创始人刘白光，目前投入到火花电视创业团队。但在他们崭露头角的之前他们已经投入了大量的精力在所处的领域，积累了丰富的技能点和经验。
+我认为创业是一件很Cool的事情，但和异类们相比，现在的我还是太弱小了，不过我在努力中。
+前几天我想到了一个类比：创业可以类比为跳舞，一直在看别人跳舞，很激动，虽然我也想要跳，但在这之前要锻炼好自己的基本功。
+另外，天使湾的竞争还是比较大的。
+商家各种促销背后的精明算术 不要被商家的促销活动冲昏了头脑，我们要了解下商家的促销手段，理性消费。我在坐等京东618周年庆的说。
+你做过的最有效的提高你的编程水平的一件事情是什么 -by- 外刊IT评论 永远保持学习 不要限制了自己的方向，成为多面手 学习和运用设计模式和最佳实践 和优秀的人在一起工作 不要一个人编程，交流能够让你更快地进步 参与到社区中去，中文的社区不好，那就到英文的社区中去，比如：StackOverflow PS：今天写作的效率太低了，戒之。</description>
+    </item>
+    <item>
+      <title>两种思考方式</title>
+      <link>https://milkythinking.com/blog/2012/06/28/two-ways-of-thinking/</link>
+      <pubDate>Fri, 08 Jun 2012 23:38:35 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/28/two-ways-of-thinking/</guid>
+      <description>今天下午来自淘宝的@kimihuang给我们普及了一些互联网广告的知识，有些收获。
+不过这篇文章将不涉及@kimihuang分享的主要内容，而是由其分享的一种赚钱的故事引发的我的思考。
+创建一个新的网站，没有流量，怎么赚钱呢？ 通过AdWords购买较低的价位的关键词引入流量，再通过AdSense在网站上投放单次点击价位较高的广告，赚取之间的差价。
+下午听到这个故事时，我的第一个反应就是：这种在国内是行不通的，因为国内的单次点击价位太低了（只是听说，没有实际了解过）。
+晚上回来后想想，也许还种思考方式会更好：这确实是一种不错的赚钱的方式，不过需要解决一些关键的问题。
+哪些低价位的关键词能够带来流量？ 带来的流量属于什么类型的人群？ 他们喜欢什么类型的高价位广告？ 靠什么内容来吸引导入的用户停留下来，并点击广告？ 如果解决国内广告单次点击价位偏低的问题？ …… 通过以上的问题，我的结论是：这种方式不是那么好赚钱的，否则很多人早就这么干了。
+虽然通过以上两种思考方式得到的最终结论是一样的，但是后一种思考方式是一种努力的结果，而不是一上来就否决（虽然有时直觉也是很有效的决策手段）。
+PS：@kimihuang 应该是Tanx的产品负责人吧（应当是靠谱的猜测）。
+PPS：@kimihuang的微博</description>
+    </item>
+    <item>
+      <title>It’s My Life</title>
+      <link>https://milkythinking.com/blog/2012/06/08/its-my-life/</link>
+      <pubDate>Fri, 08 Jun 2012 17:47:17 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/08/its-my-life/</guid>
+      <description>很喜欢这首歌，Bon Jovi嘶哑的声音与有感觉的歌词。
+This ain’t a song for the broken-hearted 这不是一首给伤心人的歌 No silent prayer for the faith-departed 没有为失去信仰者的默祷 I ain’t gonna be just a face in the crowd 我不希望自己只是芸芸众生之一 You’re gonna hear my voice 你将会听到我的声音 When I shout it out loud 当我大声呐喊出来 Chorus:
+It’s my life
+这是我的人生
+It’s now or never
+把握现在，机会稍纵即逝
+I ain’t gonna live forever
+我不希望长生不死
+I just want to live while I’m alive
+我只想趁活著得时候认真的生活
+(It’s my life)
+（这是我的人生）</description>
+    </item>
+    <item>
+      <title>一个GTD的替代系统</title>
+      <link>https://milkythinking.com/blog/2012/06/07/an-gtd-alternative-system/</link>
+      <pubDate>Thu, 07 Jun 2012 23:06:06 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/07/an-gtd-alternative-system/</guid>
+      <description>本文翻译自“GTD sucks for creative work. Here’s an alternative system. -by- Dave Lee”，他认为GTD在创意工作领域表现很糟糕，并在本文介绍一个替代的系统。
+这篇文章在Hacker News和Reddit上很火，本文的评论中也有不少有意思的内容的说。
+我的一个朋友问我使用什么系统来管理我的TODO清单（Todo List，待办事项清单）：
+你的TODO清单可能和我的一样，有上百万条那么多，而且还在持续增长中……你是否使用某个或某些系统来管理TODO清单呢？我以前曾不严格地使用GTD，目前则在使用文本文件来管理我的TODO清单。这个文本文件十分巨大……我喜欢它的简易的特性，复制、粘贴和再组织的效率……但排序是个痛苦的过程。我刚刚下载了Mac版Things，看看它能否减轻一些痛苦。
+因此，我在这里写下我对GTD的看法。从2002年开始以及之后的4年里，我是GTD的死忠。我认为自己在使用GTD方面达到了“黑带”的水准，同时我也影响周围的人。然而，一段时间之后，GTD系统变成了累赘。有太多的项目（Project）和太多的下一步行动（Next Action）包含其中，已经信息过载了。我的大脑无法处理50－100个正在进行中的项目和下一步行动。
+我认为GTD对简单的工作是有效果的，比如销售。销售时，你要打一堆的电话和发送一堆的电子邮件，因此你需要一个系统来跟踪所有的条目。然而，在创意工作领域，更多的是不断变动的内容而不是有100个要跟踪的条目。你需要专注，来推动项目的开发与创作。
+虽然我仍然喜欢GTD的一些原则（下一步行动，设定项目的目标，清空大脑等等），我认为这个系统会对创意革新者产生不好的影响。当革新者需要空间去尝试和发现的时候，他们往往会被GTD系统中洪水般的任务吓到的说。
+大部分任务/待办事项管理软件是基于项目和任务这两个概念的。这真是太失败了。成打的项目和任务最终将填满你的任务管理软件。每天当你察看接下来几周项目和任务时，得到的只有沮丧，它就像一条永无止境的充满压力的河流。
+对于创意工作者来说，最重要的不是无穷尽的待办任务，而是发现并专注在重要的事情上，深入其中。创意工作者需要深入到功能或问题中去，越深入越能发挥出更多的创造力，从而给最终用户创造更多的价值。
+因此，我的任务管理系统是什么样的呢？
+我喜欢将我的一周划分为每日关注点，并且每周都是这样。我选择我的业务中最重要的5个领域，集中精力在它们上面，每天一个领域。 我选择3条本周最想要达成的目标，将它们作为本周的目标和愿景。 在开始一天的工作前，我选择3条今天最想要达成的目标。所有这3条目标与今天的关注点契合。 我使用番茄工作法，每25分钟专注地工作。我使用Mac软件“ My Little Pomodoro”进行管理并有规律地休息。 我将每日关注点视作独立的项目，因此，我只需要跟踪5个项目。 5个项目中的每个项目，我只保留需要关注的最少的信息。我不会让大量的任务和笔记充斥在项目中。我记录一些我需要处理的工作和相关的关键信息。我也会保持对关键指标的跟踪，目前在使用Google Spreadsheets和Asana（虽然设置软件的过程让我很不爽，不过至少让它们能够工作）。 对于当前的5个项目不重要的信息，我会将它们移动到团队Wiki中。Wiki作为一个快速参考空间供我放置哪些不那么重要的笔记和想法。它们是我不想遗忘的事物，也许将来某一天我会需要用到它们。我将它们与我的项目分离开来保证项目空间的简洁。 其他的不需要随手获取的信息将存储在Dropbox或邮件归档中。这将作为我的远程参考，在我将来需要的时候去搜索查找。 每天我优先处理每日关注点所处的领域和3条今日目标。在一天结束的时候，我会处理其他次重要的内容，如电子邮件。 保持工作台、系统桌面和电子邮件收件箱的干净整洁，以此来让混乱熵保持在较低的水平，并使得前面的1-9更好的运作。 就个人而言，我无法忍受使用Mac版Things（或类似的任务管理软件）来组织管理工作的想法。通常，你会创建一些项目，然后给它们添加一些任务，在你意识到你有那么多的项目和任务之前，它已经被淹没的。整个事情变成了一种干扰和阻碍。它使得工作变得很无趣。
+每日关注点和最少的任务让我保持专注且超高的效率。它让创意工作变得有趣。
+试一下吧^.^</description>
+    </item>
+    <item>
+      <title>使用PHP SimpleXML生成XML文件</title>
+      <link>https://milkythinking.com/blog/2012/06/05/generate-xml-file-with-php-simplexml/</link>
+      <pubDate>Tue, 05 Jun 2012 21:48:20 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/05/generate-xml-file-with-php-simplexml/</guid>
+      <description>使用SimpleXML生成XML文件很简单，示例代码如下：
+$xml = new SimpleXMLElement(&amp;#39;&amp;lt;books /&amp;gt;&amp;#39;); $book = $xml-&amp;gt;addChild(&amp;#39;book&amp;#39;); $book-&amp;gt;addChild(&amp;#39;title&amp;#39;, &amp;#39;拖延心理学&amp;#39;); $book-&amp;gt;addChild(&amp;#39;isbn&amp;#39;, &amp;#39;9787300113906&amp;#39;); $rating = $book-&amp;gt;addChild(&amp;#39;rating&amp;#39;, 5); $rating-&amp;gt;addAttribute(&amp;#39;type&amp;#39;, &amp;#39;stars&amp;#39;); // 添加其他节点 echo $xml-&amp;gt;asXML(); 输入结果如下：
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;books&amp;gt;&amp;lt;book&amp;gt;&amp;lt;title&amp;gt;&amp;amp;#x62D6;&amp;amp;#x5EF6;&amp;amp;#x5FC3;&amp;amp;#x7406;&amp;amp;#x5B66;&amp;lt;/title&amp;gt;&amp;lt;isbn&amp;gt;9787300113906&amp;lt;/isbn&amp;gt;&amp;lt;rating type=&amp;#34;stars&amp;#34;&amp;gt;5&amp;lt;/rating&amp;gt;&amp;lt;/book&amp;gt;&amp;lt;/books&amp;gt; 请注意输出的XML内容，声明中没有encoding=&amp;quot;UTF-8&amp;quot;，汉字也被转换为对应的UTF-8编码。
+如何解决上面遇到的问题呢？
+虽然SimpleXML没有提供设置encoding的接口，但是可以通过以下途径解决：
+使用如下代码初始化SimpleXMLElement对象：
+$xml = new SimpleXMLElement(&amp;#39;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&amp;lt;books /&amp;gt;&amp;#39;); PS：网上有建议说在最后生成字符串时使用$xml = str_replace(&#39;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;&#39;, &#39;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&#39;, $xml);命令进行替换实现添加encoding的目的，但是这种方法无法解决汉字转为UTF-8编码的问题。</description>
+    </item>
+    <item>
+      <title>配置Git</title>
+      <link>https://milkythinking.com/blog/2012/06/04/setting-up-git/</link>
+      <pubDate>Mon, 04 Jun 2012 22:45:04 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/04/setting-up-git/</guid>
+      <description>此前曾写过一篇介绍Git安装的文章，今天来写点Git配置那些事儿——git config。
+因为Git是分布式的版本控制工具，没有一个中心仓库向你询问用户名和密码，在你向本地仓库提交的时候，也需要这些信息，可以通过git config进行配置，如下：
+git config user.name hutushen222 上面的命令将配置数据存储到当前项目的.git/config文件中，不过可以使用“–global”、“–system”、“–file”来修改存储的位置，具体如下：
+“git config –system …”，系统配置，存储在/etc/gitconfig文件中，对所有用户的项目起作用； “git config –global …”，全局配置，存储在当前用户的~/.gitconfig文件中，对当前用户的所有项目起作用； “git config …”，项目配置，存储在当前项目的.git/config文件中，只对当前项目起作用。 项目级别配置可以覆盖全局/系统级别的配置，全局级别的配置可以覆盖系统级别的配置。
+常用配置 Git的配置选项很多，有100多个，我常使用的也就那么几个，因为是每个项目都要用到的，所以都使用“–global”进行全局配置。
+user.name
+设置提交时使用的用户名 。
+git config --global user.name &amp;#34;Jack Jordan&amp;#34; user.email
+设置提交是使用的邮箱。
+git config --global user.email example@gmail.com core.ui
+设置该选项的值为auto或always后，命令行git将使用不同的颜色展示不同类型的内容，比如已经未添加到暂存区的文件显示为红色，等待提交的文件显示为绿色；git diff查看差异时，移除的行显示为红死，添加的行显示为绿色。
+git config --global color.ui auto alias.*
+设置git命令的别名。我此前使用的是SVN，习惯了那些简短的命令，不过通过设置，Git也可以使用同样的命令。
+git config --global alias.co checkout git config --global alias.st status git config --global alias.ci commit core.editor
+设置提交时使用的编辑器。
+git config --global core.editor vim merge.</description>
+    </item>
+    <item>
+      <title>杂记 #1 宅男</title>
+      <link>https://milkythinking.com/blog/2012/06/03/miscellanies-1-otaku/</link>
+      <pubDate>Sun, 03 Jun 2012 22:51:09 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/03/miscellanies-1-otaku/</guid>
+      <description>周六下午骑行归来后整个人心神不宁的，想找些事情做，不是看书、敲代码这类正事，而是纯粹消磨时间的事情比如看小说、看电影。小说又不想开始一部新的（不知道什么好看），电影也没有找到好看的（除了动画片、小清新爱情片其他的很不符合我的口味），最后在乐视上看到了前一段时间同事推荐过《黑子的篮球》。点开看了几集感觉还不错，故事的节奏很快（我很不喜欢灌篮的慢节奏，因此一直没有看完），不过动画版目前只更新到第8集，看完后又找来漫画继续看，看到凌晨1点多才去睡觉。因此也就忘记了更新博客。
+今天睡到将近12点才起床，吃完午饭，继续看漫画《黑子的篮球》，看到4点多的时候，感觉很累了，而且看了这么多后兴致也没了。不过以后如果有动画版还是会追一下的说。
+想着接下来要做什么呢？想到很久没和家里联系了，于是给妈妈打了个电话，还是不知道聊些什么，没聊几句就挂掉了，告知端午节会回家。然后给芬芬童鞋打了个电话，很久没和她煲电话粥了，一开始感觉很不适应的说，不过还好，杂七杂八的聊了下去。
+其中关于我是否比较宅的话题让我感触很多，感觉自己好像变得无趣很多。自从工作后，原本不擅长主动和他人交流的我，和他人的交流就更加少了。工作上，除了必要的交流，平时交流较多的也就两三个；生活中，除了租住在同一套房间里的同事，也鲜有交流。关键是懒得走出去，更关键的是走出去不知道干吗。这种状况在上次637童鞋来杭州玩后，改善了一些，之后的几周，和同事出去大吃了一顿，和同事出去爬山一次，去上海参加了一次Drupal交流活动，51陪老大在杭州溜达了一下（老大应该玩的很不爽，因为动漫节对我们来说太无趣了），然后就是和同事去骑行了几次。
+接下来，除了骑行，我还要找些其他的事情做，比如在豆瓣上寻找一些读书会、展览会之类活动参与进去，让自己的生活有趣一些。还有就是和童鞋保持联系的说，特别是杭州的童鞋。
+6点多骑车去江边逛一下，去找个以后周末可以去躺一下午看书的地方，归来时顺便去吃晚饭。发现钱塘江边傍晚还是挺热闹的，不少人应该是饭后散步或傍晚跑步健身吧，也有一群人在伴着音乐跳舞，一群老大爷在做健身操，一个歌手弹着吉他唱着《后来》，一群人在江边的篮球场上对抗者……
+PS：加上这篇凑数的文章，本周更新6篇，虽然没能够完全做到每天更新，但是结果还是不错的，以后再接再厉。
+PPS：感觉生活中还是少了些什么。是自己还不是很成熟的缘故吧？！我应该学会享受孤独。</description>
+    </item>
+    <item>
+      <title>Weekly Digest #2</title>
+      <link>https://milkythinking.com/blog/2012/06/01/weekly-digest-2/</link>
+      <pubDate>Fri, 01 Jun 2012 23:59:42 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/06/01/weekly-digest-2/</guid>
+      <description>Weekly Digest是一个文摘系列，分享一些我最近阅读的文章以及我的观点，每周五发布。
+你的问题不是缺少动力 -by- 褪墨[1] 当我们被想要实现某个目标却一直没有做好这件事困扰的时候，我们“面对的问题并不是没有动力，而是如何坚持”。
+我认为没能够做到坚持有两点原因：
+外界干扰信息太多，导致我们注意力过于分散； 由于个人的惰性，导致执行力不足 我建议你可以尝试一下以下的方法：
+给自己制定两个清单——TODO清单 &amp;amp; NOT TODO清单（让自己专注于真正重要的事情上）； 每天早晨回顾一下前面两个清单，然后制定今天的3MITs清单（找出今天最重要的3件事，然后竭尽全力完成它们）； 营造有利于自己实现目标的环境（调整房间的布局等让自己感觉良好一些） 以上几条是我最近在实践的方法：我两周前购买了新的桌椅，调整了房间的布局，让自己的工作一角更加舒适；我每周进行回顾和计划，并决定下周要做什么和不做什么；最后每天制定3MITs清单，并尽可能去完成它们。虽然我还是不能够做到完全按照计划行事，但是对比之前一段时间来说，已经有了很大的进步，接下来我要做的就是坚持下去更加自然地去做这些事情的说。
+[1]：褪墨是时间管理方面的很不错的的博客。
+DNSPod.com DNSPod是国内最大的第三方免费DNS解析服务商，提供了一堆不错的功能，国内很多知名站点都在使用它的服务（详见百度百科）。
+我之前一直使用的是Godaddy的解析服务（购买域名时的默认解析服务），由于前一段时间有Godaddy的解析被屏蔽的说法，加上今天使用同事的手机首次访问我的站点时，出现无法找到域名的提示，让我决定使用DNSPod的服务。
+DNSPod提供了两个版本：国际版（.com）和中文版（.cn），按照我的一贯作风，我选择了国际版，虽然面对国内的用户可能中文版更好一些，但对我来说影响不大。不过切换的过程中出现了一个小问题，由于添加域名的时候我将博客域名错输为一个我以前想要注册的域名，导致博客域名一直无法解析，原以为是延时生效的缘故，洗完澡后才发现问题所在，改正后即时生效了。
+另外，DNSPod去年被腾讯收购了。最近DNSPod开源了其DNS服务器的源码（BSD协议）。
+最后，推荐两个工具：Just-Ping 和 Ping.eu。
+虎嗅网 虎嗅是一个有视角的商业资讯与交流平台。霍炬在V2EX上推荐了它并给了很高的评价。我个人感觉有些文章确实不错，目前将其放入收藏夹闲暇时浏览一下。不过对于其不提供全文RSS这一点感觉很不错，即使有FullTextRSSFeed这类服务可以将其转换为全文。
+Bootstrapping ── 不求人的創業模式 -by- Mr Jamie 作为一名程序猿，业余时间不充分利用起来，绝对是绝大的浪费，浪费是可耻的行为。业余时间可以用来读书、学习新的技能、创业，总之就是不能够白白浪费掉。
+对于创业，目前IT创业成本很低，有很多优秀的免费的服务可以使用来帮助自己构建新的产品，“会写程序的人不自己折腾点啥，真愧对这个时代。”虽然很多人说创业一定要全职投入，否则很容易失败，如果你被这样的观点困扰了，推荐看看《重来》（《Rework》）。</description>
+    </item>
+    <item>
+      <title>每天早晨应当查看的两个清单</title>
+      <link>https://milkythinking.com/blog/2012/05/31/focus-list-and-ignore-list/</link>
+      <pubDate>Thu, 31 May 2012 21:59:15 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/31/focus-list-and-ignore-list/</guid>
+      <description>本文翻译自“Two Lists You Should Look at Every Morning -by- Peter Bregman”，文中说你要准备两个清单：专注清单和忽视清单，专注清单上列出你要投入精力去做的事情，忽视清单上列出的是为了保证精力集中你应当避免的事情。毕竟时间是有限的，如何在有限的时间里创造出更大的价值，就在于我们能够将时间投入在真正重要的事情上，好钢要用在刀刃上。
+这两个清单也称之为TODO 清单和NOT TODO清单，我尝试过，还在实践中，希望能够做的越来越好。
+我与一位科技公司的CEO约定了会面时间，但我迟到了。当我走进他公司所在办公楼的电梯时，我已经使用iPhone给他发了邮件。我按了6楼，眼睛仍一直停留在手机屏幕上。在我用拇指不停地戳着屏幕的时候，电梯门打开了，我看也没看，直接走了出去。这时身后传来一道声音：“你走错楼层了。”我回头看了下，发现CEO正站在那里保持电梯门开着等我回去，脸上挂着灿烂的笑容。他一直与我在同一部电梯里。“你被逮捕了。”他说。
+世界在飞速地前进着，而且只会越来越快。有太多的科技、太多的信息和太多的事物要我们去理解、去思考、去做出响应。我的一位朋友最近的新工作是一个中等规模的投资银行的学习开发主管。在她第一天上班打开电脑的时候，已经有385条信息在那里等着她去处理了。
+因此我们试图加速来跟上节奏。为了回复所有的邮件，我们熬夜到凌晨3点。我们使用Twitter、Facebook、LinkedIn，我们浏览新闻站点，只是希望确保我们随时掌握最新的信息。当我们听到新信息的铃声或者振动时，我们已经开始“分泌唾液”了。
+但这是错误的。信息的飞速增长给我们带来冲击是不可避免的（而且正在变得越来越糟糕）。试图掌控这一切只会适得其反。当更急的浪头赶过来的时候，我们更需要关注的是航向，否则，我们将会被冲散并像沙粒一样淹没在周围。 理智地有意地去分辨出什么是重要的事情从未像今天这样的迫切。
+“说不”也从未想今天这样重要。不，我不打算读那篇文章。不，我不会去阅读那封邮件。不，我不打算打那个电话。不，不会去参加那个会议。
+这很难做到，因为可能，仅仅是可能，下一条信息将会是我们成功的关键。但事实上我们成功的关键在于相反的事物上：我们有意去面对错过一些信息带来的风险。因为试图关注所有的内容也是个风险，且将会导致我们筋疲力尽。我们将会变得困惑、紧张且易怒。我们会错过站在同一部电梯里的CEO。
+弗吉尼亚理工大学交通学院此前进行了一次车祸的研究，他们将相机装置在汽车中来记录事故发上前发生了些什么事情。他们发现80%的事故是由于事故发生的前3秒内司机分心导致的。换句话说，他们失去了专注——用手机拨打电话、调整广播电台、吃一口三明治、或者查看一条信息——从而没有意识到周围世界发生的变化，然后，他们出车祸了。
+世界正在飞速变化着，如果我们没有保持专注在前进的道路上，拒绝有诱人分心的事物，也就是分心，我们发生事故的几率就会增加。
+因此，现在是停下来、列出优先级并保持专注的好时机。制定以下两个清单：
+清单1：专注清单（前进的道路）
+你想要实现什么样的目标？什么事情让你感到快乐？什么事情对你来说是重要的？规划分配你的时间来处理这些事情。因为时间是一个有限的资源，不管你多么努力地工作也不可能每周工作8天，每天25个小时。
+清单2：忽视清单（分心的事物）
+为了有效地利用你的时间，你必须问自己同等重要但却经常被忽略的互补问题：你不想做什么事情？什么让你感到不快乐？什么对你来说是不重要的？使用这个方法你得到了什么？
+有些人已经拥有第一个清单。少部分人也拥有第二个。但考虑到我们是那么容易分心，每天又有那么多杂念产生，第二个清单就变得比任何时候都更重要。在未来仍然能够保持成长的领导人知道这些问题的答案，每当有一个吸引他们注意力的事物出现，我们会问自己是否值得进一步投入还是忽略掉它。
+这意味着，你不应当创建这些清单后就把他们放在抽屉里。这两个清单是你每天的行为指导。将它们放在日历旁，每天早晨回顾一下，并问自己：今天的计划是什么？我将在那些地方投入我的时间？我进一步投入到其中会有怎样的结果？怎样会导致我分心？然后鼓起勇气、做出选择，即使这会让一些人失望。
+CEO在电梯里“逮捕”我之后，他告诉我他刚刚参加的一个会议的情况。这是一个所有入围年度企业家称号候选人的聚会，他是其中之一。这对他来说是一个重要的会议——因为这是每个人想要得到的头衔（所有评审人员也出席了该会议）——在他进去之前他做出了两个明确的决定：1）专注与会议本身；2）不查看他的黑莓手机。
+让他感到惊讶的是：他是唯一一个没有粘到移动设备上的人。是其他的CEO不在意这个称号吗？是他们的业务太依赖他们以致于他们不能够离开哪怕一个小时吗？与评审者沟通不是一件明智的事情吗？
+在那一个小时里只有一件最重要的事情，只有一位知道该关注什么该忽略的什么CEO的行为体现它的重要性。不管他最终是否赢得冠军，他已经赢得了这个游戏。
+PS：即使借助Google Translate，但还是感觉翻译太困难了，文中有很多地方翻译的不甚贴切。</description>
+    </item>
+    <item>
+      <title>重新学习面向对象编程</title>
+      <link>https://milkythinking.com/blog/2012/05/30/relearn-object-oriented-programming/</link>
+      <pubDate>Wed, 30 May 2012 23:31:15 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/30/relearn-object-oriented-programming/</guid>
+      <description>使用PHP已经一年多了，这个过程中开发的项目大部分都是过程式开发。最近的一些事让我意识到我已经不熟悉面向对象编程了。
+阅读一些文章，比如“Skinny Controller; Fat Model”、“Tell, Don’t Ask”等，发现自己的程序严重违反这些原则； 这两天在学习使用PHP的命名空间的特性，虽然知道命名空间的作用，但是使用起来感觉及其不习惯； 尝试使用面向对象的方法设计我最近在做的小程序，感觉很困难的说，不知道从何下手； …… 以上的种种迹象表明我已经忘记了如何进行面向对象编程了，看来是时候重新学习面向对象编程的说。</description>
+    </item>
+    <item>
+      <title>第二次iOS开发分享</title>
+      <link>https://milkythinking.com/blog/2012/05/29/2nd-ios-development-sharing/</link>
+      <pubDate>Tue, 29 May 2012 20:31:13 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/29/2nd-ios-development-sharing/</guid>
+      <description>今天是同事的第二次iOS开发分享。
+起初迟疑要不要过去呢，因为去年的第一讲我几乎什么都没有听懂。但发现其他同事没什么响应，感觉这样太对不起分享的同事了，就权当过去充充人数吧。不过听完之后，还是很有收获的，这次白参与的说。
+首先，回顾了下第一讲介绍的Object-C的语法，然后介绍了下Xcode，并开发了个入门程序——输入姓名，点击按钮，显示“Hello，XXX！”，其间穿插着介绍了iOS应用的基本模型。
+这次做的比较近听的比较认真，感觉如下：
+Object-C的语法挺怪异的 Object-C没有命名空间 Object-C需要手动去控制内存分配 Xcode的语法提示太牛X了 iOS App开发入门不是很难 感觉开发好的App的难点主要应该在交互设计上（自我感觉） 以后iOS开发的分享，我要积极地参加的说（虽然现阶段我不会去学） PS：下半年或者2013年有时间可以学习一下iOS开发的说。</description>
+    </item>
+    <item>
+      <title>《正则表达式30分钟入门教程》学习笔记</title>
+      <link>https://milkythinking.com/blog/2012/05/28/notes-for-30-minutes-regex-tutorial/</link>
+      <pubDate>Mon, 28 May 2012 22:52:32 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/28/notes-for-30-minutes-regex-tutorial/</guid>
+      <description>最近业余时间在写的小说抓取程序需要进行内容解析，比如解析小说的章节信息、提取小说的正文内容、移除页面的水印，这个过程中要用到正则表达式。虽然用Google找到可以使用的正则表达式，但想要更加深入的学习一下，于是上周末找来网上推荐的《正则表达式30分钟入门教程》，以下是我的学习笔记。
+正则表达式是什么？ 正则表达式是描述一串文本特征的工具。
+什么是文本的特征？ 比如，中国电话号码的特征为：以0开头的3或4位数字（区号），然后是连字符（-），最后是7或8为数字（本地号码）。3位区号8位本地号码 或者 4位区号7位本地号码 组成的电话号码的正则表达式为 0\d{2}-\d{8}|0\d{3}-\d{7}，使用该正则表达式你就可以查找一个文件中所有符合规则的电话号码了。
+元字符（metacharacter） 元字符是正则表达式规定的具有特殊含义的字符。比如：\s 表示任意的空白符（包括空格、制表符Tab、换行符、中文全角空格等）；\d 表示0-9之间的一位数字。
+字符转义 字符转义就是让元字符表示它们自身，如：\s 就代表 \s，而不是空白符；. 就代表点（.），而不是除换行符以外的任意字符。使用反斜线（\）进行转义，代表字符 \s 的正则表达式为 \\s；代表点的正则表达式为 \.。
+未完待续…</description>
+    </item>
+    <item>
+      <title>要不要玩滑板呢？</title>
+      <link>https://milkythinking.com/blog/2012/05/27/want-to-play-skateboard/</link>
+      <pubDate>Sun, 27 May 2012 21:14:18 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/27/want-to-play-skateboard/</guid>
+      <description>之前，忘记是什么时候了，曾考虑过这个问题。在了解了些滑板的基本信息后，对自己说先放一放，免得又因为自己一时脑热，买回来后不玩了。今天又想到了这个问题，找了张A4纸，画了个思维导图，得到了如下的结果：
+方便（vs. 轮滑与11号） 长条形，不占用空间，比轮滑便携 不需要系鞋带之类的，踩着滑，落地走呗 比11号速度快 酷 极限运动，演化自冲浪运动 踩着滑板去上班，比较帅气（是不是也有点2呢？） 学习 场地，小区附近的公路比较空闲 时间，夏天到了，下班后还要很久才天黑，天黑了也有路灯的说 基础与技巧，可以逛社区、看视频来学习，购买滑板时也会有教程赠送 其他 消费不多，基本入门板，300元左右可以搞定 锻炼身体，有事做，自然不会老宅在家里 障碍
+会不会在意路人的眼光呢？（与路面摩擦的声音还蛮大的） 我能够坚持多久？ 结论是：可以玩滑板，接下来多了解些滑板的信息后再购买滑板。</description>
+    </item>
+    <item>
+      <title>假如今天是你的最后一天，你会做些什么？</title>
+      <link>https://milkythinking.com/blog/2012/05/26/if-today-is-the-last-day-of-your-life-what-do-you-want-to-do/</link>
+      <pubDate>Sat, 26 May 2012 12:59:19 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/26/if-today-is-the-last-day-of-your-life-what-do-you-want-to-do/</guid>
+      <description>知乎上看到这么一句话“如果明天是世界末日，还会选择创业，这是一种人生态度。”，感觉很虚。
+突然联想一句话“假如今天是你的最后一天，你会做些什么？”（我一直误以为是乔布斯2005年在斯坦福毕业典礼上演讲提及的。）
+我多次问过自己，好像每次的答案都是“享受最后的生活”，细想一下，我会做的事情有：
+给父母打个电话，平静的告诉他们这件事情 通知殡仪馆或者能够收尸的人 出去逛逛，用心看看这个世界 安静地睡上一觉 经过考证，乔布斯2005年在斯坦福毕业典礼上演讲的原话如下：
+If today were the last day of my life,would I want to do what I am about to do today? 如果今天是我生命中的最后一天,我会不会完成今天要做的事情呢？
+其表达的意思是做自己真正想做的事情。对于这个问题，我应该还是一样的回答吧，除非这件事情对他人会有影响，而且必须完成。
+另外一个原因是我还没有不甚明了自己到底想要什么，还在摸索中，“So keep looking. Don’t settle.”。
+扩展一下吧 乔布斯的演讲听过好多遍，当年还尝试过背诵/模仿，目前只有零星的记忆——“Connecting the dots.”和“Stay hungry, stay foolish!”。
+我最喜欢的是“Connecting the dots.”这句，我常用它来解释自己做的一些事情，来激励自己前行。
+“Stay hungry, stay foolish!”我一直没有很好地理解，倒是看到一些比较新颖的解释。
+讲稿中文 @ 福布斯中文 | 演讲视频 @ 优酷
+刚刚快速回顾了一下演讲的内容，这次又有新的发现。
+PS：这次我要把它背下来。</description>
+    </item>
+    <item>
+      <title>Weekly Digest #1</title>
+      <link>https://milkythinking.com/blog/2012/05/25/weekly-digest-1/</link>
+      <pubDate>Fri, 25 May 2012 21:40:54 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/25/weekly-digest-1/</guid>
+      <description>Weekly Digest是一个新的系列，分享一些我阅读的文章以及我的观点，每周五发布。
+我所信奉的编程哲学 -by- 张砷镓
+本文介绍了一些好的编码习惯，虽然我平时也比较注意编码习惯，但是还是有很多不足的地方，以下几条是我接下来一段时间需要加强的地方：
+Coding for Reading（我的一些代码逻辑需要调整） 用常量代替魔术数 ； 减少逻辑层次：对于复杂的表达式，通过提取中间变量来降低表达式的逻辑层次，保证每个表达式的逻辑层次不超过二层。对于多层条件判断，大多数情况可以用防御式编程将其简化成单层的条件判断，尽早return或者exit。（对于函数是尽早return还是推迟return，一直有些争论，我会在之后的某篇文章里进行探讨。） 请给它 5 分钟的时间 -by- 装傻充愣
+我也有这样的坏毛病，尤其是在他人表达和我不一致的观点时候，我会立即进行反驳，并表现出强烈的“进攻性”，结果往往不是好的结果。看到这篇文章，我要反思一下，学习5分钟的技巧——『5 分钟』代表着『思考』，而不是作出回应。——在以后和他人的交流过程中获得更好的效果。
+TEA上对该文章有不错的讨论，感觉superwa的第4条确实太“恶”了，不过不认同holy的心灵鸡汤的观点，『5分钟』只是个泛数，我们要让他们表达自己的观点（imwilsonxu），不倾听直接武断的下结论的方法不可取。另外心灵鸡汤对某类人还是很有用处的，比如我，疲惫的时候来点心灵鸡汤感觉很不错。
+37Signals成员的工作空间？ -by- 装傻充愣
+工作空间的舒适与否直接影响工作的心情，我喜欢较大的桌面，较安静的空间。之前使用的桌子空间太小，感觉很不爽，上周末终于在淘宝上购买了新的桌椅，现在感觉好多了。
+BattleStations @ Reddit 晒晒你的工作空间 @ V2EX
+Getting Real -by- 37Signals #book
+The smarter, faster, easier way to build a successful web application
+现在Getting Real可以免费下载了，你还在等什么呢？
+37Signals还有一本书：《Rework》，中文版《重来》。
+PS：想注册一下TEA，发现需要邀请码，想了一下也就释然了——邀请机制是社区初期保证内容的质量和社区的氛围的好方法。我目前不是TEA的好用户，再等等吧。</description>
+    </item>
+    <item>
+      <title>不用密码进行SSH连接</title>
+      <link>https://milkythinking.com/blog/2012/05/23/password-less-ssh-login/</link>
+      <pubDate>Wed, 23 May 2012 23:25:00 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/23/password-less-ssh-login/</guid>
+      <description>开发测试或维护VPS时，我们会使用SSH远程连接服务器，登陆后进行相关的操作。
+ssh hutushen222@192.168.200.137 为了保证账户的安全，一般我们会设置一个复杂的密码，这样导致每次连接时输入密码成为很不爽的事情，即使使用了KeePass之类的工具来管理密码。
+其实有一种一劳永逸的方法来解决每次输入密码的痛苦——使用密钥进行安全验证，过程如下：
+$ ssh-keygen -t rsa # 选择加密方式 rsa/dsa Enter file in whitch to save the key (~/.ssh/id_rsa): vps_rsa # 输入保存密钥的文件名 Enter passphrase (empty for no passphrase): # 设置密钥密码，可以不设置 Enter same passphrase again: # 确认密钥密码 Your identification has been saved in vps_rsa. # 私钥 Your public key has been saved in vps_rsa.pub. # 公钥 The key fingerprint is: 10:e1:02:57:15:7a:b7:37:b3:f3:a7:de:78:6f:ec:ff hutushen222@Sailing ... $ ssh-copy-id -i ~/.ssh/vps_rsa.pub hutushen222@192.168.200.137 # 将公钥添加到远程服务器的authorized_keys文件中 经过上述的步骤后，再使用SSH远程连接时就可以不输入密码或者输入设置的简单的密钥密码完成登陆。</description>
+    </item>
+    <item>
+      <title>PHP: json_encode()</title>
+      <link>https://milkythinking.com/blog/2012/05/22/php-json_encode/</link>
+      <pubDate>Tue, 22 May 2012 21:58:08 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/22/php-json_encode/</guid>
+      <description>开发过程中经常使用到的API大部分使用JSON作为数据交换的格式，PHP使用json_encode()将PHP的不同类型的变量转换为对应的JSON字符串。虽然经常使用，但直到今天我才注意到原来json_encode()还支持第二个参数options。
+函数原型 string json_encode(mixed $value [, int $options = 0]) 参数说明 value value可以为非resource类型的任意PHP变量。
+options 目前我本地的PHP版本为5.3.2，因此只试验了5.3.0引入的常量，所有可用的常量以及它们含义可以在JSON Constant页面查看。每一个常量的字面意思表达的都很清楚，不过对于它们的使用场景我还有些疑惑，比如：可不可以混搭使用？
+PHP 5.3.0
+JSON_HEX_QUOT: 将所有的双引号（”）转换为\u0022。 // 实例代码： $data = &amp;#39;&amp;#34;&amp;#39;; echo json_encode($data); // &amp;#34;\&amp;#34;&amp;#34; echo json_encode($data, JSON_HEX_QUOT); // &amp;#34;\u0022&amp;#34; JSON_HEX_TAG: 将所有的大于号（&amp;gt;）转换为\u003E，将所有的小于号（&amp;lt;）转换为 \u003C。 JSON_HEX_AMP: 将所有的与号（&amp;amp;）转换为 \u0026。 JSON_HEX_APOS: 将所有的单引号（’）转换为\u0027。 JSON_FORCE_OBJECT: 当value为非关联数组时强制输出结果为JSON对象。在接收者要求数据为对象且value为空数组时使用。 // 实例代码： $data = array(); echo json_encode($data); // [] echo json_encode($data, JSON_FORCE_OBJECT); // {} PHP 5.3.3
+JSON_NUMERIC_CHECK: Encodes numeric strings as numbers. PHP 5.4.0
+JSON_BIGINT_AS_STRING: Encodes large integers as their original string value.</description>
+    </item>
+    <item>
+      <title>时间管理 #1</title>
+      <link>https://milkythinking.com/blog/2012/05/21/time-management-01/</link>
+      <pubDate>Mon, 21 May 2012 20:57:45 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/21/time-management-01/</guid>
+      <description>我一直在时断时续地进行着时间管理，不过从来没有做好，也没有养成好的习惯。
+工作上还好，每周会提交大致的计划，另外由于这段时间的工作任务也比较明确，每天感觉还不错，比较充实。不过，业余时间的生活则惨不忍睹，由于自己注意力涣散、不够专注的恶习，东摸摸，西碰碰，几乎是一事无成。感觉自己的生活越来越混乱，上周我决定重新拾起GTD，来理清自己的生活，调整做事的节奏。
+时间管理最常见的误区有哪些？
+今天知乎上看到了这个问答，粗略的看下发现我的误区还真不少，比如：
+我一直以为GTD就是时间管理，如果我能够严格按照起流程进行实践，我应该能够怎么怎么样，没有做好只是以为自己没有严格地去实践； 我的时间管理的目标就是为了做更多的事情，结果好像都没有做好； …… 接下来的一段时间，我将结合GTD、误区列表和实践重新走上时间管理的道路上，这个时间管理系列用来记录这个过程中我的一些思考。
+PS：知乎是一个高质量的问答社区，上线以来已经积累了不少有深度的内容。不过为了维持内容的质量，知乎一直采用邀请机制来注册用户，如果你感兴趣，我这里还有些邀请码。
+PPS：这篇文章好像还是谈及自己的碎碎念，干货呢？我先适应一下每天更新的习惯，技术类的文章我接下来也会逐步写起来。</description>
+    </item>
+    <item>
+      <title>Learn to Write</title>
+      <link>https://milkythinking.com/blog/2012/05/20/learn-to-write/</link>
+      <pubDate>Sun, 20 May 2012 20:22:29 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/05/20/learn-to-write/</guid>
+      <description>What I should be worried about is, “Have I written something worthy of your attention?” – Please Learn to Write via Rands In Repose
+很久没有打开自己的博客了，虽然一直叫嚣着要坚持发布，但行动与口号一直背道而驰，只是偶尔在本地记录些笔记和零碎的念想，却不曾发布出来。
+浏览了下GA上的统计，访问量很少，其中最受欢迎的是几篇关于工具介绍的文章。浏览下自己的文章，感觉水准很低的说，大部分文章都是自己碎碎念，对他人无甚益处。此前曾有同事对我说过，让我写些“干货”，怎奈干货太少，也不知从何写起。
+其实只是自己太纠结，太过关注于外物，忘记了本质，如：捣腾的乱七八糟的分类，现在连我自己都不知道它们代表着什么意思了。与此同时，人心浮躁，不能够安静下来专注地学习，贪求太多，最终却什么都没有做好。
+写其实不是很难，关键是如何写好，吸引到读者。现在我也不知道，就先从写开始，一步一步来吧。
+Now… go.
+PS：读Rands In Repose感觉很吃力，英语得练的说。</description>
+    </item>
+    <item>
+      <title>团队的执行者</title>
+      <link>https://milkythinking.com/blog/2012/03/18/team-executor/</link>
+      <pubDate>Sun, 18 Mar 2012 23:01:54 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/03/18/team-executor/</guid>
+      <description>困境 前两天走在回家的路上和同事说到：已经工作了一年，但感觉还没有学会很好地工作。后来在《程序员》的一篇文章[1]里看到了“执行者”这个词，立刻套在了自己的身上——感觉自己就是一个执行者，但这不是个好的定位，因为缺少了独立思考与解决问题的能力。
+是什么造成了这种状况呢？我认为有两方面的原因：团队方面和个人方面。
+团队方面 我所在的PHP组，项目相对离散，几乎每个人都是维护着各自的项目，没有太多的交集，至少我个人找不到团队的归属感。另外，我目前主要负责维护的项目是公司内部使用的，功能相对稳定，没有明确的后续开发计划，因此经常被安排其他项目的零散的维护任务，但仅仅是临时的介入，多个项目之间进行切换是件比较不爽的事情，也找不到那种为了产品的持续改进而努力奋斗的氛围。
+个人方面 对于现在面临的状况与我个人对其的处理方式有很大的关系。起初自己的技术实力很菜，通过他人的安排来进行任务开发，现在技术已经有了一定的成长，但是还是没有转变过来这种状态。虽然感觉有些不爽，但是没有有效地表达出来，或者是表达出来后没有持续跟进，导致问题并没有得到解决，我还是处于这种状态，累积起来整个人就会变得压抑起来。
+另外由于项目之间的关联性较少，导致整个人相对闭塞一些，长时间这样，也变得有些狂妄和浮躁起来。
+现状 两周前和入职师傅有了次谈话，收获良多，之后决定改变自己对待所处状况的处理方式，积极表达出自己的真实的想法，对待一些问题变得更加坚持一些。而后，经过一些事情和个人思考之后，上周终于决定加入到公司的一个此前我一直不愿意全职加入的团队中，虽然现在仍然不是全职，但是主要的精力将投入到其中去。上周参与了该团队的几次讨论后，有种终于找到组织的感觉，因为这是一个团队，一个为了开发出更好的产品而努力的团队，一个可以相互交流的团队，一个为了共同的目标奋斗的团队。我将不仅仅是一个团队执行者，期待着下一个阶段我的表现的说。
+[1]: 《程序员》 2012.02 敏捷结对编程实践
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>ThinkPad E430小记</title>
+      <link>https://milkythinking.com/blog/2012/08/12/thinkpad-e430/</link>
+      <pubDate>Mon, 12 Mar 2012 21:39:52 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/08/12/thinkpad-e430/</guid>
+      <description>在淘宝聚划算上看到了ThinkPad E430的团购信息，再次勾起了我给自己购买个新笔记本的念头，在京东上搜了一圈之后，发现E430的配置还是挺不错的，3899的价钱比京东上便宜多了，最终决定购买之。
+天猫物流，到货很快的说。
+E430的外观改变了此前ThinkPad给我留下的四四方方、棱角分明的印象，更具现代感。键盘也不是传统的ThinkPad风格，变为新潮的巧克力键盘。屏幕的高度比我的HP 6531s短，对比后发现E430的长宽比更好，16:9。屏幕的清晰度也很好，比我的老化的6531s显示器和外接显示器好多了。
+默认的系统是定制版Ubuntu 11.10，感觉很不好，重装为Ubuntu 12.04 AMD64版本，虽然默认只有2G内存，不过已经购买了8G内存的说。安装12.04也折腾了很久的说，来来回回刻录了好多次U盘安装盘，怎么都不好使，后来才发现10.10之后使用UltraISO直接刻录无法使用，UltraISO刻录后必须修改某个参数或者使用官网推荐的方法刻录才可行。
+下面开始吐槽的说。
+吐槽 最上面一排按键竟然默认是功能键的，组合Fn才是F1-F12，而F1-F12才是我比较常用的按键。（习惯之，或者找找看有没有改键程序的说）
+E430的做工不够精细，不和同事的MBP/MBA比较了，连我的HP 6531s都不如。触控板有些松动，网上说这是通病。右下方的右键在Ubuntu系统下同左键效果。机体正面的棱角很“锋利”，我极度怀疑某天我不小心可能会被划伤。
+CapsLock没有指示灯。
+电池也很“坑爹”的说，回到家后才发现接通电源一下午，电量的最大值竟然还是39%，试验了下，发现少于39%会充电，到达39%又停止了。网上搜索的下，可能电池是坏的。第二天联系了客服经过了神奇的步骤后才激活电池的充电功能，干！（激活步骤后面会提及。）
+神奇的步骤 关机，拔下电源，拔出电池。 插上电源，开机。 关机，拔下电源。 插上电池，插上电源。（这时候应该能看到电池显示灯亮，表示已经能正常充电啦！） 开机。（会显示“电源已接通，正充电”。） PS：结合前两次购买笔记本的经验，发现京东上至少笔记本的价钱并不低。内存好像也是，三星黑金刚4G亚马逊的价钱更低，另外这次京东竟然不支持货到付款，同时由于京东不支持支付宝，提高了付款的门槛，果断转到亚马逊购买的说。最后，我决定成为“京东黑”的说。
+PPS：此前购买护具，因为检查疏漏，过了几天真正使用时才发现其中一个有个裂口，感觉不影响使用也就没去申诉的说。于是这次购物就没有在收到货物后立即付款，感觉这才是在淘宝购物的正确的方法的说。</description>
+    </item>
+    <item>
+      <title>2011丁香园年会</title>
+      <link>https://milkythinking.com/blog/2012/01/14/dxy-2011-year-end-banquet-activities/</link>
+      <pubDate>Sat, 14 Jan 2012 04:46:12 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/01/14/dxy-2011-year-end-banquet-activities/</guid>
+      <description>晚上喝醉了，吐了，广爷将我送回来后，果断闷声睡大觉，现在终于醒了。
+第一次体验醉酒感觉的说。年会活动前对自己说“找个角落里闷声吃饭”就可以了，但是实际上我却没有很好的执行。不喜欢红酒，但还算不是太难喝啦，至少比啤酒要好多了的说。
+今天还是很欢乐的一天的说，下午获得了公司的月度奖励，晚上参与公司的年会，吃的很欢乐，喝的也很欢乐。很羡慕获得iPad2或iPhone4S的同事，他们真的很优秀。2012年会用，站在的一定会有我的说。当然还要有森森童鞋，这一天我很期待哟。
+有时感觉公司的某些流程挺混乱的，但是今晚听张老板介绍后才发现其实在某些方面，我们的工作还是是很酷的说，比如需要和设计师（vv）、药企事业部、欧美合作厂商、上海或长沙的同事进行跨地域的合作，而且他们工作的还很不错的说——这不就是我经常在网上看到的一些很赞的公司的做法吗。写到这里我想到了网易丁磊的一个故事：他老感觉公司XX部门流程什么的挺混乱的，出去参与一个什么会议，听到其他老总说——你们公司XX部门做的还很不错吗，我们的怎么怎么XXX。结论是可能工作中的一些问题被过度放大了，其实在某些地地方已经做的很不错了的说，当然还是要持续改进追求卓越的说。
+年会活动环节有个兔斯基表情模仿，我被建武和小荣童鞋给搞了上去，一个很猥琐的表情，只是心境上调节不好，做不到那么猥琐啦。作恶者终究是要受到惩罚的：小荣童鞋，作恶者之一，一不小心也被搞了上台的说；建武同学则在接下来的一轮中被我和森森同学强行丢到了台上，他们的模仿可比我好多了。赞一个。
+晚上给“师傅”敬了杯酒，小熊童鞋真的很棒的说，这一年在他的帮助下学到了很多的东西。当然还有公司其他的同事，比如说广爷、建科、森森、大辉等，经常开周会的时候能从他们的讨论中获取新的我不了解的内容——只好回家“苦逼”的去Google，去学习。
+对了还要感谢大辉和明城童鞋当年在面试我的时候很随意的就让我进来了的说。我需要更加的努力的说。这真是一个很不错的团队，我需要跟上屌丝同事们的节奏，不能落下太多的说。
+今年公司也先后有几个同事离职了，可能是个人原因，可能是更好的机会，可能仅仅是可能，这些具体原因我就不太关注了，希望他们能够在新的一年里找到心仪的工作或者创业顺利的说。
+这就是今年的年会，很混乱的说，抑制着去瞅瞅人人状态更新的冲动，坚持写了下来，感觉还是很不错的说，番茄工作法可以实践起来的说。
+Update：刚刚看到了年终奖以及调薪的邮件，感觉很不错的说。2012要继续加油，至少为了2012年会的礼物的说。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>My 2011 and pre-My 2012</title>
+      <link>https://milkythinking.com/blog/2012/01/01/my-2011-and-pre-my-2012/</link>
+      <pubDate>Sun, 01 Jan 2012 04:16:46 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2012/01/01/my-2011-and-pre-my-2012/</guid>
+      <description>2011 刚刚回顾了下My 2010 and pre-My 2011，整体的感觉是“挖了很多坑却没有凿好一眼井”。
+时间线
+2011.03.01 开始丁香园实习 2011.05.28 返校，拼凑论文，准备答辩 2011.06.23 毕业，拿到毕业证和学位证 2011.07.07 回到丁香园，试用 2011.08.01 转正 关键字
+挖坑 问答 工作 OpenX 菜鸟 数字的力量
+1 颗智齿被拔除，还有一颗等待中 2 次分享，问答网站介绍、OpenX初探，质量有待提高 3 次活动，淘宝懒懒交流会、淘宝技术嘉年华、淘宝前端技术分享沙龙 30+ 本书，没有记录，数字记不清了，但阅读量太少了 47 篇博文 101 篇OhLife日记 博客更新
+计划2篇/周，实际更新了47篇，小于1篇/周，而且很多还是个人的碎碎念，因此博客并没有什么流量的说。 GTD
+断断续续地整了一段时间，但是一直没有很好的管理自己的生活。 行动力
+好的地方，网络小说基本上戒了。不过有段时间花在视频上的时间有些多。 身体健康
+“好了伤疤忘了疼”、“不长记性”类型。 体重增加了。 锻炼没有坚持，不过又重新开始跑步了。 自信与自评
+原来我是外向的人。 其他
+第一次租房的时候没有注意合同条款，最后是交了毁约金了事。
+对互联网产品的理解更加成熟一些，但是还是没有有效地利用它们。
+信息过载依然很严重。
+开始用更好的心态进行学习总结，但是还没有另自己满意。
+和同学合作开发站点但是不了了之，我负主要责任。
+虽然不是很明显，但感觉很多方面都有进步的说，希望更进一步的说。
+2012 2012，船票还没搞到，生活还在继续，梦想还在前方，努力前行即可。
+关键词
+MVP focus GTD English JavaScript PHP 数字的力量
+12 次分享 12 次活动，包括技术/非技术类 77 本书，文学、社科、设计、技术 77 篇博文 技术提升</description>
+    </item>
+    <item>
+      <title>HTRA – 《我,睡了,81个人的沙发》</title>
+      <link>https://milkythinking.com/blog/2011/12/24/htra-rediscover-self-trip-around-europe-of-a-gril/</link>
+      <pubDate>Sat, 24 Dec 2011 17:13:19 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/12/24/htra-rediscover-self-trip-around-europe-of-a-gril/</guid>
+      <description>上周看了《我可能不会爱你》之后，我萌生了独自去旅行几个月的想法。后来，看了《第36个故事》，想起了沙发客[1]这种旅行方式，也许到时候我也可以尝试这种方式。
+几天前，在亚马逊上搜索其他书籍的时候，无意间看到了《我，睡了，81个人的沙发》[2]，看了下介绍，感觉作者很屌的说，便买了下来。今天早晨起床后，花了2个多小时，读完了这本书。
+就像作者自序中说的一样，“这本书记录的，其实是一个很简单的故事，关于一个24岁的女孩，独自在欧洲流浪的14个月。”
+&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt;
+大学毕业后，连美恩仍然对自己的生活比较迷茫，不知道自己真正想要的是什么，“人生好像从来就没有停下来喘口气的时间”。于是，她选择背上七公斤的行李，离开家门，踏上旅行，去寻找一个答案。这期间她迷惘过，在罗马的青年旅社里犹疑要不要回家；顿悟过，人生就像拍照一样，呈现的表象很美好，而真实却往往丑陋不堪；放纵过，在巴塞罗那享受被追求，被喜欢，被当成女生的滋味；见识过，在伦敦参加“变态”的Torture Garden的Party[3]……最终她找到了自己——做个摄影师。
+此前我就有工作一段时间休假1周，找个安静的地方总结思考的想法。在看了《旅行，写作，编程》这篇文章后，我发现原来我可以选择另外一种生活方式，真是爽呆了。读完这本书后，我更加期待一次独自去旅行了，放下一切，去聆听自己内心的声音，找到真实的自己。
+人啊，认识你自己！[4]
+[1] 沙发客－百度百科｜沙发客网｜CouchSurfing [2] 《我，睡了，81个人的沙发》－豆瓣读书 [3] 一种Fetish文化。 [4] 古罗马谚语 PS：在写这篇文章的时候看到了Leo的事迹，改天可以找来他的书看看，也会去了解一下穷游网。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>《我可能不会爱你》观后感</title>
+      <link>https://milkythinking.com/blog/2011/12/18/in-time-with-you/</link>
+      <pubDate>Sun, 18 Dec 2011 12:31:39 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/12/18/in-time-with-you/</guid>
+      <description>周四晚上下班回来后，打开优酷看到了《我可能不会爱你》，看了简短的剧情介绍，只有13集[1]，加上此前对林依晨扮演的角色的喜欢[2]，就打开看了看，结果是面临诱惑又一次控制不住自己[3]，一定要把它看完，但明天还要上班的说，于是看了几集；第二天，也就是周五，下班后回来看到很晚（可以说是通宵）；周六晚上回来后终于看完了最后一集。今天，决定写点什么吧，一来保持自己每周更新的频率，二来写点其他的想法。
+这部电视剧讲述的故事是：一个男生喜欢一个女生，但是很久不敢表白，之后，男生阴差阳错的很多次没有完成表白，只好继续维持着“最好的朋友”的关系，只因为太熟悉各自都不敢直面自己的内心，还互相帮助着对方寻找人生的另一半……之后，男生选择了离开……再之后，女生发现了男生的喜欢，意识到自己真实的内心……最后，两个人走到了一起。
+看完这部电视剧，我的一些收获：
+爱情，人的另一半仅仅会在有限的圈子里寻找，爱情是偶尔的Moment与更多的是平淡的历久弥新的生活。 旅行，我也想去旅行一段时间，3个月[4]，放空，体验，思考。 工作，热爱自己的工作，努力认真地工作，成长需要时间。 [1] 以前在学校里看过几个日剧好像都是13集，一个通宵就可以搞定。不过我被这部电视剧的13集骗了，每集90分钟，是日剧长度的两倍。 [2] 《天外飞仙》里的小七。 [3] 老毛病，要么不开始，要么就要看完。称之为毛病的原因是目前只对简单的事情有效。 [4] 不知道要去哪里，不知道要准备些什么，也不知道需要多少Money，但先准备着。 Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>生活碎碎念 01</title>
+      <link>https://milkythinking.com/blog/2011/12/11/thinking-life-01/</link>
+      <pubDate>Sun, 11 Dec 2011 21:09:14 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/12/11/thinking-life-01/</guid>
+      <description>每周更新几篇博文的计划总是执行不好，上周写了一点后存为了草稿，现在却已经没有了将其写完的欲望。由于好久没写东西了，甚至不知道该写点什么好呢？技术分享，总感觉要等到自己充分掌握了某个技术之后才能动笔；生活琐事，感觉自己好像仍然原地踏步，而且写出来的内容有人看吗。不过，今天先不管这些，继续写生活的琐事吧。
+看小说 vs. 看电影 周五晚上开始到周六晚上看了不少的电影，周六傍晚去吃饭的路上，我突然冒出了这样的想法：看电影消磨时间是不是和大学期间曾经看小说消磨时间是同样的性质，如果是这样，我是不是又进入到了一个悲催的轮回之中，是不是意味着我又迷失了自我呢？
+不过，目前好像没有那么严重，不过这还是预示着我的生活出现了些问题，是的，一个困扰我很久的问题——目标不明确——有很多事情需要做，但是却不知道现在该做什么，干脆就什么都不做了，转而去把时间消磨在其他的事物上。
+GTD 两周前我写了篇平衡自己的生活的文章，但是现在我的生活还是比较失衡。除了每天坚持写日记外，早晨起不来了，每天不锻炼了，书读的也少了，周计划周总结在自己的借口中几乎抛弃了，生活的空间越发得乱了，时间都花到哪里去了呢？
+这两周我曾尝试着每天早晨列出当天最重要的几件事情，然后优先去执行，有些效果，但是我却没有坚持下来。GTD也许能够解决一些问题，但更重要的是我自己的自控能力有些弱爆了的说，有时我甚至不愿意去列这个清单。
+不过，清单是个很不错的工具，将自己要完成的事情列出来，大致评估一些时间或者计划花费的时间，然后一件件去完成，效果还不错，关键在于坚持。
+专注 另外一件我一直在努力的事情是：减少自己的关注点，却一直没有做到或者做好。专注能够带来很好的效率的提升，能够更快地掌握一门新的技术，但是我目前却不能很好的做到。
+新的事物总是在不断得冒出来，我却没有及时将它们结束，这是因为我不能很好地界定一件事情做到什么程度可以停止，潜意识里我总是将完成的标准设置的很高，于是每一次完成任务要用到的知识我都想要足够精通，那样就可以将工作完成得更好，这样不知不觉中就累积了很多的事情和技能需要关注，想什么都抓住，结果却什么都没有做好。
+信息过载 我一直面临着较为严重的信息过载，虽然采取了一定的措施，但是目前还是没有有效得解决这个问题。脑海中经常飘过这样的念头——等到了假期的时候，我就有时间好好理一理收集的内容了。但假期在哪里呢？而且根据以往的经验，即使有假期我也不可能理清这些积攒的信息，因为假期还有假期的事情，更何况现在也没有那么长时间的假期的。
+《什么绑架了我们的注意力》，信息太多了，可能会失去独立思考的能力的说，这可不是我想要的。既然不能期待假期能够解决问题，那么我应该现在就开始着手逐步解决这个问题，每天进步一点点的说。于是，迟疑了下，最终下午还是删除了博客园新闻的RSS订阅，它每天更新了太多的信息，同时却没有多少是我真正需要关注的，接下来我将会逐步清理自己的Google Reader订阅源。
+工作总结 &amp;amp; 3.7 Plan 下午开始写2011年终工作总结，突然意识到3.7.2快要结束了，3.7.3即将到来，我的3.7计划已经过了2/7。按照现在的状态走先去，3.7计划结束之后，我将变成什么样的我呢？
+虽然不知道今后会怎么样，但下周我要总结3.7.2，计划3.7.3，还有就是要回应一下自己的《My 2010 and pre-My 2011》，写一篇《My 2011 and pre-My 2012》。
+写博客的目的 写博客的目的如下：
+释放一下自己写东西的欲望。 Joel等人的建议，提升自己的写作能力。 通过博客和他人交流，形成影响力。 Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>平衡生活</title>
+      <link>https://milkythinking.com/blog/2011/11/27/balance-my-life/</link>
+      <pubDate>Sun, 27 Nov 2011 16:46:44 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/11/27/balance-my-life/</guid>
+      <description>刚刚发布了自己本周捣腾Veer的流水帐，距离再上一篇更新已经一个多月了。
+这一个多月里，除了工作，我和同事合租了新房子，早晨自己煮粥，学会了煎蛋，拔掉了一颗智齿，和同学一起合作做项目，买了新手机Veer并成功刷机，车胎被扎破的自行车还未修，……
+这几天好像感觉有些疲劳，也许是这段时间里的一些不爽的事情在本周爆发造成的吧。十一假期以及之后的搬家等打乱了我之前的节奏，也没有及时进行调整，就这样浑浑噩噩的过了这么多天，不过就到此为止了。
+昨天做晚饭的时候，突然意识到生活不仅仅是工作与编码，还有很多其他的事情值得做。比如，做饭对我来说可以算是一种享受，写博客也是一种享受，对于这些能够自己感到快乐的事情，是值得花时间去做，这并不是在浪费时间。生活是场马拉松——“我们大多数人是走到终点的,只有少数人是跑过终点。因此,在刚开始时,去抢领先位置并没有太大意义。”马拉松才刚刚开始，这是个较为漫长的旅程，所以说先好好准备，预热，在逐步提升速度。
+诚然，我现在的技术水平和视野有限，但它们并不是短时间内能够提升的，都需要一个过程。因此我不需要着急，只要每天进步一点点——《三双鞋》里提及，每天进步1%，一年之后，你将提升37倍——关键在于坚持。
+那么，接下来我将如何做呢？
+每天进步一点点，看书，学习新的技术； 学会专注，减少同时进行的任务数量； 多做几次饭，善待自己的胃，顺便提升自己的厨艺； 每周走出去参加一些沙龙和活动，或者约见一些网友，多结实一些人； 每周写一篇博客，有时间或心情时可以多写一点，技术、碎碎念； Connect The Dots！
+PS：刚刚发现博客之前设定的博文链接无法访问，404，原来是.htaccess没有设置的原因，之前虚拟空间下该文件是设置时自动创建的，而VPS下我关闭了目录的写入权限，手动创建后解决。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>HP Veer &amp; WebOS捣腾小记</title>
+      <link>https://milkythinking.com/blog/2011/11/27/hp-veer-and-webos/</link>
+      <pubDate>Sun, 27 Nov 2011 14:01:40 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/11/27/hp-veer-and-webos/</guid>
+      <description>我的Moto W205已经使用4年了，按键越来越不灵敏了，很长一段时间不能方便地发送信息，后来甚至连打电话也变得比较困难，是到了换个手机的时候了。之前考虑过小米，但出货太慢了，HTC有些贵说，更别提iPhone了，后来在公司里看到同事在玩一款小巧的手机，原来是Veer，基于WebOS操作系统，淘宝上有的卖，AT&amp;amp;T合约机解锁版，￥700左右，性价比超高的说，值得入手。于是上周末在淘宝上购买了HP Veer，和点金石一起才￥688（友情推荐：这应该是淘宝最低价吧 😀 ）。这是我第一次在淘宝上购买实体物品，和店主简单了解下能否快速发货后，迅速下单购买，顺丰快递，周一签收。
+周一
+在森森童鞋的帮助下开始试用，系统基于煮机网制作的Rom，中文版，启动或重启时有个怪怪的Logo，一开始不了解，还以为WebOS原本就是那样呢。除了基本的通话（Phone）、短信（Messaging）、通讯录（Contract）、日历（Calendar）功能外，系统中已经安装有一些软件，如浏览器（Web）、邮件（Email）、音乐（Music）、PDF阅读器（PdfView）、软件管理器（Preware）、Google地图（Google Maps）等等，随便点开了一些应用，卡片式弹出打开，不了解WebOS的手势操作，不知道如何关闭程序、如何前进后退。由于系统没有安装中文输入法，还无法输入中文。
+傍晚回家的路上，给朋友打了个电话，感觉通话质量不是很好。由于没有中文输入法，需要和房东交互发送信息，只好借用嘉乐童鞋的手机。回家连接Wifi，打开一些常用的网页，如Instapaper、RenRen、微博，将它们保存为书签方便以后查看。遗憾的是，Google Reader移动版无法访问，总是重定向到Google.cn，也许改天可以设置VPN就可以访问的说。
+设置煮粥提醒闹铃和早晨起床闹铃。
+试用点金石，感觉很不错。
+周二
+继续体验WebOS的功能，如通话功能、短信功能，期间误拨了好几次电话的说。捣腾着安装了WebOS微博、人人等应用，感觉还不错。下载了WebOSQuickInstall（WQI），使用它安装了一个小游戏后又通过Preware卸载掉了。用于不知道可以使用WQI加载.ipk文件直接进行安装，于是笨拙地将安装文件通过USB保存到Veer中，然后使用Internalz+Preware进行安装，太扯了点的说。
+研究如何安装中文输入法，通过Web访问下载.ipk文件至手机中，然后使用Internalz+Preware进行安装。尝试了Wbee、爱微输入法、忠哲输入法。为了安装Wbee还尝试了使用VPS辅助下载文件。Wbee还要导入一个独特的文件来支持Veer内置的应用输入中文，使用WQI进行导入。
+发现重启之后时间总是错乱，关闭状态下WebOS无法保持时间，手动调整了好多次，这点很不方便。
+不过，整体感觉捣腾Veer不是件麻烦的事情，这可能与WebOS是基于我比较熟悉的Linux有一定的关系吧。
+周三
+在安装了微博、人人之后，感觉机子已经能够满足我目前的基本需求了，如果没有遇到问题，就可以很长时间不用捣腾了。但事与愿违，早上上班的路上，为了省电关闭了Wifi，下午由于Wiki无法启动，重启了一次，之后很多应用无法打开，应用一直停留在呼吸状态。搜索了下，可能是安装的补丁之间有冲突造成的，也可能是煮机网定制的Rom不稳定。森森建议刷机，说很简单，我还没刷过机就当尝鲜的说。
+晚上回家后，煮机网上找资料，查找刷机教程，真的很简单的说，不过由于网速较慢花了很久才下载完官方Rom（不太信任第三方Rom，下载了也没用），实际刷机过程花了很少的时间。刷机成功后，重启，已经是AT&amp;amp;T的启动画面了，接着提示需要注册Palm账户，填写信息后，很久没有成功，猜测可能是我的SIM卡无法上网的原因，于是借了小蓝童鞋的SIM卡尝试，很快完成了注册过程。进入系统后，发现AT&amp;amp;T版本安装了一些我不需要的软件的，如Amazon MP3、YPmobile等，但没有找到卸载的地方，不过影响不大的说。
+接着，在安装Preware时耗费了一些精力，下载了多次软件与安装包，还切换到了Windows平台下，仅仅是因为自己以为要在USB模式下使用WQI进行安装，其实是在充电模式下安装（不过，安装前记得要将系统切换为开发模式：搜索webos20090606，打开Developer Mode Enabler，开启开发模式后重启机器即可）。
+再后来，安装了Internalz Pro、Evernote、忠哲输入法（免费版）、Weibo（免费版）、RenRen（功能不完善）、AiiQQ（功能不完善）、Translator（基于Google Translate）、Clock Sync（用于同步时间）。然后，创建新的启动页，重新排列已有的软件，将常用的不用的软件按照使用频率和类型进行归档整理。
+周四
+安装了Relego（ReadItLater的WebOS客户端）。
+电池好像不是很给力的说，尤其实在开启Wiki以及一些应用的时候，以后使用的时候，得悠着点。
+周五
+安装了ClassicNote（一个简单的笔记软件）、HoshiDict（词典，支持StarDict词库）。了解了如何合并联系人的多个账户，可以为联系人设置特定的通知音乐，不过联系人无法进行中文搜索，这点带来了一些不便，想给某人大电话，有时需要翻半天目录的说，目前采用将常用的联系人标记为“收藏”来应付一下。
+使用Tasks进行简单的GTD实践。
+傍晚，和家人和朋友通了电话，这次通话质量还是可以的。
+周六、周日
+没有继续捣腾了。
+小结
+以上就是我这周捣腾HP Veer &amp;amp; WebOS的流水帐，目前Veer已经能够满足我的大部分需求了，比我的上一个手机强大了N倍的说，通话质量也还可以。后续我还会进行一些其他折腾，主要是学习与体验WebOS的功能、数据备份与回复和安装新的软件，届时将会结合阅读到的文章与实际体验来发布一些相关文章，也许还可以考虑自己捣腾着开发一些简单的App来玩的说。考虑过是否要办张3G卡，目前好像没有太多的必要，还是等能够更加熟练地使用Veer再说吧。
+PS：HP Veer是我的第三部手机，希望可以用的久一些。另外两部是：第一部Nokia XXX（忘记了）在大一入学时购买，10月份就丢了；第二部Moto W205是在当时丢失手机后购买的，前前后后用了四年的说，终于退役了。
+**Update：**发现虽然通讯录里无法搜索联系人，但打电话时却可以通过输入汉字查找联系人。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>十一假期记事</title>
+      <link>https://milkythinking.com/blog/2011/10/07/record-my-dots-of-the-last-9-days/</link>
+      <pubDate>Fri, 07 Oct 2011 21:51:07 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/10/07/record-my-dots-of-the-last-9-days/</guid>
+      <description>这是一个糟糕的假期，这也是一个不错的假期……
+农活 回家的目的之一就是帮助家里做些农活。实际上，却没有做多少事情，竟然还害怕虫子，悲催。
+现在才体会到父母的辛苦，希望不是太晚。
+《我如何工作》 假期前，在Google Reader上的某篇文章中看到了这本书，感觉很不错，在卓越下单购买。
+假期间，粗略地读了一遍，是本很不错的书。
+现在，已经没有太多的印象了，因为《那些年》。
+汽车之旅 不知道可以购买返程火车票，回家后也在意料之中没有购买到，于是只能坐汽车回杭州。这是第三次往返蒙城与杭州的汽车之旅，和前两次一样，没有什么好的印象。我早早地赶到车站，幸运地拥有个座位，但很多其他的乘客就没有这么幸运了。汽车严重超载，司机的态度也很恶劣，人们为了出行而不得不选择忍耐。我则想，为什么不反抗一下呢？其实一些乘客的素质也不是特别好，这也形成了一个恶性循环吧。
+往返蒙城与杭州以及周边的班车统统叫“蔡红磊班车”，这应该算是个品牌吧。但是怎么就是感觉怪怪的呢，没有英文的家族或姓名形成的品牌有感觉。另外，他们也太不注重维护品牌的形象了，可能是因为垄断吧。另外，汽车的线路是如何决定的呢？为什么没有另外一个车队也跑这个线路呢？
+GTD &amp;amp; 掌控生活 一直做不到完全掌控自己的时间和生活，可能永远也做不到，我意识到了要“拥抱变化”、“没有最好，只有最适合”等心得。
+计划永远赶不上变化，这并不意味着不做计划，而是要学会拥抱变化； 不再一味地追逐所谓的最佳实践，而是要利用自己现阶段掌握的技能来完成任务，也许不是最好的，但是确实现在最适合的； 有太多的想法，太多的事情需要去做，但人的精力是有限的，做了这个，就的放弃那个。不要一下子抓住太多，而是要控制自己的欲望，一件件去完成他们。专注，才有力量； 不是所有的事情都可以一蹴而就，大部分事情都需要一个过程，每天进步一点点；（向建科致敬） 《那些年》 &amp;amp; 《那些年，我们一起追的女孩》 回家前，在校内上看到了《那些年》的MV分享，没有什么共鸣的感觉，歌词太“烂”了。
+回家后，和高中的同学见了见，聊了聊天 。我扯了很多东西。
+返回杭州后，听着《那些年》，再次看了一遍《那些年，我们一起追的女孩》，这时才感觉到《那些年》很有味道。
+找房子 现在的房间有些不爽，寻思着换个房子，于是和公司的两个同事打算一起合租。提前回来，也是为了找房子。目前还没有找到合适的房子，也许最后不得不放弃一起合租的打算，反而单间比较好找。
+找房子的经历，还是有些收获的：
+中介费挺贵的； 和他人的交流能力有所提升； 不能只看房租，还要关注其他的内容，如物业费、网费等； 要注意合同，否则会吃亏； 赶集网比较烂（多方面），不如百姓网和58同城； STEVE JOBS Steve Jobs逝世了，我在卓越上预购了中文版和英文版的**《Steve Jobs》**，表示一下纪念。
+我不是Apple范，但我十分喜欢Jobs在斯坦福大学的演讲。虽然我做不到将每一天当作生命中的最后一天，但我却十分喜欢“Connect the dots.”与“Stay hungry, stay foolish.”这两句话。虽然我还无法全部理解和践行这两句话代表的意义，但是它们给我的生活带来了不少有意义的影响。缅怀Steve Jobs。 Thank you, Steve!
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>OhLife</title>
+      <link>https://milkythinking.com/blog/2011/09/24/ohlife/</link>
+      <pubDate>Sat, 24 Sep 2011 12:36:39 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/09/24/ohlife/</guid>
+      <description>OhLife 是什么？
+OhLife is a journal that we guarantee you’ll write in
+OhLife 是一个在线日记工具。注册后，每天你会收到一封邮件，回复邮件即可完成一篇日记，这些日记是私人保密的，只有你才能够看到。
+我于本周三注册了OhLife，原本只是想体验一下。到现在，我已经写了三篇日记，发现自己已经有些喜欢上这个简单的服务了。
+之前，我就有断断续续写日记的习惯，偶尔想起来的时候就会写些东西。最近，我突然很想记录自己每天做了些什么，有什么想法，这样以后就可以回顾一下自己走过的路。对我来说，OhLife 是一个很适合的工具。你也可以尝试一下。
+UPDATE 我的 OhLife 邀请链接
+参考连接 OhLife：抛弃你的日记本吧！
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>HTRA – 程序与书法</title>
+      <link>https://milkythinking.com/blog/2011/09/11/htra-program-and-calligraphy/</link>
+      <pubDate>Sun, 11 Sep 2011 21:37:29 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/09/11/htra-program-and-calligraphy/</guid>
+      <description>看了《程序与书法》和《再谈程序与书法》这两篇文章，虽然认为作者文章写的不怎么样，但是它们还是带给我了一些的思考——不要一味得求速度，要学会掌控节奏，享受生活与工作的乐趣。
+我已经工作5个月了（实习3个月+试用1个月+正式1个月）。话说这段时间我确实成长了不少，接触并了解了不少新东西，技术得到了提升，视野比之以前开阔了一些，但我也愈发的意识到自己知识的缺失，技能的不成熟，经验的匮乏。
+我十分想弥补自己知识的缺失，提升自己的技能水平和竞争力。于是我购买不不少书籍，每天阅读；工作上也花费了不少的时间，学习新的技术，快速完成接手的任务；还想着完成一个又一个的个人项目。由于自己内心的急切，在这段时间内犯了一些错误或者采用了一些不好的方法：
+因加班之名，导致工作时间内不够专注，工作效率不高（也许是因为想到反正要加班的缘故吧）。 相对与阅读研究资料，更醉心于收集资料，识得现在的我面临着严重的信息过载——Google Reader 中越来越多的待读条目；Read It Later 中接近5000条的待读条目；Instapaper 中的待读条目。 没有养成良好的总结的习惯，导致在学习新事物后，又会很快的遗忘。比如：学习使用Zend Framework的过程中就没有注重总结，于是在做新项目的时候又要重新学习某些内容。 关注点太多，想做的事情太多，精力过于分散，结果是什么都没做或者没有做好。比如：研究某些问题，还没有总结等到结果就转换到下一个问题上面，于是都没有获得好的答案；业余时间想做好几个项目，结果一个都没做好。 忽视了身体，导致最近一段时间健康状况急剧下降。比如：上周六打了次篮球，结果是浑身乏力好几天。 以上就是我现在面临的几个主要的问题，我将继续保持学习新东西的热情，专注于提升自己的竞争力，但是在这个过程中，将采取一些兄东改变这些问题。
+尽可能不加班，不管是傍晚还是周末，而是想办法提升自己在工作时间内的效率。业余时间将用来完成其他计划要做的事情，如读书、个人项目、锻炼身体等等。 正确地评估项目工作量，合理的安排工作计划（需要经验，还需努力）； 中午不打乒乓球，注意休息，保证下午的工作状态（已经在做，效果不错，坚持）； 记录自己每天的时间花费情况，30分钟一个单位，并进行总结，找到浪费时间的地方并改进（实验中，断断续续）； 晚上在公司里多待一会儿，打打乒乓球以及和同事进行交流（交流能够增进情感，学到不少东西的说）。 逐步处理收集的信息，分析信息的类型，制定处理方法，比如有些内容归档备查、有些内容直接删除、有些内容安排时间认真阅读。 每天安排1h-1.5h的时间进行已有信息清理工作（良好的阅读习惯之一，实践之）； 每月清理一次Google Reader中的订阅源，去除不值得或不需要关注的信息源（研究总结如果更好的使用GR）； 寻找合适的知识管理工具，学习知识管理的技巧（我目前使用Zim＋Dropbox，但感觉Zim并不是十分合适）。 逐步养成总结的习惯， 每天随手记录知识要点、学习心得，晚上整理归档（效果不错，要坚持）； 每隔一段时间分享自己的总结，也许不是很完善，但“很完善要等到什么时候”（接受建科的建议，暂定两周一次）； 读完《如何阅读一本书》，学习阅读的技巧； 写读书笔记以及部分博客阅读感想，更新HTRA系列。 关注点太多，影响效率，因此我将竭尽全力减少自己的关注的事物的数量和同时进行的任务的数量。 通过制定计划，来强调自己在某个时间段迫切需要完成任务，并努力完成（GTD Life）； 放慢生活的节奏，放松自己的心情，别给自己太多的压力，新的生活才刚刚开始（Hello, World!）。 享受生活，关注健康，锻炼身体。 开始煮饭的生活，提升自己生活的质量和厨艺（煮了好几次方便面，囧 =_=!!!）； 每个周末将安排有固定的锻炼的时间——打篮球（先买个篮球的说）； 平时也将进行一些锻炼活动，比如说傍晚的乒乓球和晚上的跑步（跑步需要坚持下）。 PS：Dropbox 是一个能同步的文件夹，帮助你在多台计算机上进行文件同步。免费容量为2G，如果你对其感兴趣，请使用我的邀请链接进行注册，这样你我都可以增加225M容量。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>HTRA – 西乔：我在过着很奢侈的生活</title>
+      <link>https://milkythinking.com/blog/2011/09/10/htra-xiqiaos-life-and-philosophy/</link>
+      <pubDate>Sat, 10 Sep 2011 20:46:46 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/09/10/htra-xiqiaos-life-and-philosophy/</guid>
+      <description>这是一个三明治访谈（西乔），受访者是西乔——Web设计师、Designlol.net 站长、《神秘的程序员》作者。本次访谈的内容在我的脑海中形成了共鸣，以下是我从访谈中截取的部分片段，并针对每个片段写下自己的一些碎碎念。
+挣到年薪百万就算是人生追求吗？我们最终是为了什么而付出心血和健康，牺牲和家人呆在一起的时间，牺牲掉自己支配时间的自由呢？
+我的人生追求是什么？我的梦想是什么？我现在做的事情与实现梦想有什么关系？我的梦想不是拥有很多的金钱，金钱方面，只要达到经济独立就好了。我的梦想是： … 家庭、创业、 … 。我现在做的事情在朝着实现我的梦想前进，我将一如既往地走下去。联想到前一段时间看过的TED视频《做生活的高手》，要学会专注于你的目标，专注于你的梦想。
+在开发链条中的创造性的角色，程序员、设计师和产品经理他们都不能单靠自己的力量去完 成一个创造。所以最后，一个程序员要发展，要做出更好的东西来，必须也要去懂设计，去懂产品。好的产品经理要了解设计、要了解技术，不一定要自己做，但需 要对整个生产链有理解。你如果只在自己的角色里，最后你是很难最有效率地合作，做出成功的产品来。
+我给自己设定了一个综合成长的路线，而不单单是一个会编码的程序员，我对自己有更高的要求。比如，最近我在读一些产品、设计方面的书籍，如《结网》、《写给大家看的设计书》等，并从中获得了不少收获；工作中我还会尝试一些前端开发；在开发项目的过程中，会思考项目的需求，和产品、编辑交流对项目进行改进。接下来的时间，我在考虑如何建立自己的团队（非公司），协作开发一些有趣的项目。
+去看更多，体验更多，做更多尝试，突破以前的思路。
+刚到丁香园实习的时候，接触到几乎全是新鲜的内容，那时感觉很棒，每天都很兴奋。现在的工作也很棒，每天期待着去工作，虽然偶尔会有些疑问，但是和同事的交流后也就释然，更加主动地去求知，去提升自己的水平。不过，现在的目标不仅仅扩展自己的视野，在接触了不少新内容之后，另一件很重要的事情就是增强自己的技能深度，在某个方面做到很牛的说。
+经济独立并不只是看有多少钱在银行里，而是在任何时候都有能力去挣到钱。
+很欣赏西乔的经济独立的观点，我达到经济独立的标准是什么呢？现阶段则是能够满足基本生活、买书、网络服务费用，并有些结余。
+结婚的时候我们没有任何嫁妆、彩礼、钻戒，也没有拍婚纱照，那其实是真正意义上的裸婚，尽管那个时候我们有房有车。我认为裸婚并不意味着你没房没车就结婚，裸婚是你不会为结婚去特别置办什么东西。
+裸婚万岁！！！不知道悲催的单身了二十多年并依然单身的我什么时候会结婚呢？不过有一点我很明确：将来，我想要两个小孩的说。你想要几个小孩呢？
+PS：读书是个好习惯，有多少人在坚持呢？
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>MySQL COUNT(*) vs. COUNT(expr)</title>
+      <link>https://milkythinking.com/blog/2011/09/08/mysql-count-vs-count-expr/</link>
+      <pubDate>Thu, 08 Sep 2011 20:59:17 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/09/08/mysql-count-vs-count-expr/</guid>
+      <description>最近在的项目中需要进行数据统计，在实现时多次使用到COUNT()函数，涉及的表也包含百万级别的记录，于是借此机会对COUNT()进行了一些研究。
+COUNT()函数用来统计表中行的数目或符合特定条件的行的数目。
+COUNT() 函数的两种用法：
+COUNT(*) — 统计表中的行的数目或符合特定条件的行的数目； COUNT(expr) — 统计表中expr字段值不为NULL的行的数目或值不为NULL且符合特定条件的行的数目（即统计时忽略expr字段值为NULL的行）。 以上表明COUNT(*)与COUNT(expr)并不等价。
+当统计的字段值不能为NULL(expr … NOT NULL)时，二者的结果一致； 当统计的字段值允许为NULL的时候，COUNT(expr)将会遍历所有的记录，找到不为NULL的字段。 对于MyISAM引擎，MySQL会在information_schema.TABLES中存储表的记录行数，因此在使用COUNT(*)统计表的行数的时候，直接返回该值；在统计值可以为NULL的字段的时候，使用COUNT(expr)需要进行遍历，遍历带来的结果将是性能的降低。
+以上表明，在进行数据统计的时候，尽可能使用COUNT(*)来获得最佳性能。
+参考链接：
+MySQL SELECT COUNT(*) PS：个人感觉对比结果不是很完善，有时间再实践并补充。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>关于“How To Read A …”</title>
+      <link>https://milkythinking.com/blog/2011/09/04/about-how-to-read-a/</link>
+      <pubDate>Sun, 04 Sep 2011 21:31:43 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/09/04/about-how-to-read-a/</guid>
+      <description>How To Read A … 是我刚刚建立的博文主题，该主题的内容是一些我的阅读笔记、总结和读后感，我希望通过该主题来提升自己的概括总结能力。
+具体原因如下：
+最近在读一本书《如何阅读一本书》（好吧，其实已经很就没有看了），该书介绍了阅读的四个层次以及一些阅读技巧。虽然书名为《如何阅读一本书》，但是其介绍的阅读技巧也适用于其他类型的阅读，如博客、论文等等。我尝试采用书中介绍的一些技巧来阅读GR上订阅的部分文章并撰写总结，以此来提升自己的概括总结能力，于是我在点点上新建了一个子博客——阅读的艺术，并发布了几篇阅读总结。今天决定逐步弃用点点（原因），遂决定在 Milky Thinking 中建立一个新主题。
+PS：阅读是门艺术，强烈推荐《如何阅读一本书》，掌握阅读的艺术。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>PHP最佳实践之编码规范</title>
+      <link>https://milkythinking.com/blog/2011/09/01/php-best-practices-on-coding-standards/</link>
+      <pubDate>Thu, 01 Sep 2011 23:37:55 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/09/01/php-best-practices-on-coding-standards/</guid>
+      <description>PHP Developer Coding Standards
+View more presentations from Matthew Weier O’Phinney
+本文编译自上面展示的幻灯片，作者为Zend Framework架构师、项目负责人。
+编码规范的目的 效率 可维护性 协作 效率 如果没有编码规范，你将会：
+经常格式化他人的代码 6个月前的代码和今天的代码具有不同的视觉结构 修改旧代码的时候，不时遇到语法错误，如条件语句缺少括号、列表数据遗漏逗号等等 可维护性 遵循编码规范，你的代码将具有可预见的布局，包括文件布局和代码布局。容易阅读的代码将会容易理解、维护和重构。
+协作 团队成员遵循编码规范，任何程序员可以拾起并理解他人的代码，这将帮助他们进行维护和重构。还可以更加高效的进行开发，获得更高的客户满意度。
+编码规范提供了什么？ 文件布局的一致性 代码布局的一致性 使用公共规范 不要发明自己的规范，不管是为个人还是为公司。因为你并不特别，你的PHP代码也不是独一无二的。他人已经探讨过这个问题，你可以受益于集体的智慧。
+为什么使用公共规范？ 客观 – 选择将不是基于主观的喜好，而是实际的经验 招聘或外包的需求 – 容易判断求职者的经验或代码的质量 兼容性 – 遵循你用到的库的编码规范 已有的选择 PEAR 编码规范 Zend Framework 编码规范 eZcomponents 编码规范 PHPLib PEAR编码规范 PEAR的规范是最广泛接受并使用的编码桂冠，这很大程度上受到PEAR用户数的影响，也是得益于该规范的整体质量与明确性。
+PEAR命名约定 类名（Classes）
+混合模式 首字母大写 使用下划线分隔逻辑包和代码的边界 示例：Spreadsheet_Excel_Writer, Services_Google_AdWords 文件（Files）
+文件名和类名一一对应（一个类一个文件） .php 后缀 类名的下划线对应着目录结构 没有松散的PHP代码 示例：Spreadsheet_Excel_Writer ==&amp;gt; Spreadsheet/Excel/Writer.php 变量（Variables）
+驼峰模式（CamelCase） 首字母小写 示例：var $firstName = 常量（Constants）</description>
+    </item>
+    <item>
+      <title>《秒速5厘米》等电影观后感</title>
+      <link>https://milkythinking.com/blog/2011/08/31/thinking-after-5-centimeters-per-second-etc/</link>
+      <pubDate>Wed, 31 Aug 2011 21:37:16 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/08/31/thinking-after-5-centimeters-per-second-etc/</guid>
+      <description>音为爱 激情是好的，但不能遇到一点点挫折就放弃。选择了开始，就要善始善终。
+YES OR NO 爱就爱了。
+秒速5厘米 把眼前的事情一件件做好。One Time，One Thing!
+棋魂 强烈的变强的欲望。热爱一件事，就要把它做到极致。
+PS：哇咔咔，很诡异的电影观后感。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Weekly Review (2011.08.22 – 2011.08.28)</title>
+      <link>https://milkythinking.com/blog/2011/08/30/weekly-review-from-08-22-to-08-28/</link>
+      <pubDate>Tue, 30 Aug 2011 07:35:42 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/08/30/weekly-review-from-08-22-to-08-28/</guid>
+      <description>8月20号的时候发布了一篇我的8月份的计划，昨晚总结了一下自己上周的工作，发现自己的计划完成不了了——因为自己浪费了太多的时间。
+上周做了些什么 我负责开发的内部项目上线并投入使用 修改项目的Bug，开发了一些新的功能 阅读了《结网》（80%），对产品经理有一定的了解 研究了一些东东（匿名投票、历史记录、编码规范等等） 初步掌握jQueryUI Sortable的使用 乒乓球技术提升了，玩了传说中的XBox和Kinect 看了《音为爱》《yes or no》《秒速5厘米》三部电影 看了《棋魂》，50集左右（我的周末就耗在上面了） 使用Yasac制定每天的计划，记录自己的想法 可取之处 开始规划自己的生活 学习了一些新的技术 和同事的关系还不错 不足之处 没有早起、晨读 没有坚持锻炼（健康状况 良） 没有进行每日回顾 没有更新博客 学习新东西，解决了问题后，没有进行总结， 周五，在不重要的功能上耗费了太多的时间，致使重要的功能没有完成，只得周六去加班 虽然开始规划生活，但是做的很不好。于是，虽然有很多事情可以做或要做，但是却不知从何下手 看电影和动漫耗费了太多的时间，致使更重要的事情没有做，比如说这篇回顾应该是周末就完成的 下班后都做了些什么？ 如何改进不足 早起（今天做到了），晨练＋晨读 晚上坚持跑步（只要不下雨） 每日回顾（每天抽出半小时，回顾反思自己的生活） 响应“写点什么”，坚持更新博客，这就是开始 学习新东西后，养成随手总结的习惯，并将总结发布到自己的博客上 专注的工作一段时间之后，应当停下休整一下，调整方向再次前行（目标导向） 已经开始了规划生活了，接下来就是坚持和越做越好 干，学会抵制诱惑，控制自己的时间，有节制的娱乐 好好利用自己的业余时间，开发个人项目，提升自己的技能 回顾结束了，也找到了改进的办法，那就开始行动吧！
+PS：写这种东西是不是“滥竽充数”呢？不过，好像一直没有写出高质量的文章，所以就这样吧。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Just Do It – 写点什么</title>
+      <link>https://milkythinking.com/blog/2011/08/20/just-do-it-on-writing/</link>
+      <pubDate>Sat, 20 Aug 2011 22:37:26 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/08/20/just-do-it-on-writing/</guid>
+      <description>晚上在整理自己此前产生的零散的碎片，其中有些是写给自己的激励的话语。如“也许刚开始自己的见解很粗陋，但是除了我自己，who cares？所以没所谓啦，大胆去写就行了。”
+是的，对待某些问题，我目前的想法可能是片面的甚至可能是错误的，但是谁能够一开始就做的很完美，即使那些我认为很牛的人也不能够。
+因此，问题的关键就在于执行力了。不要让自己内心的怯懦禁锢了自己前进的脚步。开始去做吧，只要用心，在这个过程中我将会成长起来，我也将会发掘自己真实的兴趣所在。
+不用在意自己的能力，不用在意别人的眼光（其实是自己内心的偏见），做就行了。
+Just Do It!
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>2011年8月份的计划</title>
+      <link>https://milkythinking.com/blog/2011/08/20/my-propose-in-2011-08/</link>
+      <pubDate>Sat, 20 Aug 2011 00:39:51 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/08/20/my-propose-in-2011-08/</guid>
+      <description>8月20号制定8月份的计划好像有些晚，但还是要记下来，激励自己前行。本计划的时长为12天（2011.08.20 – 2011.08.31）。
+缘起 已经放纵了一周。晚上和小广、轩源聊了会儿天，有些收获，回来后零零散散地记录并思考了下。其中的一点感悟是“好的东西为什么要留到明天才开始做；明知道不好的事情为什么今天还要继续呢！”。于是关掉了早晨保留的小说的标签页，决定写点什么，然后就有了规划一下自己8月份剩下的日子。
+正文 工作
+ASMS 已有功能的完善以及新功能的开发（第二阶段－2周）； Zend 框架的学习，特别是Zend_Db的使用与最佳实践； 个人
+明确2011年下半年的计划，分解到各个月份之中； 阅读《结网》，笔记、总结并撰写读后感； 开始新个人项目的开发，完成初版功能设想、原型设计以及框架的搭建。基于Zend进行开发，Git进行版本控制； Shell快捷键的学习与实践； HTML &amp;amp; CSS 的学习与实践； 其他
+SVN 的学习与技巧分享（SVN Hacks），包括SVN的介绍、命令、专题等。（2天/篇）； 明确MilkyClassifieds的方向； Google Reader的清理，博客的阅读计划； PS：工作和个人部分是必须要做的事情，其他则是有时间会进行的事情。 PPS：和小广、轩源聊天收获颇多，需要好好总结一下，也许会写在某篇文章中。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>我最近的生活</title>
+      <link>https://milkythinking.com/blog/2011/08/06/my-recent-life/</link>
+      <pubDate>Sat, 06 Aug 2011 00:55:17 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/08/06/my-recent-life/</guid>
+      <description>7月7号，我回到公司开始毕业后的正式的工作；7月9号，参加了淘宝技术嘉年华；7月11号，找好房子；7月12号，开始了一个人的生活；7月22，签订劳动合同；7月29号，提交实习工作小结；8月4号，小组负责人对我进行实习评估；现在是8月6号，农历的“七月七”，不过我还是独自一人，“七夕一”啊。
+转眼已经工作和独自生活将近一个月了，这期间经历了一些事情，在此将我能记起的一些事情记录下来，寥表纪念。
+1. 淘宝技术嘉年华
+我参加的是淘宝技术专场，听的云里雾里，用小熊的话说是因为“没有达到那个层次”。淘宝正明（章文嵩博士）分享的关于开源项目 LVS 的故事对我有些启发。
+2. 一个人生活
+终于开始了自己渴盼已久的独立的生活，目前整体的感觉是非常不错的，但是我还没有找到比较好的节奏，在逐步调整中。以往生活中遇到的一些问题并没有因为独自一个人生活就消失，而是依然存在，需要我进一步采取行动去解决，如GTD时间管理、总结的能力、执行力等等。
+当然，这一段时间还是做了些比较不错的事情的，如下：
+制定了自己的下半年的计划，有了较为明确的目标：提升自己的PHP&amp;amp;MySQL技能；成为Drupal专家；完成并运营一个个人项目。 现在的生活计划是：早晨读书，晚上编码，睡前回顾当天的生活，偶尔写点日志或博客。 阅读了一些书籍，技术或非技术的，读书是一件让人感觉十分不错的事情，我将坚持下去，并利用从《如何阅读一本书》学到的技巧，更好地阅读，同时提升自己的总结的能力。 由于强烈地意识到自己的“超重”，于是从8月4号开始，我开始晨练，也发现我现在的身体十分得虚弱，所以说锻炼是要坚持下去的。除了锻炼，我将会注意自己的饮食，要养成健康的生活习惯。 3. 关于工作
+刚回来的时候完全没有状态，表现十分糟糕，有一周的时间完全是在看书，这点感觉有些过意不去。不过还好，一周的学习让我对Drupal的理解更加深刻些。之后的经历了某个周会，让我对自己的定位，对主动性有了更好的理解，也明确了自己的方向，整个人安静了下来。
+接下来两周就是使用Drupal完成一些公司商业项目的维护与开发工作，并思考商业项目开发流程，就某些方面提出自己的改进的意见。在这个过程中遇到了不少需要深入研究的内容，使用Instapaper等工具进行适当的组织，接下来的时间将会一一研究。
+本周则开始学习Zend Framework，设计开发公司的一个内部使用的项目，我想独自负责整个项目，因此现在还要多多努力。
+4. 关于人际交往
+其实在实习评估后，我才意识到这方面的问题。目前自己的表现可不是一般的糟糕，接下来时间我将花费些精力思考如何去做的更好，并采取行动。在人际交往方面自己应该主动一些，勇敢一些。
+5. 个人项目
+由于最近工作上的任务，导致没有进行太多的个人项目的开发，接下来的时间会逐步增加个人项目开发的时间，养成编程的习惯。只有真正投入时间去做，才能够做出好的项目。我也将利用开发个人项目的过程来提升自己的个方面的技能。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>实习生转正前的一次谈话</title>
+      <link>https://milkythinking.com/blog/2011/08/05/my-evaluation-for-intern-to-employee/</link>
+      <pubDate>Fri, 05 Aug 2011 23:54:29 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/08/05/my-evaluation-for-intern-to-employee/</guid>
+      <description>上上周五签订劳动合同，上周五提交了实习工作小结，本周则是进行转正评估。
+周四被小组负责人叫去，针对我的实习小结进行了一次谈话。小组负责人给我的评估等级依然较低，不过符合我当前技术的水准。下面我就几个我印象比较深刻的地方写点什么。
+技术水平：目前我的技术水平还比较低，能够勉强完成一些不是很具有挑战性任务。同时很多方面的知识都有些欠缺，接下来的时间需要花精力去一步步学习成长。要给自己设定一个目标并坚持。在这个过程中切忌急躁，一步一个脚印，踏实地走下去。
+决断能力：在7月初刚回来的两周我决断方面的表现确实很糟糕，好像不敢做决定似的。这与我脱离生产环境很久有一定的关系。后来经过某次周会后的反思以及我技术的成长，在决断方面我的表现有不少提升。决断能力建立在技术水准上，肚里有料，说话做事的是否当然会更有底气了。
+人际交往：团队沟通方面自己做的不够好，我此前给自己设定的扩大自己影响力的目标没有很好地践行。我目前的表现是，没有去主动结识他人，熟悉的人基本上都是在工作上和我有些交往的人以及乒乓球球友。我应该试着主动去结识更多的人，从身边的同事开始。
+其他的评估选项我记不清了，但是正如我此前提及的2011下半年计划，我将专心提升自己的技能，让自己成为一个“牛人”，至少也是“准牛人”吧，哈哈。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>一个人住</title>
+      <link>https://milkythinking.com/blog/2011/07/24/living_alone/</link>
+      <pubDate>Sun, 24 Jul 2011 20:52:50 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/07/24/living_alone/</guid>
+      <description>一个人住已经有一段时间了（12天），曾经垂涎N久的生活终于变成了现实，无拘无束的生活整体感觉还不错。
+我曾经向他人描述的场景是：一个白色的空间（没有墙壁和门，光线很好），中间有一个很大的桌子和一张很舒适的椅子。没有人来打扰我，很安静，我可以专心做自己想做的事情。
+现在的情形是我有一个小房间，没有人来打扰我，我可以做自己想做的事情，除了桌子和椅子不是很舒服，其他感觉还不错。
+（很久没有写东西了，都不知道如何写下去了。）
+这段时间我都做了些什么？
+阅读了《如何阅读一本书》（部分），有些收获，并决定依循其中的方法阅读更多的书籍。 制定了自己2011下半年的计划——专注于技能的提升，做到极致。 提升PHP&amp;amp;MySQL知识； 成为Drupal开发专家； 完成一个个人项目。 重新启动了MilkyClassifieds项目——基于分类信息网站OpenClassifieds开发的程序，也是淘来还的平台。 适应了公司的工作，逐渐找到节奏。 这段时间我遇到了什么问题？
+房间目前还有些乱糟糟的，“飘窗”一直没有清理，还缺少一些物品。 以前积攒的大量的零散的笔记等还没有整理，还需要时间。 除了实体的零散的信息，我还存有很多电子资源，信息过载很严重，目前还没有有效的信息管理组织方法。 生活还没有形成规律，作息、锻炼等还有待制定计划并坚持执行，GTD系统也没有很好地运作。 还有，前一段时间花钱没有节制，接下来的半个月要小“艰苦”一下。 这段时间我的一些感悟？
+信息管理并不会因为某个工具而变得简单起来，替换工具还具有很大的成本。信息管理关键还是要有一个既定的规则，然后按照这个规则组织整理信息。 工作中要沉下心来，踏实地工作，同时主动去发现问题解决问题。还有要自信，要有接受挑战的勇气。 事情的发展有一个渐进的过程，不要苛求一下就很完美，关键在于坚持。不断地改进，每天进步一点点，积少成多，最终会带来很大的改观。工作如此，生活亦如此。 PS：大爱TinyMCE全屏模式！！！
+PPS：我越来越喜欢简洁的产品，希望自己在设计和实现产品的时候也能够做到。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>开始我的独立生活</title>
+      <link>https://milkythinking.com/blog/2011/07/12/start-independent-living/</link>
+      <pubDate>Tue, 12 Jul 2011 23:04:44 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/07/12/start-independent-living/</guid>
+      <description>昨天签了合同，今天晚上在同事的帮助下将行李物品搬进了租来的『蜗居』，开始了我的『完全独立』的生活。
+这是我期盼已久的生活——没有人来打搅我，一个人，静静的，感觉真的很棒。
+明天会去购买一些必需品，清扫一下房间，思考一下计划，开始全新的生活。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>毕业季03-毕业鸟各自飞</title>
+      <link>https://milkythinking.com/blog/2011/06/25/senior_year_03_flying_birds/</link>
+      <pubDate>Sat, 25 Jun 2011 02:56:20 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/06/25/senior_year_03_flying_birds/</guid>
+      <description>明天，确切的说应该是今天傍晚，我就要起程离校，结束了我的大学生活，也结束了我作为学生的生涯。
+四年的大学生活结束了，由陌生走向相识的同伴们，聚了又散了。
+四年的大学生活结束了，再也没有一个地方可以容许我们肆无忌惮地挥霍青春、嬉笑怒骂了。
+四年的大学生活结束了，没有太多的遗憾，没有太多的喜悦，没有太多的伤悲，也没有太多的激情与梦想。
+四年的大学生活结束了，也许是，带着点点的遗憾，带着点点的喜悦，带着点点的伤悲，也带着点点的激情与梦想。
+在此，我祝福你们，为了内心的梦想而前行，追逐自己的幸福生活！
+我还是没有落下一滴眼泪。
+毕业鸟，各自飞！
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>毕业季02-散伙饭</title>
+      <link>https://milkythinking.com/blog/2011/06/23/senior_year_02_the_last_dinner/</link>
+      <pubDate>Thu, 23 Jun 2011 03:15:03 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/06/23/senior_year_02_the_last_dinner/</guid>
+      <description>今晚我们班组织了散伙饭，大家都喝了点酒，后来有几个哥们还哭鼻子了，我的哭点较高，所以就没有啦。
+在吃饭的时候，大家互相传递着毕业纪念册，我也写了几个，但是这样的形式很没有感觉，我更喜欢慢慢写点什么，而不是一下写一堆东西。
+我的毕业纪念册是一个特别的本子，我要求每一个人在上面书写他们的梦想（也许并不是每个人都认真对待这个要求），以后没事翻看他人的梦想应该时间比较惬意的事情。很久以后，我们再聚首的时候，我还可以拿来『点名』的说。
+饭后，大家跑去学校旁边的KTV，除了刚开始唱了两首歌，大家一直在玩真心话大冒险的游戏，通过这个游戏，大家相互之间了解了很多东西，一对比，感觉我们宿舍的哥们纯洁得像张白纸似的（光棍宿舍的悲哀呐）。
+通过真心话大冒险的游戏，朋友们也给我提了点意见，比如说要适当地学会妥协、在公司做事勤快些等，这些值得我去反思、吸收并应用到自己的生活中来，希望自己能够快点成长起来。
+今晚我还是没有体味到离别的伤感，神经大条的我，也许一定得等到踏上离别的列车才会有些感觉吧。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>毕业季01</title>
+      <link>https://milkythinking.com/blog/2011/06/21/senior_year_01/</link>
+      <pubDate>Tue, 21 Jun 2011 23:00:51 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/06/21/senior_year_01/</guid>
+      <description>晚上给一个学弟写了点关于学习与找工作的建议，写的时候再次感觉到自己知识的薄弱，内心有些发虚——我知道很多的东西，但目前都不是很深入，没有形成自己的知识体系。在提升自己内功方面自己还有一段比较长的路要走，所以目前我应该专注于自己的技能的提升。
+今天参加了学校的毕业典礼，终于穿上了『传说中』的学士服，不过没有太多的感觉——『毕业证拿来照张相就回收，尼玛再也不相信爱情了。』（转自小猪）
+玩了一天志文的Android，大屏阅读Instapaper的感觉真的不错，我应该快点入手一个Android，可以享受随时随地阅读的快感，没事还可以学学Android编程，现在就是缺了点钱，赶快努力工作赚钱的说。
+阅读了一篇关于『写博客』的文章，写博客是件很不错的活动，可以锻炼表达，偶尔我会有强烈的表达的欲望。我的博客更新一直不是很勤快，一直说要以固定的频率来更新，但却没有真正做到。可能与我对博客的态度有关吧，总感觉不是很完美，以后写博客时可以尝试一下他人的经验，45分钟完成博文主体部分，15分钟修改；如果写一篇很长的文章，可以事先规划好，分成几篇来完成。
+此前在知乎上看到说某哥们的『每天一本书计划』，感觉不可信。因为不止我怀疑，作者写了篇博文来解释每天一本书的具体方法。我也有阅读的习惯，但是一直没有掌握好的方法，读完此篇文章后，发现其中有些方法很值得借鉴，比如写阅读笔记、梳理书本框架等。另外对于网络阅读我也需要进行总结，否则就会想现在这样，每天阅读很多，但是真正在脑海中留下的内容却很少。
+这一段时间一直在为『悲催的』毕业论文忙碌，前两天终于完结了，毕业设计就是一件很扯的事情，不过我很喜欢我的毕设项目——iDaren，一个问答网站，我会坚持做下去的。
+明天还书，买票，整理物品，准备回家！
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>“淘来换”上线第一天</title>
+      <link>https://milkythinking.com/blog/2011/06/11/first_day_of_taolaihuan/</link>
+      <pubDate>Sat, 11 Jun 2011 03:50:28 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/06/11/first_day_of_taolaihuan/</guid>
+      <description>昨晚将应用上传到虚拟空间搭建起了“淘来换”，关于“淘来换”的具体情形在前一篇文章里进行了描述，这里讲述一下上线第一天的经历与感想。
+上午 六点多，上床睡觉。
+九点多，起床。登录到淘来换，想发布自己的几本书籍信息上去，发现无法发布成功，被提示是垃圾信息，不知道什么原因造成的，也不知道会不会对其他用户造成影响，于是想检测一下数据库数据来发现问题。登录到HelloHost，在操作页面点击虚拟空间的cPanel面板，却无法打开页面。在更换浏览器、网络接入途径、机器之后仍然是无法打开。只得发布工单（HelloHost中对求助邮件的称谓）给HelloHost的工作人员。
+下午 吃过午饭回来后，尝试并成功通过其他的途径访问到淘来换的数据库。很快便发现了无法发布信息的原因所在，解决掉之后，将信息成功发布。后了解到是大海在熟悉站点操作的时候进行的一些操作，导致我的帐号被当作垃圾用户（Spammer）了。
+解决了我们的第一个热心用户发布内容的电话号码的乱码问题，并给他发送了一封通知邮件（发现我有这方面的潜质）。
+三点左右，去听了大海的关于Web容量规划的分享，有些收获，了解了一些名词与信息。由于初次的原因，大海的表现不是很好，还有很大的提升空间。
+之后去校医院进行学校的体检，是一个交钱走流程的形式，医生就随便看看，然后盖章。不过还是了解了点信息的：1）我有些近视（我讨厌眼镜）；2）我有两个智齿；3）最后被抽了半管血，下周一去取结果，不知道校医院的血液检测会不会专业些、负责些。
+被大海告知去毅字楼取毕业照片（没有我的存在）。从毅字楼出来的时候，听到几个童鞋在讨论“大四的学生怎么还不卖东西？”，可惜当时没有冲上去推销我们的站点的勇气，下次一定不能这么怂。
+回到宿舍，和大海交流了下，对站点进行了一些小的调整。
+晚上 六点多的时候爬到床上，睡到十点多。
+HelloHost的工作人员回复了我的工单，解决了遇到的问题，成功登录到cPanel。虽然不是即时的支持，但效率还可以吧。
+花了些时间继续捣鼓我的“知乎邀请码”的生意，目前还无一人购买。张明烁童鞋很支持我的生意，愿意提供他的邀请名额出来。
+总结 由于还是不十分熟悉我们使用的开源应用，导致目前站点还存在不少问题，比如中文翻译很烂的问题，邮件通知的问题（邮件格式不正确，导致受到的邮件无法正常解析，这可能是由于该开源应用的国际化方面做的不好），一时半会儿我也不能解决掉这些问题，因为没有太多时间。从这件事上我学习到，在搭建站点之前应该尽可能多了解一下你使用的应用，因为上线之后你不能轻易进行改变了。当然也不能因为不熟悉就一直拖着，试着去找一个平衡点。
+由于淘来换是我进行的第一次尝试，在上线前也没有考虑太多（脑袋一热就发布了），因此很多方面做的不好，还有很多工作要做。希望自己能够通过这次经历，好好进行总结。在我目前筹备中的下一个站点（小众的分享交流社区）上线的时候，自己能够做的更好些。
+接下来应该设想一下推广的途径，发布信息，吸引更多的人参与进来，让平台成长起来，具体怎么做，就不得而知了。I’m thinking now!
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>“淘来换”——校园分类信息网站</title>
+      <link>https://milkythinking.com/blog/2011/06/10/taolaihuan_school_classifieds_website/</link>
+      <pubDate>Fri, 10 Jun 2011 06:00:43 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/06/10/taolaihuan_school_classifieds_website/</guid>
+      <description>刚刚和大海一起将“淘来换”搭建起来，不知不觉竟然搞了这么久，但是现在还没什么睡意，写篇蹩脚的软文来“显摆”一下。
+“淘来换”的一般信息 网址：http://www.taolaihuan.com/ （大海在Godaddy上注册，7折购买）（我认为域名很“衰”！！！）
+托管：Hello, Host!虚拟主机“新手套餐 #1”（购买时使用优惠码“sinawb”，8.9折）
+代码：OpenClassifieds，PHP实现的开源分类信息程序（下载是最好去sf.net上搜索，下载）
+“淘来换”缘起与搭建过程 大海很早就有搭建一个校园二手物品交换平台的想法，曾经还写过不少功能、设计之类的文档，但是就是没有最终实现。
+今年3月份的时候，我们都在杭州实习（他淘宝，我丁香园），我们就物品交换平台交换了下想法并设计了站点的功能，打算基于PHP框架CodeIgniter进行实现。起初，很积极地学习CodeIgniter，但是后来由于实习期间的工作蛮多的，同时自己的技术不够“硬”，就搁置了。
+5月底，我回到了学校。想到我们即将被“驱逐”出校，书籍等物品需要进行清理，大海有提到了物品交换平台的想法，受到百姓网的启发，大海想搭建一个分类信息网站，于是就找了找分类信息开源软件。起初选择了OSClass，也尝试了OpenClassifieds，如果使用OSClass需要进行一定程度的二次开发来满足我们的需求。
+中间拖了几天后，大海迟疑要不要搞下去。因为我在忙毕设论文，大海研究生导师也给他分配了点任务。在我的建议下，两天前购买了域名和空间。
+今天，大海设置好域名指向（A记录、DNS解析等），晚上我们决定将代码上传到空间上。因为使用OSClass的话需要有较多的改动，于是选择了OpenClassifieds，虽然OpenClassifieds在选择中文语言包的时候会遇到较严重的问题，站点无法使用。
+我在本机搭建环境，最终找到OpenClassifieds在中文语言包下出错的原因——由于其输出内容过滤函数不支持中文，在启用URL重写规则时，站点完全无法使用。我一时无法解决这个问题，于是选择了折中的办法——禁用URL重写，虽然这将不利于搜索引擎索引。OpenClassifields还有不少其他的小问题，也都找到了对应的解决方法。
+使用FileZilla（FTP）将OpenClassifieds上传到虚拟主机上并进行安装与配置，其中邮件发送来来回回整了很久，好在最终解决了。之后，添加了几个分类，并从当当上面找了几个数据进行可用性测试，效果还好。最后，配置下Google统计，事情高一段落。
+“淘来换”的一些想法 “淘来换”目前定位为西北工业大学校园分类信息网站，给即将被“驱逐”的大四的学生提供一个物品展示平台，低年纪的学生可以在这里淘些需要的东西。目前“淘来换”中添加了两个地址“西北工业大学（友谊校区）”和“西北工业大学（长安校区）”，也许会添加写其他的地方，如西安交通大学，如果的确有需要的话。
+OpenClassifieds的实现比较简单，但是功能还是蛮强大的，是个不错的搭建小型分类信息站点的平台，具有很强的定制性。但是目前其功能特别是中文版本下存在着不少的小问题，但不会导致完全无法使用。如果“淘来换”能够有足够的人参与进来，我可以考虑对其进行二次开发，修复Bugs，晚上功能来满足一些特定的需求。
+PS：突然想到，也许我可以将知乎邀请码放置在“淘来换”上出售，嘿嘿，不错的创意，当然收入将捐赠给某个公益基金，想法缘自于还未见过面的支付宝的朋友——张明烁。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>搭建一个小众分享讨论社区</title>
+      <link>https://milkythinking.com/blog/2011/06/10/set_up_a_minority_share_discussion_community/</link>
+      <pubDate>Fri, 10 Jun 2011 04:21:41 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/06/10/set_up_a_minority_share_discussion_community/</guid>
+      <description>我想搭建一个小众的分享讨论的站点，类似Hacker News。
+缘起 我使用Google Reader订阅了很多的博客的RSS源，每天会看到很多有意思的文章，有些文章我想与他人进行分享和讨论，此前一直分享到人人上面，但是很少有回应，这种感觉很不爽。
+使用Hacker News一段时间，勉强可以阅读上面的帖子与评论，但是蹩脚的英文使得交流十分困难，尝试评论了几次，结果被他人给“踩”了下去，积分也一直是负的（有点打击的说）。
+于是，我尝试找寻中文的类似Hacker News的互动社区，但是目前没有找到喜欢的站点。国内的较为知名的社会化分享站点如鲜果热文和豆瓣9点，面向群体为普通大众和文艺青年，内容偏娱乐与文艺。抽屉、我烧网的这种中文Digg类的站点的内容与氛围我就更加不喜欢。
+在知乎上提问，Yeming Zhang推荐cnBeta和Solidot。我曾经GR订阅过cnBeta，但是因其不是全文输出且与博客 园新闻的性质差不多，就退订了。Solidot目前还在订阅中，每天会查看一下其更新的内容，但是感兴趣的话题比较少，偶尔会点开仔细阅读下，但很少看评论。考虑到自己好像还没有深入融入到任何一个社区的经历，于是计划尝试一下——cnBeta这种资讯类的站点被我过滤掉了，我注册了个Solidot帐号，今天投递帖子的时候，发现投递的内容是需要审核的，有些不爽，但是还会坚持一段时间。
+Pligg 很早就有搭建一个分享讨论社区的想法，此前的计划是：成为一个Hacker News的资深用户，熟悉Hacker News的细节，clone一个Hacker News，并在这个过程中提升自己技术水平。但是这个项目的优先级很低，因为还有很多其他更重要或更感兴趣的事情要做，于是就一直搁置在那里。
+这几天，我意识到为什么不使用现有的开源产品来搭建一个呢？没有必要什么都要自己敲代码来完成，那样也太没效率了。于是就搜索了下，结果有Drigg、Hetaru、Pligg、PHPDug等。Drigg的站点无法访问；PHPDug以前使用过，但是感觉不好，也没有后续开发；Hetaru是初次接触，放弃；Pligg很九从JobsDigg知晓，并研究过部分代码。通过一些比较，我最终选择了Pligg。
+Pligg的简单介绍：
+Pligg，最灵活的类似Digg的Web2.0 CMS系统！网页设计师可以使用Pligg做他(她)想做的任何事情。稍微懂一些PHP和Mysql的知识即可安装Pligg。如果需要修改和管理 Pligg，可能有点难度。对于精通Web开发语言的朋友，Pligg是一个定制化非常强的CMS系统。—— via Anson Ho
+这两天研究了下Pligg的使用，基本了解了Pligg的内容类型、后台管理选项以及主题开发的知识。感觉Pligg的默认主题的内容组织很糟糕，如果能够很好的组织一下，内容的呈递效果将会更好。但是我那蹩脚的CSS知识使得自己现在不能很好地实现设想的形式，决定初次搭建的时候先使用Pligg的默认模版，之后在进行新的主题的开发并进行更换。还想到，如果可能，可以在Pligg的基础上融入自己的理解进行二次开发工作，发布一个基于Pligg的开源项目分支，并借机深入研究下Pligg的整体架构提升自己的技能。当然目前仅仅是设想，会不会进一步实现将根据接下来自己的实际情况来决定。
+下一步行动（Next Action） 尝试去GR订阅的文章的来源处与作者以及其他参与评论的人进行互动。
+继续学习Pligg的操作与配置，捣鼓一下自己的想法，构思站点的内容。
+购买域名和托管空间，将站点搭建起来，并邀请一些朋友参与进来。
+了解Pligg模版开发的知识，设计并开发一个新的Pligg主题，替换掉默认的主题。
+PS：学好英语才是正途。周二去给“实名制”充值，在电梯里遇到几个留学生，其中一哥们看到我T恤上的英文单词便尝试和我交流一下，但是我悲催的没有听懂。
+PPS：知乎邀请码还有两枚，我周遭的同学愣是没有感兴趣的，有人想要的话请到“淘来换”上购买，收入将捐赠给某个公益基金。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>我是个黑客吗？</title>
+      <link>https://milkythinking.com/blog/2011/06/09/am_i_a_hacker/</link>
+      <pubDate>Thu, 09 Jun 2011 01:02:01 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/06/09/am_i_a_hacker/</guid>
+      <description>前两天，阿敏亲戚公司的网站管理后台无法登陆了，老是提示“验证码错误”，于是向阿敏求助。不想写毕设论文的我，就去凑了个热闹。最终解决了问题，下面描述一下详细的过程：
+使用提供的帐号和密码在本地进行了多次尝试，遇到同样的错误。
+查看验证码图片的生成路径，猜测其验证码生成方式和我们自己做项目时生成验证码的方式是一样的，单独的一个文件，调用PHP的GD库生成包含随机字符串的图片，每次生成的时候将随机字符串存储在SESSION中，与用户提交表单后的验证码进行比对，相同的话继续执行登陆过程。
+怀疑是否是在存储随机字符串到SESSION中的时数据出错（我们此前曾遇到这个问题），但是我们没有托管空间的帐号，无法接触到代码，不可能进行调试验证猜测。
+尝试单独刷新验证码，输入前一次验证码的字符串，还是提示“验证码错误”。
+使用Firebug查看页面源码，发现该站点的登陆页面不是表单（Form），而是在点击登陆按钮的时候，通过JS获取相应字段的数据，然后发送Ajax请求执行登陆过程。
+查找处理登陆过程的JS代码，分析后感觉可以绕过其验证码的登陆过程，但是怎样绕过呢？于是将该页面下载到本地，修改对应的JS文件，屏蔽了其验证码验证的过程，尝试了几次登陆过程，最终还是失败。难道分析结果不对？
+在JS代码中添加alert语句，确认代码停止执行的位置，结果是，代码都执行了呀。
+意识到可以在Firebug中执行JS代码，于是将处理用户名和密码验证的JS代码复制过去执行，发现返回的数据有警告信息，大意是磁盘空间不够，SESSION文件无法写入，这应该就是症结所在了。
+获取站点的IP地址，咨询万网（网站托管在万网机房）的技术支持，的确是磁盘空间已满造成的，需要升级服务或者删除一些文件腾出些空间。
+因为站点很久没人维护，就花费了些时间获取万网会员的账户和密码，然后登陆进去。通过FTP访问并不能茶找到报错信息中显示的文件夹，但是既然是空间满了，阿敏决定删除写文件来释放些空间。
+找到一个比较大的文件，备份到本地，然后删除掉线上的数据，此时能够登陆进去了。阿敏和其亲戚交流了下，事情告一段落。
+我手痒，在Firebug下跑了下此前分析的可能绕过验证码验证过程的JS登陆过程。刚开始一直停留在登陆页面，以为自己的设想是错误的呢，看代码，发现是漏掉了一条跳转语句，添加后，成功登陆到后台。当然这是在我们知道用户名和密码的过程中。
+既然这样可以绕过，那么在不知道密码的情况下，写个脚本暴力破解是可能的。（突然想到也许该站点还存在注入漏洞，当时没有尝试，找时间可以尝试一下，不过我是不会做坏事的啦^_^）
+以上就是这次事件的经过了，哈好，我是个黑客了吗？
+另外，在登陆到空间管理后台时，我查看了下数据库数据，发现所有的密码都是明文存放的，网站的代码也是乱七八糟的，和我们初学PHP时的项目有的一拼的说。
+我提议阿敏建议他亲戚对重新开发一下站点，外包给我，基于Drupal实现一个更优秀与健壮的站点，但是没有下文了。不过这确提醒了我，以后确实可以通过接些外包的活连连手，赚点外快的说。
+PS：站点就不说出来了，免得他人过去进行破坏，不过很希望他们愿意进行再次开发，外快啊！！！
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>去你妈的“没有状态”</title>
+      <link>https://milkythinking.com/blog/2011/06/06/fuck_not_in_the_mood/</link>
+      <pubDate>Mon, 06 Jun 2011 13:10:57 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/06/06/fuck_not_in_the_mood/</guid>
+      <description>又是一次很久没有写博客的经历，现在都不知道写些什么东西了——此前给自己的更新博客的计划又流产了。
+回学校之后，一直为毕设论文的事情忙着，终于在前天晚上将论文初稿交了出去，现在还差翻译没有搞定。其实我一直在逃避写论文这件事情，感觉是件没什么意义的事情，还不如花时间去完善我的项目呢。但是这又是件不得不做的事情，我必须将它们完成，并顺利地毕业。
+如果自己能够认真对待毕设，我完全可以很快搞定它们，但是我却没有去做，而是给自己找了个借口——“没有状态”。看到这句话，我的内心充满了对自己的不满——因为自己的不节制，导致自己这段时间的生活乱七八糟的，却用“没有状态”来欺骗自己，让自己在放纵的时候心安理得。
+每天无聊地去看人人有没有更新、点点有没有更新、GR有没有更新，仿佛只有它们有更新了自己才能够找到“充实”的感觉。我要的不是这样的“充实”，我要真正的充实。
+我该采取怎样的行动呢？
+规律自己的作息，践行前两天制定的作息计划。 信任自己的GTD系统，并坚持执行其中的任务。 不能只做个信息的收集者，还应该做个信息的处理者，让信息变得有价值。 减少自己关注的事物的数量，让自己更加专注起来。 给自己认为重要的事情，安排固定的时间。Do It！ 不再用“没有状态”来欺骗自己，累了就去休息，然后继续工作。 上面列出的几条都不是具体的行动，那么我现在该做些什么呢？将自己要做的事情列出一个清单，整理到自己的GTD系统中，然后坚持去做。磨刀不误砍柴工！
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>由news:yc想开去</title>
+      <link>https://milkythinking.com/blog/2011/05/22/thinking_on_news_yc/</link>
+      <pubDate>Sun, 22 May 2011 09:58:30 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/05/22/thinking_on_news_yc/</guid>
+      <description>今天Hacker News置顶的链接是“news:yc”，一个iPhone App，用来阅读Hacker News的。该App几乎具有Hacker News站点所有的功能，如阅读热门链接、投票、评论等，还整合了Instapaper。news:yc创建者是一个美国高中生。
+刺激我的是“创建者是一个美国高中生”，每当看到他人创建了一个App或一个站点，我就会对自己有些许的不满意，我创造的产品在哪里呢？我什么时候能够将自己的产品拿出来供他人使用呢？我为什么就不能够做到专注地完成一个优秀的产品呢？
+No chance for interludes or pauses or moments where you build up for the big finish. If the passerby doesn’t stop, it’s all for nought. — Seth Godin(Busker’s dilemma)
+Seth Godin这句话和前一段时间《黑客与画家》中Paul Graham的说法是一致的。因为我的一些做法，现在的我就是什么都没有获得。有的只是在看到他人完成了产品时的羡慕。
+我想获得一些东西——荣誉感、认同感、激情、金钱等等，我想通过自己创造的产品来获得这些东西。但是我夫的一些行为却是在给自己设限，妨碍自己去实现它们。不能再这样下去了，我应该积极的接受《黑客与画家》等传达的想法，快速创造并推出我的产品。
+下面是我想对自己说的一些话：
+没有使用VPS搭建过服务器，不熟悉Ubuntu Server，不知道怎么搭建一个安全的站点，不知道怎样的结构才是一个好的结构，……这些统统都扔掉。大胆地去做，去尝试，去学习，没有谁能够一下子就学会这些东西，但是如果你连尝试都不愿意的话，你永远都不可能学会这些东西。不要说现在没有时间，你每天浪费的大量的时间完全可以压缩过来做这些更加有意义的事情。那么行动起来，将自己开个头的产品坚持做下去，然后快速地推出来。
+Do it!
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>我的Google Reader体验01</title>
+      <link>https://milkythinking.com/blog/2011/05/21/thinking_on_google_reader_01/</link>
+      <pubDate>Sat, 21 May 2011 19:19:19 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/05/21/thinking_on_google_reader_01/</guid>
+      <description>今天在我的Google Reader中看到一篇关于Google Reader的文章，该文章介绍了几个更好的使用Google Reader的小技巧。有些是我经常使用的，如文件夹(Folder)和标签(Tag)功能，快捷键(Shortcuts)操作；有些是我曾体验过但没深入了解的，如趋势(Trends)；还有些是我初次接触到的，如Next小书签(booklet)。结合文章的描述，逐一体验了下那些对我来说新的功能，在这个过程中又发现另一些新功能，感觉很不错。这个过程中唯一有些不爽的是：由于某些原因，Google Reader不能够时刻正常访问。
+我的Google Reader中订阅了100多个博客，如果不使用Google Reader而是逐个去访问它们，也太耗费精力了。订阅到Google Reader后，我只用打开Google Reader一个站点就可以了，Google Reader可以帮我定期扫描博客的更新，极大程度的方便了我，节省了一定的时间。当然有些不好的地方就是不能看到针对这些文章的精彩的评论了。
+由于订阅的源过多，有些源每天还会更新大量的文章，聚集在一起后，将是个很大的量。刚开始，我不知道取舍，同时还想每天清空所有更新的条目，结果搞得自己疲惫不堪。过了一段时间后，反思了下，发现这样每天忙忙碌碌，却没什么效果，每天接收大量的信息，真正有用的没有多少，转化为自己的知识的就更少了——忙于清空，哪来时间思考。
+在看了月光博客等一些关于Google Reader的使用技巧的文章后，我开始清理自己的订阅源。删除了一批，剩余的使用文件夹和标签进行归类，并对它们进行了重要性划分，查看更新的时候，会根据重要程度按照文件夹进行查看。也不再一味的坚持每天要清空所有的未读条目，现在看到1000+未读时已经没有丝毫焦躁的感觉了。在查看更新时，首先会快速地浏览所有的条目，对认为比较有意思的内容，加“星”，然后再逐条阅读这些加“星”的条目。每隔一段时间，我会清理一下Google Reader的未读条目，有时只是简单的“全部标为已读”，这种感觉还不错。
+但是，现有的习惯也有不好的地方，主要体现在两个方面：1. 即使自己进行了初次过滤，由于总量很大，还是有不少条目需要阅读，而自己并不能分配充足的时间逐条看完，于是这些内容积压起来，一段时间后，量还挺大的；2. 由于阅读英文的成本较高，往往需要花费更多的时间，于是就本能的逃避阅读它们，虽然我认为它们很有价值，但是却阅读的量却十分地少，久而久之，就更少看了。今天在看了我的Google趋势(Trend)数据后，我意识到我应该投入一些时间去耐心地读一读这些优秀的文章，否则就没有必要订阅它们，还不如取消订阅呢。
+前一段时间，我还意识到，只单纯地追逐最新的文章并不是很好的做法，有些优秀的博客值得自己花时间去更多的阅读，特别是那些“老”的文章，目前已选定了几个要深入阅读的博客，但是还没有采取进一步的行动。
+以上就是我使用Google Reader的一些经历与想法，接下来的一段时间里，我将着手改进自己使用Google Reader的习惯，让自己能够更好的使用这个工具。
+PS：自5.1会学校一趟之后，就没发布新的博文了，前几天也写了一些，但是没有完成，现在停留在草稿箱中。发现如果自己不能一口气完成，就会一直拖延下去。
+PPS：有时我也会想在这个博客该写些什么内容呢？不想太技术化，偶尔写些自己的碎碎念是个不错的想法。同时近来我的更新频率十分低，只因懒惰的原因。希望从这周起自己能够坚持更新，初步定为每周2篇，一篇技术贴，一篇碎碎念。
+PPPS：如果你偶尔路过这里，请通过评论留下足迹，你的评论将激励我更有激情地坚持下去，就像前一段时间我迷恋Google统计中每天的博客访问量一样。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>移除Ubuntu 10.04的Ubuntu One</title>
+      <link>https://milkythinking.com/blog/2011/05/03/remove_ubuntu_one_from_ubuntu_10_04/</link>
+      <pubDate>Tue, 03 May 2011 09:06:27 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/05/03/remove_ubuntu_one_from_ubuntu_10_04/</guid>
+      <description>Ubuntu One是集成到Ubuntu 10.04里的一个文件同步服务，但是我没有学会使用，同时我还有更好的替代者Dropbox，那么还留着Ubuntu One做甚呢？！那么就果断移除它吧。
+如果你从来没有曾经尝试使用过Ubuntu One，那么前两步操作可以省略掉，当然为了确保安全你最好将所有的流程过一遍。
+确认Ubuntu One没有运行。打开系统监视器(System-&amp;gt;Administration-&amp;gt;System Monitor)，在Process标签页中，搜索“UbuntuOne”，选中并杀死这些进程。 保证没有保存Ubuntu One的验证字段。打开密码管理器(Applications-&amp;gt;Accessories-&amp;gt;Passwords and Encryption Keys)，如果存在与Ubuntu One相关的密码，删除它们。 移除所有Ubuntu One使用到的文件夹。打开终端窗口(Applications-&amp;gt;Accessories-&amp;gt;Terminal)，使用如下命令移除相应的文件夹： rm –rf ~/.local/share/ubuntuone rm –rf ~/.cache/ubuntuone rm –rf ~/.config/ubuntuone rm –rf ~/Ubuntu\ One 当然你也可以依次找到它们并手动删除。在Nautilus中，Ctrl-H显示隐藏文件夹，接下来，你知道的。
+彻底删除所有与Ubuntu One相关的包。 sudo apt-get purge ubuntuone-client* python-ubuntuone-storage* 好了，以上就是彻底删除Ubuntu One的过程!
+via How-To Geek
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Ubuntu下的剪贴板Diodon和Parcellite</title>
+      <link>https://milkythinking.com/blog/2011/04/29/ubuntu_clipboards_diodon_and_parcellite/</link>
+      <pubDate>Fri, 29 Apr 2011 07:17:24 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/29/ubuntu_clipboards_diodon_and_parcellite/</guid>
+      <description>今天起晚了，但是还是想坚持一下，写一篇。
+剪贴板是什么？ 我的理解就是一个保存你最近复制、剪切的内容的容器，如果你需要多次使用几段内容，就不用每次都去复制，只要在剪贴板里选择对应的记录，粘贴过去就好，极大的节省了时间。
+Ubuntu下的剪贴板 Ubuntu下的剪贴板有很多，但是我认为大部分都不好用，此前最好用的是Parcellite，但在我的笔记本上Parcellite不知和什么程序冲突，一直无法使用，每次使用时都会“死”掉。试用了其他的一些剪贴板，但感觉还不如自己一条条去复制呢，操作太不爽了，直到前两天遇到了Diodon，一个和 Parcellite十分类似的剪贴板，安装后，使用体验不错。
+安装PARCELLITE 打开Ubuntu软件中心，搜索Parcellite，安装即可 去Parcellite的站点下载最新的安装包进行安装，下载页面。 安装DIODON Diodon目前并没有集成到Ubuntu的软件中心中，所以通过如下命令进行安装：
+sudo add-apt-repository ppa:diodon-team/stable sudo apt-get update sudo apt-get install diodon PS：刚刚看到Parcellite已经更新了，不知道最新版怎么样，还会不会有我遇到的问题。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>4小时睡眠与早晨工作</title>
+      <link>https://milkythinking.com/blog/2011/04/28/4_hours_sleep_and_morning_work/</link>
+      <pubDate>Thu, 28 Apr 2011 07:08:37 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/28/4_hours_sleep_and_morning_work/</guid>
+      <description>昨天看了阮一峰的新文章詹宏志谈教育、阅读和创业，并跟着阅读了一些《詹宏志谈读书》，后者太长了，没看完呢。现在的感觉是詹宏志对看书太入迷了，我可能永远达不到那种境界，而且对看书的理解也有些不同，不过等完整的看完《詹宏志谈读书》在考虑这个问题吧。也许他的读书的方式能够在一定程度上影响我接下来的读书习惯。
+不过最令我感触的是，詹宏志的作息习惯，十二点睡，四点起来，一直维持了二十年。这让我想起来前一段时间看到的程序员参加奥运会的故事，故事中的主人公“夸”为了参加奥运会每天也只睡4个小时，也坚持了很久，并最终也如愿得参加了奥运会。我于是想人到底要不要8个小时的睡眠呢？也许不吧。虽然我目前做不来4个小时，但是压缩下我的睡眠时间还是可以做到的，果断将闹钟调早了半小时，至6：00。
+詹宏志对于早晨和晚上的时间的描述吸引了我。
+晚上读书是“渐入困境”，早上读书则是“渐入佳境”，有一种开展中的状态。
+早上也是比晚上好的写稿时间。我现在觉得，晚上需要咖啡、克补，需要一些搏斗，早上就不需要，是在慢慢打开的状态。早上的时间最完整充实，一出门，时间就支离破碎，连回家的时间都不可预测。
+我也应该尝试一下早晨做点什么。于是就写了这篇文章，目前感觉还不错的说，可以坚持一段时间。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>由工资引起的碎碎念</title>
+      <link>https://milkythinking.com/blog/2011/04/24/on_wage/</link>
+      <pubDate>Sun, 24 Apr 2011 13:30:59 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/24/on_wage/</guid>
+      <description>两天前和世则聊天，谈到了工资；今天中午吃饭，大伯提起了我的工资。这就勾起了我的碎碎念。
+前一段时间在《非你莫属》的节目中的“谈钱不伤感情”环节，一个应聘者说自己的每月开销有多少，所以希望能够拿到多少的工资。已经灭灯的湛庐文化的老总立刻说道，这是个错误的观点，在谈工资的环节，应当从自己给公司创造了多少价值的角度进行，如果你能够给公司创造40万的价值，公司会愿意支付你4万的工资，至于你每月的花销有多少完全是你个人的事情。
+我最近将要和公司谈工资，我此前的计算方式也是那个求职者采用方式。看完那期《非你莫属》的节目后，我立刻摒弃了以前的做法，开始思考自己能够创造多少价值。但是我却不是很清楚，尤其是在没有参考标准的前提下，但不是任何事情都是有参考标准的，在这种情况下我该怎样做呢？
+世则的工资是挺高的，和他比起来，我现在的工资是挺低的。但百度是家大公司啊，我们丁香园是个小公司，同等水平不可能提供那么高的工资，再说世则也确实挺厉害的。我够不够厉害还得另说了。
+去年淘宝西安校园招聘的时候，我去做了一天的招聘兼职，期间和一些淘宝的员工聊了会儿，其中一哥们叫江枫，淘宝的DBA，那时也聊到了工资的事情，江枫的观点是刚开始的两三年的工资多点少点并没有什么。这个观点我比较认同。
+对于现在的我来说，最重要的不是工资多少。同时对于工资，公司有个大致的标准在那里，当初我既然接受了这个标准，那么还多想什么呢？我现在最重要的事情是提升自己的技能，等这两三年过去了，技术达到一定的水准，到那时有足够的筹码去谈工资或者做自己感兴趣的事情。
+好了，碎碎念结束了，继续提升技能的旅程！
+PS：《非你莫属》中灭灯代表该公司不能为你提供合适的职位。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Ubuntu下安装Git以及Git帮助手册</title>
+      <link>https://milkythinking.com/blog/2011/04/17/install_git_and_manual/</link>
+      <pubDate>Sun, 17 Apr 2011 09:04:53 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/17/install_git_and_manual/</guid>
+      <description>Git简介 Git是一个分布式版本控制系统，对应的是SVN、CVS这样的集中式版本控制系统。
+虽然知晓并安装Git是很久以前的事情了，但是我却没怎么用过，一直使用的是SVN。在《Pro Git》中看到的Git的好处有：
+本地完整地镜像了代码仓库的所有内容，如果服务器出现故障，可以使用任何一个本地镜像进行恢复。而使用SVN，如果没有对服务器端的数据进行安全悲愤，出现故障后，以前的所有记录数据将会丢失，无法恢复。 本地完整地镜像了代码仓库的所有内容，当由于某些原因，不能连接到中心服务器的时候，你可以在本地继续工作、提交代码，等到网络连通，再将更新同步到中心服务器。 当然还有其他的好处，但是我没有体验过，无法很好得描述，等以后有经验了在补充吧。
+安装Git Git 的工作需要调用 curl,zlib,openssl,expat,libiconv 等库的代码,所以需要先安装这些依赖工具。
+apt-get install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 从源代码安装 到Git官方站点下载最新的源代码，如当前最新版 1.7.4.4。 编译安装命令
+tar -zxf git-1.7.4.4.tar.gz cd git-1.7.4.4 make prefix=/usr/local all sudo make prefix=/usr/local install 二进制包安装 这种方法安装方便，我使用的就是这个方法，但往往不是最新版本的Git，如我的版本就是1.7.2.1。
+apt-get install git-core 安装Git帮助手册 使用二进制包安装后，发现并没有安装Git的帮助手册，源代码安装后是否有类似的情形就不知道了，如果有也可以用以下的方法进行安装。 使用git --version查看自己安装的Git版本。 然后现在对应的帮助手册，并解压到相应的位置：
+curl -O &amp;#34;http://kernel.org/pub/software/scm/git/git-manpages-1.7.2.1.tar.bz2&amp;#34; sudo tar xjv -C /usr/local/share/man -f git-manpages-1.7.2.1.tar.bz2 你还可以复制执行下面的脚本，轻松搞定手册安装：
+cd /tmp curl -O &amp;#34;http://kernel.org/pub/software/scm/git/git-manpages-`git --version | awk &amp;#39;{print $3}&amp;#39;`.tar.bz2&amp;#34; sudo mkdir -p /usr/local/share/man sudo tar xjv -C /usr/local/share/man -f git-manpages-`git --version | awk &amp;#39;{print $3}&amp;#39;`.</description>
+    </item>
+    <item>
+      <title>《非你莫属》碎碎念</title>
+      <link>https://milkythinking.com/blog/2011/04/16/only_you_scrawl/</link>
+      <pubDate>Sat, 16 Apr 2011 18:48:10 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/16/only_you_scrawl/</guid>
+      <description>话说，今天由校内的一个视频分享引起，接连看了好几期《非你莫属》这个求职节目，就像此前的看《非诚勿扰》那个节目一样——同样是从最新的一期开始，一期一期地往前看n期；同样是由于想了解一下参与嘉宾的故事，而勾起的看下去的欲望；同样感觉节目还不错，值得多看几期；最后，也许同样会像《非诚勿扰》，接下来会再追几期然后遗忘。
+看过几期《非你莫属》之后我的感触是什么呢？
+眼睛太累了，不能这么放纵下去了 该借助《非你莫属》来反思一下自己 不能再放纵下去了 我好像有一个周期，一段时间斗志满满，然后突然倦了、泄气了，经过一段时间的调整之后，又会斗志昂扬，周而复始。
+前一段时间人一直紧绷着，内心中某个东西（可以说是梦想也可以说是欲望）在不断地督促自己前进，努力再努力，坚持了一段时间后，疲了倦了，就松懈下来。前几天的一个晚上，翻出来此前看的一个小说，接连几天晚上将它的更新看完。然后今天又接连看了6、7期《非你莫属》。
+眼睛看累了，人也更疲倦了，是该恢复过来了，下周的工作上还有挑战呢。
+《非你莫属》引起的碎碎念 这几期《非你莫属》中，有男有女，有老有少；有很牛的人，也有很衰的人；有很纠结的人，也有很简单的人；最后的结局，有成功，当然也有失败。
+我现在正在公司实习，已经一个多月了。这段实习经历，加之其几天的一个讨论会，让我学习了很多，了解了更多的工作相关的知识，认识到了自身的不足。在那个讨论会上，我说出了这样一句话“我想成为一个有想法并能够实现自己想法的人”，虽然此前有模糊的一些念想，但还是第一次明确表达出来自己的念想，会后总结的时候才发现这句话就是对我的此前的想法很好的总结。
+每个人都有梦想，但是只有一部分人用行动去追逐自己的梦想。同样是那个讨论会，让我意识到一味的空想并不能带来什么，往往考虑一些不存在的东西，除了消耗经历，拖慢速度，最终什么都得不到。我现阶段最重要的事情是技术的积累与经验的积累，我目前还太嫩，我需要快点成长起来，当然这个成长过程中也不能太贪心太急躁。毕竟人不能一口吃成胖子，虽然可以选择打肿脸的方式。
+准备好了吗？再次起航吧！Gonna Sailing!
+PS：在写“不能再放纵下去了”这一小节的时候，迟疑要不要将自己做的事情写出来呢，最后还是写了，自己应当学会直面自己的缺点，而不是掩盖、逃避。
+PPS：在写这篇博文的时候，眼睛好像不那么难受了。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>内容转移</title>
+      <link>https://milkythinking.com/blog/2011/04/10/content_shifting/</link>
+      <pubDate>Sun, 10 Apr 2011 14:09:45 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/10/content_shifting/</guid>
+      <description>这篇文章翻译自Fred Wilson的博文Content Shifting，水平有限，见谅！
+在昨天关于SoundCloud的文章中，我从@Daryn那获得了如下评论：
+对于音频文件我依然遇到类似的情形。我曾经对自己说，“酷，Fred发布了一个新的播客，我有空应该听一下。”是否有一个应用，能够像Instapaper或者Boxee小书签一样帮助我将播客保存下来，等我有空在听呢？
+我的回复如下：
+这要看你最终想在什么样的设备上处理它们？Sonos房间音乐系统？iPhone或Android？还是平板电脑？
+当你使用Instapaper或Boxee Watch Later这样的服务的时候，会形成一种习惯性的思维，你希望能够将内容转移到任何地方、任何设备上。
+昨天，我在SoundCloud上发现了让人惊叹的艺术家James Vincent McMorrow。这里是他的新专辑——Early In The Morning。我立即在自己的笔记本上聆听了它，但我十分想在自己的Sonos系统上享受它。
+昨晚，我看了Black Keys表演的“周末夜现场”（SNL）。我在YouTube上发现了这个视频，然后将它发送到Boxee，这样我就能在大屏幕上观看它了。
+昨天下午，我在车里收听Sirius XMU电台，发现了一些不错的音乐，我想要一种简单的方式将它们转移到我的私人电台fredwilson.fm中。
+昨天，我在TechCrunch/Scribd上看到了美国司法部（DOJ）呈递给Twitter的关于Wikileaks的法院命令。我想在iPad上得到这篇文档，那样我就能够在家里的沙发上阅读它了。
+你已经获得了这个想法。随着设备种类和内容格式迅速地增长，且它们都通过互联网相互连接，内容转移正在逐渐成为一个大的市场和一个真正的热点领域。
+某些类型的内容转移实现起来十分容易，如在手机或平板上获得一个网页，不需要任何魔法，Instapaper在这方面做的非常好。
+另一些类型的内容转移就十分得困难了。如将一首歌从Sirius XMU电台转移到fredwilson.fm就不简单；让SoundCloud在Sonos上播放也不简单，就像Matt Galligan在那篇文章说的那样需要一个开放的Sonos平台。
+我认为这是创业者们的一个机会。在一些情况下，内容转移将是一个大点的平台的杀手级功能，如Boxee的“待会看”功能。在另一些情况下，内容转移将是一个独立的服务，像Instapaper一样
+但我确信人们希望从发现型的设备（笔记本、卫星电台等）上转移内容到消费型的设备（平板电脑、Sonos等）上。同时我确信在未来几年内我们能够看到这种转移将会越来越简单。
+via A VC
+参考：
+Black Keys 乔纳斯兄弟 SNL Saturday Night Live 美国的一个综艺节目 Sonos 无线房间音乐系统 Sirius XMU 一个音乐电台 Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Zim介绍</title>
+      <link>https://milkythinking.com/blog/2011/04/09/about_zim/</link>
+      <pubDate>Sat, 09 Apr 2011 21:36:19 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/09/about_zim/</guid>
+      <description>Zim是我目前使用的且十分喜欢的一个树状笔记软件，也是一个桌面wiki系统（a desktop wiki）。Zim界面展示【我今天也是第一次看，发现不少新东西，又一次见识了Zim的强大】
+WIKI是什么？ Wiki是一种在网络上开放、可供多人协同创作的超文本系统，由沃德·坎宁安于1995年首先开发。沃德·坎宁安将Wiki定义为“一种允许一群用户通过简单的描述来创建和连接一组网页的社会计算系统”。……基本上，Wiki包含一套能简易制作、修改HTML网页的系统，再加上一套记录和编排所有改变的系统，并且提供还原改变的功能。via – 维基百科
+ZIM与WIKI 按照wiki的定义，Zim并不能算是一个wiki系统，只是一个应用了一些wiki的语法规则的笔记软件。
+ZIM的功能 使用Zim可以做些什么呢？
+创建笔记，记录重要的想法 开会或听讲座时进行记录 组织任务列表 保存博客或邮件的草稿 进行头脑风暴 …… 还不止这些：
+你可以使用Zim写日记，Zim日历（Calendar）插件可以帮助你很好的管理它们 你可以使用Zim实践GTD时间管理，Zim的Task List插件以及标签功能可以帮助你【我会介绍下我的GTD经验】 你可以使用Zim组织管理自己的其他文档，如PDF，DOC等等【这个我也要特别介绍下】 你可以使用Zim……，只要你想的到！！！ ZIM安装 Zim是跨平台的，支持Windows和Linux（Ubuntu）平台。【这也是我选择它的原因之一。】
+Ubuntu Ubuntu软件中心 打开Ubuntu软件中心，搜索Zim，选择安装。我就是这么安装的，但通过这种方法和apt-get方式安装的Zim版本为0.43，想安装最新版本请使用其他两种方法。
+apt-get安装 一行命令：sudo apt-get install zim
+下载deb包安装 所有版本deb包下载页面｜点击下载Zim 0.50
+源码编译安装 所有版本源码下载页面｜点击下载Zim 0.50
+Windows 由于目前很少使用Windows，虽然下载了安装文件，但我还没有在Windows下安装Zim呢。所有版本下载页面｜点击下载 Zim 0.50
+安装过程就不用我来教了吧 😉 。据说可以选择安装Portable版，也就是一般所说的绿色版，放在U盘中随身携带。
+Windows下Zim的汉化问题【不知道新版本还有木有这个问题】
+中文界面设置 我安装Zim在linux下或用wine运行都是中文界面，但在windows （xp）里就是英文的。 特意去发邮件问中文译者tolbKni，他说： “Windows下的Zim其实利用了mingw32模拟Linux环境，在Linux界面的语言是由locale决定的，所以你可以利用这个方法解决。 最简单的方法，我的电脑（计算机）右键属性里的环境变量里增加一个变量，变量名为 “LANG”，值为 “zh_CN.UTF-8″，皆不带引号。 你也可以写个简单的批处理文件在启动Zim之前定义这个变量。” 我已用添加环境变量的方法搞定了中文界面。 via 小众软件
+ZIM现状 刚才在善用佳软上看到了另一个wiki风格笔记软件——wikidpad，访问其主页发现更新频率挺高的，突然担心Zim现在是否还在维护更新。看了下，还好，官方最新版本为0.50，前一段时间刚发布的，同时Zim的发布频率还是很高的，我现在使用的Zim版本为0.43，改天升级一下。
+感谢Zim的作者和其他的开发者、贡献者！
+PS：在写这篇文章的时候，发现已经有文章介绍了Zim，分别是小众软件和译言，但还是决定写下来，因为后续还会写一些文章，关于使用Zim＋Dropbox进行知识管理和GTD时间管理。
+PPS：今天就先写这些，关于Zim的使用技巧以及注意事项，我在另一篇文章里进行介绍吧。
+PPPS：如果你是个软件控，想试用各种各样的实用软件、笔记软件等，推荐你逛逛善用佳软，如笔记软件列表。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>我为什么写博客？该怎样写？</title>
+      <link>https://milkythinking.com/blog/2011/04/09/why_and_how_i_write_my_own_blog/</link>
+      <pubDate>Sat, 09 Apr 2011 18:33:42 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/09/why_and_how_i_write_my_own_blog/</guid>
+      <description>刚刚删除了我的几篇草稿，有的较短，有的较长，按照今天的想法，感觉都没有写下去的必要，于是就都删除了。
+完美主义者？ 前几天和公司的同事聊天，他说我是一个完美主义者，也许确实是吧。
+写一篇博文的时候，有时可能会花费很久的时间，修改好多次，但是最终觉得还是不够好，于是就存为草稿，然后像刚刚那样删掉草稿；完成一天的工作后，回想自己今天在工作的时候，又花费了多少时间浏览网页，没有努力工作，实际上可能确实完成了些东西；完成一个项目后，回想自己在项目的过程中的种种，会想如果我能够意识到这些，我的项目应该会做的更好；……
+就拿这两天写的一篇对于自己现在做的项目—丁香问答—的一些看法的邮件，改了三遍，最后的版本的有些小节只包含一些零散的东西，但还是发送出去了，因为我知道按照我现在的水准，不可能在短的时间里做的再好了。
+我为什么写博客？ 有很多的原因，如有时我会有写东西的欲望，记录一下自己的某些想法，想象有很多人喜欢我的博客等等。还有一件事，因为看到Seth Godin的一篇博文——”The only possible response…“，内容只有一个词——”isn’t“。我想我为什么就不能写点什么呢？
+尝试过不少博客平台，如Blog.com, WordPress.com， 网易博客，人人日志等等，零零散散的写过一些，但是感觉都不是很好，感觉不属于自己的，于是我就搭建了自己的独立的博客，也是就现在的这个。
+我该如何写博客呢？ 虽然计划定期更新一些文章，但是现在自己的Zim笔记软件里存了一些草稿，也不完善，也就不好意思发布。
+现在看了我应该改改自己的习惯了，目前的这种状态并不能保证我规律地更西自己的博客。突然想到Fenng在曾说过的话，是关于项目文档的，我说我会在自己的Zim笔记中记录草稿，然后过一段时间更新到公司内部的分享平台上。Fenng说应该直接写在平台上，他是对的，我真的应该改改写惯了。
+当然质量还是要保证的，但是效率要高一些。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Ubuntu系统下安装Firefox 4</title>
+      <link>https://milkythinking.com/blog/2011/04/01/install_firefox_4_within_ubuntu/</link>
+      <pubDate>Fri, 01 Apr 2011 23:21:24 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/04/01/install_firefox_4_within_ubuntu/</guid>
+      <description>笔记本上的Firefox 3.6这两天不知什么原因总是崩溃，同时由于Firefox 3.6很耗内存，于是就合计着用Firefox 4替换当前版本的Firefox，毕竟稳定版已经出来了，而且网上对Firefox 4的评价还是很不错的。
+此前曾尝试过下载Firefox 4的压缩包来安装，但是没有整好，运行时还是Ubuntu自带的Firefox 3.6。有没有一个比较不错的替换系统默认版本的方法？
+Google了下，一下就找到了，而且还是稳定版本的。安装成功后，想到有没有人已经将该方法翻译了呢？又Google了下，发现已有的中文资料都是一些安装每日开发版本的文章，于是就决定总结下。
+Ubuntu 10.04 / 10.10安装Firefox 4的命令如下：
+sudo add-apt-repository ppa:mozillateam/firefox-stable sudo apt-get update sudo apt-get install firefox ubufox 安装后的Firefox 4是英文版的，如果想要中文版，好需要安装额外的语言包。原文给了两个链接，32bit | 64bit，但这两个链接好像不能用，至少我没有找到语言包。Ubufox是一个Firefox插件，好像是负责更新Ubuntu的一些更改，但具体是什么作用我不甚明了。
+安装成功后，启动Firefox 4，此时Firefox将会检查此前安装的插件的兼容性，由于一些插件没有相应的升级，将会被禁用。启动成功后，由于此前老的Firefox配置的原因，菜单栏应该还是存在的，你可以自己调整一下。
+via (可能访问不了)
+更新：使用上述的方法安装后可以为中文版本。如果你使用Firebug，请记得更新到1.7.X版本。
+PS：在写这篇文章的过程中，下意识地按了3＋次Ctrl+S，悲催。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Dropbox解封了？</title>
+      <link>https://milkythinking.com/blog/2011/03/19/dropbox_is_ok/</link>
+      <pubDate>Sat, 19 Mar 2011 09:13:09 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/03/19/dropbox_is_ok/</guid>
+      <description>Dropbox解封了。（对于Dropbox的介绍，见文章底部。）
+来到丁香园实习后，由于需要在工作机和笔记本上工作，同时在家里不能很方便地上网，于是想找一个同步工具帮助自己同步我的工作机和笔记本中的内容，特别是一些文本文件。虽然知道有Dropbox这个“神器”存在，但是其服务被屏蔽很久了——记得刚到公司领取机器安装系统的时候，就尝试了下，因为知晓公司有强力的路由器，但是尝试失败了。当然网上还有其他的一些服务，如Box.net等，但是都不能像Dropbox一样很方便地进行同步。我迫切需要一个同步工具，于是就进行了下面的尝试。
+U盘
+考虑过使用U盘，还专门买了个新的SanDisk，但是很不方便，不能很好的追踪文件频繁的变更。如果U盘丢了（我丢过很多个），那么数据就全完了，当然还可以经常手动备份，但是那样也太麻烦了点吧。
+SVN or Git
+考虑过使用Google Code或GitHub，在前面二者之一建立一个项目，然后使用SVN或Git对文件进行管理。好处是能够很方便的追踪并管理文件的变化，同时也不用担心数据丢失的问题。但是另一个顾虑使得这不是一个好的解决方法——使用Google Code或GitHub，我的所有的数据都是可以被他人随意访问的——我还是想有一些文件不愿意让他人看到的。
+Ubuntu One
+偶然间想到了Ubuntu One这个服务，好像也是一个同步服务，而且我的系统也是Ubuntu，于是就尝试了一下如何使用。摆弄了半天，稀里糊涂，云里雾里，到现在还不甚明白具体如何使用——中途发现Dropbox突然可以使用了，就没再研究了。
+Dropbox
+很早就使用过Dropbox，Windows平台下，但当时注册不久就被悲催地屏蔽了。后来的一段时间内，SSH能够满足我偶尔出去逛逛的需求，同时由于没有需要同步的需求，也就没有研究使用VPN来正常使用Dropbox。
+今天在研究Ubuntu One一段时间后，随手尝试了下Dropbox的客户端，发现竟然能够下载安装相应的后台支持程序，于是想到可能是公司强力的路由器的原因，感觉很好。于是又迫不及待的尝试了下笔记本上的Dropbox，也顺利地安装成功，难道公司的无线路由也很强力？——暂时这么认为。
+晚上在家里用大伯的电脑上网，突然想到家里是否可以访问Dropbox，于是尝试了下。虽然速度较慢，但还是神奇的打开了，兴奋ing。想到自己的容量还是2G（免费账户初始容量），邀请他人注册可以扩容，于是就在点点、校内、新浪微博上发布自己的邀请链接，希望能够有人使用它注册，同时帮助我实现扩容的目标，到目前还没有人使用。此前曾在某人的博客中看到说使用邀请链接注册容量也会增加一些，但是我不确定，不知道是不是那哥们的XX招数。
+如果你也想尝试使用Dropbox，那么请点击我的邀请链接吧，在这里先谢过了！
+—-
+DropBox简介(截取自异次元软件世界)
+DropBox就是一款非常好用的免费网络文件同步工具(当然它也算是一个服务)。当你在电脑A使用DropBox时，指定文件夹里所有文件的改动均会自动地“同步” 到DropBox的服务器，当下次你在电脑B需要使用这些文件时，你只需登录你的账户，所有被同步的文件均会自动下载到B电脑中，同样，你在电脑B对某文件的修改，也会体现在电脑A上，而所有这一切均是全自动的，这样你的文件可以说是随时随地都能保持着最新了，下面我们一起来看看DropBox吧……
+使用Dropbox前，需要先安装它的桌面客户端，DropBox 提供了Windows、Mac和 Linux 版本，可以跨平台实现文件同步！并且它还提供Web访问功能，当你在不方便安装客户端的地方可以通过Web在浏览器访问你的文件，将它们下载回来使用。
+PS：今天竟然将笔记本电源忘记在公司了，那么就早点睡吧，一个好机会啊。 PPS：这篇文章就是自己在家敲打出来，然后同步到工作机上再发布到自己的博客上的，有了Dropbox，以后自己的博客最好也更新的勤快些，并多多推广下。 2011.03.18 夜
+PPPS：昨天自己在家里登上Dropbox难道是偶然？ 2011.03.19
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>独一无二</title>
+      <link>https://milkythinking.com/blog/2011/03/10/unique/</link>
+      <pubDate>Thu, 10 Mar 2011 17:32:04 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/03/10/unique/</guid>
+      <description>也许没有鬼子的幽默风趣， 也许没有老三的什么气质， 也许没有阿敏的勤勤恳恳， 也许没有剑圣的能说会道， …… 但那又怎么样呢？ 我就是我，独一无二的我。
+活出自己的风格！
+PS：每个人都有自己的长处，我的呢？有没有人发现？
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>我的点点博客们</title>
+      <link>https://milkythinking.com/blog/2011/02/26/my_diandian_blogs/</link>
+      <pubDate>Sat, 26 Feb 2011 19:49:31 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/02/26/my_diandian_blogs/</guid>
+      <description>关于点点 点点是什么呢？点点是一个轻博客，中国版的Tumblr。点点的目标是什么呢？我认为Tumblr的创始人的描述比较合适：
+让多数人更简单更个性地表达（更多）
+点点最吸引我的功能是“多人博客”，什么是多人博客呢？
+Q：什么是多人博客？
+A：多人博客是点点与传统微博、社区产品最显著的不同，她让你建立自己的新博客，新建的博客可以基于任何主题（喜欢读书？爱好摄影？沉迷美食？等等等等），展现你生活中的独特一面。
+你也可以建立一个社团/组织的主页邀请成员加入，比如街舞社，合唱团；或者邀请他人和你共同发布感兴趣的内容，比如主题摄影，专题写作。
+我的点点博客们 hutushen222
+http://hutushen222.diandian.com
+记录我自己的碎碎念，关于我对生活，对工作，对梦想的想法。
+====
+MilkyShare
+http://milkyshare.diandian.com/
+贴一些我在网上看到的有意思的事物，欢迎大家关注和参与。
+====
+MilkyReal
+http://milkyreal.diandian.com/
+晒计划，行动力。
+有时候，我们需要做的就是快速地行动，希望大家参与进来。
+====
+Startup
+http://startup.diandian.com/
+关于创业，但是没有想好怎么开始。
+====
+爱你一万年（已删除）
+http://2110000.diandian.com/
+关于美好的爱情
+结语 从我的点点博客们，可以看出，在点点上建立博客时间很容易的事情，也在一定程度上实现了更简单更个性地表达。
+如果你对点点感兴趣，请留言，我这里还有几个邀请码。
+Update:
+在写完一篇读后感后，我决定减少点点的使用时间，因为点点一直是作为我的一个私人发布工具，我并没有从中找到感兴趣的内容，亦或者我根本不愿意投入精力去从中发掘我可能感兴趣的内容，因此，为什么不把自己的所有内容都集中到博客中来呢，这样可以减少自己关注的站点的数量，还可以提高自己的博客发布频率，何乐而不为呢？！。2011-09-04
+Gonna Sailing 😉
+==END==</description>
+    </item>
+    <item>
+      <title>我对待项目的两种方式</title>
+      <link>https://milkythinking.com/blog/2011/02/20/two_kind_of_method_for_project/</link>
+      <pubDate>Sun, 20 Feb 2011 20:06:46 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/02/20/two_kind_of_method_for_project/</guid>
+      <description>当你有个想法后，开始一个项目，你会怎样做呢？
+对待这个问题，我有两种处理方式，一个老方式和一个新方式。
+以前的处理方式
+从生活中产生了一个想法 思考，添加更多的功能 设计，简单的组织一下结构 开始开发 开始了一个模块 思考怎样才是做这个模块最佳的实践呢 查找资料，寻求最佳实践，但总感觉当前使用的方法不是最好的 继续寻找着 对项目失去了兴趣 项目烂尾 一段时间后，感觉此前的做法太烂了，全部丢掉，重新开始 陷入恶性循环 现在的处理方式
+从生活中产生一个想法 这是我想要的吗 最简单最重要的功能是什么 设计，简单的组织一下结构 开始开发 开始一个模块 快速的完成这个模块 该模块基本可用 开始下一个模块 完成一个具备基本功能的项目 逐步完善各个模块 完成一个相对健壮和完善的项目 添加其他的功能 当你开始一个项目的时候，要时刻提醒自己，你真正的目标是什么？
+我当前最重要的目标是做出一个产品，你呢？
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Collapsar – 论坛、程序员和取舍</title>
+      <link>https://milkythinking.com/blog/2011/01/07/collapsar_forum_programmer_choice/</link>
+      <pubDate>Fri, 07 Jan 2011 01:46:32 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/01/07/collapsar_forum_programmer_choice/</guid>
+      <description>今天是黑色星期五，在此给大家分享一些这我认为的有意思的文章。
+为何说开发者永远不要逛论坛，这里给出了解答，我也很少逛论坛【1】。via Solidot 世界上有三类程序员，人族、虫族和神族。曾经的我想努力成为神族，现在的我感觉还是人族比较不错，我很喜欢的37Signals公司也是人族哦。via Solidot 你我都有很多的欲望，但是受限于每个人的精力，为了取得更好的成绩，你我需要学会取舍。舍得，有舍才有得，@Fenng的创业者的取与舍值得推荐。via DBANotes 赌场并不是靠出千作弊等手段来赢取巨额利润，而是靠着游戏规则中每玩一次偏向于赌场的微小优势积累起来的，详情请看澳门赌场纪实（一）（二），切勿赌博。via 果壳 死记硬背是学习英语的不二法门，别再给自己学不好英语找借口了。via 松鼠会 【1】对于网上社区，我十分喜欢StackOverflow那样进行深入探讨形式，有时我会感到不可思议，通过我写博客等的经验，我了解到想要给出高质量的回答是需要花费很多的时间的，为什么StackOverflow上的用户会那么热心而详尽地回答问题呢？可以看看这个例子。我十分厌恶国内论坛那种充斥着无意义字眼的交流，所以我也不去逛论坛，甚至排斥论坛。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>怕鬼的胆小鬼</title>
+      <link>https://milkythinking.com/blog/2011/01/07/a_coward_with_ghost/</link>
+      <pubDate>Fri, 07 Jan 2011 00:48:03 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/01/07/a_coward_with_ghost/</guid>
+      <description>我是一个怕鬼的胆小鬼，在写下这个标题的时候，我对自己说，自己都是鬼了为什么还要怕鬼呢？
+情景1：晚上去厕所，角落里传来滴答的滴水声，就会想象那里会不会有一个什么样的怪物，也许是蛇形怪物，也许是其他什么恐怖的东东；
+情景2：深夜去厕所，走在走廊里总是怀疑后面是否有人，窗外是否有东西，前面角落里是否也藏匿着什么，等等；
+情景3：骑车走夜路，路上没有行人，听着车轮摩擦地面的声音，总是怀疑后面有人，回头，没人，再回头，还是没人…
+怕鬼的毛病应该是遗留问题，是小时候大人们不想让我在村子里乱跑想出的招数，但是却在我身上留下了深深的印记。
+我知道自己这个毛病，也尝试着去改变，我对自己说，如果真的有鬼，并且自己真的见到了也未尝不是一件奇遇，想象一下漂亮的小倩。
+可是自己却从来都没有见到过啊，只是活在自己臆想的恐怖的情境中，为什么想象那种情景会感到恐怖呢？为什么呢？人为什么会有恐怖的感觉呢？
+前一段时间在果壳看到了一篇文章“鬼在看着你，还是你在念着鬼？”，这篇文章解释了为什么人会看到鬼——丰富的想像力，巧妙的心理暗示，次声波引发的共振最容易让人“感觉”到鬼魂。而我的情况应该是由于前两者而引起的。虽说我也有正向的心理暗示，但它却没有击败我的负面的心理暗示，大部分情景下我还是感到恐怖害怕。
+下面是果壳文章中给出的避鬼指南：
+如果你不想在独自走夜路或者路过墓地、老宅、鬼屋之类的地方看到鬼魂，那么首先你应该想着与之无关的事情，尽量轻松有趣。因为你越是注意那些可能引发心理 暗示的景象，你被心中的鬼惊吓到可能性就越大。下回看跟别人看鬼片逞能时，到了关键环节就在心中哼两句“爱情买卖”。别人都吓得直冒冷汗，你却“扑哧”乐 了。多酷啊！如果真的看到什么“诡异”的事情，尽量给它一个科学的解释。做到了这些，你就可以训练有素地和mm看鬼片走夜路啦~
+如果你也是个怕鬼的胆小鬼，可以借鉴一下啦。相信科学，希望你我都能够尽快改掉这个坏毛病。
+PS：在看果壳文章中的描述的情景时，不自觉的就想象了下，发现自己中毒颇深。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>My 2010 and pre-My 2011</title>
+      <link>https://milkythinking.com/blog/2011/01/06/my_2010_and_pre_my_2011/</link>
+      <pubDate>Thu, 06 Jan 2011 01:04:12 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2011/01/06/my_2010_and_pre_my_2011/</guid>
+      <description>2010－回顾 在2010，我学到的最重要的事物是——“行动”、“专注”、“重构”、“坚持”、“自信”。
+行动 —— 如果你有什么想法，请快速地去施行它，在实践中发现问题，解决问题，这样你才能够走的更远。
+专注 —— 当你选择完成一个想法或项目时，请专注于执行它。这时如果你有了新的想法，请仔细权衡一下，选择一个，延后或放弃另一个。你的精力是有限的，专注能够让你利用有限的精力做出更好的成绩。
+重构 —— 如果你有以前未完成最近打算继续做的项目或者目前在做但遇到了困难的项目，请首先考虑重构而不是从头来过。在现有的项目的基础上进行改进，可以让自己更专注于解决重要的问题，可以节约时间。而如果你选阿则了从头来过可能会遇到同样的困难，那是你怎样选择呢？（此前曾经写过一篇相关主题的文章，改天修改一下发布出来）
+坚持 —— 创意、想法等带来的激动会随着时间的飘逝，逐渐减弱。但是项目此时却还没有完工，同时自己的脑海中又迸发了新的想法和让自己激动的创意，但是请冷静下来，坚持完成自己现有的项目。如果是经过了认真的权衡，你也许会选择变更，但是在这之前请记住——“10个烂尾的项目比不上一个完成的项目”。
+自信 —— “即使在没有底气的时候，也要表现得自信”这句话是在《云攻略》一书中提到的，我认为很有道理。自信能够给人力量。
+=======
+以上是我在2010学习到的事物，接下来我将分别就以上的几点以及其他的方面进行我的2011的一些计划。
+=======
+2011－关于博客 博客又一次很久没有更新，这样要到什么时候才能提升访问量呢？提到访问量，最近在思考如何组织和管理自己的博客，曾经想要不要像有些博客那样作为一个转载和分享的博客呢？但是最终被我给否定了。我的博客的定位是什么呢？Milky Thinking是我表达自己的想法记录自己的生活与成长的地方，所以力争几乎所有的内容都是自己的原创。如果要分享网志，我应该建立另外一个网站（也许真的会建立一个，不过在那之前要思考一下是否真的有必要）。
+那么在2011，我将坚持更新博客，暂计划每周更新两篇，不包括Collapsar和Wormhole这两个分享系列，周三前第一篇，周六前第二篇，不拖延（刚发现现在正好是周三，不知不觉中践行了自己的期许，是个好兆头）。有人说写博客应当如行云流水般，但是目前我做不到，也不知道那是种什么感觉，但是在2011，我将通过坚持，不断的提升自己的写作技巧，希望自己在2012到来时能够做到行云流水。
+2011－关于GTD 原以为到了新年自己应该能够做的更好一些，但是这几天真他mia的不在状态，生活得混混沌沌。这几天没有坚持GTD，只是偶尔简单的瞅瞅自己的GTD Notebook，也没什么行动力。虽然过几天有个考试，但是复习就是不在状态。其实在不在状态不是因为新年不新年的原因，而是自己的心态的原因，欲望太多，积压在身上的事情也越多，多到自己无法很好的处理，因此采用了拖延战术，但是结果却是更加的糟糕。—— 拖延只会将事情拖入更加窘迫的境地。 —— 而我应该果断地迎难而上，解决当前的问题。
+那么在2011，我要好好的学习和运用GTD这一工具来更好的管理自己的生活。重新阅读一遍《Getting Things Done》，更好地理解GTD的本质，坚持每天更新和管理自己的GTD Notebook。其实GTD的关键在于执行，没有执行，一切都是空谈。
+2011－关于行动 “实践而非空想，快速地行动。”——是我从Fenng、Getting Real、Rework以及我自己的思考与总结中学习到的。
+1）我曾经向Fenng询问了一个关于数据库的问题，但是Fenng并没有给出正面的回答，而是建议我自己去实践。我自己的确去尝试了，虽然还没有明确的答案，但是感觉还不错。 2）Getting Real和Rework是37Singals完成的两本书，Getting Real可以在网上免费获取，Rework则需要购买。两本书我都是快速地看了一边，目前还不能够做到用一句话来总结它们，但是如果你想改变，想做些什么，那么这两本书很值得一看。Getting Real中我最喜欢的文章是From Idea to Implementation，讲述了如何从想法到最终实现的过程，即使你现在什么都不会，你也可以行动。 3）在这段做毕设的时间的前期，我想要一个项目进度管理工具，但是没有找到合适的。这时我想到此前在《Joel说软件》中看到的一篇关于进度管理的文章，于是从图书馆借来书重新看了看那篇文章。文章中讲述的方法很简单，就是使用Excel建立一个简单的表格，使用一些条目来组织管理项目任务信息。我Excel用的不熟，于是我想我是否可以利用自己的技能来做一个简单的满足需求的工具呢。于是构思了两天，思考了一下项目大致的组织结构，然后又花了两天的时间验证自己的想法并实现了一个初步的版本，这些想法后来用到了我的毕设项目中。而这个管理工具——Schedule——目前还很难使用，待我完成毕设之后花时间进一步地完善，不久后就能够出来跟大家见面了。
+从以上的事件中我认识到了实践与行动的重要性。如果你有什么想法，请快速地通过实践来验证或者实现它，你需要做的就是“开始去做”，“开火，调整”，在过程中不断的调整方向、速度。
+那么在2011，我将更加积极地去实践，去行动，学习并成长。开始一些自己的想法，一个一个去完成。
+2011－关于身体 2010岁末的一个晚上，我悲催地从剧痛中醒来，之后去医院检查，得了结石。虽然经过几天的治疗，已经好了，但是当时的疼痛去深深的印刻在我的心里，我不想再次体验那种痛苦——脱离了掌控的剧痛。从此事件中我意识到了健康的重要性，即使我现在很年轻，也不能够去肆意挥霍自己的健康。
+2010，虽然我的体重没有飙升，但是一直维持在一个较高的水平，我想瘦一些，让自己更加健康一些。而偏胖的原因来自于自己的不良的饮食习惯，特别是晚上吃夜宵的习惯，即使自己不是很饿。
+那么在2011，我将加强锻炼，同时在生活中注意饮食，晚上少吃或不吃夜宵，每天多喝水（2L）。
+2011－关于自信与自我评价 “即使在没有底气的时候，也要表现得自信”，从第一眼看到它，我就深深地喜欢上了这句话。因为一些原因，我自己不够自信，这种感觉很不好，我也尝试这做一些改变，相比以前我明显得感受到了自己的进步，但是我要做的更好。
+我不够自信的原因是什么呢？应该有以下几个方面：
+1）我有一个坏习惯——放大他人的成绩，缩小自己的努力。即使是做同样的工作，如果是别人做完之后，就会觉得他/她很牛；而如果我自己也解决了这个问题，自我感觉就很so-so，也没做什么吗——也许自己曾经很努力的去做，但是当问题解决之后，那一瞬间可能和兴奋，但此后就想不起来以前的努力，感觉好像本来就那么样吗，很少能够从中获得什么荣誉感之类的。而且总是认为如果自己努力的话，可以做的更好，而自己却没有做——这可不是个好习惯，它致使我缺乏成就感，不自信等。 2）信息不准确，造成的自身定位的偏差。由于不了解准确的信息，我不知道自己如今的技能水平是一个什么地步，感觉有很多的东西不会，感觉他人很牛X，自己很衰。但是通过做毕设的过程中，我在一定程度上了解了一些信息，在认识到了自己的某些不足之处的同时感觉自己在某些方面做的还是不错的，不是那么衰吗。 3）兴趣过于宽泛，而技能不够精通。我的兴趣较为宽泛，是因为欲望较多，但是由于人的精力有限，就造成了没有特别精通的技能，怎样才算精通，我不知道，就中2）中表达的一样，我没有准确的标准，就是感觉精通应该是很牛很牛吧。 4）没有让自己感到骄傲的作品。因为自己的此前的一些恶习，致使自己目前还没有完成一件让自己满意并感到骄傲的作品，这在很大程度上影响了我的自信。也许你会说把自己的自信建立在外物上是不对的，但是对于目前的我来说，还是需要的。 5）历史遗留问题。我的家庭并不是很富裕，只能算是一般吧，但是我自己的虚荣心却在作祟。好在经历了大学生涯，在这方面学习到了很多，相比以前已经放的很开了。 既然知道了自己的原因，并愿意去做出改变。
+那么在2011，我将通过完成一些让自己满意作品，通过博客来记录点点滴滴，来充实自己的成就感；在2011，我将学会控制自己的欲望，专注于提升自己的技能水平，同时主动去了解相关的信息，给自己一个准确的定位；在2011，我将阅读《少有人走的路》来提升自己的心智。
+2011－关于专注与执行力 “专注＝执行力＝效率”，这句话是我自己的感悟。我喜欢那种专注感觉，那种状态下，我的身体会发热，我的思路很清晰，我的状态一级棒，我的效率超高。
+但是目前我却很少进入到那种状态了。我被很多的事物分散了精力，人人上是否有同学的状态更新？新浪/Twitter上是否有有意思的微博？Google Reader中是否有未读的条目？Gmail中是否有别人给我的邮件？… 所有这些是我每天都会遇到的，我也每天都会检查好多次更新。这种状态却让我感觉很不好，而且目前也没有了太大的兴趣，比如人人更新，新浪微博/Twitter现在只是快速的扫一下，很少有感兴趣的信息出现了。但是自己却在每天重复很多次去查看。在这个过程中不知不觉中消耗了很多的时间，同时工作的效率也被拖下来了。
+既然我讨厌现在的状态，我喜欢那种专注的感觉，我喜欢那种身体发热的快感，那么还等什么呢！
+那么在2011，我将学会专注，之后执行力和效率自然而然就会有了，专注就是力量。
+具体怎样做呢？</description>
+    </item>
+    <item>
+      <title>碎碎念 – 身体，虚荣心&amp;摆摆书架</title>
+      <link>https://milkythinking.com/blog/2010/12/28/thinking_body_vanity_bookforus/</link>
+      <pubDate>Tue, 28 Dec 2010 21:32:38 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/28/thinking_body_vanity_bookforus/</guid>
+      <description>今天上午去医院检查了一下，医生说我的结石已经不见了，有些不相信（因为左下腹还是稍微有些不适，可能是心理作用），但是既然医生都这么说了，就认可一下他的医德吧。当然，如果真的好了，还是很欣慰的。那样我就可以继续投入到开发的乐趣中了。
+下午来到实验室，查看下邮件，登了登校内，发现自己在校内建立的小组“Getting Things Done的日子”竟然有了不少人加入，而且还有一哥们写了篇较长的文章，感觉很欣慰，同时希望有更多的人能够接受并在生活中使用GTD。今天又重新回到了使用纸笔进行GTD的状态，发现这样更有感觉，此前使用了几天的Doit.im，可能同时是因为前几天的病情，生活很混乱，好在找回了点感觉。
+接着和一初中同学聊了会天，可能是我的虚荣心在作祟吧，哈哈，花了两个小时给他做了一个随机数生成器，据说是在买福利彩票时使用的。除了丑陋的界面外，其他的自我感觉还可以，在这个过程中发现，习惯了使用数据库存储/获取数据，如果数据不存储的话，一下子还不是很习惯。
+====
+刚刚看到了天涯海阁对摆摆书架创始人刘白光的访谈，此前在其他地方也了解了一些摆摆书架的信息，如摆摆书架的建立源于创始人的自己生活中的想法的延伸，这与我目前的对待项目的想法相似，于是就萌生了了解一下该作者的想法，并真的去了解了一下。在这个过程中产生了一系列的想法，具体的碎碎念一会在说，还是先谈谈摆摆书架。
+摆摆书架主页的描述：
+摆摆书架是一个社会化图书馆。 摆摆书架的所有藏书均来自会员捐赠、寄存在会员处，并且所有会员都可以随时借阅。 您可以分享自己看过的闲书，并且可以免费借阅他人分享书籍。
+创始人刘白光的说法：
+摆摆书架有个挺唬人的概念——社会化图书馆，即所有藏书均来自会员捐赠,寄存在会员处，并且所有会员可以随时借阅。其实简单的说，这就是一个帮助大家分享闲置书籍的网站，主要面向的是热爱读书且具有分享精神的大学生和白领。
+摆摆书架的功能：
+用户注册之后，有一本借阅书籍的限额，你可以从目前摆摆书架上面挑选自己喜欢的书借阅，书的拥有者将免费将书寄送给你，阅读完毕，你可以将书的状态标记为以读，别人就可以从你这边借阅此书，你需要付费将书寄送给向你借阅的人； 用户注册之后只有一本书借阅的限额，当你将借阅的书寄出一本的时候你将会得到一本的借阅的限额，你可以通过捐赠自己的闲书来获取； 借阅图书的时候用户不需要支付费用，当别人向你借阅你拥有的书籍的时候你需要支付寄书的费用，寄出的书越多，你获取的借书的限额也越多，用户平等的分享和获取书籍。 其实作为一个爱书的人，我还是很喜欢摆摆书架的理念的，我曾经不止一次说过——没钱，但就不差买书的钱——也确实买了不少的书，虽然其中有一些买回来并没怎么看过，有些因为自己的选择而无用，比如《Spring in Action》，因为自己转向PHP方向，就无用了，于是就送给了大海。目前唯一纠结的来自于对邮寄、快递价格的不了解，我还没邮寄过快递呢？不过应该不会成为问题。也许你也喜欢摆摆书架，那么赶快去申请邀请码吧！
+====
+接下来到了吐糟碎碎念的时刻了。
+首先，我很喜欢摆摆书架的理念，以及其创建的由来，正如前面提到的，这也是我想了解一下创始人的原因。
+在天涯海阁上看到刘白光创立过“网生代”，打开网站，发现是一个推荐网络应用和实用软件的地方，我此前的爱好也是捣鼓各种有趣的软件，网站成立于2007年7月——我刚经历玩高考的岁月，但最新的一片文章表示该博客已经停止更新了——因为他们已经无法从中感受到乐趣了，很洒脱。此时我以为刘白光应当是一个前辈吧，那么早就接触到互联网，并建立博客，而且应该还算成功吧。
+那片文章中的还给出了刘白光的个人的博客的链接地址，于是又链接了过去。最新的文章是“My 2010”，此时才发现，这哥们原来和我一样也是07级的大学生。当时的感觉是羡慕嫉妒恨呐，这哥们和我一届，但是却比我做的更好更成功，内心有那么点酸酸的。发现，摆摆书架是他一月的时候的一个想法，并在此后的日子里逐渐走向了现实，想想我的那一个个烂尾的项目，内心很纠结。
+还好最近的我有些改观，观念上和行动上，同时我也在尝试这一些新鲜的事物，比如终于建立了自己的博客，等着我带来的惊喜吧！
+PS：那天也许整一个hutushen222的烂尾的和胎死腹中的项目的清单！
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>QQ云词典初体验</title>
+      <link>https://milkythinking.com/blog/2010/12/25/qq_cloud_dict/</link>
+      <pubDate>Sat, 25 Dec 2010 20:44:50 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/25/qq_cloud_dict/</guid>
+      <description>今天在网上看到“QQ云词典”的消息，话说它是腾讯在近期推出的一款基于云计算技术的查词翻译工具，简洁高效，而且支持 Firefox、Opera、Chrome、Safari 等主流浏览器。虽说我不是腾讯的fans，但是新鲜的东西还是值得尝试一下的（我out了，见PS）。
+进入QQ Labs下的QQ词典页面，发现使用很简单，将“QQ云词典链接”添加到你的浏览器的书签栏（右键另存为书签，或者直接拖到书签栏），然后随便打开一个页面，此时点击书签栏中的“启动QQ云词典”书签即可，此时你的页面中会显示一个输入框，在其中输入单词便可以查询了，具体效果见下图：
+当然“QQ云词典”也支持划词翻译，效果如下：
+总体感觉还行，但是有些词汇的翻译结果让人不敢恭维，不过还好啦，希望其不断的改进，并越做越好。
+PS：舍友说肯定会有人说腾讯抄袭，去网上搜了下，果然已经有类似的东西存在了，如“小D划词”，但文字写了，图片也截了，就不说什么了。
+PS2：还有“QQ云输入法”是否也是拷贝“搜狗云输入法”呢？
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>如果自己都不爱惜自己的身体，还有谁会爱惜呢？</title>
+      <link>https://milkythinking.com/blog/2010/12/24/love_your_body/</link>
+      <pubDate>Fri, 24 Dec 2010 23:55:38 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/24/love_your_body/</guid>
+      <description>今天凌晨四点，我被痛醒了——左下腹剧烈的疼痛，痛到浑身颤抖。
+前天晚上就开始有不适感，老想上厕所，但是感觉不是很强烈，以为是尿频，在网上查了下，说尿频可能是由于不良的作息习惯、缺乏锻炼引起的。想想也是，此前的几天我有好几次是凌晨四点多才睡觉（一直以为自己很年轻，还可以挥霍一下），而且最近一段时间也没有什么锻炼，好像最近的一次打球也是两周前的事情了。同时由于最近看了一些文章，感觉自己熬夜没什么意义，也没有效率，我完全可以让自己白天做的更好。于是昨晚决定早睡，并打算此后增加些运动，要爱惜身体，就像我昨天博文中说的一样。我大概12点就躺在床上了，一会就睡着了，然后就是开头的情形。
+打开电脑，查了查左下腹剧烈疼痛的缘由是什么，但是什么也没有查到，本打算天亮再去医院，但是疼痛更加剧烈了，只好叫醒舍友（他2点睡下的，很过意不去），然后赶往医院。急诊挂号，尿检，接着医生给开了止痛药、点滴，然后就是注射和打点滴（已经很就没有打针了，而且记事起好像还没打过点滴）和等待了。而止痛药好像没有效果，整个点滴的过程伴随着左下腹的剧烈疼痛，坐着不是，站着不是，躺着不是，就是没有一个体位可以让自己的疼痛缓解一下，此时我终于体会到了所谓病痛——此前我一直无法理解的疼痛——在那里直想骂娘，期间去厕所吐了两次，医生说正常现象，难道打点滴还会有反应？
+我要等到8点中，去泌尿科检测。等待的过程总是很煎熬的，还好和舍友聊天在一定程度上分散了注意力。而在疼痛的过程中，由于对自己病情的不了解，我也体验到了那种瞎想的“快感”，所幸我知道自己在瞎想。不是特别的恐惧。
+打完点滴已经接近8点了，就去楼上等待，一会看了医生，医生认为可能是结石，要我去做B超，但是要先憋尿，为此我强行喝了几杯水。刚开始还好，可能是止痛药有效果了，不是特别疼痛，但是过了一段时间后，那种痛感又来了。… 最终确诊为结石——5×3mm——不知道是不是很大，并阻塞了左侧的输尿管，而这一切就是这几天自己身体出现异常和剧烈疼痛的原因。知道结果后，感觉就好多了，至少不那么紧张了。之后去检测可不可以震碎，结果不是很清晰，要过两天再去看看。医生给开了些药，和一些建议，就回了。
+晚上又去医院打了针，现在感觉一切良好，没有剧痛。
+====
+通过这件事我意识到了健康的重要性，不能仗着年轻就挥霍自己的身体，年轻人要注意并学会养生。
+此前我的作息及其不规律，随性的生活，吃饭也不规律，运动也不规律，没有一个好的习惯，而且由于每天大部分时间都是坐着，我又不喜欢喝水，这些都是我发病的诱因。经历此件事后，我要重新考虑自己的生活。
+那种痛感，我不想再体验了，完全脱离了我的控制，无助，我需要一个健康的身体。
+如果自己都不爱惜自己的身体，还有谁会爱惜呢？
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>爱惜身体，注意健康</title>
+      <link>https://milkythinking.com/blog/2010/12/23/love_body_focus_health/</link>
+      <pubDate>Thu, 23 Dec 2010 22:46:52 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/23/love_body_focus_health/</guid>
+      <description>这几天我的身体突然遇到这样那样的问题，可能是由于这几天熬夜，加速了我此前不爱惜身体积攒的“负债”的爆发。
+此前一直以为自己的身体很强壮，经得起自己的放纵。但现在有些后悔自己此前的放纵，饮食方面的放纵，作息方面的放纵，如果有机会重来的话，我想我不会那样做了。
+不过，既然已经遇到了问题，那么就在接下来的时间里要学会爱惜自己的身体，注意自己的健康，养成良好的作息习惯，饮食习惯，还有就是要注意锻炼。
+饮食方面，主要是因为自己的嘴馋，当然只要我注意一下还是可以做到不去吃的。
+作息方面，晚睡，偶尔是因为重要的事情，如突然写代码很有感觉，但是大部分时间是想看电影或者浏览网页，而这些真的需要自己去熬夜去做吗？如果不熬夜的话，合理的安排一下时间，我想我也能够做的很好，所以说以后不要熬夜了。
+今天就给自己制定个作息计划，并严格的去执行它，为了健康！
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Collapsar – 创可贴MP3、睡眠、梦想、GTD &amp; nano手表</title>
+      <link>https://milkythinking.com/blog/2010/12/22/collapsar_skinny_sleeping_doit_artist/</link>
+      <pubDate>Wed, 22 Dec 2010 22:52:14 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/22/collapsar_skinny_sleeping_doit_artist/</guid>
+      <description>今天是星期三，在此给大家分享一些这一周我看到的有关生活、炫科技等方面的新鲜事物以及我试用的一些网络应用。
+【生活】你到底需要睡多久呢？为了你的健康，请关注一下睡眠的时间和质量吧。我大约需要8h的睡眠时间，睡足后的感觉真的很不错哦。via 果壳 【应用】如果你在担心睡的太多会影响自己做事，那么你应该尝试一下GTD——一个无压力高效的时间管理系统，推荐一个我最近在尝试使用的GTD工具Doit.im，也许你会喜欢上它。 【Geek】既然是时间管理，那么肯定需要个钟表，就让我们来看看Geek怎么玩——仪表盘时钟，多米诺骨牌时钟以及超酷iPod nano手表 via 爱折腾 &amp;amp; 爱范儿 【创意】用体温驱动的创可贴MP3——Skinny Player，你是否也期待拥有一个，那么就去鼓励一下作者。via 果壳 &amp;amp; Discovery 【应用】担心自己的笔记本或手机被盗吗？别怕，让Prey来帮助你快速定位及跟踪被盗的笔记本或手机。via Wow! Ubuntu 【网站】你有艺术家的梦想吗？那么Etsy满足实现它吧。你可以在Etsy上面开店，销售自己的手工艺品。 【网站】如果你有好的想法，但是手头缺少资金，也许你可以尝试到**Kickstarter**上进行资金募集并实现它，那么行动吧。 也许不久后你就可以购买iPod nano手表了，赶快攒钱吧！观看nano watch的制作视频。
+PS：Wormhole与Collapsar一样是一个分享链接的系列。那么为什么要搞两个系列呢？因为我每周接触到很多的文章和新鲜事物，从上周五到现在又积攒了很多链接，如果全都放在一片文章中显得过多而且主题不是很明确，因此决定添加一个新的系列Wormhole，并在Wormhole中分享生活、炫科技和新应用，而Collapsar则用以分享我认为有想法的文章和评论。 PS2：另一个原因：Wormhole可以让我每周三都有事情做而不用去想些什么的问题啦。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>关于我的博客的一些想法</title>
+      <link>https://milkythinking.com/blog/2010/12/22/thinking_on_my_blog/</link>
+      <pubDate>Wed, 22 Dec 2010 20:53:35 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/22/thinking_on_my_blog/</guid>
+      <description>话说我已经好几天没有写博客了，虽说我此前的计划是每天写一篇短文，每周写一篇较长的文章，但是我发现写一篇让自己满意的文章很难，需要花费不少的时间。就像前一篇文章——关于拖延，我写了很久，晚上大约10点多在实验室里开始写，11点多回宿舍，之后坐在床上又写了2个多小时，此间来回修改了好多次，但是最终的结果却还是不让自己满意——我不知道怎样的结果才会让自己满意，但我知道当时写出来的东西我不满意。
+这两天，我在思考放弃还是坚持此前的计划，但是放弃的话我又有些不甘，毕竟这是我曾经想了很久的事情。今天下午看到了这条评论，也是我的博客的第一条评论，它坚定了我写下去的信念。
+Most what i read online is trash and copy paste but i think you offer something different. Keep it like this.
+我不知道他（Rosaria Walde）是谁，他填写了网站链接但是我却打不开，但他的评论确给了我极大的勇气，就在这里感谢他一下啦:-)。(更新：确认这条评论为spam，悲催啊)
+那么接下来我还是努力的做到自己以前的计划吧，每天写一些就好，也许有些时候没有做到，但是坚持下去就好。相信我的写作技能也会在坚持中不断的成长，并形成自己的风格。
+还有，写博客的时候，想象有很多人会看到它，我会感到很开心。那么开心就好，让自己开心的事情自己有什么理由不去做呢？
+也许有时候坚持就是最好的行动！
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>关于拖延</title>
+      <link>https://milkythinking.com/blog/2010/12/19/%E5%85%B3%E4%BA%8E%E6%8B%96%E5%BB%B6/</link>
+      <pubDate>Sun, 19 Dec 2010 03:50:56 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/19/%E5%85%B3%E4%BA%8E%E6%8B%96%E5%BB%B6/</guid>
+      <description>经验说：事情越欠越多，都是因为拖延症 实验说：拖延症是因为你总是无法战胜眼前的欲望
+拖延是我的一个老毛病，我可以随意地列举出一堆的例证：
+因为拖延，我的博客的搭建时间晚了将近一个月； 因为拖延，我的实现项目功能的计划拖到晚上才完成； 因为拖延，我的ReadItLater中有几千条链接等待自己规整； 因为拖延，我的硬盘中留存着几百本电子书等待自己分类； 因为拖延，我的书桌下堆积着厚厚的一沓零散的笔记等待自己誊抄； …… 因为拖延，我的生活几乎失控。 为什么会拖延 从人类进化的角度看：进化的过程中人们形成了为了眼前的利益而放弃更长远利益的倾向——我们的祖先猴子才不会思考未来呢，眼前的香蕉才是最重要的——人们总是无法战胜眼前的欲望。
+当人们面临选择的时候，总时会选择满足自己当前的欲望。这种行为倾向被称作“即时倾向”——现在爽了就好，谁知道未来会怎么样呢？
+拖延的后果 “即时倾向”深深扎根于我们的大脑，我们的宏伟计划往往毁于那一时又一时的欲望满足。
+“当你现在面临是去自习还是去K歌，是吃水果还是吃肉，写作业还是打游戏的选择时，“现在的你”可能会屈服于眼前的欲望，而把更好的选择留给以后。那么 “未 来的你”呢？他面对这个“更好的选择”和当时的新选择时会怎样做？选择“现在的你”留下来的那个吗？别傻了，他仍然会和现在做出同样的选择，继续把“更好 的选择”留到以后。于是，“该做的事”就一直被拖延了下去，“不该做的事”却总是迅速就搞定了。
+如何改掉拖延的毛病 每个人都有得拖延症的基因，最好的面对方式就是正面自己喜欢拖沓的弱点，然后通过种种手段来让自己没有拖沓的余地，从而逼迫自己做正确的事情。——《怪诞行为学》
+既然我们知道拖延是以为此前我们无法战胜眼前的欲望，那么我们就可以从这个方面着手进行改变，果断的采取行动，也许你可以参考一下我的经验。
+我的经验 虽然我拖延的毛病一直没有完全改掉，但是相比以前，已经改进了不少，下面是我在改正的过程中使用的方法与思考的想法：
+1. 兴趣 做自己感兴趣的事情。 曾经我沉迷于网络小说，不是因为喜欢，而是因为无聊空虚，于是想从看小说中获得充实感。但实际情况是，只有沉浸在小说的情节中时，我才不会感到空虚，而一旦闲下来我又会感到十分的痛苦。后来我找到了自己感兴趣的事情——编程——然后投入了很多的精力实践，在这个过程中获得充实感和荣誉感。
+2. 心理暗示 合理的心理暗示能够帮助你更快的改掉坏习惯。 完全不看网络小说有几个月了。我戒除“小说癖”经历了一个渐进的过程，中间也有过反复，所幸最终我成功了。这期间我发现心理暗示是一个很好的克服坏习惯的好方法。我对自己暗示有：我能够做到不看网络小说，网络小说内容很空洞，我应该做更有意义的事情……
+3. GTD – 时间管理 GTD是一个很不错的时间管理工具，通过清空自己的大脑，将所有的需要采取行动事情整理到一个系统中，通过此系统帮助自己跟进管理自己的事情。你不会错过任何重要的事情，同时通过GTD将每一件事情分解为一个个可以执行的子任务，每一个子任务可以很快的完成，这中方法能够帮助你更接近目标和实现目标。
+4. MIT – Most Important Things 也许仅仅有一个GTD清单还不够，此时你可以给自己整理一个MIT清单，该清单的任务不多（3条左右），但清单上的任务都是你当天一定要完成的最重要的任务，强迫自己花费时间去把它们完成。
+5. 专注就是力量 为了更好的更高效完成任务，你需要专注，专注就是力量。 当你全身心的投入到完成你当前的任务中去，你将能够更快更好的完成它。
+“明天”是永远不会来的那一天，活在当下！
+参考链接： 关键时刻，偏不 gelivable —— 别给自己找借口 我知道你为什么拖延 —— 你当前的欲望 理性战胜拖延症 —— 你可以战胜拖延 PS1：其实现在写这篇文章就是一个拖延的结果，否则几天前就应当完成了。 PS2：这篇文章写的好辛苦，参考的文章写的太好了，但我不能够抄袭，我要把自己的想法表到出来。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>Collapsar – 数码吉他，37Signals，&amp; 职场修炼</title>
+      <link>https://milkythinking.com/blog/2010/12/17/collapsar_%E6%95%B0%E7%A0%81%E5%90%89%E4%BB%96_37signals_%E8%81%8C%E5%9C%BA%E4%BF%AE%E7%82%BC/</link>
+      <pubDate>Fri, 17 Dec 2010 11:15:44 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/17/collapsar_%E6%95%B0%E7%A0%81%E5%90%89%E4%BB%96_37signals_%E8%81%8C%E5%9C%BA%E4%BF%AE%E7%82%BC/</guid>
+      <description>今天是黑色星期五，在此给大家分享一些这一周我看到的有意思的文章，新鲜的事物。
+让人羡慕嫉妒恨的37Signals办公室场景展示 给力的iPhone App-本地实时翻译-外语导游们表示鸭梨很大 via 36氪 陪同学刚买了个电钢琴，然后就在网上看到了更拉风的数码无弦电吉他-Kitara。演示视频 发挥你的创造力，掏出你的钱包，来挖掘它的潜能吧！官网 via 果壳&amp;amp;engadget 你是否曾经有过让自己激动的绝世好想法，你是否也认为我就差一个编程的就可以改变世界。也许你应当尝试一下37Signals的方法 via 外刊IT评论 最后要特别推荐一下西工大的一枚校友余波童鞋，我在twitter上follow了他，非常喜欢他的推讯，最近发现余波童鞋的博客也很给力，如职场修炼，从校园开始。
+PS: Collapsar的想法源于Think Vitamin的一个类似的主题系列。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>joliprint – 将任意网页转换成PDF文件</title>
+      <link>https://milkythinking.com/blog/2010/12/16/joliprint-%E5%B0%86%E4%BB%BB%E6%84%8F%E7%BD%91%E9%A1%B5%E8%BD%AC%E6%8D%A2%E6%88%90pdf%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 16 Dec 2010 23:08:59 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/16/joliprint-%E5%B0%86%E4%BB%BB%E6%84%8F%E7%BD%91%E9%A1%B5%E8%BD%AC%E6%8D%A2%E6%88%90pdf%E6%96%87%E4%BB%B6/</guid>
+      <description>简介 joliprint是一个将任意网页打印成PDF文件的网络服务，其打印出来的PDF文档使用双栏显示，同时会保持原始文章的格式、链接和图片，可读性很强。
+使用方法 1. 网页 1.1 进入joliprint网站； 1.2 在输入框输入对应网址，然后点击**Joliprint it!**按钮； 1.3 一会儿，一个保存文件的弹窗将会出现，选择文件保存路径，确定即可。 2. 小书签(bookmarklet) 2.1 进入joliprint网站 2.2 将joliprint小书签保存到收藏夹中 2.3 在浏览器中打开你想要保存的页面，点击收藏夹中的joliprint小书签 2.4 同样，一个保存文件的弹窗出现，选择文件保存路径，确定即可 用途 保存一些喜欢的网页。 可以用来浏览一些访问不到的网页，将被屏蔽的网址输入到joliprint中，下载PDF文件即可。 joliprint小书签和Google Reader结合使用。 joliprint可以以插件的形式安装到wordpress等博客系统中。 也许你还能够发现更好的用途。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>创建CSS粘性页脚</title>
+      <link>https://milkythinking.com/blog/2010/12/15/%E5%88%9B%E5%BB%BAcss%E7%B2%98%E6%80%A7%E9%A1%B5%E8%84%9A/</link>
+      <pubDate>Wed, 15 Dec 2010 21:09:15 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/15/%E5%88%9B%E5%BB%BAcss%E7%B2%98%E6%80%A7%E9%A1%B5%E8%84%9A/</guid>
+      <description>问题：
+使用CSS/HTML实现的页面的页脚不能够一直停留在页面底部，当页面内容较少时，页脚就会显示在屏幕的中部，而我希望当页面内容较少的时候，页脚能够一直停留在页面底部，同时当页面内容较多时，页脚正常状态显示。
+解决方案：
+CSS粘性页脚(CSS Sticky Footer)。
+以下是我从网上找到的几个解决方案，感觉可能大同小异，但目前我对CSS也是一知半解，就都列出来吧。
+Making Your Footer Stay Put With CSS Make the Footer Stick to the Bottom of a Page CSS Making Your Footer Stay at the Bottom How to keep footers at the bottom of the page 其中第二个不需要使用额外的文件就能够兼容IE6，我想其使用的方法应该可以应用到其他的解决方案中(未验证)。相对来说，我更喜欢第四个解决方案。
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>我对创业的一些看法</title>
+      <link>https://milkythinking.com/blog/2010/12/15/my_opinion_of_startup/</link>
+      <pubDate>Wed, 15 Dec 2010 17:02:22 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/15/my_opinion_of_startup/</guid>
+      <description>昨天收到“创新工厂”的邮件——关于创新工厂2011年的实习生招聘——请求推荐一些学弟学妹(我此前曾参加“创新工厂”的笔试，但是很遗憾没有通过。)
+晚上，在实验室回宿舍的路上，我和灌楚他们稍微交流了下对于创业的想法，其中灌楚认为国内不适合创业，环境不好，而且几个巨头已经将市场占据了。虽然现状好像确实如此，而且国内抄袭现象很严重，但是我还是认为其中充满着机会。
+虽然我即将走向工作岗位，但是脑海中还是有些不安分的因子在跳动。我也一直关注着创业以及创业公司相关的信息，但是目前我还缺乏立即投入到创业的过程中的勇气。我认为创业是一件让人激动的事情，但是首先我需要历炼一下，最终我选择了一家创立时间已经很久的创业型公司——“丁香园”。虽然有人说，工作经验和创业经验完全是两码事，但是我还是坚持自己选择的路线。
+PS：创立时间很久的创业型公司让人很纠结，但明城曾说过：“创业是一种态度”，就这么理解吧，哈哈
+Gonna Sailing 😉 ==END==</description>
+    </item>
+    <item>
+      <title>开火，调整</title>
+      <link>https://milkythinking.com/blog/2010/12/14/fire_motion/</link>
+      <pubDate>Tue, 14 Dec 2010 17:02:00 +0800</pubDate>
+      <guid>https://milkythinking.com/blog/2010/12/14/fire_motion/</guid>
+      <description>“为什么这么简单的事情要搞得这么复杂？…”
+昨晚被Fenng说了一通，是的，为什么要那么复杂呢？ … 略去自己的借口 …
+确实没有必要搞的那么复杂，项目是一步一步做出来的，在这个过程中要根据项目的目标和当前的资源做好权衡。
+不要去做一些无用的思考，并用这些思考的结果来麻痹自己。
+其实你要做的就是明确自己的目标，然后快速的行动，在行动中发现问题，解决问题，最终实现自己的目标。
+快速行动，否则你可能就不会采取行动了。
+开火，调整！
+PS：终于重新建立了自己的博客，此前仅仅是因为自己的假想一直拖着。昨晚在看完Fenng的邮件后，决定尝试一下，发现原来就是这么简单，我又一次因为自己的假想的困难而拖延。而同时我又一次体验到了快速行动带来的那种让人激动的快感…
+Gonna Sailing 😉 ==END==</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Weekly Digest #2 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="Weekly Digest是一个文摘系列，分享一些我最近阅读的文章以及我的观点，每周五发布。
+你的问题不是缺少动力 -by- 褪墨[1] 当我们被想要实现某个目标却一直没有做好这件事困扰的时候，我们“面对的问题并不是没有动力，而是如何坚持”。
+我认为没能够做到坚持有两点原因：
+外界干扰信息太多，导致我们注意力过于分散； 由于个人的惰性，导致执行力不足 我建议你可以尝试一下以下的方法：
+给自己制定两个清单——TODO清单 &amp; NOT TODO清单（让自己专注于真正重要的事情上）； 每天早晨回顾一下前面两个清单，然后制定今天的3MITs清单（找出今天最重要的3件事，然后竭尽全力完成它们）； 营造有利于自己实现目标的环境（调整房间的布局等让自己感觉良好一些） 以上几条是我最近在实践的方法：我两周前购买了新的桌椅，调整了房间的布局，让自己的工作一角更加舒适；我每周进行回顾和计划，并决定下周要做什么和不做什么；最后每天制定3MITs清单，并尽可能去完成它们。虽然我还是不能够做到完全按照计划行事，但是对比之前一段时间来说，已经有了很大的进步，接下来我要做的就是坚持下去更加自然地去做这些事情的说。
+[1]：褪墨是时间管理方面的很不错的的博客。
+DNSPod.com DNSPod是国内最大的第三方免费DNS解析服务商，提供了一堆不错的功能，国内很多知名站点都在使用它的服务（详见百度百科）。
+我之前一直使用的是Godaddy的解析服务（购买域名时的默认解析服务），由于前一段时间有Godaddy的解析被屏蔽的说法，加上今天使用同事的手机首次访问我的站点时，出现无法找到域名的提示，让我决定使用DNSPod的服务。
+DNSPod提供了两个版本：国际版（.com）和中文版（.cn），按照我的一贯作风，我选择了国际版，虽然面对国内的用户可能中文版更好一些，但对我来说影响不大。不过切换的过程中出现了一个小问题，由于添加域名的时候我将博客域名错输为一个我以前想要注册的域名，导致博客域名一直无法解析，原以为是延时生效的缘故，洗完澡后才发现问题所在，改正后即时生效了。
+另外，DNSPod去年被腾讯收购了。最近DNSPod开源了其DNS服务器的源码（BSD协议）。
+最后，推荐两个工具：Just-Ping 和 Ping.eu。
+虎嗅网 虎嗅是一个有视角的商业资讯与交流平台。霍炬在V2EX上推荐了它并给了很高的评价。我个人感觉有些文章确实不错，目前将其放入收藏夹闲暇时浏览一下。不过对于其不提供全文RSS这一点感觉很不错，即使有FullTextRSSFeed这类服务可以将其转换为全文。
+Bootstrapping ── 不求人的創業模式 -by- Mr Jamie 作为一名程序猿，业余时间不充分利用起来，绝对是绝大的浪费，浪费是可耻的行为。业余时间可以用来读书、学习新的技能、创业，总之就是不能够白白浪费掉。
+对于创业，目前IT创业成本很低，有很多优秀的免费的服务可以使用来帮助自己构建新的产品，“会写程序的人不自己折腾点啥，真愧对这个时代。”虽然很多人说创业一定要全职投入，否则很容易失败，如果你被这样的观点困扰了，推荐看看《重来》（《Rework》）。">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2012/06/01/weekly-digest-2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Weekly Digest #2" />
+<meta property="og:description" content="Weekly Digest是一个文摘系列，分享一些我最近阅读的文章以及我的观点，每周五发布。
+你的问题不是缺少动力 -by- 褪墨[1] 当我们被想要实现某个目标却一直没有做好这件事困扰的时候，我们“面对的问题并不是没有动力，而是如何坚持”。
+我认为没能够做到坚持有两点原因：
+外界干扰信息太多，导致我们注意力过于分散； 由于个人的惰性，导致执行力不足 我建议你可以尝试一下以下的方法：
+给自己制定两个清单——TODO清单 &amp; NOT TODO清单（让自己专注于真正重要的事情上）； 每天早晨回顾一下前面两个清单，然后制定今天的3MITs清单（找出今天最重要的3件事，然后竭尽全力完成它们）； 营造有利于自己实现目标的环境（调整房间的布局等让自己感觉良好一些） 以上几条是我最近在实践的方法：我两周前购买了新的桌椅，调整了房间的布局，让自己的工作一角更加舒适；我每周进行回顾和计划，并决定下周要做什么和不做什么；最后每天制定3MITs清单，并尽可能去完成它们。虽然我还是不能够做到完全按照计划行事，但是对比之前一段时间来说，已经有了很大的进步，接下来我要做的就是坚持下去更加自然地去做这些事情的说。
+[1]：褪墨是时间管理方面的很不错的的博客。
+DNSPod.com DNSPod是国内最大的第三方免费DNS解析服务商，提供了一堆不错的功能，国内很多知名站点都在使用它的服务（详见百度百科）。
+我之前一直使用的是Godaddy的解析服务（购买域名时的默认解析服务），由于前一段时间有Godaddy的解析被屏蔽的说法，加上今天使用同事的手机首次访问我的站点时，出现无法找到域名的提示，让我决定使用DNSPod的服务。
+DNSPod提供了两个版本：国际版（.com）和中文版（.cn），按照我的一贯作风，我选择了国际版，虽然面对国内的用户可能中文版更好一些，但对我来说影响不大。不过切换的过程中出现了一个小问题，由于添加域名的时候我将博客域名错输为一个我以前想要注册的域名，导致博客域名一直无法解析，原以为是延时生效的缘故，洗完澡后才发现问题所在，改正后即时生效了。
+另外，DNSPod去年被腾讯收购了。最近DNSPod开源了其DNS服务器的源码（BSD协议）。
+最后，推荐两个工具：Just-Ping 和 Ping.eu。
+虎嗅网 虎嗅是一个有视角的商业资讯与交流平台。霍炬在V2EX上推荐了它并给了很高的评价。我个人感觉有些文章确实不错，目前将其放入收藏夹闲暇时浏览一下。不过对于其不提供全文RSS这一点感觉很不错，即使有FullTextRSSFeed这类服务可以将其转换为全文。
+Bootstrapping ── 不求人的創業模式 -by- Mr Jamie 作为一名程序猿，业余时间不充分利用起来，绝对是绝大的浪费，浪费是可耻的行为。业余时间可以用来读书、学习新的技能、创业，总之就是不能够白白浪费掉。
+对于创业，目前IT创业成本很低，有很多优秀的免费的服务可以使用来帮助自己构建新的产品，“会写程序的人不自己折腾点啥，真愧对这个时代。”虽然很多人说创业一定要全职投入，否则很容易失败，如果你被这样的观点困扰了，推荐看看《重来》（《Rework》）。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2012/06/01/weekly-digest-2/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2012-06-01T23:59:42+08:00" />
+<meta property="article:modified_time" content="2012-06-01T23:59:42+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Weekly Digest #2"/>
+<meta name="twitter:description" content="Weekly Digest是一个文摘系列，分享一些我最近阅读的文章以及我的观点，每周五发布。
+你的问题不是缺少动力 -by- 褪墨[1] 当我们被想要实现某个目标却一直没有做好这件事困扰的时候，我们“面对的问题并不是没有动力，而是如何坚持”。
+我认为没能够做到坚持有两点原因：
+外界干扰信息太多，导致我们注意力过于分散； 由于个人的惰性，导致执行力不足 我建议你可以尝试一下以下的方法：
+给自己制定两个清单——TODO清单 &amp; NOT TODO清单（让自己专注于真正重要的事情上）； 每天早晨回顾一下前面两个清单，然后制定今天的3MITs清单（找出今天最重要的3件事，然后竭尽全力完成它们）； 营造有利于自己实现目标的环境（调整房间的布局等让自己感觉良好一些） 以上几条是我最近在实践的方法：我两周前购买了新的桌椅，调整了房间的布局，让自己的工作一角更加舒适；我每周进行回顾和计划，并决定下周要做什么和不做什么；最后每天制定3MITs清单，并尽可能去完成它们。虽然我还是不能够做到完全按照计划行事，但是对比之前一段时间来说，已经有了很大的进步，接下来我要做的就是坚持下去更加自然地去做这些事情的说。
+[1]：褪墨是时间管理方面的很不错的的博客。
+DNSPod.com DNSPod是国内最大的第三方免费DNS解析服务商，提供了一堆不错的功能，国内很多知名站点都在使用它的服务（详见百度百科）。
+我之前一直使用的是Godaddy的解析服务（购买域名时的默认解析服务），由于前一段时间有Godaddy的解析被屏蔽的说法，加上今天使用同事的手机首次访问我的站点时，出现无法找到域名的提示，让我决定使用DNSPod的服务。
+DNSPod提供了两个版本：国际版（.com）和中文版（.cn），按照我的一贯作风，我选择了国际版，虽然面对国内的用户可能中文版更好一些，但对我来说影响不大。不过切换的过程中出现了一个小问题，由于添加域名的时候我将博客域名错输为一个我以前想要注册的域名，导致博客域名一直无法解析，原以为是延时生效的缘故，洗完澡后才发现问题所在，改正后即时生效了。
+另外，DNSPod去年被腾讯收购了。最近DNSPod开源了其DNS服务器的源码（BSD协议）。
+最后，推荐两个工具：Just-Ping 和 Ping.eu。
+虎嗅网 虎嗅是一个有视角的商业资讯与交流平台。霍炬在V2EX上推荐了它并给了很高的评价。我个人感觉有些文章确实不错，目前将其放入收藏夹闲暇时浏览一下。不过对于其不提供全文RSS这一点感觉很不错，即使有FullTextRSSFeed这类服务可以将其转换为全文。
+Bootstrapping ── 不求人的創業模式 -by- Mr Jamie 作为一名程序猿，业余时间不充分利用起来，绝对是绝大的浪费，浪费是可耻的行为。业余时间可以用来读书、学习新的技能、创业，总之就是不能够白白浪费掉。
+对于创业，目前IT创业成本很低，有很多优秀的免费的服务可以使用来帮助自己构建新的产品，“会写程序的人不自己折腾点啥，真愧对这个时代。”虽然很多人说创业一定要全职投入，否则很容易失败，如果你被这样的观点困扰了，推荐看看《重来》（《Rework》）。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Weekly Digest #2",
+      "item": "https://milkythinking.com/blog/2012/06/01/weekly-digest-2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Weekly Digest #2",
+  "name": "Weekly Digest #2",
+  "description": "Weekly Digest是一个文摘系列，分享一些我最近阅读的文章以及我的观点，每周五发布。\n你的问题不是缺少动力 -by- 褪墨[1] 当我们被想要实现某个目标却一直没有做好这件事困扰的时候，我们“面对的问题并不是没有动力，而是如何坚持”。\n我认为没能够做到坚持有两点原因：\n外界干扰信息太多，导致我们注意力过于分散； 由于个人的惰性，导致执行力不足 我建议你可以尝试一下以下的方法：\n给自己制定两个清单——TODO清单 \u0026amp; NOT TODO清单（让自己专注于真正重要的事情上）； 每天早晨回顾一下前面两个清单，然后制定今天的3MITs清单（找出今天最重要的3件事，然后竭尽全力完成它们）； 营造有利于自己实现目标的环境（调整房间的布局等让自己感觉良好一些） 以上几条是我最近在实践的方法：我两周前购买了新的桌椅，调整了房间的布局，让自己的工作一角更加舒适；我每周进行回顾和计划，并决定下周要做什么和不做什么；最后每天制定3MITs清单，并尽可能去完成它们。虽然我还是不能够做到完全按照计划行事，但是对比之前一段时间来说，已经有了很大的进步，接下来我要做的就是坚持下去更加自然地去做这些事情的说。\n[1]：褪墨是时间管理方面的很不错的的博客。\nDNSPod.com DNSPod是国内最大的第三方免费DNS解析服务商，提供了一堆不错的功能，国内很多知名站点都在使用它的服务（详见百度百科）。\n我之前一直使用的是Godaddy的解析服务（购买域名时的默认解析服务），由于前一段时间有Godaddy的解析被屏蔽的说法，加上今天使用同事的手机首次访问我的站点时，出现无法找到域名的提示，让我决定使用DNSPod的服务。\nDNSPod提供了两个版本：国际版（.com）和中文版（.cn），按照我的一贯作风，我选择了国际版，虽然面对国内的用户可能中文版更好一些，但对我来说影响不大。不过切换的过程中出现了一个小问题，由于添加域名的时候我将博客域名错输为一个我以前想要注册的域名，导致博客域名一直无法解析，原以为是延时生效的缘故，洗完澡后才发现问题所在，改正后即时生效了。\n另外，DNSPod去年被腾讯收购了。最近DNSPod开源了其DNS服务器的源码（BSD协议）。\n最后，推荐两个工具：Just-Ping 和 Ping.eu。\n虎嗅网 虎嗅是一个有视角的商业资讯与交流平台。霍炬在V2EX上推荐了它并给了很高的评价。我个人感觉有些文章确实不错，目前将其放入收藏夹闲暇时浏览一下。不过对于其不提供全文RSS这一点感觉很不错，即使有FullTextRSSFeed这类服务可以将其转换为全文。\nBootstrapping ── 不求人的創業模式 -by- Mr Jamie 作为一名程序猿，业余时间不充分利用起来，绝对是绝大的浪费，浪费是可耻的行为。业余时间可以用来读书、学习新的技能、创业，总之就是不能够白白浪费掉。\n对于创业，目前IT创业成本很低，有很多优秀的免费的服务可以使用来帮助自己构建新的产品，“会写程序的人不自己折腾点啥，真愧对这个时代。”虽然很多人说创业一定要全职投入，否则很容易失败，如果你被这样的观点困扰了，推荐看看《重来》（《Rework》）。",
+  "keywords": [
+    
+  ],
+  "articleBody": "Weekly Digest是一个文摘系列，分享一些我最近阅读的文章以及我的观点，每周五发布。\n你的问题不是缺少动力 -by- 褪墨[1] 当我们被想要实现某个目标却一直没有做好这件事困扰的时候，我们“面对的问题并不是没有动力，而是如何坚持”。\n我认为没能够做到坚持有两点原因：\n外界干扰信息太多，导致我们注意力过于分散； 由于个人的惰性，导致执行力不足 我建议你可以尝试一下以下的方法：\n给自己制定两个清单——TODO清单 \u0026 NOT TODO清单（让自己专注于真正重要的事情上）； 每天早晨回顾一下前面两个清单，然后制定今天的3MITs清单（找出今天最重要的3件事，然后竭尽全力完成它们）； 营造有利于自己实现目标的环境（调整房间的布局等让自己感觉良好一些） 以上几条是我最近在实践的方法：我两周前购买了新的桌椅，调整了房间的布局，让自己的工作一角更加舒适；我每周进行回顾和计划，并决定下周要做什么和不做什么；最后每天制定3MITs清单，并尽可能去完成它们。虽然我还是不能够做到完全按照计划行事，但是对比之前一段时间来说，已经有了很大的进步，接下来我要做的就是坚持下去更加自然地去做这些事情的说。\n[1]：褪墨是时间管理方面的很不错的的博客。\nDNSPod.com DNSPod是国内最大的第三方免费DNS解析服务商，提供了一堆不错的功能，国内很多知名站点都在使用它的服务（详见百度百科）。\n我之前一直使用的是Godaddy的解析服务（购买域名时的默认解析服务），由于前一段时间有Godaddy的解析被屏蔽的说法，加上今天使用同事的手机首次访问我的站点时，出现无法找到域名的提示，让我决定使用DNSPod的服务。\nDNSPod提供了两个版本：国际版（.com）和中文版（.cn），按照我的一贯作风，我选择了国际版，虽然面对国内的用户可能中文版更好一些，但对我来说影响不大。不过切换的过程中出现了一个小问题，由于添加域名的时候我将博客域名错输为一个我以前想要注册的域名，导致博客域名一直无法解析，原以为是延时生效的缘故，洗完澡后才发现问题所在，改正后即时生效了。\n另外，DNSPod去年被腾讯收购了。最近DNSPod开源了其DNS服务器的源码（BSD协议）。\n最后，推荐两个工具：Just-Ping 和 Ping.eu。\n虎嗅网 虎嗅是一个有视角的商业资讯与交流平台。霍炬在V2EX上推荐了它并给了很高的评价。我个人感觉有些文章确实不错，目前将其放入收藏夹闲暇时浏览一下。不过对于其不提供全文RSS这一点感觉很不错，即使有FullTextRSSFeed这类服务可以将其转换为全文。\nBootstrapping ── 不求人的創業模式 -by- Mr Jamie 作为一名程序猿，业余时间不充分利用起来，绝对是绝大的浪费，浪费是可耻的行为。业余时间可以用来读书、学习新的技能、创业，总之就是不能够白白浪费掉。\n对于创业，目前IT创业成本很低，有很多优秀的免费的服务可以使用来帮助自己构建新的产品，“会写程序的人不自己折腾点啥，真愧对这个时代。”虽然很多人说创业一定要全职投入，否则很容易失败，如果你被这样的观点困扰了，推荐看看《重来》（《Rework》）。\n",
+  "wordCount" : "36",
+  "inLanguage": "en",
+  "datePublished": "2012-06-01T23:59:42+08:00",
+  "dateModified": "2012-06-01T23:59:42+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2012/06/01/weekly-digest-2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Weekly Digest #2
+    </h1>
+    <div class="post-meta"><span title='2012-06-01 23:59:42 +0800 CST'>June 1, 2012</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Weekly Digest是一个文摘系列，分享一些我最近阅读的文章以及我的观点，每周五发布。</p>
+<hr>
+<h4 id="你的问题不是缺少动力httpwwwmifengtdcnarticlesyour-problem-isnt-motivationhtml-by--褪墨1"><a href="http://www.mifengtd.cn/articles/your-problem-isnt-motivation.html">你的问题不是缺少动力</a> -by- 褪墨[1]<a hidden class="anchor" aria-hidden="true" href="#你的问题不是缺少动力httpwwwmifengtdcnarticlesyour-problem-isnt-motivationhtml-by--褪墨1">#</a></h4>
+<p>当我们被想要实现某个目标却一直没有做好这件事困扰的时候，我们“面对的问题并不是没有动力，而是如何坚持”。</p>
+<p>我认为没能够做到坚持有两点原因：</p>
+<ol>
+<li>外界干扰信息太多，导致我们注意力过于分散；</li>
+<li>由于个人的惰性，导致执行力不足</li>
+</ol>
+<p>我建议你可以尝试一下以下的方法：</p>
+<ol>
+<li>给自己制定<a href="http://milkythinking.com/blog/2012/05/31/focus-list-and-ignore-list/">两个清单</a>——TODO清单 &amp; NOT TODO清单（让自己专注于真正重要的事情上）；</li>
+<li>每天早晨回顾一下前面两个清单，然后制定今天的<a href="http://milkythinking.com/blog/2012/05/24/time-management-02-three-most-important-things/">3MITs清单</a>（找出今天最重要的3件事，然后竭尽全力完成它们）；</li>
+<li>营造有利于自己实现目标的环境（调整房间的布局等让自己感觉良好一些）</li>
+</ol>
+<p>以上几条是我最近在实践的方法：我两周前购买了新的桌椅，调整了房间的布局，让自己的工作一角更加舒适；我每周进行回顾和计划，并决定下周要做什么和不做什么；最后每天制定3MITs清单，并尽可能去完成它们。虽然我还是不能够做到完全按照计划行事，但是对比之前一段时间来说，已经有了很大的进步，接下来我要做的就是坚持下去更加自然地去做这些事情的说。</p>
+<p>[1]：<a href="http://www.mifengtd.cn/">褪墨</a>是时间管理方面的很不错的的博客。</p>
+<h4 id="dnspodcomhttpswwwdnspodcom"><a href="https://www.dnspod.com/">DNSPod.com</a><a hidden class="anchor" aria-hidden="true" href="#dnspodcomhttpswwwdnspodcom">#</a></h4>
+<p>DNSPod是国内最大的第三方免费DNS解析服务商，提供了一堆不错的功能，国内很多知名站点都在使用它的服务（详见<a href="http://baike.baidu.com/view/1838299.htm">百度百科</a>）。</p>
+<p>我之前一直使用的是Godaddy的解析服务（购买域名时的默认解析服务），由于前一段时间有Godaddy的解析被屏蔽的说法，加上今天使用同事的手机首次访问我的站点时，出现无法找到域名的提示，让我决定使用DNSPod的服务。</p>
+<p>DNSPod提供了两个版本：国际版（<a href="https://www.dnspod.com/">.com</a>）和中文版（<a href="https://www.dnspod.cn/">.cn</a>），按照我的一贯作风，我选择了国际版，虽然面对国内的用户可能中文版更好一些，但对我来说影响不大。不过切换的过程中出现了一个小问题，由于添加域名的时候我将博客域名错输为一个我以前想要注册的域名，导致博客域名一直无法解析，原以为是延时生效的缘故，洗完澡后才发现问题所在，改正后即时生效了。</p>
+<p>另外，DNSPod去年被腾讯收购了。最近DNSPod开源了其DNS服务器的<a href="https://github.com/DNSPod/dnspod-sr">源码</a>（BSD协议）。</p>
+<p>最后，推荐两个工具：<a href="http://just-ping.com/">Just-Ping</a> 和 <a href="http://ping.eu/">Ping.eu</a>。</p>
+<h4 id="虎嗅网httpwwwhuxiucom"><a href="http://www.huxiu.com/">虎嗅网</a><a hidden class="anchor" aria-hidden="true" href="#虎嗅网httpwwwhuxiucom">#</a></h4>
+<p>虎嗅是一个有视角的商业资讯与交流平台。霍炬在<a href="http://www.v2ex.com/t/37892">V2EX</a>上推荐了它并给了很高的评价。我个人感觉有些文章确实不错，目前将其放入收藏夹闲暇时浏览一下。不过对于其不提供全文RSS这一点感觉很不错，即使有<a href="http://fulltextrssfeed.com/">FullTextRSSFeed</a>这类服务可以将其转换为全文。</p>
+<h4 id="bootstrapping--不求人的創業模式httpmrjamiecc20120116bootstrapping-permanent-link-to-bootstrapping--不求人的創業模式-by--mr-jamie"><a href="http://mrjamie.cc/2012/01/16/bootstrapping/" title="Permanent Link to Bootstrapping ── 不求人的創業模式">Bootstrapping ── 不求人的創業模式</a> -by- Mr Jamie<a hidden class="anchor" aria-hidden="true" href="#bootstrapping--不求人的創業模式httpmrjamiecc20120116bootstrapping-permanent-link-to-bootstrapping--不求人的創業模式-by--mr-jamie">#</a></h4>
+<p>作为一名程序猿，业余时间不充分利用起来，绝对是绝大的浪费，浪费是可耻的行为。业余时间可以用来读书、学习新的技能、创业，总之就是不能够白白浪费掉。</p>
+<p>对于创业，目前<a href="http://weibo.com/1718767577/ylzRJtjGk">IT创业成本很低</a>，有很多优秀的免费的服务可以使用来帮助自己构建新的产品，“会写程序的人不自己折腾点啥，真愧对这个时代。”虽然很多人说创业一定要全职投入，否则很容易失败，如果你被这样的观点困扰了，推荐看看《<a href="http://www.amazon.cn/%E9%87%8D%E6%9D%A5-%E6%9B%B4%E4%B8%BA%E7%AE%80%E5%8D%95%E6%9C%89%E6%95%88%E7%9A%84%E5%95%86%E4%B8%9A%E6%80%9D%E7%BB%B4-%E8%B4%BE%E6%A3%AE%E2%80%A2%E5%BC%97%E9%87%8C%E5%BE%B7/dp/B0048EKQS0/ref=sr_1_1?ie=UTF8&amp;qid=1338572015&amp;sr=8-1">重来</a>》（《<a href="http://www.amazon.cn/Rework-%E5%A4%A7%E5%8D%AB%E2%80%A2%E6%B1%89%E6%A3%AE/dp/0307463745/ref=sr_1_2?ie=UTF8&amp;qid=1338572015&amp;sr=8-2">Rework</a>》）。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

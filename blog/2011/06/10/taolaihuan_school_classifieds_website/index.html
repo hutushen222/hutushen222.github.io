@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>“淘来换”——校园分类信息网站 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="刚刚和大海一起将“淘来换”搭建起来，不知不觉竟然搞了这么久，但是现在还没什么睡意，写篇蹩脚的软文来“显摆”一下。
+“淘来换”的一般信息 网址：http://www.taolaihuan.com/ （大海在Godaddy上注册，7折购买）（我认为域名很“衰”！！！）
+托管：Hello, Host!虚拟主机“新手套餐 #1”（购买时使用优惠码“sinawb”，8.9折）
+代码：OpenClassifieds，PHP实现的开源分类信息程序（下载是最好去sf.net上搜索，下载）
+“淘来换”缘起与搭建过程 大海很早就有搭建一个校园二手物品交换平台的想法，曾经还写过不少功能、设计之类的文档，但是就是没有最终实现。
+今年3月份的时候，我们都在杭州实习（他淘宝，我丁香园），我们就物品交换平台交换了下想法并设计了站点的功能，打算基于PHP框架CodeIgniter进行实现。起初，很积极地学习CodeIgniter，但是后来由于实习期间的工作蛮多的，同时自己的技术不够“硬”，就搁置了。
+5月底，我回到了学校。想到我们即将被“驱逐”出校，书籍等物品需要进行清理，大海有提到了物品交换平台的想法，受到百姓网的启发，大海想搭建一个分类信息网站，于是就找了找分类信息开源软件。起初选择了OSClass，也尝试了OpenClassifieds，如果使用OSClass需要进行一定程度的二次开发来满足我们的需求。
+中间拖了几天后，大海迟疑要不要搞下去。因为我在忙毕设论文，大海研究生导师也给他分配了点任务。在我的建议下，两天前购买了域名和空间。
+今天，大海设置好域名指向（A记录、DNS解析等），晚上我们决定将代码上传到空间上。因为使用OSClass的话需要有较多的改动，于是选择了OpenClassifieds，虽然OpenClassifieds在选择中文语言包的时候会遇到较严重的问题，站点无法使用。
+我在本机搭建环境，最终找到OpenClassifieds在中文语言包下出错的原因——由于其输出内容过滤函数不支持中文，在启用URL重写规则时，站点完全无法使用。我一时无法解决这个问题，于是选择了折中的办法——禁用URL重写，虽然这将不利于搜索引擎索引。OpenClassifields还有不少其他的小问题，也都找到了对应的解决方法。
+使用FileZilla（FTP）将OpenClassifieds上传到虚拟主机上并进行安装与配置，其中邮件发送来来回回整了很久，好在最终解决了。之后，添加了几个分类，并从当当上面找了几个数据进行可用性测试，效果还好。最后，配置下Google统计，事情高一段落。
+“淘来换”的一些想法 “淘来换”目前定位为西北工业大学校园分类信息网站，给即将被“驱逐”的大四的学生提供一个物品展示平台，低年纪的学生可以在这里淘些需要的东西。目前“淘来换”中添加了两个地址“西北工业大学（友谊校区）”和“西北工业大学（长安校区）”，也许会添加写其他的地方，如西安交通大学，如果的确有需要的话。
+OpenClassifieds的实现比较简单，但是功能还是蛮强大的，是个不错的搭建小型分类信息站点的平台，具有很强的定制性。但是目前其功能特别是中文版本下存在着不少的小问题，但不会导致完全无法使用。如果“淘来换”能够有足够的人参与进来，我可以考虑对其进行二次开发，修复Bugs，晚上功能来满足一些特定的需求。
+PS：突然想到，也许我可以将知乎邀请码放置在“淘来换”上出售，嘿嘿，不错的创意，当然收入将捐赠给某个公益基金，想法缘自于还未见过面的支付宝的朋友——张明烁。
+Gonna Sailing 😉 ==END==">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2011/06/10/taolaihuan_school_classifieds_website/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="“淘来换”——校园分类信息网站" />
+<meta property="og:description" content="刚刚和大海一起将“淘来换”搭建起来，不知不觉竟然搞了这么久，但是现在还没什么睡意，写篇蹩脚的软文来“显摆”一下。
+“淘来换”的一般信息 网址：http://www.taolaihuan.com/ （大海在Godaddy上注册，7折购买）（我认为域名很“衰”！！！）
+托管：Hello, Host!虚拟主机“新手套餐 #1”（购买时使用优惠码“sinawb”，8.9折）
+代码：OpenClassifieds，PHP实现的开源分类信息程序（下载是最好去sf.net上搜索，下载）
+“淘来换”缘起与搭建过程 大海很早就有搭建一个校园二手物品交换平台的想法，曾经还写过不少功能、设计之类的文档，但是就是没有最终实现。
+今年3月份的时候，我们都在杭州实习（他淘宝，我丁香园），我们就物品交换平台交换了下想法并设计了站点的功能，打算基于PHP框架CodeIgniter进行实现。起初，很积极地学习CodeIgniter，但是后来由于实习期间的工作蛮多的，同时自己的技术不够“硬”，就搁置了。
+5月底，我回到了学校。想到我们即将被“驱逐”出校，书籍等物品需要进行清理，大海有提到了物品交换平台的想法，受到百姓网的启发，大海想搭建一个分类信息网站，于是就找了找分类信息开源软件。起初选择了OSClass，也尝试了OpenClassifieds，如果使用OSClass需要进行一定程度的二次开发来满足我们的需求。
+中间拖了几天后，大海迟疑要不要搞下去。因为我在忙毕设论文，大海研究生导师也给他分配了点任务。在我的建议下，两天前购买了域名和空间。
+今天，大海设置好域名指向（A记录、DNS解析等），晚上我们决定将代码上传到空间上。因为使用OSClass的话需要有较多的改动，于是选择了OpenClassifieds，虽然OpenClassifieds在选择中文语言包的时候会遇到较严重的问题，站点无法使用。
+我在本机搭建环境，最终找到OpenClassifieds在中文语言包下出错的原因——由于其输出内容过滤函数不支持中文，在启用URL重写规则时，站点完全无法使用。我一时无法解决这个问题，于是选择了折中的办法——禁用URL重写，虽然这将不利于搜索引擎索引。OpenClassifields还有不少其他的小问题，也都找到了对应的解决方法。
+使用FileZilla（FTP）将OpenClassifieds上传到虚拟主机上并进行安装与配置，其中邮件发送来来回回整了很久，好在最终解决了。之后，添加了几个分类，并从当当上面找了几个数据进行可用性测试，效果还好。最后，配置下Google统计，事情高一段落。
+“淘来换”的一些想法 “淘来换”目前定位为西北工业大学校园分类信息网站，给即将被“驱逐”的大四的学生提供一个物品展示平台，低年纪的学生可以在这里淘些需要的东西。目前“淘来换”中添加了两个地址“西北工业大学（友谊校区）”和“西北工业大学（长安校区）”，也许会添加写其他的地方，如西安交通大学，如果的确有需要的话。
+OpenClassifieds的实现比较简单，但是功能还是蛮强大的，是个不错的搭建小型分类信息站点的平台，具有很强的定制性。但是目前其功能特别是中文版本下存在着不少的小问题，但不会导致完全无法使用。如果“淘来换”能够有足够的人参与进来，我可以考虑对其进行二次开发，修复Bugs，晚上功能来满足一些特定的需求。
+PS：突然想到，也许我可以将知乎邀请码放置在“淘来换”上出售，嘿嘿，不错的创意，当然收入将捐赠给某个公益基金，想法缘自于还未见过面的支付宝的朋友——张明烁。
+Gonna Sailing 😉 ==END==" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2011/06/10/taolaihuan_school_classifieds_website/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2011-06-10T06:00:43+08:00" />
+<meta property="article:modified_time" content="2011-06-10T06:00:43+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="“淘来换”——校园分类信息网站"/>
+<meta name="twitter:description" content="刚刚和大海一起将“淘来换”搭建起来，不知不觉竟然搞了这么久，但是现在还没什么睡意，写篇蹩脚的软文来“显摆”一下。
+“淘来换”的一般信息 网址：http://www.taolaihuan.com/ （大海在Godaddy上注册，7折购买）（我认为域名很“衰”！！！）
+托管：Hello, Host!虚拟主机“新手套餐 #1”（购买时使用优惠码“sinawb”，8.9折）
+代码：OpenClassifieds，PHP实现的开源分类信息程序（下载是最好去sf.net上搜索，下载）
+“淘来换”缘起与搭建过程 大海很早就有搭建一个校园二手物品交换平台的想法，曾经还写过不少功能、设计之类的文档，但是就是没有最终实现。
+今年3月份的时候，我们都在杭州实习（他淘宝，我丁香园），我们就物品交换平台交换了下想法并设计了站点的功能，打算基于PHP框架CodeIgniter进行实现。起初，很积极地学习CodeIgniter，但是后来由于实习期间的工作蛮多的，同时自己的技术不够“硬”，就搁置了。
+5月底，我回到了学校。想到我们即将被“驱逐”出校，书籍等物品需要进行清理，大海有提到了物品交换平台的想法，受到百姓网的启发，大海想搭建一个分类信息网站，于是就找了找分类信息开源软件。起初选择了OSClass，也尝试了OpenClassifieds，如果使用OSClass需要进行一定程度的二次开发来满足我们的需求。
+中间拖了几天后，大海迟疑要不要搞下去。因为我在忙毕设论文，大海研究生导师也给他分配了点任务。在我的建议下，两天前购买了域名和空间。
+今天，大海设置好域名指向（A记录、DNS解析等），晚上我们决定将代码上传到空间上。因为使用OSClass的话需要有较多的改动，于是选择了OpenClassifieds，虽然OpenClassifieds在选择中文语言包的时候会遇到较严重的问题，站点无法使用。
+我在本机搭建环境，最终找到OpenClassifieds在中文语言包下出错的原因——由于其输出内容过滤函数不支持中文，在启用URL重写规则时，站点完全无法使用。我一时无法解决这个问题，于是选择了折中的办法——禁用URL重写，虽然这将不利于搜索引擎索引。OpenClassifields还有不少其他的小问题，也都找到了对应的解决方法。
+使用FileZilla（FTP）将OpenClassifieds上传到虚拟主机上并进行安装与配置，其中邮件发送来来回回整了很久，好在最终解决了。之后，添加了几个分类，并从当当上面找了几个数据进行可用性测试，效果还好。最后，配置下Google统计，事情高一段落。
+“淘来换”的一些想法 “淘来换”目前定位为西北工业大学校园分类信息网站，给即将被“驱逐”的大四的学生提供一个物品展示平台，低年纪的学生可以在这里淘些需要的东西。目前“淘来换”中添加了两个地址“西北工业大学（友谊校区）”和“西北工业大学（长安校区）”，也许会添加写其他的地方，如西安交通大学，如果的确有需要的话。
+OpenClassifieds的实现比较简单，但是功能还是蛮强大的，是个不错的搭建小型分类信息站点的平台，具有很强的定制性。但是目前其功能特别是中文版本下存在着不少的小问题，但不会导致完全无法使用。如果“淘来换”能够有足够的人参与进来，我可以考虑对其进行二次开发，修复Bugs，晚上功能来满足一些特定的需求。
+PS：突然想到，也许我可以将知乎邀请码放置在“淘来换”上出售，嘿嘿，不错的创意，当然收入将捐赠给某个公益基金，想法缘自于还未见过面的支付宝的朋友——张明烁。
+Gonna Sailing 😉 ==END=="/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "“淘来换”——校园分类信息网站",
+      "item": "https://milkythinking.com/blog/2011/06/10/taolaihuan_school_classifieds_website/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "“淘来换”——校园分类信息网站",
+  "name": "“淘来换”——校园分类信息网站",
+  "description": "刚刚和大海一起将“淘来换”搭建起来，不知不觉竟然搞了这么久，但是现在还没什么睡意，写篇蹩脚的软文来“显摆”一下。\n“淘来换”的一般信息 网址：http://www.taolaihuan.com/ （大海在Godaddy上注册，7折购买）（我认为域名很“衰”！！！）\n托管：Hello, Host!虚拟主机“新手套餐 #1”（购买时使用优惠码“sinawb”，8.9折）\n代码：OpenClassifieds，PHP实现的开源分类信息程序（下载是最好去sf.net上搜索，下载）\n“淘来换”缘起与搭建过程 大海很早就有搭建一个校园二手物品交换平台的想法，曾经还写过不少功能、设计之类的文档，但是就是没有最终实现。\n今年3月份的时候，我们都在杭州实习（他淘宝，我丁香园），我们就物品交换平台交换了下想法并设计了站点的功能，打算基于PHP框架CodeIgniter进行实现。起初，很积极地学习CodeIgniter，但是后来由于实习期间的工作蛮多的，同时自己的技术不够“硬”，就搁置了。\n5月底，我回到了学校。想到我们即将被“驱逐”出校，书籍等物品需要进行清理，大海有提到了物品交换平台的想法，受到百姓网的启发，大海想搭建一个分类信息网站，于是就找了找分类信息开源软件。起初选择了OSClass，也尝试了OpenClassifieds，如果使用OSClass需要进行一定程度的二次开发来满足我们的需求。\n中间拖了几天后，大海迟疑要不要搞下去。因为我在忙毕设论文，大海研究生导师也给他分配了点任务。在我的建议下，两天前购买了域名和空间。\n今天，大海设置好域名指向（A记录、DNS解析等），晚上我们决定将代码上传到空间上。因为使用OSClass的话需要有较多的改动，于是选择了OpenClassifieds，虽然OpenClassifieds在选择中文语言包的时候会遇到较严重的问题，站点无法使用。\n我在本机搭建环境，最终找到OpenClassifieds在中文语言包下出错的原因——由于其输出内容过滤函数不支持中文，在启用URL重写规则时，站点完全无法使用。我一时无法解决这个问题，于是选择了折中的办法——禁用URL重写，虽然这将不利于搜索引擎索引。OpenClassifields还有不少其他的小问题，也都找到了对应的解决方法。\n使用FileZilla（FTP）将OpenClassifieds上传到虚拟主机上并进行安装与配置，其中邮件发送来来回回整了很久，好在最终解决了。之后，添加了几个分类，并从当当上面找了几个数据进行可用性测试，效果还好。最后，配置下Google统计，事情高一段落。\n“淘来换”的一些想法 “淘来换”目前定位为西北工业大学校园分类信息网站，给即将被“驱逐”的大四的学生提供一个物品展示平台，低年纪的学生可以在这里淘些需要的东西。目前“淘来换”中添加了两个地址“西北工业大学（友谊校区）”和“西北工业大学（长安校区）”，也许会添加写其他的地方，如西安交通大学，如果的确有需要的话。\nOpenClassifieds的实现比较简单，但是功能还是蛮强大的，是个不错的搭建小型分类信息站点的平台，具有很强的定制性。但是目前其功能特别是中文版本下存在着不少的小问题，但不会导致完全无法使用。如果“淘来换”能够有足够的人参与进来，我可以考虑对其进行二次开发，修复Bugs，晚上功能来满足一些特定的需求。\nPS：突然想到，也许我可以将知乎邀请码放置在“淘来换”上出售，嘿嘿，不错的创意，当然收入将捐赠给某个公益基金，想法缘自于还未见过面的支付宝的朋友——张明烁。\nGonna Sailing 😉 ==END==",
+  "keywords": [
+    
+  ],
+  "articleBody": "刚刚和大海一起将“淘来换”搭建起来，不知不觉竟然搞了这么久，但是现在还没什么睡意，写篇蹩脚的软文来“显摆”一下。\n“淘来换”的一般信息 网址：http://www.taolaihuan.com/ （大海在Godaddy上注册，7折购买）（我认为域名很“衰”！！！）\n托管：Hello, Host!虚拟主机“新手套餐 #1”（购买时使用优惠码“sinawb”，8.9折）\n代码：OpenClassifieds，PHP实现的开源分类信息程序（下载是最好去sf.net上搜索，下载）\n“淘来换”缘起与搭建过程 大海很早就有搭建一个校园二手物品交换平台的想法，曾经还写过不少功能、设计之类的文档，但是就是没有最终实现。\n今年3月份的时候，我们都在杭州实习（他淘宝，我丁香园），我们就物品交换平台交换了下想法并设计了站点的功能，打算基于PHP框架CodeIgniter进行实现。起初，很积极地学习CodeIgniter，但是后来由于实习期间的工作蛮多的，同时自己的技术不够“硬”，就搁置了。\n5月底，我回到了学校。想到我们即将被“驱逐”出校，书籍等物品需要进行清理，大海有提到了物品交换平台的想法，受到百姓网的启发，大海想搭建一个分类信息网站，于是就找了找分类信息开源软件。起初选择了OSClass，也尝试了OpenClassifieds，如果使用OSClass需要进行一定程度的二次开发来满足我们的需求。\n中间拖了几天后，大海迟疑要不要搞下去。因为我在忙毕设论文，大海研究生导师也给他分配了点任务。在我的建议下，两天前购买了域名和空间。\n今天，大海设置好域名指向（A记录、DNS解析等），晚上我们决定将代码上传到空间上。因为使用OSClass的话需要有较多的改动，于是选择了OpenClassifieds，虽然OpenClassifieds在选择中文语言包的时候会遇到较严重的问题，站点无法使用。\n我在本机搭建环境，最终找到OpenClassifieds在中文语言包下出错的原因——由于其输出内容过滤函数不支持中文，在启用URL重写规则时，站点完全无法使用。我一时无法解决这个问题，于是选择了折中的办法——禁用URL重写，虽然这将不利于搜索引擎索引。OpenClassifields还有不少其他的小问题，也都找到了对应的解决方法。\n使用FileZilla（FTP）将OpenClassifieds上传到虚拟主机上并进行安装与配置，其中邮件发送来来回回整了很久，好在最终解决了。之后，添加了几个分类，并从当当上面找了几个数据进行可用性测试，效果还好。最后，配置下Google统计，事情高一段落。\n“淘来换”的一些想法 “淘来换”目前定位为西北工业大学校园分类信息网站，给即将被“驱逐”的大四的学生提供一个物品展示平台，低年纪的学生可以在这里淘些需要的东西。目前“淘来换”中添加了两个地址“西北工业大学（友谊校区）”和“西北工业大学（长安校区）”，也许会添加写其他的地方，如西安交通大学，如果的确有需要的话。\nOpenClassifieds的实现比较简单，但是功能还是蛮强大的，是个不错的搭建小型分类信息站点的平台，具有很强的定制性。但是目前其功能特别是中文版本下存在着不少的小问题，但不会导致完全无法使用。如果“淘来换”能够有足够的人参与进来，我可以考虑对其进行二次开发，修复Bugs，晚上功能来满足一些特定的需求。\nPS：突然想到，也许我可以将知乎邀请码放置在“淘来换”上出售，嘿嘿，不错的创意，当然收入将捐赠给某个公益基金，想法缘自于还未见过面的支付宝的朋友——张明烁。\nGonna Sailing 😉 ==END==\n",
+  "wordCount" : "24",
+  "inLanguage": "en",
+  "datePublished": "2011-06-10T06:00:43+08:00",
+  "dateModified": "2011-06-10T06:00:43+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2011/06/10/taolaihuan_school_classifieds_website/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      “淘来换”——校园分类信息网站
+    </h1>
+    <div class="post-meta"><span title='2011-06-10 06:00:43 +0800 CST'>June 10, 2011</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>刚刚和大海一起将<a href="http://www.taolaihuan.com/" title="淘来换 － 校园分类信息网站">“淘来换”</a>搭建起来，不知不觉竟然搞了这么久，但是现在还没什么睡意，写篇蹩脚的软文来“显摆”一下。</p>
+<h2 id="淘来换的一般信息">“淘来换”的一般信息<a hidden class="anchor" aria-hidden="true" href="#淘来换的一般信息">#</a></h2>
+<p>网址：<a href="http://www.taolaihuan.com/" title="淘来换 － 校园分类信息网站">http://www.taolaihuan.com/</a> （大海在Godaddy上注册，7折购买）（我认为域名很“衰”！！！）</p>
+<p>托管：<a href="https://hellohost.net/" title="Hello, Host!">Hello, Host!</a>虚拟主机“<a href="https://hellohost.net/hosting.html" title="虚拟主机">新手套餐 #1</a>”（购买时使用优惠码“sinawb”，8.9折）</p>
+<p>代码：<a href="http://www.open-classifieds.com/" title="Free Classifieds PHP Script">OpenClassifieds</a>，PHP实现的开源分类信息程序（下载是最好去sf.net上搜索，下载）</p>
+<h2 id="淘来换缘起与搭建过程">“淘来换”缘起与搭建过程<a hidden class="anchor" aria-hidden="true" href="#淘来换缘起与搭建过程">#</a></h2>
+<p>大海很早就有搭建一个校园二手物品交换平台的想法，曾经还写过不少功能、设计之类的文档，但是就是没有最终实现。</p>
+<p>今年3月份的时候，我们都在杭州实习（他淘宝，我<a href="http://www.dxy.cn/" title="丁香园 － 医药生命科学专业网站">丁香园</a>），我们就物品交换平台交换了下想法并设计了站点的功能，打算基于PHP框架CodeIgniter进行实现。起初，很积极地学习CodeIgniter，但是后来由于实习期间的工作蛮多的，同时自己的技术不够“硬”，就搁置了。</p>
+<p>5月底，我回到了学校。想到我们即将被“驱逐”出校，书籍等物品需要进行清理，大海有提到了物品交换平台的想法，受到<a href="http://www.baixing.com/" title="国内分类信息网站。拥有我感兴趣的强力的团队">百姓网</a>的启发，大海想搭建一个分类信息网站，于是就找了找分类信息开源软件。起初选择了<a href="http://osclass.org/" title="OSClass | Professional open source classifieds">OSClass</a>，也尝试了<a href="http://www.open-classifieds.com/" title="Free Classifieds PHP Script">OpenClassifieds</a>，如果使用OSClass需要进行一定程度的二次开发来满足我们的需求。</p>
+<p>中间拖了几天后，大海迟疑要不要搞下去。因为我在忙毕设论文，大海研究生导师也给他分配了点任务。在我的建议下，两天前购买了域名和空间。</p>
+<p>今天，大海设置好域名指向（A记录、DNS解析等），晚上我们决定将代码上传到空间上。因为使用OSClass的话需要有较多的改动，于是选择了OpenClassifieds，虽然OpenClassifieds在选择中文语言包的时候会遇到较严重的问题，站点无法使用。</p>
+<p>我在本机搭建环境，最终找到OpenClassifieds在中文语言包下出错的原因——由于其输出内容过滤函数不支持中文，在启用URL重写规则时，站点完全无法使用。我一时无法解决这个问题，于是选择了折中的办法——禁用URL重写，虽然这将不利于搜索引擎索引。OpenClassifields还有不少其他的小问题，也都找到了对应的解决方法。</p>
+<p>使用FileZilla（FTP）将OpenClassifieds上传到虚拟主机上并进行安装与配置，其中邮件发送来来回回整了很久，好在最终解决了。之后，添加了几个分类，并从当当上面找了几个数据进行可用性测试，效果还好。最后，配置下Google统计，事情高一段落。</p>
+<h2 id="淘来换的一些想法">“淘来换”的一些想法<a hidden class="anchor" aria-hidden="true" href="#淘来换的一些想法">#</a></h2>
+<p>“淘来换”目前定位为西北工业大学校园分类信息网站，给即将被“驱逐”的大四的学生提供一个物品展示平台，低年纪的学生可以在这里淘些需要的东西。目前“淘来换”中添加了两个地址“西北工业大学（友谊校区）”和“西北工业大学（长安校区）”，也许会添加写其他的地方，如西安交通大学，如果的确有需要的话。</p>
+<p>OpenClassifieds的实现比较简单，但是功能还是蛮强大的，是个不错的搭建小型分类信息站点的平台，具有很强的定制性。但是目前其功能特别是中文版本下存在着不少的小问题，但不会导致完全无法使用。如果“淘来换”能够有足够的人参与进来，我可以考虑对其进行二次开发，修复Bugs，晚上功能来满足一些特定的需求。</p>
+<p>PS：突然想到，也许我可以将知乎邀请码放置在“淘来换”上<a href="http://www.taolaihuan.com/item.php?item=5&amp;type=%E6%8F%90%E4%BE%9B&amp;category=special&amp;title=" title="出售知乎邀请码">出售</a>，嘿嘿，不错的创意，当然收入将捐赠给某个公益基金，想法缘自于还未见过面的支付宝的朋友——<a href="http://www.zhihu.com/people/mingshuo" title="张明烁">张明烁</a>。</p>
+<p>Gonna Sailing 😉<!-- raw HTML omitted -->
+==END==</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

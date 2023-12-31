@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>内容转移 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="这篇文章翻译自Fred Wilson的博文Content Shifting，水平有限，见谅！
+在昨天关于SoundCloud的文章中，我从@Daryn那获得了如下评论：
+对于音频文件我依然遇到类似的情形。我曾经对自己说，“酷，Fred发布了一个新的播客，我有空应该听一下。”是否有一个应用，能够像Instapaper或者Boxee小书签一样帮助我将播客保存下来，等我有空在听呢？
+我的回复如下：
+这要看你最终想在什么样的设备上处理它们？Sonos房间音乐系统？iPhone或Android？还是平板电脑？
+当你使用Instapaper或Boxee Watch Later这样的服务的时候，会形成一种习惯性的思维，你希望能够将内容转移到任何地方、任何设备上。
+昨天，我在SoundCloud上发现了让人惊叹的艺术家James Vincent McMorrow。这里是他的新专辑——Early In The Morning。我立即在自己的笔记本上聆听了它，但我十分想在自己的Sonos系统上享受它。
+昨晚，我看了Black Keys表演的“周末夜现场”（SNL）。我在YouTube上发现了这个视频，然后将它发送到Boxee，这样我就能在大屏幕上观看它了。
+昨天下午，我在车里收听Sirius XMU电台，发现了一些不错的音乐，我想要一种简单的方式将它们转移到我的私人电台fredwilson.fm中。
+昨天，我在TechCrunch/Scribd上看到了美国司法部（DOJ）呈递给Twitter的关于Wikileaks的法院命令。我想在iPad上得到这篇文档，那样我就能够在家里的沙发上阅读它了。
+你已经获得了这个想法。随着设备种类和内容格式迅速地增长，且它们都通过互联网相互连接，内容转移正在逐渐成为一个大的市场和一个真正的热点领域。
+某些类型的内容转移实现起来十分容易，如在手机或平板上获得一个网页，不需要任何魔法，Instapaper在这方面做的非常好。
+另一些类型的内容转移就十分得困难了。如将一首歌从Sirius XMU电台转移到fredwilson.fm就不简单；让SoundCloud在Sonos上播放也不简单，就像Matt Galligan在那篇文章说的那样需要一个开放的Sonos平台。
+我认为这是创业者们的一个机会。在一些情况下，内容转移将是一个大点的平台的杀手级功能，如Boxee的“待会看”功能。在另一些情况下，内容转移将是一个独立的服务，像Instapaper一样
+但我确信人们希望从发现型的设备（笔记本、卫星电台等）上转移内容到消费型的设备（平板电脑、Sonos等）上。同时我确信在未来几年内我们能够看到这种转移将会越来越简单。
+via A VC
+参考：
+Black Keys 乔纳斯兄弟 SNL Saturday Night Live 美国的一个综艺节目 Sonos 无线房间音乐系统 Sirius XMU 一个音乐电台 Gonna Sailing 😉 ==END==">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2011/04/10/content_shifting/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="内容转移" />
+<meta property="og:description" content="这篇文章翻译自Fred Wilson的博文Content Shifting，水平有限，见谅！
+在昨天关于SoundCloud的文章中，我从@Daryn那获得了如下评论：
+对于音频文件我依然遇到类似的情形。我曾经对自己说，“酷，Fred发布了一个新的播客，我有空应该听一下。”是否有一个应用，能够像Instapaper或者Boxee小书签一样帮助我将播客保存下来，等我有空在听呢？
+我的回复如下：
+这要看你最终想在什么样的设备上处理它们？Sonos房间音乐系统？iPhone或Android？还是平板电脑？
+当你使用Instapaper或Boxee Watch Later这样的服务的时候，会形成一种习惯性的思维，你希望能够将内容转移到任何地方、任何设备上。
+昨天，我在SoundCloud上发现了让人惊叹的艺术家James Vincent McMorrow。这里是他的新专辑——Early In The Morning。我立即在自己的笔记本上聆听了它，但我十分想在自己的Sonos系统上享受它。
+昨晚，我看了Black Keys表演的“周末夜现场”（SNL）。我在YouTube上发现了这个视频，然后将它发送到Boxee，这样我就能在大屏幕上观看它了。
+昨天下午，我在车里收听Sirius XMU电台，发现了一些不错的音乐，我想要一种简单的方式将它们转移到我的私人电台fredwilson.fm中。
+昨天，我在TechCrunch/Scribd上看到了美国司法部（DOJ）呈递给Twitter的关于Wikileaks的法院命令。我想在iPad上得到这篇文档，那样我就能够在家里的沙发上阅读它了。
+你已经获得了这个想法。随着设备种类和内容格式迅速地增长，且它们都通过互联网相互连接，内容转移正在逐渐成为一个大的市场和一个真正的热点领域。
+某些类型的内容转移实现起来十分容易，如在手机或平板上获得一个网页，不需要任何魔法，Instapaper在这方面做的非常好。
+另一些类型的内容转移就十分得困难了。如将一首歌从Sirius XMU电台转移到fredwilson.fm就不简单；让SoundCloud在Sonos上播放也不简单，就像Matt Galligan在那篇文章说的那样需要一个开放的Sonos平台。
+我认为这是创业者们的一个机会。在一些情况下，内容转移将是一个大点的平台的杀手级功能，如Boxee的“待会看”功能。在另一些情况下，内容转移将是一个独立的服务，像Instapaper一样
+但我确信人们希望从发现型的设备（笔记本、卫星电台等）上转移内容到消费型的设备（平板电脑、Sonos等）上。同时我确信在未来几年内我们能够看到这种转移将会越来越简单。
+via A VC
+参考：
+Black Keys 乔纳斯兄弟 SNL Saturday Night Live 美国的一个综艺节目 Sonos 无线房间音乐系统 Sirius XMU 一个音乐电台 Gonna Sailing 😉 ==END==" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2011/04/10/content_shifting/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2011-04-10T14:09:45+08:00" />
+<meta property="article:modified_time" content="2011-04-10T14:09:45+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="内容转移"/>
+<meta name="twitter:description" content="这篇文章翻译自Fred Wilson的博文Content Shifting，水平有限，见谅！
+在昨天关于SoundCloud的文章中，我从@Daryn那获得了如下评论：
+对于音频文件我依然遇到类似的情形。我曾经对自己说，“酷，Fred发布了一个新的播客，我有空应该听一下。”是否有一个应用，能够像Instapaper或者Boxee小书签一样帮助我将播客保存下来，等我有空在听呢？
+我的回复如下：
+这要看你最终想在什么样的设备上处理它们？Sonos房间音乐系统？iPhone或Android？还是平板电脑？
+当你使用Instapaper或Boxee Watch Later这样的服务的时候，会形成一种习惯性的思维，你希望能够将内容转移到任何地方、任何设备上。
+昨天，我在SoundCloud上发现了让人惊叹的艺术家James Vincent McMorrow。这里是他的新专辑——Early In The Morning。我立即在自己的笔记本上聆听了它，但我十分想在自己的Sonos系统上享受它。
+昨晚，我看了Black Keys表演的“周末夜现场”（SNL）。我在YouTube上发现了这个视频，然后将它发送到Boxee，这样我就能在大屏幕上观看它了。
+昨天下午，我在车里收听Sirius XMU电台，发现了一些不错的音乐，我想要一种简单的方式将它们转移到我的私人电台fredwilson.fm中。
+昨天，我在TechCrunch/Scribd上看到了美国司法部（DOJ）呈递给Twitter的关于Wikileaks的法院命令。我想在iPad上得到这篇文档，那样我就能够在家里的沙发上阅读它了。
+你已经获得了这个想法。随着设备种类和内容格式迅速地增长，且它们都通过互联网相互连接，内容转移正在逐渐成为一个大的市场和一个真正的热点领域。
+某些类型的内容转移实现起来十分容易，如在手机或平板上获得一个网页，不需要任何魔法，Instapaper在这方面做的非常好。
+另一些类型的内容转移就十分得困难了。如将一首歌从Sirius XMU电台转移到fredwilson.fm就不简单；让SoundCloud在Sonos上播放也不简单，就像Matt Galligan在那篇文章说的那样需要一个开放的Sonos平台。
+我认为这是创业者们的一个机会。在一些情况下，内容转移将是一个大点的平台的杀手级功能，如Boxee的“待会看”功能。在另一些情况下，内容转移将是一个独立的服务，像Instapaper一样
+但我确信人们希望从发现型的设备（笔记本、卫星电台等）上转移内容到消费型的设备（平板电脑、Sonos等）上。同时我确信在未来几年内我们能够看到这种转移将会越来越简单。
+via A VC
+参考：
+Black Keys 乔纳斯兄弟 SNL Saturday Night Live 美国的一个综艺节目 Sonos 无线房间音乐系统 Sirius XMU 一个音乐电台 Gonna Sailing 😉 ==END=="/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "内容转移",
+      "item": "https://milkythinking.com/blog/2011/04/10/content_shifting/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "内容转移",
+  "name": "内容转移",
+  "description": "这篇文章翻译自Fred Wilson的博文Content Shifting，水平有限，见谅！\n在昨天关于SoundCloud的文章中，我从@Daryn那获得了如下评论：\n对于音频文件我依然遇到类似的情形。我曾经对自己说，“酷，Fred发布了一个新的播客，我有空应该听一下。”是否有一个应用，能够像Instapaper或者Boxee小书签一样帮助我将播客保存下来，等我有空在听呢？\n我的回复如下：\n这要看你最终想在什么样的设备上处理它们？Sonos房间音乐系统？iPhone或Android？还是平板电脑？\n当你使用Instapaper或Boxee Watch Later这样的服务的时候，会形成一种习惯性的思维，你希望能够将内容转移到任何地方、任何设备上。\n昨天，我在SoundCloud上发现了让人惊叹的艺术家James Vincent McMorrow。这里是他的新专辑——Early In The Morning。我立即在自己的笔记本上聆听了它，但我十分想在自己的Sonos系统上享受它。\n昨晚，我看了Black Keys表演的“周末夜现场”（SNL）。我在YouTube上发现了这个视频，然后将它发送到Boxee，这样我就能在大屏幕上观看它了。\n昨天下午，我在车里收听Sirius XMU电台，发现了一些不错的音乐，我想要一种简单的方式将它们转移到我的私人电台fredwilson.fm中。\n昨天，我在TechCrunch/Scribd上看到了美国司法部（DOJ）呈递给Twitter的关于Wikileaks的法院命令。我想在iPad上得到这篇文档，那样我就能够在家里的沙发上阅读它了。\n你已经获得了这个想法。随着设备种类和内容格式迅速地增长，且它们都通过互联网相互连接，内容转移正在逐渐成为一个大的市场和一个真正的热点领域。\n某些类型的内容转移实现起来十分容易，如在手机或平板上获得一个网页，不需要任何魔法，Instapaper在这方面做的非常好。\n另一些类型的内容转移就十分得困难了。如将一首歌从Sirius XMU电台转移到fredwilson.fm就不简单；让SoundCloud在Sonos上播放也不简单，就像Matt Galligan在那篇文章说的那样需要一个开放的Sonos平台。\n我认为这是创业者们的一个机会。在一些情况下，内容转移将是一个大点的平台的杀手级功能，如Boxee的“待会看”功能。在另一些情况下，内容转移将是一个独立的服务，像Instapaper一样\n但我确信人们希望从发现型的设备（笔记本、卫星电台等）上转移内容到消费型的设备（平板电脑、Sonos等）上。同时我确信在未来几年内我们能够看到这种转移将会越来越简单。\nvia A VC\n参考：\nBlack Keys 乔纳斯兄弟 SNL Saturday Night Live 美国的一个综艺节目 Sonos 无线房间音乐系统 Sirius XMU 一个音乐电台 Gonna Sailing 😉 ==END==",
+  "keywords": [
+    
+  ],
+  "articleBody": "这篇文章翻译自Fred Wilson的博文Content Shifting，水平有限，见谅！\n在昨天关于SoundCloud的文章中，我从@Daryn那获得了如下评论：\n对于音频文件我依然遇到类似的情形。我曾经对自己说，“酷，Fred发布了一个新的播客，我有空应该听一下。”是否有一个应用，能够像Instapaper或者Boxee小书签一样帮助我将播客保存下来，等我有空在听呢？\n我的回复如下：\n这要看你最终想在什么样的设备上处理它们？Sonos房间音乐系统？iPhone或Android？还是平板电脑？\n当你使用Instapaper或Boxee Watch Later这样的服务的时候，会形成一种习惯性的思维，你希望能够将内容转移到任何地方、任何设备上。\n昨天，我在SoundCloud上发现了让人惊叹的艺术家James Vincent McMorrow。这里是他的新专辑——Early In The Morning。我立即在自己的笔记本上聆听了它，但我十分想在自己的Sonos系统上享受它。\n昨晚，我看了Black Keys表演的“周末夜现场”（SNL）。我在YouTube上发现了这个视频，然后将它发送到Boxee，这样我就能在大屏幕上观看它了。\n昨天下午，我在车里收听Sirius XMU电台，发现了一些不错的音乐，我想要一种简单的方式将它们转移到我的私人电台fredwilson.fm中。\n昨天，我在TechCrunch/Scribd上看到了美国司法部（DOJ）呈递给Twitter的关于Wikileaks的法院命令。我想在iPad上得到这篇文档，那样我就能够在家里的沙发上阅读它了。\n你已经获得了这个想法。随着设备种类和内容格式迅速地增长，且它们都通过互联网相互连接，内容转移正在逐渐成为一个大的市场和一个真正的热点领域。\n某些类型的内容转移实现起来十分容易，如在手机或平板上获得一个网页，不需要任何魔法，Instapaper在这方面做的非常好。\n另一些类型的内容转移就十分得困难了。如将一首歌从Sirius XMU电台转移到fredwilson.fm就不简单；让SoundCloud在Sonos上播放也不简单，就像Matt Galligan在那篇文章说的那样需要一个开放的Sonos平台。\n我认为这是创业者们的一个机会。在一些情况下，内容转移将是一个大点的平台的杀手级功能，如Boxee的“待会看”功能。在另一些情况下，内容转移将是一个独立的服务，像Instapaper一样\n但我确信人们希望从发现型的设备（笔记本、卫星电台等）上转移内容到消费型的设备（平板电脑、Sonos等）上。同时我确信在未来几年内我们能够看到这种转移将会越来越简单。\nvia A VC\n参考：\nBlack Keys 乔纳斯兄弟 SNL Saturday Night Live 美国的一个综艺节目 Sonos 无线房间音乐系统 Sirius XMU 一个音乐电台 Gonna Sailing 😉 ==END==\n",
+  "wordCount" : "49",
+  "inLanguage": "en",
+  "datePublished": "2011-04-10T14:09:45+08:00",
+  "dateModified": "2011-04-10T14:09:45+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2011/04/10/content_shifting/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      内容转移
+    </h1>
+    <div class="post-meta"><span title='2011-04-10 14:09:45 +0800 CST'>April 10, 2011</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>这篇文章翻译自<a href="http://www.avc.com/a_vc/about.html">Fred Wilson</a>的博文<a href="http://www.avc.com/a_vc/2011/01/content-shifting.html">Content Shifting</a>，水平有限，见谅！</p>
+<hr>
+<p>在昨天关于<a href="http://www.avc.com/a_vc/2011/01/soundcloud.html">SoundCloud</a>的文章中，<a href="http://twitter.com/#!/daryn">我从@Daryn</a>那获得了如下<a href="http://www.avc.com/a_vc/2011/01/soundcloud.html#comment-126171939">评论</a>：</p>
+<blockquote>
+<p>对于音频文件我依然遇到类似的情形。我曾经对自己说，“酷，Fred发布了一个新的播客，我有空应该听一下。”是否有一个应用，能够像Instapaper或者Boxee小书签一样帮助我将播客保存下来，等我有空在听呢？</p>
+</blockquote>
+<p>我的回复如下：</p>
+<blockquote>
+<p>这要看你最终想在什么样的设备上处理它们？Sonos房间音乐系统？iPhone或Android？还是平板电脑？</p>
+</blockquote>
+<p>当你使用Instapaper或Boxee Watch Later这样的服务的时候，会形成一种习惯性的思维，你希望能够将内容转移到任何地方、任何设备上。</p>
+<p>昨天，我在SoundCloud上发现了让人惊叹的艺术家<a href="http://www.jamesvmcmorrow.com/">James Vincent McMorrow</a>。这里是他的新专辑——<a href="http://soundcloud.com/partisanpr/sets/james-vincent-mcmorrow-early-in-the-morning">Early In The Morning</a>。我立即在自己的笔记本上聆听了它，但我十分想在自己的Sonos系统上享受它。</p>
+<p>昨晚，我看了Black Keys表演的“周末夜现场”（SNL）。我在YouTube上发现了这个视频，然后将它发送到Boxee，这样我就能在大屏幕上观看它了。</p>
+<p>昨天下午，我在车里收听Sirius XMU电台，发现了一些不错的音乐，我想要一种简单的方式将它们转移到<a href="http://www.avc.com/a_vc/2010/12/something-i-want-to-be-able-to-do.html">我的私人电台fredwilson.fm</a>中。</p>
+<p>昨天，我在<a href="http://techcrunch.com/2011/01/07/twitter-informs-users-of-doj-wikileaks-court-order-didnt-have-to/">TechCrunch</a>/<a href="http://www.scribd.com/doc/46499784/Twitter-Unsealing-Order">Scribd</a>上看到了美国司法部（DOJ）呈递给Twitter的关于Wikileaks的法院命令。我想在iPad上得到这篇文档，那样我就能够在家里的沙发上阅读它了。</p>
+<p>你已经获得了这个想法。随着设备种类和内容格式迅速地增长，且它们都通过互联网相互连接，内容转移正在逐渐成为一个大的市场和一个真正的热点领域。</p>
+<p>某些类型的内容转移实现起来十分容易，如在手机或平板上获得一个网页，不需要任何魔法，Instapaper在这方面做的非常好。</p>
+<p>另一些类型的内容转移就十分得困难了。如将一首歌从Sirius XMU电台转移到fredwilson.fm就不简单；让SoundCloud在Sonos上播放也不简单，就像Matt Galligan在那篇文章说的那样需要一个开放的Sonos平台。</p>
+<p>我认为这是创业者们的一个机会。在一些情况下，内容转移将是一个大点的平台的杀手级功能，如Boxee的“待会看”功能。在另一些情况下，内容转移将是一个独立的服务，像Instapaper一样</p>
+<p>但我确信人们希望从发现型的设备（笔记本、卫星电台等）上转移内容到消费型的设备（平板电脑、Sonos等）上。同时我确信在未来几年内我们能够看到这种转移将会越来越简单。</p>
+<p>via <a href="http://www.avc.com/a_vc/2011/01/content-shifting.html">A VC</a></p>
+<p>参考：</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Black_Keys">Black Keys</a> <a href="http://zh.wikipedia.org/zh-cn/%E5%BC%B7%E7%B4%8D%E6%96%AF%E5%85%84%E5%BC%9F">乔纳斯兄弟</a></li>
+<li>SNL <a href="http://zh.wikipedia.org/zh-cn/%E9%80%B1%E6%9C%AB%E5%A4%9C%E7%8F%BE%E5%A0%B4"><em>Saturday Night Live</em></a> 美国的一个综艺节目</li>
+<li>Sonos <a href="http://www.sonos-china.com/">无线房间音乐系统</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Sirius_XMU">Sirius XMU</a> 一个音乐电台</li>
+</ul>
+<p>Gonna Sailing 😉<!-- raw HTML omitted -->
+==END==</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

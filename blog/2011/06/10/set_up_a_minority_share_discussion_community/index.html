@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>搭建一个小众分享讨论社区 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="我想搭建一个小众的分享讨论的站点，类似Hacker News。
+缘起 我使用Google Reader订阅了很多的博客的RSS源，每天会看到很多有意思的文章，有些文章我想与他人进行分享和讨论，此前一直分享到人人上面，但是很少有回应，这种感觉很不爽。
+使用Hacker News一段时间，勉强可以阅读上面的帖子与评论，但是蹩脚的英文使得交流十分困难，尝试评论了几次，结果被他人给“踩”了下去，积分也一直是负的（有点打击的说）。
+于是，我尝试找寻中文的类似Hacker News的互动社区，但是目前没有找到喜欢的站点。国内的较为知名的社会化分享站点如鲜果热文和豆瓣9点，面向群体为普通大众和文艺青年，内容偏娱乐与文艺。抽屉、我烧网的这种中文Digg类的站点的内容与氛围我就更加不喜欢。
+在知乎上提问，Yeming Zhang推荐cnBeta和Solidot。我曾经GR订阅过cnBeta，但是因其不是全文输出且与博客 园新闻的性质差不多，就退订了。Solidot目前还在订阅中，每天会查看一下其更新的内容，但是感兴趣的话题比较少，偶尔会点开仔细阅读下，但很少看评论。考虑到自己好像还没有深入融入到任何一个社区的经历，于是计划尝试一下——cnBeta这种资讯类的站点被我过滤掉了，我注册了个Solidot帐号，今天投递帖子的时候，发现投递的内容是需要审核的，有些不爽，但是还会坚持一段时间。
+Pligg 很早就有搭建一个分享讨论社区的想法，此前的计划是：成为一个Hacker News的资深用户，熟悉Hacker News的细节，clone一个Hacker News，并在这个过程中提升自己技术水平。但是这个项目的优先级很低，因为还有很多其他更重要或更感兴趣的事情要做，于是就一直搁置在那里。
+这几天，我意识到为什么不使用现有的开源产品来搭建一个呢？没有必要什么都要自己敲代码来完成，那样也太没效率了。于是就搜索了下，结果有Drigg、Hetaru、Pligg、PHPDug等。Drigg的站点无法访问；PHPDug以前使用过，但是感觉不好，也没有后续开发；Hetaru是初次接触，放弃；Pligg很九从JobsDigg知晓，并研究过部分代码。通过一些比较，我最终选择了Pligg。
+Pligg的简单介绍：
+Pligg，最灵活的类似Digg的Web2.0 CMS系统！网页设计师可以使用Pligg做他(她)想做的任何事情。稍微懂一些PHP和Mysql的知识即可安装Pligg。如果需要修改和管理 Pligg，可能有点难度。对于精通Web开发语言的朋友，Pligg是一个定制化非常强的CMS系统。—— via Anson Ho
+这两天研究了下Pligg的使用，基本了解了Pligg的内容类型、后台管理选项以及主题开发的知识。感觉Pligg的默认主题的内容组织很糟糕，如果能够很好的组织一下，内容的呈递效果将会更好。但是我那蹩脚的CSS知识使得自己现在不能很好地实现设想的形式，决定初次搭建的时候先使用Pligg的默认模版，之后在进行新的主题的开发并进行更换。还想到，如果可能，可以在Pligg的基础上融入自己的理解进行二次开发工作，发布一个基于Pligg的开源项目分支，并借机深入研究下Pligg的整体架构提升自己的技能。当然目前仅仅是设想，会不会进一步实现将根据接下来自己的实际情况来决定。
+下一步行动（Next Action） 尝试去GR订阅的文章的来源处与作者以及其他参与评论的人进行互动。
+继续学习Pligg的操作与配置，捣鼓一下自己的想法，构思站点的内容。
+购买域名和托管空间，将站点搭建起来，并邀请一些朋友参与进来。
+了解Pligg模版开发的知识，设计并开发一个新的Pligg主题，替换掉默认的主题。
+PS：学好英语才是正途。周二去给“实名制”充值，在电梯里遇到几个留学生，其中一哥们看到我T恤上的英文单词便尝试和我交流一下，但是我悲催的没有听懂。
+PPS：知乎邀请码还有两枚，我周遭的同学愣是没有感兴趣的，有人想要的话请到“淘来换”上购买，收入将捐赠给某个公益基金。
+Gonna Sailing 😉 ==END==">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2011/06/10/set_up_a_minority_share_discussion_community/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="搭建一个小众分享讨论社区" />
+<meta property="og:description" content="我想搭建一个小众的分享讨论的站点，类似Hacker News。
+缘起 我使用Google Reader订阅了很多的博客的RSS源，每天会看到很多有意思的文章，有些文章我想与他人进行分享和讨论，此前一直分享到人人上面，但是很少有回应，这种感觉很不爽。
+使用Hacker News一段时间，勉强可以阅读上面的帖子与评论，但是蹩脚的英文使得交流十分困难，尝试评论了几次，结果被他人给“踩”了下去，积分也一直是负的（有点打击的说）。
+于是，我尝试找寻中文的类似Hacker News的互动社区，但是目前没有找到喜欢的站点。国内的较为知名的社会化分享站点如鲜果热文和豆瓣9点，面向群体为普通大众和文艺青年，内容偏娱乐与文艺。抽屉、我烧网的这种中文Digg类的站点的内容与氛围我就更加不喜欢。
+在知乎上提问，Yeming Zhang推荐cnBeta和Solidot。我曾经GR订阅过cnBeta，但是因其不是全文输出且与博客 园新闻的性质差不多，就退订了。Solidot目前还在订阅中，每天会查看一下其更新的内容，但是感兴趣的话题比较少，偶尔会点开仔细阅读下，但很少看评论。考虑到自己好像还没有深入融入到任何一个社区的经历，于是计划尝试一下——cnBeta这种资讯类的站点被我过滤掉了，我注册了个Solidot帐号，今天投递帖子的时候，发现投递的内容是需要审核的，有些不爽，但是还会坚持一段时间。
+Pligg 很早就有搭建一个分享讨论社区的想法，此前的计划是：成为一个Hacker News的资深用户，熟悉Hacker News的细节，clone一个Hacker News，并在这个过程中提升自己技术水平。但是这个项目的优先级很低，因为还有很多其他更重要或更感兴趣的事情要做，于是就一直搁置在那里。
+这几天，我意识到为什么不使用现有的开源产品来搭建一个呢？没有必要什么都要自己敲代码来完成，那样也太没效率了。于是就搜索了下，结果有Drigg、Hetaru、Pligg、PHPDug等。Drigg的站点无法访问；PHPDug以前使用过，但是感觉不好，也没有后续开发；Hetaru是初次接触，放弃；Pligg很九从JobsDigg知晓，并研究过部分代码。通过一些比较，我最终选择了Pligg。
+Pligg的简单介绍：
+Pligg，最灵活的类似Digg的Web2.0 CMS系统！网页设计师可以使用Pligg做他(她)想做的任何事情。稍微懂一些PHP和Mysql的知识即可安装Pligg。如果需要修改和管理 Pligg，可能有点难度。对于精通Web开发语言的朋友，Pligg是一个定制化非常强的CMS系统。—— via Anson Ho
+这两天研究了下Pligg的使用，基本了解了Pligg的内容类型、后台管理选项以及主题开发的知识。感觉Pligg的默认主题的内容组织很糟糕，如果能够很好的组织一下，内容的呈递效果将会更好。但是我那蹩脚的CSS知识使得自己现在不能很好地实现设想的形式，决定初次搭建的时候先使用Pligg的默认模版，之后在进行新的主题的开发并进行更换。还想到，如果可能，可以在Pligg的基础上融入自己的理解进行二次开发工作，发布一个基于Pligg的开源项目分支，并借机深入研究下Pligg的整体架构提升自己的技能。当然目前仅仅是设想，会不会进一步实现将根据接下来自己的实际情况来决定。
+下一步行动（Next Action） 尝试去GR订阅的文章的来源处与作者以及其他参与评论的人进行互动。
+继续学习Pligg的操作与配置，捣鼓一下自己的想法，构思站点的内容。
+购买域名和托管空间，将站点搭建起来，并邀请一些朋友参与进来。
+了解Pligg模版开发的知识，设计并开发一个新的Pligg主题，替换掉默认的主题。
+PS：学好英语才是正途。周二去给“实名制”充值，在电梯里遇到几个留学生，其中一哥们看到我T恤上的英文单词便尝试和我交流一下，但是我悲催的没有听懂。
+PPS：知乎邀请码还有两枚，我周遭的同学愣是没有感兴趣的，有人想要的话请到“淘来换”上购买，收入将捐赠给某个公益基金。
+Gonna Sailing 😉 ==END==" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2011/06/10/set_up_a_minority_share_discussion_community/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2011-06-10T04:21:41+08:00" />
+<meta property="article:modified_time" content="2011-06-10T04:21:41+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="搭建一个小众分享讨论社区"/>
+<meta name="twitter:description" content="我想搭建一个小众的分享讨论的站点，类似Hacker News。
+缘起 我使用Google Reader订阅了很多的博客的RSS源，每天会看到很多有意思的文章，有些文章我想与他人进行分享和讨论，此前一直分享到人人上面，但是很少有回应，这种感觉很不爽。
+使用Hacker News一段时间，勉强可以阅读上面的帖子与评论，但是蹩脚的英文使得交流十分困难，尝试评论了几次，结果被他人给“踩”了下去，积分也一直是负的（有点打击的说）。
+于是，我尝试找寻中文的类似Hacker News的互动社区，但是目前没有找到喜欢的站点。国内的较为知名的社会化分享站点如鲜果热文和豆瓣9点，面向群体为普通大众和文艺青年，内容偏娱乐与文艺。抽屉、我烧网的这种中文Digg类的站点的内容与氛围我就更加不喜欢。
+在知乎上提问，Yeming Zhang推荐cnBeta和Solidot。我曾经GR订阅过cnBeta，但是因其不是全文输出且与博客 园新闻的性质差不多，就退订了。Solidot目前还在订阅中，每天会查看一下其更新的内容，但是感兴趣的话题比较少，偶尔会点开仔细阅读下，但很少看评论。考虑到自己好像还没有深入融入到任何一个社区的经历，于是计划尝试一下——cnBeta这种资讯类的站点被我过滤掉了，我注册了个Solidot帐号，今天投递帖子的时候，发现投递的内容是需要审核的，有些不爽，但是还会坚持一段时间。
+Pligg 很早就有搭建一个分享讨论社区的想法，此前的计划是：成为一个Hacker News的资深用户，熟悉Hacker News的细节，clone一个Hacker News，并在这个过程中提升自己技术水平。但是这个项目的优先级很低，因为还有很多其他更重要或更感兴趣的事情要做，于是就一直搁置在那里。
+这几天，我意识到为什么不使用现有的开源产品来搭建一个呢？没有必要什么都要自己敲代码来完成，那样也太没效率了。于是就搜索了下，结果有Drigg、Hetaru、Pligg、PHPDug等。Drigg的站点无法访问；PHPDug以前使用过，但是感觉不好，也没有后续开发；Hetaru是初次接触，放弃；Pligg很九从JobsDigg知晓，并研究过部分代码。通过一些比较，我最终选择了Pligg。
+Pligg的简单介绍：
+Pligg，最灵活的类似Digg的Web2.0 CMS系统！网页设计师可以使用Pligg做他(她)想做的任何事情。稍微懂一些PHP和Mysql的知识即可安装Pligg。如果需要修改和管理 Pligg，可能有点难度。对于精通Web开发语言的朋友，Pligg是一个定制化非常强的CMS系统。—— via Anson Ho
+这两天研究了下Pligg的使用，基本了解了Pligg的内容类型、后台管理选项以及主题开发的知识。感觉Pligg的默认主题的内容组织很糟糕，如果能够很好的组织一下，内容的呈递效果将会更好。但是我那蹩脚的CSS知识使得自己现在不能很好地实现设想的形式，决定初次搭建的时候先使用Pligg的默认模版，之后在进行新的主题的开发并进行更换。还想到，如果可能，可以在Pligg的基础上融入自己的理解进行二次开发工作，发布一个基于Pligg的开源项目分支，并借机深入研究下Pligg的整体架构提升自己的技能。当然目前仅仅是设想，会不会进一步实现将根据接下来自己的实际情况来决定。
+下一步行动（Next Action） 尝试去GR订阅的文章的来源处与作者以及其他参与评论的人进行互动。
+继续学习Pligg的操作与配置，捣鼓一下自己的想法，构思站点的内容。
+购买域名和托管空间，将站点搭建起来，并邀请一些朋友参与进来。
+了解Pligg模版开发的知识，设计并开发一个新的Pligg主题，替换掉默认的主题。
+PS：学好英语才是正途。周二去给“实名制”充值，在电梯里遇到几个留学生，其中一哥们看到我T恤上的英文单词便尝试和我交流一下，但是我悲催的没有听懂。
+PPS：知乎邀请码还有两枚，我周遭的同学愣是没有感兴趣的，有人想要的话请到“淘来换”上购买，收入将捐赠给某个公益基金。
+Gonna Sailing 😉 ==END=="/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "搭建一个小众分享讨论社区",
+      "item": "https://milkythinking.com/blog/2011/06/10/set_up_a_minority_share_discussion_community/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "搭建一个小众分享讨论社区",
+  "name": "搭建一个小众分享讨论社区",
+  "description": "我想搭建一个小众的分享讨论的站点，类似Hacker News。\n缘起 我使用Google Reader订阅了很多的博客的RSS源，每天会看到很多有意思的文章，有些文章我想与他人进行分享和讨论，此前一直分享到人人上面，但是很少有回应，这种感觉很不爽。\n使用Hacker News一段时间，勉强可以阅读上面的帖子与评论，但是蹩脚的英文使得交流十分困难，尝试评论了几次，结果被他人给“踩”了下去，积分也一直是负的（有点打击的说）。\n于是，我尝试找寻中文的类似Hacker News的互动社区，但是目前没有找到喜欢的站点。国内的较为知名的社会化分享站点如鲜果热文和豆瓣9点，面向群体为普通大众和文艺青年，内容偏娱乐与文艺。抽屉、我烧网的这种中文Digg类的站点的内容与氛围我就更加不喜欢。\n在知乎上提问，Yeming Zhang推荐cnBeta和Solidot。我曾经GR订阅过cnBeta，但是因其不是全文输出且与博客 园新闻的性质差不多，就退订了。Solidot目前还在订阅中，每天会查看一下其更新的内容，但是感兴趣的话题比较少，偶尔会点开仔细阅读下，但很少看评论。考虑到自己好像还没有深入融入到任何一个社区的经历，于是计划尝试一下——cnBeta这种资讯类的站点被我过滤掉了，我注册了个Solidot帐号，今天投递帖子的时候，发现投递的内容是需要审核的，有些不爽，但是还会坚持一段时间。\nPligg 很早就有搭建一个分享讨论社区的想法，此前的计划是：成为一个Hacker News的资深用户，熟悉Hacker News的细节，clone一个Hacker News，并在这个过程中提升自己技术水平。但是这个项目的优先级很低，因为还有很多其他更重要或更感兴趣的事情要做，于是就一直搁置在那里。\n这几天，我意识到为什么不使用现有的开源产品来搭建一个呢？没有必要什么都要自己敲代码来完成，那样也太没效率了。于是就搜索了下，结果有Drigg、Hetaru、Pligg、PHPDug等。Drigg的站点无法访问；PHPDug以前使用过，但是感觉不好，也没有后续开发；Hetaru是初次接触，放弃；Pligg很九从JobsDigg知晓，并研究过部分代码。通过一些比较，我最终选择了Pligg。\nPligg的简单介绍：\nPligg，最灵活的类似Digg的Web2.0 CMS系统！网页设计师可以使用Pligg做他(她)想做的任何事情。稍微懂一些PHP和Mysql的知识即可安装Pligg。如果需要修改和管理 Pligg，可能有点难度。对于精通Web开发语言的朋友，Pligg是一个定制化非常强的CMS系统。—— via Anson Ho\n这两天研究了下Pligg的使用，基本了解了Pligg的内容类型、后台管理选项以及主题开发的知识。感觉Pligg的默认主题的内容组织很糟糕，如果能够很好的组织一下，内容的呈递效果将会更好。但是我那蹩脚的CSS知识使得自己现在不能很好地实现设想的形式，决定初次搭建的时候先使用Pligg的默认模版，之后在进行新的主题的开发并进行更换。还想到，如果可能，可以在Pligg的基础上融入自己的理解进行二次开发工作，发布一个基于Pligg的开源项目分支，并借机深入研究下Pligg的整体架构提升自己的技能。当然目前仅仅是设想，会不会进一步实现将根据接下来自己的实际情况来决定。\n下一步行动（Next Action） 尝试去GR订阅的文章的来源处与作者以及其他参与评论的人进行互动。\n继续学习Pligg的操作与配置，捣鼓一下自己的想法，构思站点的内容。\n购买域名和托管空间，将站点搭建起来，并邀请一些朋友参与进来。\n了解Pligg模版开发的知识，设计并开发一个新的Pligg主题，替换掉默认的主题。\nPS：学好英语才是正途。周二去给“实名制”充值，在电梯里遇到几个留学生，其中一哥们看到我T恤上的英文单词便尝试和我交流一下，但是我悲催的没有听懂。\nPPS：知乎邀请码还有两枚，我周遭的同学愣是没有感兴趣的，有人想要的话请到“淘来换”上购买，收入将捐赠给某个公益基金。\nGonna Sailing 😉 ==END==",
+  "keywords": [
+    
+  ],
+  "articleBody": "我想搭建一个小众的分享讨论的站点，类似Hacker News。\n缘起 我使用Google Reader订阅了很多的博客的RSS源，每天会看到很多有意思的文章，有些文章我想与他人进行分享和讨论，此前一直分享到人人上面，但是很少有回应，这种感觉很不爽。\n使用Hacker News一段时间，勉强可以阅读上面的帖子与评论，但是蹩脚的英文使得交流十分困难，尝试评论了几次，结果被他人给“踩”了下去，积分也一直是负的（有点打击的说）。\n于是，我尝试找寻中文的类似Hacker News的互动社区，但是目前没有找到喜欢的站点。国内的较为知名的社会化分享站点如鲜果热文和豆瓣9点，面向群体为普通大众和文艺青年，内容偏娱乐与文艺。抽屉、我烧网的这种中文Digg类的站点的内容与氛围我就更加不喜欢。\n在知乎上提问，Yeming Zhang推荐cnBeta和Solidot。我曾经GR订阅过cnBeta，但是因其不是全文输出且与博客 园新闻的性质差不多，就退订了。Solidot目前还在订阅中，每天会查看一下其更新的内容，但是感兴趣的话题比较少，偶尔会点开仔细阅读下，但很少看评论。考虑到自己好像还没有深入融入到任何一个社区的经历，于是计划尝试一下——cnBeta这种资讯类的站点被我过滤掉了，我注册了个Solidot帐号，今天投递帖子的时候，发现投递的内容是需要审核的，有些不爽，但是还会坚持一段时间。\nPligg 很早就有搭建一个分享讨论社区的想法，此前的计划是：成为一个Hacker News的资深用户，熟悉Hacker News的细节，clone一个Hacker News，并在这个过程中提升自己技术水平。但是这个项目的优先级很低，因为还有很多其他更重要或更感兴趣的事情要做，于是就一直搁置在那里。\n这几天，我意识到为什么不使用现有的开源产品来搭建一个呢？没有必要什么都要自己敲代码来完成，那样也太没效率了。于是就搜索了下，结果有Drigg、Hetaru、Pligg、PHPDug等。Drigg的站点无法访问；PHPDug以前使用过，但是感觉不好，也没有后续开发；Hetaru是初次接触，放弃；Pligg很九从JobsDigg知晓，并研究过部分代码。通过一些比较，我最终选择了Pligg。\nPligg的简单介绍：\nPligg，最灵活的类似Digg的Web2.0 CMS系统！网页设计师可以使用Pligg做他(她)想做的任何事情。稍微懂一些PHP和Mysql的知识即可安装Pligg。如果需要修改和管理 Pligg，可能有点难度。对于精通Web开发语言的朋友，Pligg是一个定制化非常强的CMS系统。—— via Anson Ho\n这两天研究了下Pligg的使用，基本了解了Pligg的内容类型、后台管理选项以及主题开发的知识。感觉Pligg的默认主题的内容组织很糟糕，如果能够很好的组织一下，内容的呈递效果将会更好。但是我那蹩脚的CSS知识使得自己现在不能很好地实现设想的形式，决定初次搭建的时候先使用Pligg的默认模版，之后在进行新的主题的开发并进行更换。还想到，如果可能，可以在Pligg的基础上融入自己的理解进行二次开发工作，发布一个基于Pligg的开源项目分支，并借机深入研究下Pligg的整体架构提升自己的技能。当然目前仅仅是设想，会不会进一步实现将根据接下来自己的实际情况来决定。\n下一步行动（Next Action） 尝试去GR订阅的文章的来源处与作者以及其他参与评论的人进行互动。\n继续学习Pligg的操作与配置，捣鼓一下自己的想法，构思站点的内容。\n购买域名和托管空间，将站点搭建起来，并邀请一些朋友参与进来。\n了解Pligg模版开发的知识，设计并开发一个新的Pligg主题，替换掉默认的主题。\nPS：学好英语才是正途。周二去给“实名制”充值，在电梯里遇到几个留学生，其中一哥们看到我T恤上的英文单词便尝试和我交流一下，但是我悲催的没有听懂。\nPPS：知乎邀请码还有两枚，我周遭的同学愣是没有感兴趣的，有人想要的话请到“淘来换”上购买，收入将捐赠给某个公益基金。\nGonna Sailing 😉 ==END==\n",
+  "wordCount" : "38",
+  "inLanguage": "en",
+  "datePublished": "2011-06-10T04:21:41+08:00",
+  "dateModified": "2011-06-10T04:21:41+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2011/06/10/set_up_a_minority_share_discussion_community/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      搭建一个小众分享讨论社区
+    </h1>
+    <div class="post-meta"><span title='2011-06-10 04:21:41 +0800 CST'>June 10, 2011</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>我想搭建一个小众的分享讨论的站点，类似<a href="http://news.ycombinator.com/" title="Hacker News">Hacker News</a>。</p>
+<h2 id="缘起">缘起<a hidden class="anchor" aria-hidden="true" href="#缘起">#</a></h2>
+<p>我使用Google Reader订阅了很多的博客的RSS源，每天会看到很多有意思的文章，有些文章我想与他人进行分享和讨论，此前一直分享到人人上面，但是很少有回应，这种感觉很不爽。</p>
+<p>使用Hacker News一段时间，勉强可以阅读上面的帖子与评论，但是蹩脚的英文使得交流十分困难，尝试评论了几次，结果被他人给“踩”了下去，积分也一直是负的（有点打击的说）。</p>
+<p>于是，我尝试找寻中文的类似Hacker News的互动社区，但是目前没有找到喜欢的站点。国内的较为知名的社会化分享站点如<a href="http://xianguo.com/hot" title="鲜果热点，让阅读流行起来">鲜果热文</a>和<a href="http://9.douban.com/" title="豆瓣9点">豆瓣9点</a>，面向群体为普通大众和文艺青年，内容偏娱乐与文艺。<a href="http://www.chouti.com/" title="抽屉">抽屉</a>、<a href="http://woshao.com/" title="我烧网，有点意思！">我烧网</a>的这种中文Digg类的站点的内容与氛围我就更加不喜欢。</p>
+<p>在知乎上提问，<a href="http://www.zhihu.com/people/zyeming" title="Yeming Zhang">Yeming Zhang</a>推荐<a href="http://cnbeta.com/" title="中文业界资讯站">cnBeta</a>和<a href="http://solidot.org/" title="奇客的资讯，重要的东西">Solidot</a>。我曾经GR订阅过cnBeta，但是因其不是全文输出且与博客 园新闻的性质差不多，就退订了。Solidot目前还在订阅中，每天会查看一下其更新的内容，但是感兴趣的话题比较少，偶尔会点开仔细阅读下，但很少看评论。考虑到自己好像还没有深入融入到任何一个社区的经历，于是计划尝试一下——cnBeta这种资讯类的站点被我过滤掉了，我注册了个Solidot帐号，今天投递帖子的时候，发现投递的内容是需要审核的，有些不爽，但是还会坚持一段时间。</p>
+<h2 id="pligg">Pligg<a hidden class="anchor" aria-hidden="true" href="#pligg">#</a></h2>
+<p>很早就有搭建一个分享讨论社区的想法，此前的计划是：成为一个Hacker News的资深用户，熟悉Hacker News的细节，clone一个Hacker News，并在这个过程中提升自己技术水平。但是这个项目的优先级很低，因为还有很多其他更重要或更感兴趣的事情要做，于是就一直搁置在那里。</p>
+<p>这几天，我意识到为什么不使用现有的开源产品来搭建一个呢？没有必要什么都要自己敲代码来完成，那样也太没效率了。于是就搜索了下，结果有<a href="http://www.drigg-code.org/" title="Drigg">Drigg</a>、<a href="http://hotarucms.org/" title="Hotaru CMS - Open Source Plugin-Powered CMS Engine">Hetaru</a>、<a href="http://pligg.com/" title="Pligg CMS | Open Source Content Management System">Pligg</a>、<a href="http://www.kubelabs.com/phpdug/" title="PHPDug">PHPDug</a>等。Drigg的站点无法访问；PHPDug以前使用过，但是感觉不好，也没有后续开发；Hetaru是初次接触，放弃；Pligg很九从<a href="http://jobsdigg.com/" title="JobsDigg - 互助协作平台。工作相关信息。">JobsDigg</a>知晓，并研究过部分代码。通过一些比较，我最终选择了Pligg。</p>
+<p>Pligg的简单介绍：</p>
+<blockquote>
+<p>Pligg，最灵活的类似Digg的Web2.0 CMS系统！网页设计师可以使用Pligg做他(她)想做的任何事情。稍微懂一些PHP和Mysql的知识即可安装Pligg。如果需要修改和管理 Pligg，可能有点难度。对于精通Web开发语言的朋友，Pligg是一个定制化非常强的CMS系统。—— via <a href="http://anson-ho.com/anson_geek/jobsdigg-pligg-digg_cms/" title="Jobsdigg的背后。pligg，Digg类的CMS">Anson Ho</a></p>
+</blockquote>
+<p>这两天研究了下Pligg的使用，基本了解了Pligg的内容类型、后台管理选项以及主题开发的知识。感觉Pligg的默认主题的内容组织很糟糕，如果能够很好的组织一下，内容的呈递效果将会更好。但是我那蹩脚的CSS知识使得自己现在不能很好地实现设想的形式，决定初次搭建的时候先使用Pligg的默认模版，之后在进行新的主题的开发并进行更换。还想到，如果可能，可以在Pligg的基础上融入自己的理解进行二次开发工作，发布一个基于Pligg的开源项目分支，并借机深入研究下Pligg的整体架构提升自己的技能。当然目前仅仅是设想，会不会进一步实现将根据接下来自己的实际情况来决定。</p>
+<h2 id="下一步行动next-action">下一步行动（Next Action）<a hidden class="anchor" aria-hidden="true" href="#下一步行动next-action">#</a></h2>
+<ol>
+<li>
+<p>尝试去GR订阅的文章的来源处与作者以及其他参与评论的人进行互动。</p>
+</li>
+<li>
+<p>继续学习Pligg的操作与配置，捣鼓一下自己的想法，构思站点的内容。</p>
+</li>
+<li>
+<p>购买域名和托管空间，将站点搭建起来，并邀请一些朋友参与进来。</p>
+</li>
+<li>
+<p>了解Pligg模版开发的知识，设计并开发一个新的Pligg主题，替换掉默认的主题。</p>
+</li>
+</ol>
+<p>PS：学好英语才是正途。周二去给“实名制”充值，在电梯里遇到几个留学生，其中一哥们看到我T恤上的英文单词便尝试和我交流一下，但是我悲催的没有听懂。</p>
+<p>PPS：<a href="http://www.zhihu.com/" title="知乎">知乎</a><strong>邀请码</strong>还有两枚，我周遭的同学愣是没有感兴趣的，有人想要的话请到“<a href="http://www.taolaihuan.com/" title="校园分类信息平台">淘来换</a>”上<a href="http://www.taolaihuan.com/item.php?item=5&amp;type=%E6%8F%90%E4%BE%9B&amp;category=special&amp;title=" title="出售知乎邀请码">购买</a>，收入将捐赠给某个公益基金。</p>
+<p>Gonna Sailing 😉<!-- raw HTML omitted -->
+==END==</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

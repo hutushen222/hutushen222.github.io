@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>HP Veer &amp; WebOS捣腾小记 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="我的Moto W205已经使用4年了，按键越来越不灵敏了，很长一段时间不能方便地发送信息，后来甚至连打电话也变得比较困难，是到了换个手机的时候了。之前考虑过小米，但出货太慢了，HTC有些贵说，更别提iPhone了，后来在公司里看到同事在玩一款小巧的手机，原来是Veer，基于WebOS操作系统，淘宝上有的卖，AT&amp;T合约机解锁版，￥700左右，性价比超高的说，值得入手。于是上周末在淘宝上购买了HP Veer，和点金石一起才￥688（友情推荐：这应该是淘宝最低价吧 😀 ）。这是我第一次在淘宝上购买实体物品，和店主简单了解下能否快速发货后，迅速下单购买，顺丰快递，周一签收。
+周一
+在森森童鞋的帮助下开始试用，系统基于煮机网制作的Rom，中文版，启动或重启时有个怪怪的Logo，一开始不了解，还以为WebOS原本就是那样呢。除了基本的通话（Phone）、短信（Messaging）、通讯录（Contract）、日历（Calendar）功能外，系统中已经安装有一些软件，如浏览器（Web）、邮件（Email）、音乐（Music）、PDF阅读器（PdfView）、软件管理器（Preware）、Google地图（Google Maps）等等，随便点开了一些应用，卡片式弹出打开，不了解WebOS的手势操作，不知道如何关闭程序、如何前进后退。由于系统没有安装中文输入法，还无法输入中文。
+傍晚回家的路上，给朋友打了个电话，感觉通话质量不是很好。由于没有中文输入法，需要和房东交互发送信息，只好借用嘉乐童鞋的手机。回家连接Wifi，打开一些常用的网页，如Instapaper、RenRen、微博，将它们保存为书签方便以后查看。遗憾的是，Google Reader移动版无法访问，总是重定向到Google.cn，也许改天可以设置VPN就可以访问的说。
+设置煮粥提醒闹铃和早晨起床闹铃。
+试用点金石，感觉很不错。
+周二
+继续体验WebOS的功能，如通话功能、短信功能，期间误拨了好几次电话的说。捣腾着安装了WebOS微博、人人等应用，感觉还不错。下载了WebOSQuickInstall（WQI），使用它安装了一个小游戏后又通过Preware卸载掉了。用于不知道可以使用WQI加载.ipk文件直接进行安装，于是笨拙地将安装文件通过USB保存到Veer中，然后使用Internalz&#43;Preware进行安装，太扯了点的说。
+研究如何安装中文输入法，通过Web访问下载.ipk文件至手机中，然后使用Internalz&#43;Preware进行安装。尝试了Wbee、爱微输入法、忠哲输入法。为了安装Wbee还尝试了使用VPS辅助下载文件。Wbee还要导入一个独特的文件来支持Veer内置的应用输入中文，使用WQI进行导入。
+发现重启之后时间总是错乱，关闭状态下WebOS无法保持时间，手动调整了好多次，这点很不方便。
+不过，整体感觉捣腾Veer不是件麻烦的事情，这可能与WebOS是基于我比较熟悉的Linux有一定的关系吧。
+周三
+在安装了微博、人人之后，感觉机子已经能够满足我目前的基本需求了，如果没有遇到问题，就可以很长时间不用捣腾了。但事与愿违，早上上班的路上，为了省电关闭了Wifi，下午由于Wiki无法启动，重启了一次，之后很多应用无法打开，应用一直停留在呼吸状态。搜索了下，可能是安装的补丁之间有冲突造成的，也可能是煮机网定制的Rom不稳定。森森建议刷机，说很简单，我还没刷过机就当尝鲜的说。
+晚上回家后，煮机网上找资料，查找刷机教程，真的很简单的说，不过由于网速较慢花了很久才下载完官方Rom（不太信任第三方Rom，下载了也没用），实际刷机过程花了很少的时间。刷机成功后，重启，已经是AT&amp;T的启动画面了，接着提示需要注册Palm账户，填写信息后，很久没有成功，猜测可能是我的SIM卡无法上网的原因，于是借了小蓝童鞋的SIM卡尝试，很快完成了注册过程。进入系统后，发现AT&amp;T版本安装了一些我不需要的软件的，如Amazon MP3、YPmobile等，但没有找到卸载的地方，不过影响不大的说。
+接着，在安装Preware时耗费了一些精力，下载了多次软件与安装包，还切换到了Windows平台下，仅仅是因为自己以为要在USB模式下使用WQI进行安装，其实是在充电模式下安装（不过，安装前记得要将系统切换为开发模式：搜索webos20090606，打开Developer Mode Enabler，开启开发模式后重启机器即可）。
+再后来，安装了Internalz Pro、Evernote、忠哲输入法（免费版）、Weibo（免费版）、RenRen（功能不完善）、AiiQQ（功能不完善）、Translator（基于Google Translate）、Clock Sync（用于同步时间）。然后，创建新的启动页，重新排列已有的软件，将常用的不用的软件按照使用频率和类型进行归档整理。
+周四
+安装了Relego（ReadItLater的WebOS客户端）。
+电池好像不是很给力的说，尤其实在开启Wiki以及一些应用的时候，以后使用的时候，得悠着点。
+周五
+安装了ClassicNote（一个简单的笔记软件）、HoshiDict（词典，支持StarDict词库）。了解了如何合并联系人的多个账户，可以为联系人设置特定的通知音乐，不过联系人无法进行中文搜索，这点带来了一些不便，想给某人大电话，有时需要翻半天目录的说，目前采用将常用的联系人标记为“收藏”来应付一下。
+使用Tasks进行简单的GTD实践。
+傍晚，和家人和朋友通了电话，这次通话质量还是可以的。
+周六、周日
+没有继续捣腾了。
+小结
+以上就是我这周捣腾HP Veer &amp; WebOS的流水帐，目前Veer已经能够满足我的大部分需求了，比我的上一个手机强大了N倍的说，通话质量也还可以。后续我还会进行一些其他折腾，主要是学习与体验WebOS的功能、数据备份与回复和安装新的软件，届时将会结合阅读到的文章与实际体验来发布一些相关文章，也许还可以考虑自己捣腾着开发一些简单的App来玩的说。考虑过是否要办张3G卡，目前好像没有太多的必要，还是等能够更加熟练地使用Veer再说吧。
+PS：HP Veer是我的第三部手机，希望可以用的久一些。另外两部是：第一部Nokia XXX（忘记了）在大一入学时购买，10月份就丢了；第二部Moto W205是在当时丢失手机后购买的，前前后后用了四年的说，终于退役了。
+**Update：**发现虽然通讯录里无法搜索联系人，但打电话时却可以通过输入汉字查找联系人。
+Gonna Sailing 😉 ==END==">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2011/11/27/hp-veer-and-webos/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="HP Veer &amp; WebOS捣腾小记" />
+<meta property="og:description" content="我的Moto W205已经使用4年了，按键越来越不灵敏了，很长一段时间不能方便地发送信息，后来甚至连打电话也变得比较困难，是到了换个手机的时候了。之前考虑过小米，但出货太慢了，HTC有些贵说，更别提iPhone了，后来在公司里看到同事在玩一款小巧的手机，原来是Veer，基于WebOS操作系统，淘宝上有的卖，AT&amp;T合约机解锁版，￥700左右，性价比超高的说，值得入手。于是上周末在淘宝上购买了HP Veer，和点金石一起才￥688（友情推荐：这应该是淘宝最低价吧 😀 ）。这是我第一次在淘宝上购买实体物品，和店主简单了解下能否快速发货后，迅速下单购买，顺丰快递，周一签收。
+周一
+在森森童鞋的帮助下开始试用，系统基于煮机网制作的Rom，中文版，启动或重启时有个怪怪的Logo，一开始不了解，还以为WebOS原本就是那样呢。除了基本的通话（Phone）、短信（Messaging）、通讯录（Contract）、日历（Calendar）功能外，系统中已经安装有一些软件，如浏览器（Web）、邮件（Email）、音乐（Music）、PDF阅读器（PdfView）、软件管理器（Preware）、Google地图（Google Maps）等等，随便点开了一些应用，卡片式弹出打开，不了解WebOS的手势操作，不知道如何关闭程序、如何前进后退。由于系统没有安装中文输入法，还无法输入中文。
+傍晚回家的路上，给朋友打了个电话，感觉通话质量不是很好。由于没有中文输入法，需要和房东交互发送信息，只好借用嘉乐童鞋的手机。回家连接Wifi，打开一些常用的网页，如Instapaper、RenRen、微博，将它们保存为书签方便以后查看。遗憾的是，Google Reader移动版无法访问，总是重定向到Google.cn，也许改天可以设置VPN就可以访问的说。
+设置煮粥提醒闹铃和早晨起床闹铃。
+试用点金石，感觉很不错。
+周二
+继续体验WebOS的功能，如通话功能、短信功能，期间误拨了好几次电话的说。捣腾着安装了WebOS微博、人人等应用，感觉还不错。下载了WebOSQuickInstall（WQI），使用它安装了一个小游戏后又通过Preware卸载掉了。用于不知道可以使用WQI加载.ipk文件直接进行安装，于是笨拙地将安装文件通过USB保存到Veer中，然后使用Internalz&#43;Preware进行安装，太扯了点的说。
+研究如何安装中文输入法，通过Web访问下载.ipk文件至手机中，然后使用Internalz&#43;Preware进行安装。尝试了Wbee、爱微输入法、忠哲输入法。为了安装Wbee还尝试了使用VPS辅助下载文件。Wbee还要导入一个独特的文件来支持Veer内置的应用输入中文，使用WQI进行导入。
+发现重启之后时间总是错乱，关闭状态下WebOS无法保持时间，手动调整了好多次，这点很不方便。
+不过，整体感觉捣腾Veer不是件麻烦的事情，这可能与WebOS是基于我比较熟悉的Linux有一定的关系吧。
+周三
+在安装了微博、人人之后，感觉机子已经能够满足我目前的基本需求了，如果没有遇到问题，就可以很长时间不用捣腾了。但事与愿违，早上上班的路上，为了省电关闭了Wifi，下午由于Wiki无法启动，重启了一次，之后很多应用无法打开，应用一直停留在呼吸状态。搜索了下，可能是安装的补丁之间有冲突造成的，也可能是煮机网定制的Rom不稳定。森森建议刷机，说很简单，我还没刷过机就当尝鲜的说。
+晚上回家后，煮机网上找资料，查找刷机教程，真的很简单的说，不过由于网速较慢花了很久才下载完官方Rom（不太信任第三方Rom，下载了也没用），实际刷机过程花了很少的时间。刷机成功后，重启，已经是AT&amp;T的启动画面了，接着提示需要注册Palm账户，填写信息后，很久没有成功，猜测可能是我的SIM卡无法上网的原因，于是借了小蓝童鞋的SIM卡尝试，很快完成了注册过程。进入系统后，发现AT&amp;T版本安装了一些我不需要的软件的，如Amazon MP3、YPmobile等，但没有找到卸载的地方，不过影响不大的说。
+接着，在安装Preware时耗费了一些精力，下载了多次软件与安装包，还切换到了Windows平台下，仅仅是因为自己以为要在USB模式下使用WQI进行安装，其实是在充电模式下安装（不过，安装前记得要将系统切换为开发模式：搜索webos20090606，打开Developer Mode Enabler，开启开发模式后重启机器即可）。
+再后来，安装了Internalz Pro、Evernote、忠哲输入法（免费版）、Weibo（免费版）、RenRen（功能不完善）、AiiQQ（功能不完善）、Translator（基于Google Translate）、Clock Sync（用于同步时间）。然后，创建新的启动页，重新排列已有的软件，将常用的不用的软件按照使用频率和类型进行归档整理。
+周四
+安装了Relego（ReadItLater的WebOS客户端）。
+电池好像不是很给力的说，尤其实在开启Wiki以及一些应用的时候，以后使用的时候，得悠着点。
+周五
+安装了ClassicNote（一个简单的笔记软件）、HoshiDict（词典，支持StarDict词库）。了解了如何合并联系人的多个账户，可以为联系人设置特定的通知音乐，不过联系人无法进行中文搜索，这点带来了一些不便，想给某人大电话，有时需要翻半天目录的说，目前采用将常用的联系人标记为“收藏”来应付一下。
+使用Tasks进行简单的GTD实践。
+傍晚，和家人和朋友通了电话，这次通话质量还是可以的。
+周六、周日
+没有继续捣腾了。
+小结
+以上就是我这周捣腾HP Veer &amp; WebOS的流水帐，目前Veer已经能够满足我的大部分需求了，比我的上一个手机强大了N倍的说，通话质量也还可以。后续我还会进行一些其他折腾，主要是学习与体验WebOS的功能、数据备份与回复和安装新的软件，届时将会结合阅读到的文章与实际体验来发布一些相关文章，也许还可以考虑自己捣腾着开发一些简单的App来玩的说。考虑过是否要办张3G卡，目前好像没有太多的必要，还是等能够更加熟练地使用Veer再说吧。
+PS：HP Veer是我的第三部手机，希望可以用的久一些。另外两部是：第一部Nokia XXX（忘记了）在大一入学时购买，10月份就丢了；第二部Moto W205是在当时丢失手机后购买的，前前后后用了四年的说，终于退役了。
+**Update：**发现虽然通讯录里无法搜索联系人，但打电话时却可以通过输入汉字查找联系人。
+Gonna Sailing 😉 ==END==" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2011/11/27/hp-veer-and-webos/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2011-11-27T14:01:40+08:00" />
+<meta property="article:modified_time" content="2011-11-27T14:01:40+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HP Veer &amp; WebOS捣腾小记"/>
+<meta name="twitter:description" content="我的Moto W205已经使用4年了，按键越来越不灵敏了，很长一段时间不能方便地发送信息，后来甚至连打电话也变得比较困难，是到了换个手机的时候了。之前考虑过小米，但出货太慢了，HTC有些贵说，更别提iPhone了，后来在公司里看到同事在玩一款小巧的手机，原来是Veer，基于WebOS操作系统，淘宝上有的卖，AT&amp;T合约机解锁版，￥700左右，性价比超高的说，值得入手。于是上周末在淘宝上购买了HP Veer，和点金石一起才￥688（友情推荐：这应该是淘宝最低价吧 😀 ）。这是我第一次在淘宝上购买实体物品，和店主简单了解下能否快速发货后，迅速下单购买，顺丰快递，周一签收。
+周一
+在森森童鞋的帮助下开始试用，系统基于煮机网制作的Rom，中文版，启动或重启时有个怪怪的Logo，一开始不了解，还以为WebOS原本就是那样呢。除了基本的通话（Phone）、短信（Messaging）、通讯录（Contract）、日历（Calendar）功能外，系统中已经安装有一些软件，如浏览器（Web）、邮件（Email）、音乐（Music）、PDF阅读器（PdfView）、软件管理器（Preware）、Google地图（Google Maps）等等，随便点开了一些应用，卡片式弹出打开，不了解WebOS的手势操作，不知道如何关闭程序、如何前进后退。由于系统没有安装中文输入法，还无法输入中文。
+傍晚回家的路上，给朋友打了个电话，感觉通话质量不是很好。由于没有中文输入法，需要和房东交互发送信息，只好借用嘉乐童鞋的手机。回家连接Wifi，打开一些常用的网页，如Instapaper、RenRen、微博，将它们保存为书签方便以后查看。遗憾的是，Google Reader移动版无法访问，总是重定向到Google.cn，也许改天可以设置VPN就可以访问的说。
+设置煮粥提醒闹铃和早晨起床闹铃。
+试用点金石，感觉很不错。
+周二
+继续体验WebOS的功能，如通话功能、短信功能，期间误拨了好几次电话的说。捣腾着安装了WebOS微博、人人等应用，感觉还不错。下载了WebOSQuickInstall（WQI），使用它安装了一个小游戏后又通过Preware卸载掉了。用于不知道可以使用WQI加载.ipk文件直接进行安装，于是笨拙地将安装文件通过USB保存到Veer中，然后使用Internalz&#43;Preware进行安装，太扯了点的说。
+研究如何安装中文输入法，通过Web访问下载.ipk文件至手机中，然后使用Internalz&#43;Preware进行安装。尝试了Wbee、爱微输入法、忠哲输入法。为了安装Wbee还尝试了使用VPS辅助下载文件。Wbee还要导入一个独特的文件来支持Veer内置的应用输入中文，使用WQI进行导入。
+发现重启之后时间总是错乱，关闭状态下WebOS无法保持时间，手动调整了好多次，这点很不方便。
+不过，整体感觉捣腾Veer不是件麻烦的事情，这可能与WebOS是基于我比较熟悉的Linux有一定的关系吧。
+周三
+在安装了微博、人人之后，感觉机子已经能够满足我目前的基本需求了，如果没有遇到问题，就可以很长时间不用捣腾了。但事与愿违，早上上班的路上，为了省电关闭了Wifi，下午由于Wiki无法启动，重启了一次，之后很多应用无法打开，应用一直停留在呼吸状态。搜索了下，可能是安装的补丁之间有冲突造成的，也可能是煮机网定制的Rom不稳定。森森建议刷机，说很简单，我还没刷过机就当尝鲜的说。
+晚上回家后，煮机网上找资料，查找刷机教程，真的很简单的说，不过由于网速较慢花了很久才下载完官方Rom（不太信任第三方Rom，下载了也没用），实际刷机过程花了很少的时间。刷机成功后，重启，已经是AT&amp;T的启动画面了，接着提示需要注册Palm账户，填写信息后，很久没有成功，猜测可能是我的SIM卡无法上网的原因，于是借了小蓝童鞋的SIM卡尝试，很快完成了注册过程。进入系统后，发现AT&amp;T版本安装了一些我不需要的软件的，如Amazon MP3、YPmobile等，但没有找到卸载的地方，不过影响不大的说。
+接着，在安装Preware时耗费了一些精力，下载了多次软件与安装包，还切换到了Windows平台下，仅仅是因为自己以为要在USB模式下使用WQI进行安装，其实是在充电模式下安装（不过，安装前记得要将系统切换为开发模式：搜索webos20090606，打开Developer Mode Enabler，开启开发模式后重启机器即可）。
+再后来，安装了Internalz Pro、Evernote、忠哲输入法（免费版）、Weibo（免费版）、RenRen（功能不完善）、AiiQQ（功能不完善）、Translator（基于Google Translate）、Clock Sync（用于同步时间）。然后，创建新的启动页，重新排列已有的软件，将常用的不用的软件按照使用频率和类型进行归档整理。
+周四
+安装了Relego（ReadItLater的WebOS客户端）。
+电池好像不是很给力的说，尤其实在开启Wiki以及一些应用的时候，以后使用的时候，得悠着点。
+周五
+安装了ClassicNote（一个简单的笔记软件）、HoshiDict（词典，支持StarDict词库）。了解了如何合并联系人的多个账户，可以为联系人设置特定的通知音乐，不过联系人无法进行中文搜索，这点带来了一些不便，想给某人大电话，有时需要翻半天目录的说，目前采用将常用的联系人标记为“收藏”来应付一下。
+使用Tasks进行简单的GTD实践。
+傍晚，和家人和朋友通了电话，这次通话质量还是可以的。
+周六、周日
+没有继续捣腾了。
+小结
+以上就是我这周捣腾HP Veer &amp; WebOS的流水帐，目前Veer已经能够满足我的大部分需求了，比我的上一个手机强大了N倍的说，通话质量也还可以。后续我还会进行一些其他折腾，主要是学习与体验WebOS的功能、数据备份与回复和安装新的软件，届时将会结合阅读到的文章与实际体验来发布一些相关文章，也许还可以考虑自己捣腾着开发一些简单的App来玩的说。考虑过是否要办张3G卡，目前好像没有太多的必要，还是等能够更加熟练地使用Veer再说吧。
+PS：HP Veer是我的第三部手机，希望可以用的久一些。另外两部是：第一部Nokia XXX（忘记了）在大一入学时购买，10月份就丢了；第二部Moto W205是在当时丢失手机后购买的，前前后后用了四年的说，终于退役了。
+**Update：**发现虽然通讯录里无法搜索联系人，但打电话时却可以通过输入汉字查找联系人。
+Gonna Sailing 😉 ==END=="/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "HP Veer \u0026 WebOS捣腾小记",
+      "item": "https://milkythinking.com/blog/2011/11/27/hp-veer-and-webos/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "HP Veer \u0026 WebOS捣腾小记",
+  "name": "HP Veer \u0026 WebOS捣腾小记",
+  "description": "我的Moto W205已经使用4年了，按键越来越不灵敏了，很长一段时间不能方便地发送信息，后来甚至连打电话也变得比较困难，是到了换个手机的时候了。之前考虑过小米，但出货太慢了，HTC有些贵说，更别提iPhone了，后来在公司里看到同事在玩一款小巧的手机，原来是Veer，基于WebOS操作系统，淘宝上有的卖，AT\u0026amp;T合约机解锁版，￥700左右，性价比超高的说，值得入手。于是上周末在淘宝上购买了HP Veer，和点金石一起才￥688（友情推荐：这应该是淘宝最低价吧 😀 ）。这是我第一次在淘宝上购买实体物品，和店主简单了解下能否快速发货后，迅速下单购买，顺丰快递，周一签收。\n周一\n在森森童鞋的帮助下开始试用，系统基于煮机网制作的Rom，中文版，启动或重启时有个怪怪的Logo，一开始不了解，还以为WebOS原本就是那样呢。除了基本的通话（Phone）、短信（Messaging）、通讯录（Contract）、日历（Calendar）功能外，系统中已经安装有一些软件，如浏览器（Web）、邮件（Email）、音乐（Music）、PDF阅读器（PdfView）、软件管理器（Preware）、Google地图（Google Maps）等等，随便点开了一些应用，卡片式弹出打开，不了解WebOS的手势操作，不知道如何关闭程序、如何前进后退。由于系统没有安装中文输入法，还无法输入中文。\n傍晚回家的路上，给朋友打了个电话，感觉通话质量不是很好。由于没有中文输入法，需要和房东交互发送信息，只好借用嘉乐童鞋的手机。回家连接Wifi，打开一些常用的网页，如Instapaper、RenRen、微博，将它们保存为书签方便以后查看。遗憾的是，Google Reader移动版无法访问，总是重定向到Google.cn，也许改天可以设置VPN就可以访问的说。\n设置煮粥提醒闹铃和早晨起床闹铃。\n试用点金石，感觉很不错。\n周二\n继续体验WebOS的功能，如通话功能、短信功能，期间误拨了好几次电话的说。捣腾着安装了WebOS微博、人人等应用，感觉还不错。下载了WebOSQuickInstall（WQI），使用它安装了一个小游戏后又通过Preware卸载掉了。用于不知道可以使用WQI加载.ipk文件直接进行安装，于是笨拙地将安装文件通过USB保存到Veer中，然后使用Internalz+Preware进行安装，太扯了点的说。\n研究如何安装中文输入法，通过Web访问下载.ipk文件至手机中，然后使用Internalz+Preware进行安装。尝试了Wbee、爱微输入法、忠哲输入法。为了安装Wbee还尝试了使用VPS辅助下载文件。Wbee还要导入一个独特的文件来支持Veer内置的应用输入中文，使用WQI进行导入。\n发现重启之后时间总是错乱，关闭状态下WebOS无法保持时间，手动调整了好多次，这点很不方便。\n不过，整体感觉捣腾Veer不是件麻烦的事情，这可能与WebOS是基于我比较熟悉的Linux有一定的关系吧。\n周三\n在安装了微博、人人之后，感觉机子已经能够满足我目前的基本需求了，如果没有遇到问题，就可以很长时间不用捣腾了。但事与愿违，早上上班的路上，为了省电关闭了Wifi，下午由于Wiki无法启动，重启了一次，之后很多应用无法打开，应用一直停留在呼吸状态。搜索了下，可能是安装的补丁之间有冲突造成的，也可能是煮机网定制的Rom不稳定。森森建议刷机，说很简单，我还没刷过机就当尝鲜的说。\n晚上回家后，煮机网上找资料，查找刷机教程，真的很简单的说，不过由于网速较慢花了很久才下载完官方Rom（不太信任第三方Rom，下载了也没用），实际刷机过程花了很少的时间。刷机成功后，重启，已经是AT\u0026amp;T的启动画面了，接着提示需要注册Palm账户，填写信息后，很久没有成功，猜测可能是我的SIM卡无法上网的原因，于是借了小蓝童鞋的SIM卡尝试，很快完成了注册过程。进入系统后，发现AT\u0026amp;T版本安装了一些我不需要的软件的，如Amazon MP3、YPmobile等，但没有找到卸载的地方，不过影响不大的说。\n接着，在安装Preware时耗费了一些精力，下载了多次软件与安装包，还切换到了Windows平台下，仅仅是因为自己以为要在USB模式下使用WQI进行安装，其实是在充电模式下安装（不过，安装前记得要将系统切换为开发模式：搜索webos20090606，打开Developer Mode Enabler，开启开发模式后重启机器即可）。\n再后来，安装了Internalz Pro、Evernote、忠哲输入法（免费版）、Weibo（免费版）、RenRen（功能不完善）、AiiQQ（功能不完善）、Translator（基于Google Translate）、Clock Sync（用于同步时间）。然后，创建新的启动页，重新排列已有的软件，将常用的不用的软件按照使用频率和类型进行归档整理。\n周四\n安装了Relego（ReadItLater的WebOS客户端）。\n电池好像不是很给力的说，尤其实在开启Wiki以及一些应用的时候，以后使用的时候，得悠着点。\n周五\n安装了ClassicNote（一个简单的笔记软件）、HoshiDict（词典，支持StarDict词库）。了解了如何合并联系人的多个账户，可以为联系人设置特定的通知音乐，不过联系人无法进行中文搜索，这点带来了一些不便，想给某人大电话，有时需要翻半天目录的说，目前采用将常用的联系人标记为“收藏”来应付一下。\n使用Tasks进行简单的GTD实践。\n傍晚，和家人和朋友通了电话，这次通话质量还是可以的。\n周六、周日\n没有继续捣腾了。\n小结\n以上就是我这周捣腾HP Veer \u0026amp; WebOS的流水帐，目前Veer已经能够满足我的大部分需求了，比我的上一个手机强大了N倍的说，通话质量也还可以。后续我还会进行一些其他折腾，主要是学习与体验WebOS的功能、数据备份与回复和安装新的软件，届时将会结合阅读到的文章与实际体验来发布一些相关文章，也许还可以考虑自己捣腾着开发一些简单的App来玩的说。考虑过是否要办张3G卡，目前好像没有太多的必要，还是等能够更加熟练地使用Veer再说吧。\nPS：HP Veer是我的第三部手机，希望可以用的久一些。另外两部是：第一部Nokia XXX（忘记了）在大一入学时购买，10月份就丢了；第二部Moto W205是在当时丢失手机后购买的，前前后后用了四年的说，终于退役了。\n**Update：**发现虽然通讯录里无法搜索联系人，但打电话时却可以通过输入汉字查找联系人。\nGonna Sailing 😉 ==END==",
+  "keywords": [
+    
+  ],
+  "articleBody": "我的Moto W205已经使用4年了，按键越来越不灵敏了，很长一段时间不能方便地发送信息，后来甚至连打电话也变得比较困难，是到了换个手机的时候了。之前考虑过小米，但出货太慢了，HTC有些贵说，更别提iPhone了，后来在公司里看到同事在玩一款小巧的手机，原来是Veer，基于WebOS操作系统，淘宝上有的卖，AT\u0026T合约机解锁版，￥700左右，性价比超高的说，值得入手。于是上周末在淘宝上购买了HP Veer，和点金石一起才￥688（友情推荐：这应该是淘宝最低价吧 😀 ）。这是我第一次在淘宝上购买实体物品，和店主简单了解下能否快速发货后，迅速下单购买，顺丰快递，周一签收。\n周一\n在森森童鞋的帮助下开始试用，系统基于煮机网制作的Rom，中文版，启动或重启时有个怪怪的Logo，一开始不了解，还以为WebOS原本就是那样呢。除了基本的通话（Phone）、短信（Messaging）、通讯录（Contract）、日历（Calendar）功能外，系统中已经安装有一些软件，如浏览器（Web）、邮件（Email）、音乐（Music）、PDF阅读器（PdfView）、软件管理器（Preware）、Google地图（Google Maps）等等，随便点开了一些应用，卡片式弹出打开，不了解WebOS的手势操作，不知道如何关闭程序、如何前进后退。由于系统没有安装中文输入法，还无法输入中文。\n傍晚回家的路上，给朋友打了个电话，感觉通话质量不是很好。由于没有中文输入法，需要和房东交互发送信息，只好借用嘉乐童鞋的手机。回家连接Wifi，打开一些常用的网页，如Instapaper、RenRen、微博，将它们保存为书签方便以后查看。遗憾的是，Google Reader移动版无法访问，总是重定向到Google.cn，也许改天可以设置VPN就可以访问的说。\n设置煮粥提醒闹铃和早晨起床闹铃。\n试用点金石，感觉很不错。\n周二\n继续体验WebOS的功能，如通话功能、短信功能，期间误拨了好几次电话的说。捣腾着安装了WebOS微博、人人等应用，感觉还不错。下载了WebOSQuickInstall（WQI），使用它安装了一个小游戏后又通过Preware卸载掉了。用于不知道可以使用WQI加载.ipk文件直接进行安装，于是笨拙地将安装文件通过USB保存到Veer中，然后使用Internalz+Preware进行安装，太扯了点的说。\n研究如何安装中文输入法，通过Web访问下载.ipk文件至手机中，然后使用Internalz+Preware进行安装。尝试了Wbee、爱微输入法、忠哲输入法。为了安装Wbee还尝试了使用VPS辅助下载文件。Wbee还要导入一个独特的文件来支持Veer内置的应用输入中文，使用WQI进行导入。\n发现重启之后时间总是错乱，关闭状态下WebOS无法保持时间，手动调整了好多次，这点很不方便。\n不过，整体感觉捣腾Veer不是件麻烦的事情，这可能与WebOS是基于我比较熟悉的Linux有一定的关系吧。\n周三\n在安装了微博、人人之后，感觉机子已经能够满足我目前的基本需求了，如果没有遇到问题，就可以很长时间不用捣腾了。但事与愿违，早上上班的路上，为了省电关闭了Wifi，下午由于Wiki无法启动，重启了一次，之后很多应用无法打开，应用一直停留在呼吸状态。搜索了下，可能是安装的补丁之间有冲突造成的，也可能是煮机网定制的Rom不稳定。森森建议刷机，说很简单，我还没刷过机就当尝鲜的说。\n晚上回家后，煮机网上找资料，查找刷机教程，真的很简单的说，不过由于网速较慢花了很久才下载完官方Rom（不太信任第三方Rom，下载了也没用），实际刷机过程花了很少的时间。刷机成功后，重启，已经是AT\u0026T的启动画面了，接着提示需要注册Palm账户，填写信息后，很久没有成功，猜测可能是我的SIM卡无法上网的原因，于是借了小蓝童鞋的SIM卡尝试，很快完成了注册过程。进入系统后，发现AT\u0026T版本安装了一些我不需要的软件的，如Amazon MP3、YPmobile等，但没有找到卸载的地方，不过影响不大的说。\n接着，在安装Preware时耗费了一些精力，下载了多次软件与安装包，还切换到了Windows平台下，仅仅是因为自己以为要在USB模式下使用WQI进行安装，其实是在充电模式下安装（不过，安装前记得要将系统切换为开发模式：搜索webos20090606，打开Developer Mode Enabler，开启开发模式后重启机器即可）。\n再后来，安装了Internalz Pro、Evernote、忠哲输入法（免费版）、Weibo（免费版）、RenRen（功能不完善）、AiiQQ（功能不完善）、Translator（基于Google Translate）、Clock Sync（用于同步时间）。然后，创建新的启动页，重新排列已有的软件，将常用的不用的软件按照使用频率和类型进行归档整理。\n周四\n安装了Relego（ReadItLater的WebOS客户端）。\n电池好像不是很给力的说，尤其实在开启Wiki以及一些应用的时候，以后使用的时候，得悠着点。\n周五\n安装了ClassicNote（一个简单的笔记软件）、HoshiDict（词典，支持StarDict词库）。了解了如何合并联系人的多个账户，可以为联系人设置特定的通知音乐，不过联系人无法进行中文搜索，这点带来了一些不便，想给某人大电话，有时需要翻半天目录的说，目前采用将常用的联系人标记为“收藏”来应付一下。\n使用Tasks进行简单的GTD实践。\n傍晚，和家人和朋友通了电话，这次通话质量还是可以的。\n周六、周日\n没有继续捣腾了。\n小结\n以上就是我这周捣腾HP Veer \u0026 WebOS的流水帐，目前Veer已经能够满足我的大部分需求了，比我的上一个手机强大了N倍的说，通话质量也还可以。后续我还会进行一些其他折腾，主要是学习与体验WebOS的功能、数据备份与回复和安装新的软件，届时将会结合阅读到的文章与实际体验来发布一些相关文章，也许还可以考虑自己捣腾着开发一些简单的App来玩的说。考虑过是否要办张3G卡，目前好像没有太多的必要，还是等能够更加熟练地使用Veer再说吧。\nPS：HP Veer是我的第三部手机，希望可以用的久一些。另外两部是：第一部Nokia XXX（忘记了）在大一入学时购买，10月份就丢了；第二部Moto W205是在当时丢失手机后购买的，前前后后用了四年的说，终于退役了。\n**Update：**发现虽然通讯录里无法搜索联系人，但打电话时却可以通过输入汉字查找联系人。\nGonna Sailing 😉 ==END==\n",
+  "wordCount" : "51",
+  "inLanguage": "en",
+  "datePublished": "2011-11-27T14:01:40+08:00",
+  "dateModified": "2011-11-27T14:01:40+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2011/11/27/hp-veer-and-webos/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      HP Veer &amp; WebOS捣腾小记
+    </h1>
+    <div class="post-meta"><span title='2011-11-27 14:01:40 +0800 CST'>November 27, 2011</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>我的Moto W205已经使用4年了，按键越来越不灵敏了，很长一段时间不能方便地发送信息，后来甚至连打电话也变得比较困难，是到了换个手机的时候了。之前考虑过小米，但出货太慢了，HTC有些贵说，更别提iPhone了，后来在公司里看到同事在玩一款小巧的手机，原来是Veer，基于WebOS操作系统，淘宝上有的卖，AT&amp;T合约机解锁版，￥700左右，性价比超高的说，值得入手。于是上周末在<a href="http://item.taobao.com/item.htm?id=13169083610" title="也许是淘宝上最便宜的商家">淘宝</a>上购买了HP Veer，和点金石一起才￥688（友情推荐：这应该是淘宝最低价吧 😀 ）。这是我第一次在淘宝上购买实体物品，和店主简单了解下能否快速发货后，迅速下单购买，顺丰快递，周一签收。</p>
+<p>周一</p>
+<p>在森森童鞋的帮助下开始试用，系统基于<a href="http://www.zoopda.com/" title="煮机网 —— 智能手机定制第一站。">煮机网</a>制作的Rom，中文版，启动或重启时有个怪怪的Logo，一开始不了解，还以为WebOS原本就是那样呢。除了基本的通话（Phone）、短信（Messaging）、通讯录（Contract）、日历（Calendar）功能外，系统中已经安装有一些软件，如浏览器（Web）、邮件（Email）、音乐（Music）、PDF阅读器（PdfView）、软件管理器（Preware）、Google地图（Google Maps）等等，随便点开了一些应用，卡片式弹出打开，不了解WebOS的手势操作，不知道如何关闭程序、如何前进后退。由于系统没有安装中文输入法，还无法输入中文。</p>
+<p>傍晚回家的路上，给朋友打了个电话，感觉通话质量不是很好。由于没有中文输入法，需要和房东交互发送信息，只好借用嘉乐童鞋的手机。回家连接Wifi，打开一些常用的网页，如Instapaper、RenRen、微博，将它们保存为书签方便以后查看。遗憾的是，Google Reader移动版无法访问，总是重定向到Google.cn，也许改天可以设置VPN就可以访问的说。</p>
+<p>设置煮粥提醒闹铃和早晨起床闹铃。</p>
+<p>试用点金石，感觉很不错。</p>
+<p>周二</p>
+<p>继续体验WebOS的功能，如通话功能、短信功能，期间误拨了好几次电话的说。捣腾着安装了WebOS微博、人人等应用，感觉还不错。下载了WebOSQuickInstall（WQI），使用它安装了一个小游戏后又通过Preware卸载掉了。用于不知道可以使用WQI加载.ipk文件直接进行安装，于是笨拙地将安装文件通过USB保存到Veer中，然后使用Internalz+Preware进行安装，太扯了点的说。</p>
+<p>研究如何安装中文输入法，通过Web访问下载.ipk文件至手机中，然后使用Internalz+Preware进行安装。尝试了Wbee、爱微输入法、忠哲输入法。为了安装Wbee还尝试了使用VPS辅助下载文件。Wbee还要导入一个独特的文件来支持Veer内置的应用输入中文，使用WQI进行导入。</p>
+<p>发现重启之后时间总是错乱，关闭状态下WebOS无法保持时间，手动调整了好多次，这点很不方便。</p>
+<p>不过，整体感觉捣腾Veer不是件麻烦的事情，这可能与WebOS是基于我比较熟悉的Linux有一定的关系吧。</p>
+<p>周三</p>
+<p>在安装了微博、人人之后，感觉机子已经能够满足我目前的基本需求了，如果没有遇到问题，就可以很长时间不用捣腾了。但事与愿违，早上上班的路上，为了省电关闭了Wifi，下午由于Wiki无法启动，重启了一次，之后很多应用无法打开，应用一直停留在呼吸状态。搜索了下，可能是安装的补丁之间有冲突造成的，也可能是煮机网定制的Rom不稳定。森森建议刷机，说很简单，我还没刷过机就当尝鲜的说。</p>
+<p>晚上回家后，煮机网上找资料，查找刷机教程，真的很简单的说，不过由于网速较慢花了很久才下载完官方Rom（不太信任第三方Rom，下载了也没用），实际刷机过程花了很少的时间。刷机成功后，重启，已经是AT&amp;T的启动画面了，接着提示需要注册Palm账户，填写信息后，很久没有成功，猜测可能是我的SIM卡无法上网的原因，于是借了小蓝童鞋的SIM卡尝试，很快完成了注册过程。进入系统后，发现AT&amp;T版本安装了一些我不需要的软件的，如Amazon MP3、YPmobile等，但没有找到卸载的地方，不过影响不大的说。</p>
+<p>接着，在安装Preware时耗费了一些精力，下载了多次软件与安装包，还切换到了Windows平台下，仅仅是因为自己以为要在USB模式下使用WQI进行安装，其实是在充电模式下安装（不过，安装前记得要将系统切换为开发模式：搜索webos20090606，打开Developer Mode Enabler，开启开发模式后重启机器即可）。</p>
+<p>再后来，安装了Internalz Pro、Evernote、忠哲输入法（免费版）、Weibo（免费版）、RenRen（功能不完善）、AiiQQ（功能不完善）、Translator（基于Google Translate）、Clock Sync（用于同步时间）。然后，创建新的启动页，重新排列已有的软件，将常用的不用的软件按照使用频率和类型进行归档整理。</p>
+<p>周四</p>
+<p>安装了Relego（ReadItLater的WebOS客户端）。</p>
+<p>电池好像不是很给力的说，尤其实在开启Wiki以及一些应用的时候，以后使用的时候，得悠着点。</p>
+<p>周五</p>
+<p>安装了ClassicNote（一个简单的笔记软件）、HoshiDict（词典，支持StarDict词库）。了解了如何合并联系人的多个账户，可以为联系人设置特定的通知音乐，不过联系人无法进行中文搜索，这点带来了一些不便，想给某人大电话，有时需要翻半天目录的说，目前采用将常用的联系人标记为“收藏”来应付一下。</p>
+<p>使用Tasks进行简单的GTD实践。</p>
+<p>傍晚，和家人和朋友通了电话，这次通话质量还是可以的。</p>
+<p>周六、周日</p>
+<p>没有继续捣腾了。</p>
+<p>小结</p>
+<p>以上就是我这周捣腾HP Veer &amp; WebOS的流水帐，目前Veer已经能够满足我的大部分需求了，比我的上一个手机强大了N倍的说，通话质量也还可以。后续我还会进行一些其他折腾，主要是学习与体验WebOS的功能、数据备份与回复和安装新的软件，届时将会结合阅读到的文章与实际体验来发布一些相关文章，也许还可以考虑自己捣腾着开发一些简单的App来玩的说。考虑过是否要办张3G卡，目前好像没有太多的必要，还是等能够更加熟练地使用Veer再说吧。</p>
+<p>PS：HP Veer是我的第三部手机，希望可以用的久一些。另外两部是：第一部Nokia XXX（忘记了）在大一入学时购买，10月份就丢了；第二部Moto W205是在当时丢失手机后购买的，前前后后用了四年的说，终于退役了。</p>
+<p>**Update：**发现虽然通讯录里无法搜索联系人，但打电话时却可以通过输入汉字查找联系人。</p>
+<p>Gonna Sailing 😉<!-- raw HTML omitted -->
+==END==</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

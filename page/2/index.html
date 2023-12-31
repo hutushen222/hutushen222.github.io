@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.121.1"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Milky Thinking</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://milkythinking.com/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Milky Thinking" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://milkythinking.com/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Milky Thinking"/>
+<meta name="twitter:description" content=""/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Milky Thinking",
+  "url": "https://milkythinking.com/",
+  "description": "",
+  "thumbnailUrl": "https://milkythinking.com/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">记一次磁盘清理的过程
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>缘起 我们测试环境中的一台Job机器磁盘空间使用率一直很高（VM 40G），最近经常遇到磁盘空间已满，导致一些任务无法正常运行，比如新项目的代码无法部署，影响正常的开发流程。几天前为赶项目进度，我们采用临时清理一些日志文件的方式，仅仅空出几G的空间，只能缓解一时，隔天又满了。总是这样就也太坑了，我决定花些时间彻底解决一下，不管采用什么办法。早晨起床后，我在Doit.im中创建了项目，并进行一些规划，列出一些需要进行的任务。
+我对这台机器的职责并不熟悉，我猜测会否是该机器上部署了太多的服务导致，如果是这样，就将它们迁移出去；如果是因为机器配置太低的原因，则切换到配置更高的机器；迁移的话就需要对该机器上运行的任务进行梳理……
+实战 到公司后，又听到该机器磁盘已满，又是临时的清理了些空间。我跑去测试环境的维护人员哪里，督促他解决这个问题，之后就待在那里和他一起解决。
+首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G&#43;的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？
+使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） </p>
+  </div>
+  <footer class="entry-footer"><span title='2014-04-12 10:03:14 +0800 CST'>April 12, 2014</span></footer>
+  <a class="entry-link" aria-label="post link to 记一次磁盘清理的过程" href="https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">My Toolkit Hub
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>SimpleHtmlDom – PHP HTML Parser
+Home: http://simplehtmldom.sourceforge.net
+Idiorm &amp; Paris – PHP ORM &amp; ActiveRecord Home: http://j4mie.github.io/idiormandparis/
+Docs: Idiorm &amp; Paris
+Phinx – PHP Database Migrations
+Home: http://phinx.org/
+Docs: http://docs.phinx.org/en/latest/</p>
+  </div>
+  <footer class="entry-footer"><span title='2013-09-13 09:25:55 +0800 CST'>September 13, 2013</span></footer>
+  <a class="entry-link" aria-label="post link to My Toolkit Hub" href="https://milkythinking.com/blog/2013/09/13/my-toolkit-hub/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">PHP is_array()
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>同事维护的站点遇到一个SQL注入漏洞，最后发现是由于对in_array()的理解错误（一直以为是绝对匹配才会返回true），同时拼接SQL语句时也没有使用Prepared Statement导致。代码中使用in_array($var, $white_set)判断从Query String获得的变量是否符合要求，参见下面示例代码（$var为一整型变量，取用时没有使用intval($var)或者(int)$var强制转换为整型）。
+$white_set = array(11, 13, 16); $var = $_GET[&#39;var&#39;]; if (in_array($var, $white_set)) { $query = ‘ … column = ‘ . $var . ‘ … ‘; … } 访问 http://www.example.com/path/to?var=16′ and ‘x’=&#39; 时，$var=16′ and ‘x’=&#39;，使用in_array($var, $white_set) 判断会得到 true，因为 in_array 的第三个参数默认为 false，此时在依次比较 $var 和 $white_set 中的元素会进行类型转换，相当于使用 == 进行比较；如果第三个参数为 true，则相当于使用 === 进行比较，两个变量只有完全一致才会返回 true。
+总结：in_array() 第三个参数决定变量和数组中元素如何进行比较。 值为 false 时（默认），相当于 ==；值为true时，相当于 ===。</p>
+  </div>
+  <footer class="entry-footer"><span title='2013-03-13 00:23:32 +0800 CST'>March 13, 2013</span></footer>
+  <a class="entry-link" aria-label="post link to PHP is_array()" href="https://milkythinking.com/blog/2013/03/13/php-is_array/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">程序员的职业素养 01
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今天，大辉请了《程序员的职业素养》的译者之一余晟给我们进行了一次分享。
+原本大辉在邮件中说邀请余晟分享正则表达式相关的内容，但是因时间仓促，而且正则也没太多好分享的。于是，余晟就结合其大学和工作上的经历给我们分享了程序员的职业素养这一话题。
+余晟分享了“面向接口编程”、“学生式编程”，程序员个人努力，探究事物本质的习惯、基础学科的重要性、中美软件开发管理的差异、盛大创新院的经历、降级论等，最后总结了程序员职业素养的3个方面。
+面向接口编程 某些程序员遇到有挑战性的问题，交给“高手”实现，自己仅仅是使用封装好的功能，不愿意去深究本质。
+学生式编程 只考虑理想情况，对于异常情况没有进行处理，导致程序遇到异常时就罢工。
+程序员的个人努力与探究事物本质的习惯 余晟第一份工作两个月就成长为Team Leader与其努力和探究事物本质的习惯是分不开的。
+中美软件开发管理的差异 余晟认为中美程序员的个人实力上没有什么差距，但美国程序员开发出了很多优秀的产品，在开源领域独领风骚，而中国程序员却没有太多的表现的主要原因是国人在软件开发管理方面做的不够好，规范的流程让一群普通人能够创建较为成功的项目。
+他以一个在雅虎和百度工作过的朋友的经历作为说明：雅虎的项目具有完善的流程规范，一个项目讨论过程中形成的文档，聚合导出后会发现其如论文一样规整；百度，最终则会获得各种文件格式和各种书写风格的文件。
+还举了波音飞机的流水线转配，工人使用木锤安装机翼上的某个零件，这样细致规范的工作打造了复杂先进的飞机。
+（这个观点我持怀疑态度。虽然规范很重要，但顶尖程序员创造更多的价值。另外欧美在开源领域做的比较好是一部分也是由于国情的原因：语言、理想主义 vs. 现实主义。相信国人在开源领域也会越做越好的。）
+盛大创新院的经历 其在盛大创新院时基于Lucene开发的搜索引擎，根据业务场景，实现自定义分词系统，最终因感觉代码不规范，不好意思贡献给社区，产品也没有得到太多的使用。
+（我认为这种做法是不可取的，直接贡献出去不久可以了。惭愧的是到目前我只是说说，还没有贡献过，接下来我会尝试贡献一些Drupal的代码，为Drupal社区的发展贡献自己的一些力量。）
+降级论 互联网与传统行业结合能够创造更大的价值。
+程序员职业素养的3个方面 扎实的基础，探究事物本质的习惯 基础是自我提升的保证。
+提升自己的开发效率，自动化 程序员应该善于给自己开发各种实用的小工具来提升自己的开发效率。另外，不仅仅给自己用，还应该尝试给其他人开发工具，自用和给他人用所面临的问题会有很大的差异。
+产品意识 程序员的苦逼有一部分原始是自己造成的。程序员应当具备产品意识，开发处更人性化更好的产品，减少使用者的困惑。虽然这些东西看似属于产品经理的职责，但产品经理并不能够面面俱到，另外好的产品经理属于少数。举例：1）其公司某仓库的手持扫描仪因为网络没有连接，却给出“无法解析域名”的提示，导致使用者的困惑；2）某程序修改配置后，需要重新加载配置才能够生效，按钮的文字使用“生效”而不是“加载配置”让使用者能够更加容易理解。</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-12-23 21:37:53 +0800 CST'>December 23, 2012</span></footer>
+  <a class="entry-link" aria-label="post link to 程序员的职业素养 01" href="https://milkythinking.com/blog/2012/12/23/the-clean-coder-01/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">骑行绍兴
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>上次骑行临安后，听同事提及绍兴，就提议11月中旬骑行绍兴。这个提议得到公司里很多同事的响应。我们的人品十分不错，虽然16号下了一天的雨，我们还在担心17号会否继续，但17号和18号却都是晴好天气。
+除了部分同事因出差等原因未能成行，17号，在公司的办公楼前合影纪念后，一个12人的队伍浩浩荡荡的出发了。赶去绍兴的路线选择的不是很好，虽然走104国道，但是多绕了一些，全程骑行了60公里，4个小时后，我们到达了之前预定的鲁迅故里青年旅社。
+还是第一次住青年旅社，外面感觉很小，里面却曲径通幽，别有洞天。旅社房间外面是木质的建筑，整个旅社分了好几个小院，小院里种了很多花草，水池中还有几只鱼儿在游荡，，墙壁上写满了过往旅人的印迹和涂鸦（请原谅我弱爆了的文字功底）。我这个伪旅人就不凑这份热闹了。
+房间是六人间，上下铺；洗漱用品要自备；拖鞋、吹风机可以租借；卫生间、洗澡间、洗漱区是公用的；乒乓球、台球、图书需要去登记租借才能玩。看墙上贴的公告晚上还会放电影什么的，我这次没有去参加。旅社的无线网络还是不错的，至少刷微薄什么的速度还是很快的。
+房间安定下来后，和同事一起出去吃了顿大餐。然后很几位同时逛了逛鲁迅故居所在的街道，不过我却对这种却没有太多的感觉，带着一种我来过了的心态匆匆逛了几个地方，不过由于时间较晚一些地方已经关门了。
+接着就返回旅社，洗漱休息了下，等待晚上的活动。
+晚上大家很没有创意的找了家KTV去唱歌，自从N年前被打击之后，几乎不去KTV的我，这次也拿着麦唱了几首，还是一如既往的烂呐。出来后大家去沙县吃拌面，去吃烧烤喝啤酒，聊天，然后回去睡觉。
+第二天，我较早爬起来，出去吃了早饭。大家都起床后，洗漱完毕，退房，在旁边的餐馆吃了中餐后，又在故居小街上稍作停留，就出发返回杭州了。回来的时候直接上104国道，一路走了下来，只要50&#43;就完成了返程。
+各回各家，冲完澡后，我就不想走出家门了，推了分开前说的一起去吃饭，叫起了常吃的外卖。
+以上就是我的绍兴骑行。
+-EOF-</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-11-18 23:34:59 +0800 CST'>November 18, 2012</span></footer>
+  <a class="entry-link" aria-label="post link to 骑行绍兴" href="https://milkythinking.com/blog/2012/11/18/riding-to-shaoxing/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">2012.10.31月末小记
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今晚出去跑了两小圈，约1500米吧，跑完后慢走了段距离，到小区的锻炼器材上做了一些运动。
+回想上周六打篮球，2v2，一段时间后，感觉很累，场边休息时感觉头晕胸闷的说，怀疑应当是身体出了点毛病，健康状况有些糟糕，迫切需要加强锻炼，终于再今天开始了久违的跑步。
+洗澡时突然意识到，今天是10.31，明天就是新的月份，是个不错的开始。另外，计划将跑步的时间调整到早上，这样我就需要早睡早起的说，有心情的时候还可以自己做早饭XD。
+坚持！</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-10-31 22:13:05 +0800 CST'>October 31, 2012</span></footer>
+  <a class="entry-link" aria-label="post link to 2012.10.31月末小记" href="https://milkythinking.com/blog/2012/10/31/2012-10-31-monthly-notes/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">滑板少年
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>教学资源 著名滑手王汇丰中文滑板教学 What’sUp 滑板入门教学视频 44:41 James Craig20个滑板基本招教学 其他资源 KickerClub Record Skateboard Everyday / 记录中国滑板每一天 中国滑板网 滑板人的家园 风子滑板 我购买滑板的淘宝店 </p>
+  </div>
+  <footer class="entry-footer"><span title='2012-07-28 21:55:47 +0800 CST'>July 28, 2012</span></footer>
+  <a class="entry-link" aria-label="post link to 滑板少年" href="https://milkythinking.com/blog/the-boy-is-skateboarding/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">About Me
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Web Developer、Geek、Hacker、PHPer 伪球迷、骚年、V2EXer
+Timeline 2011.07 – Now 丁香园 » PHP程序员
+2011.03 – 2011.05 丁香园 » PHP程序员（实习）
+2007.09 – 2011.06 西北工业大学 » 软件与微电子学院 » 软件工程</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-07-12 08:52:13 +0800 CST'>July 12, 2012</span></footer>
+  <a class="entry-link" aria-label="post link to About Me" href="https://milkythinking.com/blog/about/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">天寓书友会第一次线上活动记事
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>死宅了很久，觉得周末需要找些事情做，主要是要走出去多和他人交流，免得到时候连交流都不会了，找不到妹子的原因一定出在自己身上（即使现在不找，将来也是要找的嘛）。
+于是昨天逛了逛豆瓣同城，希望找到个活动参与进去。虽然有不少小组比较有意思，比如不以婚姻为目的的去爱，但哥是个闷骚的人，不好意思去参加。另外，我对书友会比较情有独钟，于是最终选择了天寓书友会（因为地址是滨江），加入了QQ群（161667557，管理员 @camomile 是名老师的说）。基于上面提及的原因，我的内心火热起来了，破例登陆了很久不大用的QQ，并长时间保持登陆（当然隐身是肯定的）。
+今天和 @camomile 一起交流如何组织活动，最终决定先尝试下线上“直播”的方式，以后有机会在组织线下活动。虽然我感觉这种文字直播是一种很怪异的方式，成员之间如何互动呢？写一篇读书笔记不就可以了吗？不过既然是尝试，看具体的效果吧。于是就晚上8点的时候直播进行了。
+@camomile 今天分享的是《寻路中国》，我没有看过，豆瓣上评分高达9.1的说，可见很值得值得一看的说。这是一篇外国人从普通国人的视角对中国改革开放以来的发展以及中国的一些传统的的看法。这不是一本游记，是一本社会纪实书籍，类似的书有《巨流河》和《夹边沟记事》，《巨流河》我看过两章，《夹边沟记事》看过阮一峰的书摘。感觉有时间这种类型的书还是值得一读的。在 @camomile 分享的过程中 @肖遥 也穿插着不少有价值的言论，让阅读量很少的浅薄的我自惭形秽啊。
+第一次现场直播已经结束后，感觉还是不错的，我想如果大家积极些，也许排期要排很久的说。总的来说还是比较期待以后有机会组织线下的交流活动。我预定了下一次直播，主题是间隔年（Gap Year）。届时我会分享《我睡了81个人的沙发》和《迟到的间隔年》这两本书的内容。
+Gap Year是一个舶来的概念，在国外的表达形式往往是不同阶段之间的旅游，这又分两种：1）是已经结束的上一段和已经确定的下一段时间存在Gap，2）是已经结束的上一段和未知的未来之间的Gap。-by- @肖遥
+第一种Gap是自然发生的，比如暑假，第二种Gap是人为营造的。好吧，我已经没有自然发生的Gap，只好到时准备下自己的迟到的间隔年，不过能够实际成行还要看到时我的状态，因为我认为：如果知道了自己想要什么，也许就不用这个过程了。
+总结：感觉这种活动还是很不错的，可以促进我去读更多的书，更多的和他人进行交流，结识更多的人。希望我能够保持热情的说，找个口好吧：为了妹子，哇咔咔 😉 ！
+PS：其实目前我认为自己最喜欢的是小型的技术交流活动，但是不知道那里能够找到附近组织或者分舵。
+PPS：也许过段时间我可以尝试自己组织些技术交流活动的说，不过时间需要进行协调的说。</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-06-30 23:09:41 +0800 CST'>June 30, 2012</span></footer>
+  <a class="entry-link" aria-label="post link to 天寓书友会第一次线上活动记事" href="https://milkythinking.com/blog/2012/06/30/first-online-event-of-tianyu-book-club/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ZF :: 自动加载自定义的Action Helper
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>项目中需要自定义Action Helper。虽然可以将Action Helper放置在自定义的类库目录下解决Autoloading问题，但是由于该类只在当前项目中使用到，因此更希望实现如下路径：
+application/ controllers/ helpers/ Acl.php IndexController.php Bootstrap.php 最终在StackOverflow上找到了解决办法，移除不必要的代码，具体实现如下：
+类名：Application_Controller_Action_Helper_Acl
+只要在Bootstrap.php中添加如下方法即可：
+protected function _initActionHelpers() { Zend_Controller_Action_HelperBroker::addPath( APPLICATION_PATH . &#39;/controllers/helpers&#39;, &#39;Application_Controller_Action_Helper_&#39; ); } 如果该Action Helper可以在多个项目中使用，那么将其放置在自定义类库目录下的路径是个不错的选择，如下：
+library/ My/ Controller/ Action/ Helper/ Acl.php 类名如下：My_Controller_Action_Helper_Acl
+首先，在application/configs/application.ini中添加如下配置：
+autoloaderNamespaces.my = &#34;My_&#34; 或者
+autoloaderNamespaces[] = &#34;My_&#34; 然后，在Bootstrap.php中添加如下方法来加载Helper类：
+protected function _initActionHelpers() { Zend_Controller_Action_HelperBroker::addHelper( new My_Controller_Action_Helper_Acl() ); } 以上就是两种不同的实现Action Helper自动加载的方法。起初由于对ZF的Resource Autoloading不熟悉，被StackOverflow上的解决方法迷惑了，最后发现其实实质内容都是一样的。
+PS：其实Action Helper的用处我还没有搞清楚，目前只是照葫芦画瓢的说，囧！</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-06-11 23:59:44 +0800 CST'>June 11, 2012</span></footer>
+  <a class="entry-link" aria-label="post link to ZF :: 自动加载自定义的Action Helper" href="https://milkythinking.com/blog/2012/06/11/zend-framework-autoloading-custom-action-helper/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://milkythinking.com/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://milkythinking.com/page/3/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>配置Git | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="此前曾写过一篇介绍Git安装的文章，今天来写点Git配置那些事儿——git config。
+因为Git是分布式的版本控制工具，没有一个中心仓库向你询问用户名和密码，在你向本地仓库提交的时候，也需要这些信息，可以通过git config进行配置，如下：
+git config user.name hutushen222 上面的命令将配置数据存储到当前项目的.git/config文件中，不过可以使用“–global”、“–system”、“–file”来修改存储的位置，具体如下：
+“git config –system …”，系统配置，存储在/etc/gitconfig文件中，对所有用户的项目起作用； “git config –global …”，全局配置，存储在当前用户的~/.gitconfig文件中，对当前用户的所有项目起作用； “git config …”，项目配置，存储在当前项目的.git/config文件中，只对当前项目起作用。 项目级别配置可以覆盖全局/系统级别的配置，全局级别的配置可以覆盖系统级别的配置。
+常用配置 Git的配置选项很多，有100多个，我常使用的也就那么几个，因为是每个项目都要用到的，所以都使用“–global”进行全局配置。
+user.name
+设置提交时使用的用户名 。
+git config --global user.name &#34;Jack Jordan&#34; user.email
+设置提交是使用的邮箱。
+git config --global user.email example@gmail.com core.ui
+设置该选项的值为auto或always后，命令行git将使用不同的颜色展示不同类型的内容，比如已经未添加到暂存区的文件显示为红色，等待提交的文件显示为绿色；git diff查看差异时，移除的行显示为红死，添加的行显示为绿色。
+git config --global color.ui auto alias.*
+设置git命令的别名。我此前使用的是SVN，习惯了那些简短的命令，不过通过设置，Git也可以使用同样的命令。
+git config --global alias.co checkout git config --global alias.st status git config --global alias.ci commit core.editor
+设置提交时使用的编辑器。
+git config --global core.editor vim merge.">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2012/06/04/setting-up-git/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="配置Git" />
+<meta property="og:description" content="此前曾写过一篇介绍Git安装的文章，今天来写点Git配置那些事儿——git config。
+因为Git是分布式的版本控制工具，没有一个中心仓库向你询问用户名和密码，在你向本地仓库提交的时候，也需要这些信息，可以通过git config进行配置，如下：
+git config user.name hutushen222 上面的命令将配置数据存储到当前项目的.git/config文件中，不过可以使用“–global”、“–system”、“–file”来修改存储的位置，具体如下：
+“git config –system …”，系统配置，存储在/etc/gitconfig文件中，对所有用户的项目起作用； “git config –global …”，全局配置，存储在当前用户的~/.gitconfig文件中，对当前用户的所有项目起作用； “git config …”，项目配置，存储在当前项目的.git/config文件中，只对当前项目起作用。 项目级别配置可以覆盖全局/系统级别的配置，全局级别的配置可以覆盖系统级别的配置。
+常用配置 Git的配置选项很多，有100多个，我常使用的也就那么几个，因为是每个项目都要用到的，所以都使用“–global”进行全局配置。
+user.name
+设置提交时使用的用户名 。
+git config --global user.name &#34;Jack Jordan&#34; user.email
+设置提交是使用的邮箱。
+git config --global user.email example@gmail.com core.ui
+设置该选项的值为auto或always后，命令行git将使用不同的颜色展示不同类型的内容，比如已经未添加到暂存区的文件显示为红色，等待提交的文件显示为绿色；git diff查看差异时，移除的行显示为红死，添加的行显示为绿色。
+git config --global color.ui auto alias.*
+设置git命令的别名。我此前使用的是SVN，习惯了那些简短的命令，不过通过设置，Git也可以使用同样的命令。
+git config --global alias.co checkout git config --global alias.st status git config --global alias.ci commit core.editor
+设置提交时使用的编辑器。
+git config --global core.editor vim merge." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2012/06/04/setting-up-git/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2012-06-04T22:45:04+08:00" />
+<meta property="article:modified_time" content="2012-06-04T22:45:04+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="配置Git"/>
+<meta name="twitter:description" content="此前曾写过一篇介绍Git安装的文章，今天来写点Git配置那些事儿——git config。
+因为Git是分布式的版本控制工具，没有一个中心仓库向你询问用户名和密码，在你向本地仓库提交的时候，也需要这些信息，可以通过git config进行配置，如下：
+git config user.name hutushen222 上面的命令将配置数据存储到当前项目的.git/config文件中，不过可以使用“–global”、“–system”、“–file”来修改存储的位置，具体如下：
+“git config –system …”，系统配置，存储在/etc/gitconfig文件中，对所有用户的项目起作用； “git config –global …”，全局配置，存储在当前用户的~/.gitconfig文件中，对当前用户的所有项目起作用； “git config …”，项目配置，存储在当前项目的.git/config文件中，只对当前项目起作用。 项目级别配置可以覆盖全局/系统级别的配置，全局级别的配置可以覆盖系统级别的配置。
+常用配置 Git的配置选项很多，有100多个，我常使用的也就那么几个，因为是每个项目都要用到的，所以都使用“–global”进行全局配置。
+user.name
+设置提交时使用的用户名 。
+git config --global user.name &#34;Jack Jordan&#34; user.email
+设置提交是使用的邮箱。
+git config --global user.email example@gmail.com core.ui
+设置该选项的值为auto或always后，命令行git将使用不同的颜色展示不同类型的内容，比如已经未添加到暂存区的文件显示为红色，等待提交的文件显示为绿色；git diff查看差异时，移除的行显示为红死，添加的行显示为绿色。
+git config --global color.ui auto alias.*
+设置git命令的别名。我此前使用的是SVN，习惯了那些简短的命令，不过通过设置，Git也可以使用同样的命令。
+git config --global alias.co checkout git config --global alias.st status git config --global alias.ci commit core.editor
+设置提交时使用的编辑器。
+git config --global core.editor vim merge."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "配置Git",
+      "item": "https://milkythinking.com/blog/2012/06/04/setting-up-git/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "配置Git",
+  "name": "配置Git",
+  "description": "此前曾写过一篇介绍Git安装的文章，今天来写点Git配置那些事儿——git config。\n因为Git是分布式的版本控制工具，没有一个中心仓库向你询问用户名和密码，在你向本地仓库提交的时候，也需要这些信息，可以通过git config进行配置，如下：\ngit config user.name hutushen222 上面的命令将配置数据存储到当前项目的.git/config文件中，不过可以使用“–global”、“–system”、“–file”来修改存储的位置，具体如下：\n“git config –system …”，系统配置，存储在/etc/gitconfig文件中，对所有用户的项目起作用； “git config –global …”，全局配置，存储在当前用户的~/.gitconfig文件中，对当前用户的所有项目起作用； “git config …”，项目配置，存储在当前项目的.git/config文件中，只对当前项目起作用。 项目级别配置可以覆盖全局/系统级别的配置，全局级别的配置可以覆盖系统级别的配置。\n常用配置 Git的配置选项很多，有100多个，我常使用的也就那么几个，因为是每个项目都要用到的，所以都使用“–global”进行全局配置。\nuser.name\n设置提交时使用的用户名 。\ngit config --global user.name \u0026#34;Jack Jordan\u0026#34; user.email\n设置提交是使用的邮箱。\ngit config --global user.email example@gmail.com core.ui\n设置该选项的值为auto或always后，命令行git将使用不同的颜色展示不同类型的内容，比如已经未添加到暂存区的文件显示为红色，等待提交的文件显示为绿色；git diff查看差异时，移除的行显示为红死，添加的行显示为绿色。\ngit config --global color.ui auto alias.*\n设置git命令的别名。我此前使用的是SVN，习惯了那些简短的命令，不过通过设置，Git也可以使用同样的命令。\ngit config --global alias.co checkout git config --global alias.st status git config --global alias.ci commit core.editor\n设置提交时使用的编辑器。\ngit config --global core.editor vim merge.",
+  "keywords": [
+    
+  ],
+  "articleBody": "此前曾写过一篇介绍Git安装的文章，今天来写点Git配置那些事儿——git config。\n因为Git是分布式的版本控制工具，没有一个中心仓库向你询问用户名和密码，在你向本地仓库提交的时候，也需要这些信息，可以通过git config进行配置，如下：\ngit config user.name hutushen222 上面的命令将配置数据存储到当前项目的.git/config文件中，不过可以使用“–global”、“–system”、“–file”来修改存储的位置，具体如下：\n“git config –system …”，系统配置，存储在/etc/gitconfig文件中，对所有用户的项目起作用； “git config –global …”，全局配置，存储在当前用户的~/.gitconfig文件中，对当前用户的所有项目起作用； “git config …”，项目配置，存储在当前项目的.git/config文件中，只对当前项目起作用。 项目级别配置可以覆盖全局/系统级别的配置，全局级别的配置可以覆盖系统级别的配置。\n常用配置 Git的配置选项很多，有100多个，我常使用的也就那么几个，因为是每个项目都要用到的，所以都使用“–global”进行全局配置。\nuser.name\n设置提交时使用的用户名 。\ngit config --global user.name \"Jack Jordan\" user.email\n设置提交是使用的邮箱。\ngit config --global user.email example@gmail.com core.ui\n设置该选项的值为auto或always后，命令行git将使用不同的颜色展示不同类型的内容，比如已经未添加到暂存区的文件显示为红色，等待提交的文件显示为绿色；git diff查看差异时，移除的行显示为红死，添加的行显示为绿色。\ngit config --global color.ui auto alias.*\n设置git命令的别名。我此前使用的是SVN，习惯了那些简短的命令，不过通过设置，Git也可以使用同样的命令。\ngit config --global alias.co checkout git config --global alias.st status git config --global alias.ci commit core.editor\n设置提交时使用的编辑器。\ngit config --global core.editor vim merge.tool\n合并差异时使用的工具。\ngit config --global merge.tool meld ",
+  "wordCount" : "78",
+  "inLanguage": "en",
+  "datePublished": "2012-06-04T22:45:04+08:00",
+  "dateModified": "2012-06-04T22:45:04+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2012/06/04/setting-up-git/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      配置Git
+    </h1>
+    <div class="post-meta"><span title='2012-06-04 22:45:04 +0800 CST'>June 4, 2012</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>此前曾写过一篇介绍<a href="http://milkythinking.com/blog/2011/04/17/install_git_and_manual/">Git安装</a>的文章，今天来写点Git配置那些事儿——<code>git config</code>。</p>
+<p>因为Git是分布式的版本控制工具，没有一个中心仓库向你询问用户名和密码，在你向本地仓库提交的时候，也需要这些信息，可以通过git config进行配置，如下：</p>
+<pre tabindex="0"><code>git config user.name hutushen222
+</code></pre><p>上面的命令将配置数据存储到当前项目的.git/config文件中，不过可以使用“–global”、“–system”、“–file”来修改存储的位置，具体如下：</p>
+<ul>
+<li>“git config –system …”，系统配置，存储在/etc/gitconfig文件中，对所有用户的项目起作用；</li>
+<li>“git config –global …”，全局配置，存储在当前用户的~/.gitconfig文件中，对当前用户的所有项目起作用；</li>
+<li>“git config …”，项目配置，存储在当前项目的.git/config文件中，只对当前项目起作用。</li>
+</ul>
+<p>项目级别配置可以覆盖全局/系统级别的配置，全局级别的配置可以覆盖系统级别的配置。</p>
+<h4 id="常用配置">常用配置<a hidden class="anchor" aria-hidden="true" href="#常用配置">#</a></h4>
+<p>Git的配置选项很多，有100多个，我常使用的也就那么几个，因为是每个项目都要用到的，所以都使用“–global”进行全局配置。</p>
+<p><strong>user.name</strong></p>
+<p>设置提交时使用的用户名 。</p>
+<pre tabindex="0"><code>git config --global user.name &#34;Jack Jordan&#34;
+</code></pre><p><strong>user.email</strong></p>
+<p>设置提交是使用的邮箱。</p>
+<pre tabindex="0"><code>git config --global user.email example@gmail.com
+</code></pre><p><strong>core.ui</strong></p>
+<p>设置该选项的值为auto或always后，命令行git将使用不同的颜色展示不同类型的内容，比如已经未添加到暂存区的文件显示为红色，等待提交的文件显示为绿色；git diff查看差异时，移除的行显示为红死，添加的行显示为绿色。</p>
+<pre tabindex="0"><code>git config --global color.ui auto
+</code></pre><p><strong>alias.</strong>*</p>
+<p>设置git命令的别名。我此前使用的是SVN，习惯了那些简短的命令，不过通过设置，Git也可以使用同样的命令。</p>
+<pre tabindex="0"><code>git config --global alias.co checkout
+git config --global alias.st status
+git config --global alias.ci commit
+</code></pre><p><strong>core.editor</strong></p>
+<p>设置提交时使用的编辑器。</p>
+<pre tabindex="0"><code>git config --global core.editor vim
+</code></pre><p><strong>merge.tool</strong></p>
+<p>合并差异时使用的工具。</p>
+<pre tabindex="0"><code>git config --global merge.tool meld
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>记一次磁盘清理的过程 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="缘起 我们测试环境中的一台Job机器磁盘空间使用率一直很高（VM 40G），最近经常遇到磁盘空间已满，导致一些任务无法正常运行，比如新项目的代码无法部署，影响正常的开发流程。几天前为赶项目进度，我们采用临时清理一些日志文件的方式，仅仅空出几G的空间，只能缓解一时，隔天又满了。总是这样就也太坑了，我决定花些时间彻底解决一下，不管采用什么办法。早晨起床后，我在Doit.im中创建了项目，并进行一些规划，列出一些需要进行的任务。
+我对这台机器的职责并不熟悉，我猜测会否是该机器上部署了太多的服务导致，如果是这样，就将它们迁移出去；如果是因为机器配置太低的原因，则切换到配置更高的机器；迁移的话就需要对该机器上运行的任务进行梳理……
+实战 到公司后，又听到该机器磁盘已满，又是临时的清理了些空间。我跑去测试环境的维护人员哪里，督促他解决这个问题，之后就待在那里和他一起解决。
+首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G&#43;的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？
+使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） ">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="记一次磁盘清理的过程" />
+<meta property="og:description" content="缘起 我们测试环境中的一台Job机器磁盘空间使用率一直很高（VM 40G），最近经常遇到磁盘空间已满，导致一些任务无法正常运行，比如新项目的代码无法部署，影响正常的开发流程。几天前为赶项目进度，我们采用临时清理一些日志文件的方式，仅仅空出几G的空间，只能缓解一时，隔天又满了。总是这样就也太坑了，我决定花些时间彻底解决一下，不管采用什么办法。早晨起床后，我在Doit.im中创建了项目，并进行一些规划，列出一些需要进行的任务。
+我对这台机器的职责并不熟悉，我猜测会否是该机器上部署了太多的服务导致，如果是这样，就将它们迁移出去；如果是因为机器配置太低的原因，则切换到配置更高的机器；迁移的话就需要对该机器上运行的任务进行梳理……
+实战 到公司后，又听到该机器磁盘已满，又是临时的清理了些空间。我跑去测试环境的维护人员哪里，督促他解决这个问题，之后就待在那里和他一起解决。
+首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G&#43;的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？
+使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-04-12T10:03:14+08:00" />
+<meta property="article:modified_time" content="2014-04-12T10:03:14+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="记一次磁盘清理的过程"/>
+<meta name="twitter:description" content="缘起 我们测试环境中的一台Job机器磁盘空间使用率一直很高（VM 40G），最近经常遇到磁盘空间已满，导致一些任务无法正常运行，比如新项目的代码无法部署，影响正常的开发流程。几天前为赶项目进度，我们采用临时清理一些日志文件的方式，仅仅空出几G的空间，只能缓解一时，隔天又满了。总是这样就也太坑了，我决定花些时间彻底解决一下，不管采用什么办法。早晨起床后，我在Doit.im中创建了项目，并进行一些规划，列出一些需要进行的任务。
+我对这台机器的职责并不熟悉，我猜测会否是该机器上部署了太多的服务导致，如果是这样，就将它们迁移出去；如果是因为机器配置太低的原因，则切换到配置更高的机器；迁移的话就需要对该机器上运行的任务进行梳理……
+实战 到公司后，又听到该机器磁盘已满，又是临时的清理了些空间。我跑去测试环境的维护人员哪里，督促他解决这个问题，之后就待在那里和他一起解决。
+首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G&#43;的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？
+使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "记一次磁盘清理的过程",
+      "item": "https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "记一次磁盘清理的过程",
+  "name": "记一次磁盘清理的过程",
+  "description": "缘起 我们测试环境中的一台Job机器磁盘空间使用率一直很高（VM 40G），最近经常遇到磁盘空间已满，导致一些任务无法正常运行，比如新项目的代码无法部署，影响正常的开发流程。几天前为赶项目进度，我们采用临时清理一些日志文件的方式，仅仅空出几G的空间，只能缓解一时，隔天又满了。总是这样就也太坑了，我决定花些时间彻底解决一下，不管采用什么办法。早晨起床后，我在Doit.im中创建了项目，并进行一些规划，列出一些需要进行的任务。\n我对这台机器的职责并不熟悉，我猜测会否是该机器上部署了太多的服务导致，如果是这样，就将它们迁移出去；如果是因为机器配置太低的原因，则切换到配置更高的机器；迁移的话就需要对该机器上运行的任务进行梳理……\n实战 到公司后，又听到该机器磁盘已满，又是临时的清理了些空间。我跑去测试环境的维护人员哪里，督促他解决这个问题，之后就待在那里和他一起解决。\n首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G+的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？\n使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） ",
+  "keywords": [
+    
+  ],
+  "articleBody": "缘起 我们测试环境中的一台Job机器磁盘空间使用率一直很高（VM 40G），最近经常遇到磁盘空间已满，导致一些任务无法正常运行，比如新项目的代码无法部署，影响正常的开发流程。几天前为赶项目进度，我们采用临时清理一些日志文件的方式，仅仅空出几G的空间，只能缓解一时，隔天又满了。总是这样就也太坑了，我决定花些时间彻底解决一下，不管采用什么办法。早晨起床后，我在Doit.im中创建了项目，并进行一些规划，列出一些需要进行的任务。\n我对这台机器的职责并不熟悉，我猜测会否是该机器上部署了太多的服务导致，如果是这样，就将它们迁移出去；如果是因为机器配置太低的原因，则切换到配置更高的机器；迁移的话就需要对该机器上运行的任务进行梳理……\n实战 到公司后，又听到该机器磁盘已满，又是临时的清理了些空间。我跑去测试环境的维护人员哪里，督促他解决这个问题，之后就待在那里和他一起解决。\n首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G+的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？\n使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） ",
+  "wordCount" : "42",
+  "inLanguage": "en",
+  "datePublished": "2014-04-12T10:03:14+08:00",
+  "dateModified": "2014-04-12T10:03:14+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      记一次磁盘清理的过程
+    </h1>
+    <div class="post-meta"><span title='2014-04-12 10:03:14 +0800 CST'>April 12, 2014</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="缘起">缘起<a hidden class="anchor" aria-hidden="true" href="#缘起">#</a></h2>
+<p>我们测试环境中的一台Job机器磁盘空间使用率一直很高（VM 40G），最近经常遇到磁盘空间已满，导致一些任务无法正常运行，比如新项目的代码无法部署，影响正常的开发流程。几天前为赶项目进度，我们采用临时清理一些日志文件的方式，仅仅空出几G的空间，只能缓解一时，隔天又满了。总是这样就也太坑了，我决定花些时间彻底解决一下，不管采用什么办法。早晨起床后，我在Doit.im中创建了项目，并进行一些规划，列出一些需要进行的任务。</p>
+<p>我对这台机器的职责并不熟悉，我猜测会否是该机器上部署了太多的服务导致，如果是这样，就将它们迁移出去；如果是因为机器配置太低的原因，则切换到配置更高的机器；迁移的话就需要对该机器上运行的任务进行梳理……</p>
+<h2 id="实战">实战<a hidden class="anchor" aria-hidden="true" href="#实战">#</a></h2>
+<p>到公司后，又听到该机器磁盘已满，又是临时的清理了些空间。我跑去测试环境的维护人员哪里，督促他解决这个问题，之后就待在那里和他一起解决。</p>
+<ol>
+<li>首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？</li>
+<li>使用<code>du -sh /path</code>命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G+的<code>nohup.out</code>日志文件。</li>
+<li>终于找到罪魁祸首了，果断<code>rm nohup.out</code>删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？</li>
+<li>分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？</li>
+<li>我首先尝试使用<code>ps aux | grep _cmd_</code>命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历<code>/proc</code>目录下所有进程的<code>fd</code>目录，命令：<code>find /proc -name fd -type d | grep nohup.out</code>，方法可行。</li>
+<li>这时瞄一眼同事的屏幕，神器出厂，lsof，<code>lsof | grep nohup.out</code>即可，还可以显示文件的状态，被我删除的文件后缀有<code>(deleted)</code>。</li>
+<li>定位到进程pid后，在使用<code>ps -p pid</code>查看进程的命令；<code>kill</code>关闭进程，<code>nohup</code>重启命令，日志文件重定向到<code>/dev/null</code>，磁盘空间瞬间释放了 😉</li>
+<li><code>lsof</code>命令的结果显示，还有很多其他的<code>nohup.out</code>文件存在，它们也将被逐个清理掉。</li>
+</ol>
+<h2 id="反思">反思<a hidden class="anchor" aria-hidden="true" href="#反思">#</a></h2>
+<p>虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？</p>
+<ol>
+<li>使用<code>nohup</code>启用命令时，将日志重定向到指定的目录下或者<code>/dev/null</code>；</li>
+<li>对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。</li>
+</ol>
+<h2 id="遗留问题">遗留问题<a hidden class="anchor" aria-hidden="true" href="#遗留问题">#</a></h2>
+<ol>
+<li>使用<code>ls -al</code>查看<code>/proc</code>下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（<a href="http://segmentfault.com/q/1010000000466146">SegmentFault</a>）</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

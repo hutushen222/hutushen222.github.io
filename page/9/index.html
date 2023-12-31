@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.121.1"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Milky Thinking</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://milkythinking.com/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Milky Thinking" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://milkythinking.com/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Milky Thinking"/>
+<meta name="twitter:description" content=""/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Milky Thinking",
+  "url": "https://milkythinking.com/",
+  "description": "",
+  "thumbnailUrl": "https://milkythinking.com/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">内容转移
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>这篇文章翻译自Fred Wilson的博文Content Shifting，水平有限，见谅！
+在昨天关于SoundCloud的文章中，我从@Daryn那获得了如下评论：
+对于音频文件我依然遇到类似的情形。我曾经对自己说，“酷，Fred发布了一个新的播客，我有空应该听一下。”是否有一个应用，能够像Instapaper或者Boxee小书签一样帮助我将播客保存下来，等我有空在听呢？
+我的回复如下：
+这要看你最终想在什么样的设备上处理它们？Sonos房间音乐系统？iPhone或Android？还是平板电脑？
+当你使用Instapaper或Boxee Watch Later这样的服务的时候，会形成一种习惯性的思维，你希望能够将内容转移到任何地方、任何设备上。
+昨天，我在SoundCloud上发现了让人惊叹的艺术家James Vincent McMorrow。这里是他的新专辑——Early In The Morning。我立即在自己的笔记本上聆听了它，但我十分想在自己的Sonos系统上享受它。
+昨晚，我看了Black Keys表演的“周末夜现场”（SNL）。我在YouTube上发现了这个视频，然后将它发送到Boxee，这样我就能在大屏幕上观看它了。
+昨天下午，我在车里收听Sirius XMU电台，发现了一些不错的音乐，我想要一种简单的方式将它们转移到我的私人电台fredwilson.fm中。
+昨天，我在TechCrunch/Scribd上看到了美国司法部（DOJ）呈递给Twitter的关于Wikileaks的法院命令。我想在iPad上得到这篇文档，那样我就能够在家里的沙发上阅读它了。
+你已经获得了这个想法。随着设备种类和内容格式迅速地增长，且它们都通过互联网相互连接，内容转移正在逐渐成为一个大的市场和一个真正的热点领域。
+某些类型的内容转移实现起来十分容易，如在手机或平板上获得一个网页，不需要任何魔法，Instapaper在这方面做的非常好。
+另一些类型的内容转移就十分得困难了。如将一首歌从Sirius XMU电台转移到fredwilson.fm就不简单；让SoundCloud在Sonos上播放也不简单，就像Matt Galligan在那篇文章说的那样需要一个开放的Sonos平台。
+我认为这是创业者们的一个机会。在一些情况下，内容转移将是一个大点的平台的杀手级功能，如Boxee的“待会看”功能。在另一些情况下，内容转移将是一个独立的服务，像Instapaper一样
+但我确信人们希望从发现型的设备（笔记本、卫星电台等）上转移内容到消费型的设备（平板电脑、Sonos等）上。同时我确信在未来几年内我们能够看到这种转移将会越来越简单。
+via A VC
+参考：
+Black Keys 乔纳斯兄弟 SNL Saturday Night Live 美国的一个综艺节目 Sonos 无线房间音乐系统 Sirius XMU 一个音乐电台 Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-10 14:09:45 +0800 CST'>April 10, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 内容转移" href="https://milkythinking.com/blog/2011/04/10/content_shifting/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Zim介绍
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Zim是我目前使用的且十分喜欢的一个树状笔记软件，也是一个桌面wiki系统（a desktop wiki）。Zim界面展示【我今天也是第一次看，发现不少新东西，又一次见识了Zim的强大】
+WIKI是什么？ Wiki是一种在网络上开放、可供多人协同创作的超文本系统，由沃德·坎宁安于1995年首先开发。沃德·坎宁安将Wiki定义为“一种允许一群用户通过简单的描述来创建和连接一组网页的社会计算系统”。……基本上，Wiki包含一套能简易制作、修改HTML网页的系统，再加上一套记录和编排所有改变的系统，并且提供还原改变的功能。via – 维基百科
+ZIM与WIKI 按照wiki的定义，Zim并不能算是一个wiki系统，只是一个应用了一些wiki的语法规则的笔记软件。
+ZIM的功能 使用Zim可以做些什么呢？
+创建笔记，记录重要的想法 开会或听讲座时进行记录 组织任务列表 保存博客或邮件的草稿 进行头脑风暴 …… 还不止这些：
+你可以使用Zim写日记，Zim日历（Calendar）插件可以帮助你很好的管理它们 你可以使用Zim实践GTD时间管理，Zim的Task List插件以及标签功能可以帮助你【我会介绍下我的GTD经验】 你可以使用Zim组织管理自己的其他文档，如PDF，DOC等等【这个我也要特别介绍下】 你可以使用Zim……，只要你想的到！！！ ZIM安装 Zim是跨平台的，支持Windows和Linux（Ubuntu）平台。【这也是我选择它的原因之一。】
+Ubuntu Ubuntu软件中心 打开Ubuntu软件中心，搜索Zim，选择安装。我就是这么安装的，但通过这种方法和apt-get方式安装的Zim版本为0.43，想安装最新版本请使用其他两种方法。
+apt-get安装 一行命令：sudo apt-get install zim
+下载deb包安装 所有版本deb包下载页面｜点击下载Zim 0.50
+源码编译安装 所有版本源码下载页面｜点击下载Zim 0.50
+Windows 由于目前很少使用Windows，虽然下载了安装文件，但我还没有在Windows下安装Zim呢。所有版本下载页面｜点击下载 Zim 0.50
+安装过程就不用我来教了吧 😉 。据说可以选择安装Portable版，也就是一般所说的绿色版，放在U盘中随身携带。
+Windows下Zim的汉化问题【不知道新版本还有木有这个问题】
+中文界面设置 我安装Zim在linux下或用wine运行都是中文界面，但在windows （xp）里就是英文的。 特意去发邮件问中文译者tolbKni，他说： “Windows下的Zim其实利用了mingw32模拟Linux环境，在Linux界面的语言是由locale决定的，所以你可以利用这个方法解决。 最简单的方法，我的电脑（计算机）右键属性里的环境变量里增加一个变量，变量名为 “LANG”，值为 “zh_CN.UTF-8″，皆不带引号。 你也可以写个简单的批处理文件在启动Zim之前定义这个变量。” 我已用添加环境变量的方法搞定了中文界面。 via 小众软件
+ZIM现状 刚才在善用佳软上看到了另一个wiki风格笔记软件——wikidpad，访问其主页发现更新频率挺高的，突然担心Zim现在是否还在维护更新。看了下，还好，官方最新版本为0.50，前一段时间刚发布的，同时Zim的发布频率还是很高的，我现在使用的Zim版本为0.43，改天升级一下。
+感谢Zim的作者和其他的开发者、贡献者！
+PS：在写这篇文章的时候，发现已经有文章介绍了Zim，分别是小众软件和译言，但还是决定写下来，因为后续还会写一些文章，关于使用Zim＋Dropbox进行知识管理和GTD时间管理。
+PPS：今天就先写这些，关于Zim的使用技巧以及注意事项，我在另一篇文章里进行介绍吧。
+PPPS：如果你是个软件控，想试用各种各样的实用软件、笔记软件等，推荐你逛逛善用佳软，如笔记软件列表。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-09 21:36:19 +0800 CST'>April 9, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to Zim介绍" href="https://milkythinking.com/blog/2011/04/09/about_zim/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">我为什么写博客？该怎样写？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>刚刚删除了我的几篇草稿，有的较短，有的较长，按照今天的想法，感觉都没有写下去的必要，于是就都删除了。
+完美主义者？ 前几天和公司的同事聊天，他说我是一个完美主义者，也许确实是吧。
+写一篇博文的时候，有时可能会花费很久的时间，修改好多次，但是最终觉得还是不够好，于是就存为草稿，然后像刚刚那样删掉草稿；完成一天的工作后，回想自己今天在工作的时候，又花费了多少时间浏览网页，没有努力工作，实际上可能确实完成了些东西；完成一个项目后，回想自己在项目的过程中的种种，会想如果我能够意识到这些，我的项目应该会做的更好；……
+就拿这两天写的一篇对于自己现在做的项目—丁香问答—的一些看法的邮件，改了三遍，最后的版本的有些小节只包含一些零散的东西，但还是发送出去了，因为我知道按照我现在的水准，不可能在短的时间里做的再好了。
+我为什么写博客？ 有很多的原因，如有时我会有写东西的欲望，记录一下自己的某些想法，想象有很多人喜欢我的博客等等。还有一件事，因为看到Seth Godin的一篇博文——”The only possible response…“，内容只有一个词——”isn’t“。我想我为什么就不能写点什么呢？
+尝试过不少博客平台，如Blog.com, WordPress.com， 网易博客，人人日志等等，零零散散的写过一些，但是感觉都不是很好，感觉不属于自己的，于是我就搭建了自己的独立的博客，也是就现在的这个。
+我该如何写博客呢？ 虽然计划定期更新一些文章，但是现在自己的Zim笔记软件里存了一些草稿，也不完善，也就不好意思发布。
+现在看了我应该改改自己的习惯了，目前的这种状态并不能保证我规律地更西自己的博客。突然想到Fenng在曾说过的话，是关于项目文档的，我说我会在自己的Zim笔记中记录草稿，然后过一段时间更新到公司内部的分享平台上。Fenng说应该直接写在平台上，他是对的，我真的应该改改写惯了。
+当然质量还是要保证的，但是效率要高一些。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-09 18:33:42 +0800 CST'>April 9, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 我为什么写博客？该怎样写？" href="https://milkythinking.com/blog/2011/04/09/why_and_how_i_write_my_own_blog/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ubuntu系统下安装Firefox 4
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>笔记本上的Firefox 3.6这两天不知什么原因总是崩溃，同时由于Firefox 3.6很耗内存，于是就合计着用Firefox 4替换当前版本的Firefox，毕竟稳定版已经出来了，而且网上对Firefox 4的评价还是很不错的。
+此前曾尝试过下载Firefox 4的压缩包来安装，但是没有整好，运行时还是Ubuntu自带的Firefox 3.6。有没有一个比较不错的替换系统默认版本的方法？
+Google了下，一下就找到了，而且还是稳定版本的。安装成功后，想到有没有人已经将该方法翻译了呢？又Google了下，发现已有的中文资料都是一些安装每日开发版本的文章，于是就决定总结下。
+Ubuntu 10.04 / 10.10安装Firefox 4的命令如下：
+sudo add-apt-repository ppa:mozillateam/firefox-stable sudo apt-get update sudo apt-get install firefox ubufox 安装后的Firefox 4是英文版的，如果想要中文版，好需要安装额外的语言包。原文给了两个链接，32bit | 64bit，但这两个链接好像不能用，至少我没有找到语言包。Ubufox是一个Firefox插件，好像是负责更新Ubuntu的一些更改，但具体是什么作用我不甚明了。
+安装成功后，启动Firefox 4，此时Firefox将会检查此前安装的插件的兼容性，由于一些插件没有相应的升级，将会被禁用。启动成功后，由于此前老的Firefox配置的原因，菜单栏应该还是存在的，你可以自己调整一下。
+via (可能访问不了)
+更新：使用上述的方法安装后可以为中文版本。如果你使用Firebug，请记得更新到1.7.X版本。
+PS：在写这篇文章的过程中，下意识地按了3＋次Ctrl&#43;S，悲催。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-01 23:21:24 +0800 CST'>April 1, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to Ubuntu系统下安装Firefox 4" href="https://milkythinking.com/blog/2011/04/01/install_firefox_4_within_ubuntu/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Dropbox解封了？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Dropbox解封了。（对于Dropbox的介绍，见文章底部。）
+来到丁香园实习后，由于需要在工作机和笔记本上工作，同时在家里不能很方便地上网，于是想找一个同步工具帮助自己同步我的工作机和笔记本中的内容，特别是一些文本文件。虽然知道有Dropbox这个“神器”存在，但是其服务被屏蔽很久了——记得刚到公司领取机器安装系统的时候，就尝试了下，因为知晓公司有强力的路由器，但是尝试失败了。当然网上还有其他的一些服务，如Box.net等，但是都不能像Dropbox一样很方便地进行同步。我迫切需要一个同步工具，于是就进行了下面的尝试。
+U盘
+考虑过使用U盘，还专门买了个新的SanDisk，但是很不方便，不能很好的追踪文件频繁的变更。如果U盘丢了（我丢过很多个），那么数据就全完了，当然还可以经常手动备份，但是那样也太麻烦了点吧。
+SVN or Git
+考虑过使用Google Code或GitHub，在前面二者之一建立一个项目，然后使用SVN或Git对文件进行管理。好处是能够很方便的追踪并管理文件的变化，同时也不用担心数据丢失的问题。但是另一个顾虑使得这不是一个好的解决方法——使用Google Code或GitHub，我的所有的数据都是可以被他人随意访问的——我还是想有一些文件不愿意让他人看到的。
+Ubuntu One
+偶然间想到了Ubuntu One这个服务，好像也是一个同步服务，而且我的系统也是Ubuntu，于是就尝试了一下如何使用。摆弄了半天，稀里糊涂，云里雾里，到现在还不甚明白具体如何使用——中途发现Dropbox突然可以使用了，就没再研究了。
+Dropbox
+很早就使用过Dropbox，Windows平台下，但当时注册不久就被悲催地屏蔽了。后来的一段时间内，SSH能够满足我偶尔出去逛逛的需求，同时由于没有需要同步的需求，也就没有研究使用VPN来正常使用Dropbox。
+今天在研究Ubuntu One一段时间后，随手尝试了下Dropbox的客户端，发现竟然能够下载安装相应的后台支持程序，于是想到可能是公司强力的路由器的原因，感觉很好。于是又迫不及待的尝试了下笔记本上的Dropbox，也顺利地安装成功，难道公司的无线路由也很强力？——暂时这么认为。
+晚上在家里用大伯的电脑上网，突然想到家里是否可以访问Dropbox，于是尝试了下。虽然速度较慢，但还是神奇的打开了，兴奋ing。想到自己的容量还是2G（免费账户初始容量），邀请他人注册可以扩容，于是就在点点、校内、新浪微博上发布自己的邀请链接，希望能够有人使用它注册，同时帮助我实现扩容的目标，到目前还没有人使用。此前曾在某人的博客中看到说使用邀请链接注册容量也会增加一些，但是我不确定，不知道是不是那哥们的XX招数。
+如果你也想尝试使用Dropbox，那么请点击我的邀请链接吧，在这里先谢过了！
+—-
+DropBox简介(截取自异次元软件世界)
+DropBox就是一款非常好用的免费网络文件同步工具(当然它也算是一个服务)。当你在电脑A使用DropBox时，指定文件夹里所有文件的改动均会自动地“同步” 到DropBox的服务器，当下次你在电脑B需要使用这些文件时，你只需登录你的账户，所有被同步的文件均会自动下载到B电脑中，同样，你在电脑B对某文件的修改，也会体现在电脑A上，而所有这一切均是全自动的，这样你的文件可以说是随时随地都能保持着最新了，下面我们一起来看看DropBox吧……
+使用Dropbox前，需要先安装它的桌面客户端，DropBox 提供了Windows、Mac和 Linux 版本，可以跨平台实现文件同步！并且它还提供Web访问功能，当你在不方便安装客户端的地方可以通过Web在浏览器访问你的文件，将它们下载回来使用。
+PS：今天竟然将笔记本电源忘记在公司了，那么就早点睡吧，一个好机会啊。 PPS：这篇文章就是自己在家敲打出来，然后同步到工作机上再发布到自己的博客上的，有了Dropbox，以后自己的博客最好也更新的勤快些，并多多推广下。 2011.03.18 夜
+PPPS：昨天自己在家里登上Dropbox难道是偶然？ 2011.03.19
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-03-19 09:13:09 +0800 CST'>March 19, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to Dropbox解封了？" href="https://milkythinking.com/blog/2011/03/19/dropbox_is_ok/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">独一无二
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>也许没有鬼子的幽默风趣， 也许没有老三的什么气质， 也许没有阿敏的勤勤恳恳， 也许没有剑圣的能说会道， …… 但那又怎么样呢？ 我就是我，独一无二的我。
+活出自己的风格！
+PS：每个人都有自己的长处，我的呢？有没有人发现？
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-03-10 17:32:04 +0800 CST'>March 10, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 独一无二" href="https://milkythinking.com/blog/2011/03/10/unique/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">我的点点博客们
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>关于点点 点点是什么呢？点点是一个轻博客，中国版的Tumblr。点点的目标是什么呢？我认为Tumblr的创始人的描述比较合适：
+让多数人更简单更个性地表达（更多）
+点点最吸引我的功能是“多人博客”，什么是多人博客呢？
+Q：什么是多人博客？
+A：多人博客是点点与传统微博、社区产品最显著的不同，她让你建立自己的新博客，新建的博客可以基于任何主题（喜欢读书？爱好摄影？沉迷美食？等等等等），展现你生活中的独特一面。
+你也可以建立一个社团/组织的主页邀请成员加入，比如街舞社，合唱团；或者邀请他人和你共同发布感兴趣的内容，比如主题摄影，专题写作。
+我的点点博客们 hutushen222
+http://hutushen222.diandian.com
+记录我自己的碎碎念，关于我对生活，对工作，对梦想的想法。
+====
+MilkyShare
+http://milkyshare.diandian.com/
+贴一些我在网上看到的有意思的事物，欢迎大家关注和参与。
+====
+MilkyReal
+http://milkyreal.diandian.com/
+晒计划，行动力。
+有时候，我们需要做的就是快速地行动，希望大家参与进来。
+====
+Startup
+http://startup.diandian.com/
+关于创业，但是没有想好怎么开始。
+====
+爱你一万年（已删除）
+http://2110000.diandian.com/
+关于美好的爱情
+结语 从我的点点博客们，可以看出，在点点上建立博客时间很容易的事情，也在一定程度上实现了更简单更个性地表达。
+如果你对点点感兴趣，请留言，我这里还有几个邀请码。
+Update:
+在写完一篇读后感后，我决定减少点点的使用时间，因为点点一直是作为我的一个私人发布工具，我并没有从中找到感兴趣的内容，亦或者我根本不愿意投入精力去从中发掘我可能感兴趣的内容，因此，为什么不把自己的所有内容都集中到博客中来呢，这样可以减少自己关注的站点的数量，还可以提高自己的博客发布频率，何乐而不为呢？！。2011-09-04
+Gonna Sailing 😉
+==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-02-26 19:49:31 +0800 CST'>February 26, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 我的点点博客们" href="https://milkythinking.com/blog/2011/02/26/my_diandian_blogs/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">我对待项目的两种方式
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>当你有个想法后，开始一个项目，你会怎样做呢？
+对待这个问题，我有两种处理方式，一个老方式和一个新方式。
+以前的处理方式
+从生活中产生了一个想法 思考，添加更多的功能 设计，简单的组织一下结构 开始开发 开始了一个模块 思考怎样才是做这个模块最佳的实践呢 查找资料，寻求最佳实践，但总感觉当前使用的方法不是最好的 继续寻找着 对项目失去了兴趣 项目烂尾 一段时间后，感觉此前的做法太烂了，全部丢掉，重新开始 陷入恶性循环 现在的处理方式
+从生活中产生一个想法 这是我想要的吗 最简单最重要的功能是什么 设计，简单的组织一下结构 开始开发 开始一个模块 快速的完成这个模块 该模块基本可用 开始下一个模块 完成一个具备基本功能的项目 逐步完善各个模块 完成一个相对健壮和完善的项目 添加其他的功能 当你开始一个项目的时候，要时刻提醒自己，你真正的目标是什么？
+我当前最重要的目标是做出一个产品，你呢？
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-02-20 20:06:46 +0800 CST'>February 20, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 我对待项目的两种方式" href="https://milkythinking.com/blog/2011/02/20/two_kind_of_method_for_project/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Collapsar – 论坛、程序员和取舍
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今天是黑色星期五，在此给大家分享一些这我认为的有意思的文章。
+为何说开发者永远不要逛论坛，这里给出了解答，我也很少逛论坛【1】。via Solidot 世界上有三类程序员，人族、虫族和神族。曾经的我想努力成为神族，现在的我感觉还是人族比较不错，我很喜欢的37Signals公司也是人族哦。via Solidot 你我都有很多的欲望，但是受限于每个人的精力，为了取得更好的成绩，你我需要学会取舍。舍得，有舍才有得，@Fenng的创业者的取与舍值得推荐。via DBANotes 赌场并不是靠出千作弊等手段来赢取巨额利润，而是靠着游戏规则中每玩一次偏向于赌场的微小优势积累起来的，详情请看澳门赌场纪实（一）（二），切勿赌博。via 果壳 死记硬背是学习英语的不二法门，别再给自己学不好英语找借口了。via 松鼠会 【1】对于网上社区，我十分喜欢StackOverflow那样进行深入探讨形式，有时我会感到不可思议，通过我写博客等的经验，我了解到想要给出高质量的回答是需要花费很多的时间的，为什么StackOverflow上的用户会那么热心而详尽地回答问题呢？可以看看这个例子。我十分厌恶国内论坛那种充斥着无意义字眼的交流，所以我也不去逛论坛，甚至排斥论坛。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-01-07 01:46:32 +0800 CST'>January 7, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to Collapsar – 论坛、程序员和取舍" href="https://milkythinking.com/blog/2011/01/07/collapsar_forum_programmer_choice/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">怕鬼的胆小鬼
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>我是一个怕鬼的胆小鬼，在写下这个标题的时候，我对自己说，自己都是鬼了为什么还要怕鬼呢？
+情景1：晚上去厕所，角落里传来滴答的滴水声，就会想象那里会不会有一个什么样的怪物，也许是蛇形怪物，也许是其他什么恐怖的东东；
+情景2：深夜去厕所，走在走廊里总是怀疑后面是否有人，窗外是否有东西，前面角落里是否也藏匿着什么，等等；
+情景3：骑车走夜路，路上没有行人，听着车轮摩擦地面的声音，总是怀疑后面有人，回头，没人，再回头，还是没人…
+怕鬼的毛病应该是遗留问题，是小时候大人们不想让我在村子里乱跑想出的招数，但是却在我身上留下了深深的印记。
+我知道自己这个毛病，也尝试着去改变，我对自己说，如果真的有鬼，并且自己真的见到了也未尝不是一件奇遇，想象一下漂亮的小倩。
+可是自己却从来都没有见到过啊，只是活在自己臆想的恐怖的情境中，为什么想象那种情景会感到恐怖呢？为什么呢？人为什么会有恐怖的感觉呢？
+前一段时间在果壳看到了一篇文章“鬼在看着你，还是你在念着鬼？”，这篇文章解释了为什么人会看到鬼——丰富的想像力，巧妙的心理暗示，次声波引发的共振最容易让人“感觉”到鬼魂。而我的情况应该是由于前两者而引起的。虽说我也有正向的心理暗示，但它却没有击败我的负面的心理暗示，大部分情景下我还是感到恐怖害怕。
+下面是果壳文章中给出的避鬼指南：
+如果你不想在独自走夜路或者路过墓地、老宅、鬼屋之类的地方看到鬼魂，那么首先你应该想着与之无关的事情，尽量轻松有趣。因为你越是注意那些可能引发心理 暗示的景象，你被心中的鬼惊吓到可能性就越大。下回看跟别人看鬼片逞能时，到了关键环节就在心中哼两句“爱情买卖”。别人都吓得直冒冷汗，你却“扑哧”乐 了。多酷啊！如果真的看到什么“诡异”的事情，尽量给它一个科学的解释。做到了这些，你就可以训练有素地和mm看鬼片走夜路啦~
+如果你也是个怕鬼的胆小鬼，可以借鉴一下啦。相信科学，希望你我都能够尽快改掉这个坏毛病。
+PS：在看果壳文章中的描述的情景时，不自觉的就想象了下，发现自己中毒颇深。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-01-07 00:48:03 +0800 CST'>January 7, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 怕鬼的胆小鬼" href="https://milkythinking.com/blog/2011/01/07/a_coward_with_ghost/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://milkythinking.com/page/8/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://milkythinking.com/page/10/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

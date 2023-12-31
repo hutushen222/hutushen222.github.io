@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ubuntu下安装Git以及Git帮助手册 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="Git简介 Git是一个分布式版本控制系统，对应的是SVN、CVS这样的集中式版本控制系统。
+虽然知晓并安装Git是很久以前的事情了，但是我却没怎么用过，一直使用的是SVN。在《Pro Git》中看到的Git的好处有：
+本地完整地镜像了代码仓库的所有内容，如果服务器出现故障，可以使用任何一个本地镜像进行恢复。而使用SVN，如果没有对服务器端的数据进行安全悲愤，出现故障后，以前的所有记录数据将会丢失，无法恢复。 本地完整地镜像了代码仓库的所有内容，当由于某些原因，不能连接到中心服务器的时候，你可以在本地继续工作、提交代码，等到网络连通，再将更新同步到中心服务器。 当然还有其他的好处，但是我没有体验过，无法很好得描述，等以后有经验了在补充吧。
+安装Git Git 的工作需要调用 curl,zlib,openssl,expat,libiconv 等库的代码,所以需要先安装这些依赖工具。
+apt-get install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 从源代码安装 到Git官方站点下载最新的源代码，如当前最新版 1.7.4.4。 编译安装命令
+tar -zxf git-1.7.4.4.tar.gz cd git-1.7.4.4 make prefix=/usr/local all sudo make prefix=/usr/local install 二进制包安装 这种方法安装方便，我使用的就是这个方法，但往往不是最新版本的Git，如我的版本就是1.7.2.1。
+apt-get install git-core 安装Git帮助手册 使用二进制包安装后，发现并没有安装Git的帮助手册，源代码安装后是否有类似的情形就不知道了，如果有也可以用以下的方法进行安装。 使用git --version查看自己安装的Git版本。 然后现在对应的帮助手册，并解压到相应的位置：
+curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-1.7.2.1.tar.bz2&#34; sudo tar xjv -C /usr/local/share/man -f git-manpages-1.7.2.1.tar.bz2 你还可以复制执行下面的脚本，轻松搞定手册安装：
+cd /tmp curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-`git --version | awk &#39;{print $3}&#39;`.tar.bz2&#34; sudo mkdir -p /usr/local/share/man sudo tar xjv -C /usr/local/share/man -f git-manpages-`git --version | awk &#39;{print $3}&#39;`.">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2011/04/17/install_git_and_manual/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Ubuntu下安装Git以及Git帮助手册" />
+<meta property="og:description" content="Git简介 Git是一个分布式版本控制系统，对应的是SVN、CVS这样的集中式版本控制系统。
+虽然知晓并安装Git是很久以前的事情了，但是我却没怎么用过，一直使用的是SVN。在《Pro Git》中看到的Git的好处有：
+本地完整地镜像了代码仓库的所有内容，如果服务器出现故障，可以使用任何一个本地镜像进行恢复。而使用SVN，如果没有对服务器端的数据进行安全悲愤，出现故障后，以前的所有记录数据将会丢失，无法恢复。 本地完整地镜像了代码仓库的所有内容，当由于某些原因，不能连接到中心服务器的时候，你可以在本地继续工作、提交代码，等到网络连通，再将更新同步到中心服务器。 当然还有其他的好处，但是我没有体验过，无法很好得描述，等以后有经验了在补充吧。
+安装Git Git 的工作需要调用 curl,zlib,openssl,expat,libiconv 等库的代码,所以需要先安装这些依赖工具。
+apt-get install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 从源代码安装 到Git官方站点下载最新的源代码，如当前最新版 1.7.4.4。 编译安装命令
+tar -zxf git-1.7.4.4.tar.gz cd git-1.7.4.4 make prefix=/usr/local all sudo make prefix=/usr/local install 二进制包安装 这种方法安装方便，我使用的就是这个方法，但往往不是最新版本的Git，如我的版本就是1.7.2.1。
+apt-get install git-core 安装Git帮助手册 使用二进制包安装后，发现并没有安装Git的帮助手册，源代码安装后是否有类似的情形就不知道了，如果有也可以用以下的方法进行安装。 使用git --version查看自己安装的Git版本。 然后现在对应的帮助手册，并解压到相应的位置：
+curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-1.7.2.1.tar.bz2&#34; sudo tar xjv -C /usr/local/share/man -f git-manpages-1.7.2.1.tar.bz2 你还可以复制执行下面的脚本，轻松搞定手册安装：
+cd /tmp curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-`git --version | awk &#39;{print $3}&#39;`.tar.bz2&#34; sudo mkdir -p /usr/local/share/man sudo tar xjv -C /usr/local/share/man -f git-manpages-`git --version | awk &#39;{print $3}&#39;`." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2011/04/17/install_git_and_manual/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2011-04-17T09:04:53+08:00" />
+<meta property="article:modified_time" content="2011-04-17T09:04:53+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu下安装Git以及Git帮助手册"/>
+<meta name="twitter:description" content="Git简介 Git是一个分布式版本控制系统，对应的是SVN、CVS这样的集中式版本控制系统。
+虽然知晓并安装Git是很久以前的事情了，但是我却没怎么用过，一直使用的是SVN。在《Pro Git》中看到的Git的好处有：
+本地完整地镜像了代码仓库的所有内容，如果服务器出现故障，可以使用任何一个本地镜像进行恢复。而使用SVN，如果没有对服务器端的数据进行安全悲愤，出现故障后，以前的所有记录数据将会丢失，无法恢复。 本地完整地镜像了代码仓库的所有内容，当由于某些原因，不能连接到中心服务器的时候，你可以在本地继续工作、提交代码，等到网络连通，再将更新同步到中心服务器。 当然还有其他的好处，但是我没有体验过，无法很好得描述，等以后有经验了在补充吧。
+安装Git Git 的工作需要调用 curl,zlib,openssl,expat,libiconv 等库的代码,所以需要先安装这些依赖工具。
+apt-get install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 从源代码安装 到Git官方站点下载最新的源代码，如当前最新版 1.7.4.4。 编译安装命令
+tar -zxf git-1.7.4.4.tar.gz cd git-1.7.4.4 make prefix=/usr/local all sudo make prefix=/usr/local install 二进制包安装 这种方法安装方便，我使用的就是这个方法，但往往不是最新版本的Git，如我的版本就是1.7.2.1。
+apt-get install git-core 安装Git帮助手册 使用二进制包安装后，发现并没有安装Git的帮助手册，源代码安装后是否有类似的情形就不知道了，如果有也可以用以下的方法进行安装。 使用git --version查看自己安装的Git版本。 然后现在对应的帮助手册，并解压到相应的位置：
+curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-1.7.2.1.tar.bz2&#34; sudo tar xjv -C /usr/local/share/man -f git-manpages-1.7.2.1.tar.bz2 你还可以复制执行下面的脚本，轻松搞定手册安装：
+cd /tmp curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-`git --version | awk &#39;{print $3}&#39;`.tar.bz2&#34; sudo mkdir -p /usr/local/share/man sudo tar xjv -C /usr/local/share/man -f git-manpages-`git --version | awk &#39;{print $3}&#39;`."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Ubuntu下安装Git以及Git帮助手册",
+      "item": "https://milkythinking.com/blog/2011/04/17/install_git_and_manual/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ubuntu下安装Git以及Git帮助手册",
+  "name": "Ubuntu下安装Git以及Git帮助手册",
+  "description": "Git简介 Git是一个分布式版本控制系统，对应的是SVN、CVS这样的集中式版本控制系统。\n虽然知晓并安装Git是很久以前的事情了，但是我却没怎么用过，一直使用的是SVN。在《Pro Git》中看到的Git的好处有：\n本地完整地镜像了代码仓库的所有内容，如果服务器出现故障，可以使用任何一个本地镜像进行恢复。而使用SVN，如果没有对服务器端的数据进行安全悲愤，出现故障后，以前的所有记录数据将会丢失，无法恢复。 本地完整地镜像了代码仓库的所有内容，当由于某些原因，不能连接到中心服务器的时候，你可以在本地继续工作、提交代码，等到网络连通，再将更新同步到中心服务器。 当然还有其他的好处，但是我没有体验过，无法很好得描述，等以后有经验了在补充吧。\n安装Git Git 的工作需要调用 curl,zlib,openssl,expat,libiconv 等库的代码,所以需要先安装这些依赖工具。\napt-get install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 从源代码安装 到Git官方站点下载最新的源代码，如当前最新版 1.7.4.4。 编译安装命令\ntar -zxf git-1.7.4.4.tar.gz cd git-1.7.4.4 make prefix=/usr/local all sudo make prefix=/usr/local install 二进制包安装 这种方法安装方便，我使用的就是这个方法，但往往不是最新版本的Git，如我的版本就是1.7.2.1。\napt-get install git-core 安装Git帮助手册 使用二进制包安装后，发现并没有安装Git的帮助手册，源代码安装后是否有类似的情形就不知道了，如果有也可以用以下的方法进行安装。 使用git --version查看自己安装的Git版本。 然后现在对应的帮助手册，并解压到相应的位置：\ncurl -O \u0026#34;http://kernel.org/pub/software/scm/git/git-manpages-1.7.2.1.tar.bz2\u0026#34; sudo tar xjv -C /usr/local/share/man -f git-manpages-1.7.2.1.tar.bz2 你还可以复制执行下面的脚本，轻松搞定手册安装：\ncd /tmp curl -O \u0026#34;http://kernel.org/pub/software/scm/git/git-manpages-`git --version | awk \u0026#39;{print $3}\u0026#39;`.tar.bz2\u0026#34; sudo mkdir -p /usr/local/share/man sudo tar xjv -C /usr/local/share/man -f git-manpages-`git --version | awk \u0026#39;{print $3}\u0026#39;`.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Git简介 Git是一个分布式版本控制系统，对应的是SVN、CVS这样的集中式版本控制系统。\n虽然知晓并安装Git是很久以前的事情了，但是我却没怎么用过，一直使用的是SVN。在《Pro Git》中看到的Git的好处有：\n本地完整地镜像了代码仓库的所有内容，如果服务器出现故障，可以使用任何一个本地镜像进行恢复。而使用SVN，如果没有对服务器端的数据进行安全悲愤，出现故障后，以前的所有记录数据将会丢失，无法恢复。 本地完整地镜像了代码仓库的所有内容，当由于某些原因，不能连接到中心服务器的时候，你可以在本地继续工作、提交代码，等到网络连通，再将更新同步到中心服务器。 当然还有其他的好处，但是我没有体验过，无法很好得描述，等以后有经验了在补充吧。\n安装Git Git 的工作需要调用 curl,zlib,openssl,expat,libiconv 等库的代码,所以需要先安装这些依赖工具。\napt-get install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 从源代码安装 到Git官方站点下载最新的源代码，如当前最新版 1.7.4.4。 编译安装命令\ntar -zxf git-1.7.4.4.tar.gz cd git-1.7.4.4 make prefix=/usr/local all sudo make prefix=/usr/local install 二进制包安装 这种方法安装方便，我使用的就是这个方法，但往往不是最新版本的Git，如我的版本就是1.7.2.1。\napt-get install git-core 安装Git帮助手册 使用二进制包安装后，发现并没有安装Git的帮助手册，源代码安装后是否有类似的情形就不知道了，如果有也可以用以下的方法进行安装。 使用git --version查看自己安装的Git版本。 然后现在对应的帮助手册，并解压到相应的位置：\ncurl -O \"http://kernel.org/pub/software/scm/git/git-manpages-1.7.2.1.tar.bz2\" sudo tar xjv -C /usr/local/share/man -f git-manpages-1.7.2.1.tar.bz2 你还可以复制执行下面的脚本，轻松搞定手册安装：\ncd /tmp curl -O \"http://kernel.org/pub/software/scm/git/git-manpages-`git --version | awk '{print $3}'`.tar.bz2\" sudo mkdir -p /usr/local/share/man sudo tar xjv -C /usr/local/share/man -f git-manpages-`git --version | awk '{print $3}'`.tar.bz2 Git使用的其他注意事项 使用Git初始化项目的时候，你可能会遇到如下的警告信息：\nwarning: templates not found /usr/local/share/git-core/templates 原因是由于模版目录的读写权限造成的，使用如下命令变更模版目录的读写权限即可：\nsudo chmod -R 755 /usr/local/share/git-core/templates/ 参考链接： 安装Git帮助手册\nPro Git 是一本免费的Git书籍，有中文版本\nGonna Sailing 😉 ==END==\n",
+  "wordCount" : "104",
+  "inLanguage": "en",
+  "datePublished": "2011-04-17T09:04:53+08:00",
+  "dateModified": "2011-04-17T09:04:53+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2011/04/17/install_git_and_manual/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Ubuntu下安装Git以及Git帮助手册
+    </h1>
+    <div class="post-meta"><span title='2011-04-17 09:04:53 +0800 CST'>April 17, 2011</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="git简介">Git简介<a hidden class="anchor" aria-hidden="true" href="#git简介">#</a></h2>
+<p>Git是一个分布式版本控制系统，对应的是SVN、CVS这样的集中式版本控制系统。</p>
+<p>虽然知晓并安装Git是很久以前的事情了，但是我却没怎么用过，一直使用的是SVN。在《<a href="http://progit.org/book/">Pro Git</a>》中看到的Git的好处有：</p>
+<ul>
+<li>本地完整地镜像了代码仓库的所有内容，如果服务器出现故障，可以使用任何一个本地镜像进行恢复。而使用SVN，如果没有对服务器端的数据进行安全悲愤，出现故障后，以前的所有记录数据将会丢失，无法恢复。</li>
+<li>本地完整地镜像了代码仓库的所有内容，当由于某些原因，不能连接到中心服务器的时候，你可以在本地继续工作、提交代码，等到网络连通，再将更新同步到中心服务器。</li>
+</ul>
+<p>当然还有其他的好处，但是我没有体验过，无法很好得描述，等以后有经验了在补充吧。</p>
+<h2 id="安装git">安装Git<a hidden class="anchor" aria-hidden="true" href="#安装git">#</a></h2>
+<p>Git 的工作需要调用 curl,zlib,openssl,expat,libiconv 等库的代码,所以需要先安装这些依赖工具。</p>
+<pre tabindex="0"><code>apt-get install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+</code></pre><h3 id="从源代码安装">从源代码安装<a hidden class="anchor" aria-hidden="true" href="#从源代码安装">#</a></h3>
+<p>到<a href="http://git-scm.com/download">Git官方站点</a>下载最新的源代码，如当前最新版 <a href="http://kernel.org/pub/software/scm/git/git-1.7.4.4.tar.bz2">1.7.4.4</a>。
+编译安装命令</p>
+<pre tabindex="0"><code>tar -zxf git-1.7.4.4.tar.gz
+cd git-1.7.4.4
+make prefix=/usr/local all
+sudo make prefix=/usr/local install
+</code></pre><h3 id="二进制包安装">二进制包安装<a hidden class="anchor" aria-hidden="true" href="#二进制包安装">#</a></h3>
+<p>这种方法安装方便，我使用的就是这个方法，但往往不是最新版本的Git，如我的版本就是1.7.2.1。</p>
+<pre tabindex="0"><code>apt-get install git-core
+</code></pre><h2 id="安装git帮助手册">安装Git帮助手册<a hidden class="anchor" aria-hidden="true" href="#安装git帮助手册">#</a></h2>
+<p>使用二进制包安装后，发现并没有安装Git的帮助手册，源代码安装后是否有类似的情形就不知道了，如果有也可以用以下的方法进行安装。
+使用<code>git --version</code>查看自己安装的Git版本。
+然后现在对应的帮助手册，并解压到相应的位置：</p>
+<pre tabindex="0"><code>curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-1.7.2.1.tar.bz2&#34;
+sudo tar xjv -C /usr/local/share/man -f git-manpages-1.7.2.1.tar.bz2
+</code></pre><p>你还可以复制执行下面的脚本，轻松搞定手册安装：</p>
+<pre tabindex="0"><code>cd /tmp
+curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-`git --version | awk &#39;{print $3}&#39;`.tar.bz2&#34;
+sudo mkdir -p /usr/local/share/man
+sudo tar xjv -C /usr/local/share/man -f git-manpages-`git --version | awk &#39;{print $3}&#39;`.tar.bz2
+</code></pre><h2 id="git使用的其他注意事项">Git使用的其他注意事项<a hidden class="anchor" aria-hidden="true" href="#git使用的其他注意事项">#</a></h2>
+<p>使用Git初始化项目的时候，你可能会遇到如下的警告信息：</p>
+<pre tabindex="0"><code>warning: templates not found /usr/local/share/git-core/templates
+</code></pre><p>原因是由于模版目录的读写权限造成的，使用如下命令变更模版目录的读写权限即可：</p>
+<pre tabindex="0"><code>sudo chmod -R 755 /usr/local/share/git-core/templates/
+</code></pre><h2 id="参考链接">参考链接：<a hidden class="anchor" aria-hidden="true" href="#参考链接">#</a></h2>
+<p><a href="http://www.codeography.com/2009/09/15/install-git-man-pages-the-easy-way.html">安装Git帮助手册</a></p>
+<p><a href="http://progit.org/book/">Pro Git</a> 是一本免费的Git书籍，有<a href="http://progit.org/book/zh/">中文版本</a></p>
+<p>Gonna Sailing 😉<!-- raw HTML omitted -->
+==END==</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

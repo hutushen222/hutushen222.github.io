@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>不用密码进行SSH连接 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="开发测试或维护VPS时，我们会使用SSH远程连接服务器，登陆后进行相关的操作。
+ssh hutushen222@192.168.200.137 为了保证账户的安全，一般我们会设置一个复杂的密码，这样导致每次连接时输入密码成为很不爽的事情，即使使用了KeePass之类的工具来管理密码。
+其实有一种一劳永逸的方法来解决每次输入密码的痛苦——使用密钥进行安全验证，过程如下：
+$ ssh-keygen -t rsa # 选择加密方式 rsa/dsa Enter file in whitch to save the key (~/.ssh/id_rsa): vps_rsa # 输入保存密钥的文件名 Enter passphrase (empty for no passphrase): # 设置密钥密码，可以不设置 Enter same passphrase again: # 确认密钥密码 Your identification has been saved in vps_rsa. # 私钥 Your public key has been saved in vps_rsa.pub. # 公钥 The key fingerprint is: 10:e1:02:57:15:7a:b7:37:b3:f3:a7:de:78:6f:ec:ff hutushen222@Sailing ... $ ssh-copy-id -i ~/.ssh/vps_rsa.pub hutushen222@192.168.200.137 # 将公钥添加到远程服务器的authorized_keys文件中 经过上述的步骤后，再使用SSH远程连接时就可以不输入密码或者输入设置的简单的密钥密码完成登陆。">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2012/05/23/password-less-ssh-login/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="不用密码进行SSH连接" />
+<meta property="og:description" content="开发测试或维护VPS时，我们会使用SSH远程连接服务器，登陆后进行相关的操作。
+ssh hutushen222@192.168.200.137 为了保证账户的安全，一般我们会设置一个复杂的密码，这样导致每次连接时输入密码成为很不爽的事情，即使使用了KeePass之类的工具来管理密码。
+其实有一种一劳永逸的方法来解决每次输入密码的痛苦——使用密钥进行安全验证，过程如下：
+$ ssh-keygen -t rsa # 选择加密方式 rsa/dsa Enter file in whitch to save the key (~/.ssh/id_rsa): vps_rsa # 输入保存密钥的文件名 Enter passphrase (empty for no passphrase): # 设置密钥密码，可以不设置 Enter same passphrase again: # 确认密钥密码 Your identification has been saved in vps_rsa. # 私钥 Your public key has been saved in vps_rsa.pub. # 公钥 The key fingerprint is: 10:e1:02:57:15:7a:b7:37:b3:f3:a7:de:78:6f:ec:ff hutushen222@Sailing ... $ ssh-copy-id -i ~/.ssh/vps_rsa.pub hutushen222@192.168.200.137 # 将公钥添加到远程服务器的authorized_keys文件中 经过上述的步骤后，再使用SSH远程连接时就可以不输入密码或者输入设置的简单的密钥密码完成登陆。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2012/05/23/password-less-ssh-login/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2012-05-23T23:25:00+08:00" />
+<meta property="article:modified_time" content="2012-05-23T23:25:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="不用密码进行SSH连接"/>
+<meta name="twitter:description" content="开发测试或维护VPS时，我们会使用SSH远程连接服务器，登陆后进行相关的操作。
+ssh hutushen222@192.168.200.137 为了保证账户的安全，一般我们会设置一个复杂的密码，这样导致每次连接时输入密码成为很不爽的事情，即使使用了KeePass之类的工具来管理密码。
+其实有一种一劳永逸的方法来解决每次输入密码的痛苦——使用密钥进行安全验证，过程如下：
+$ ssh-keygen -t rsa # 选择加密方式 rsa/dsa Enter file in whitch to save the key (~/.ssh/id_rsa): vps_rsa # 输入保存密钥的文件名 Enter passphrase (empty for no passphrase): # 设置密钥密码，可以不设置 Enter same passphrase again: # 确认密钥密码 Your identification has been saved in vps_rsa. # 私钥 Your public key has been saved in vps_rsa.pub. # 公钥 The key fingerprint is: 10:e1:02:57:15:7a:b7:37:b3:f3:a7:de:78:6f:ec:ff hutushen222@Sailing ... $ ssh-copy-id -i ~/.ssh/vps_rsa.pub hutushen222@192.168.200.137 # 将公钥添加到远程服务器的authorized_keys文件中 经过上述的步骤后，再使用SSH远程连接时就可以不输入密码或者输入设置的简单的密钥密码完成登陆。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "不用密码进行SSH连接",
+      "item": "https://milkythinking.com/blog/2012/05/23/password-less-ssh-login/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "不用密码进行SSH连接",
+  "name": "不用密码进行SSH连接",
+  "description": "开发测试或维护VPS时，我们会使用SSH远程连接服务器，登陆后进行相关的操作。\nssh hutushen222@192.168.200.137 为了保证账户的安全，一般我们会设置一个复杂的密码，这样导致每次连接时输入密码成为很不爽的事情，即使使用了KeePass之类的工具来管理密码。\n其实有一种一劳永逸的方法来解决每次输入密码的痛苦——使用密钥进行安全验证，过程如下：\n$ ssh-keygen -t rsa # 选择加密方式 rsa/dsa Enter file in whitch to save the key (~/.ssh/id_rsa): vps_rsa # 输入保存密钥的文件名 Enter passphrase (empty for no passphrase): # 设置密钥密码，可以不设置 Enter same passphrase again: # 确认密钥密码 Your identification has been saved in vps_rsa. # 私钥 Your public key has been saved in vps_rsa.pub. # 公钥 The key fingerprint is: 10:e1:02:57:15:7a:b7:37:b3:f3:a7:de:78:6f:ec:ff hutushen222@Sailing ... $ ssh-copy-id -i ~/.ssh/vps_rsa.pub hutushen222@192.168.200.137 # 将公钥添加到远程服务器的authorized_keys文件中 经过上述的步骤后，再使用SSH远程连接时就可以不输入密码或者输入设置的简单的密钥密码完成登陆。",
+  "keywords": [
+    
+  ],
+  "articleBody": "开发测试或维护VPS时，我们会使用SSH远程连接服务器，登陆后进行相关的操作。\nssh hutushen222@192.168.200.137 为了保证账户的安全，一般我们会设置一个复杂的密码，这样导致每次连接时输入密码成为很不爽的事情，即使使用了KeePass之类的工具来管理密码。\n其实有一种一劳永逸的方法来解决每次输入密码的痛苦——使用密钥进行安全验证，过程如下：\n$ ssh-keygen -t rsa # 选择加密方式 rsa/dsa Enter file in whitch to save the key (~/.ssh/id_rsa): vps_rsa # 输入保存密钥的文件名 Enter passphrase (empty for no passphrase): # 设置密钥密码，可以不设置 Enter same passphrase again: # 确认密钥密码 Your identification has been saved in vps_rsa. # 私钥 Your public key has been saved in vps_rsa.pub. # 公钥 The key fingerprint is: 10:e1:02:57:15:7a:b7:37:b3:f3:a7:de:78:6f:ec:ff hutushen222@Sailing ... $ ssh-copy-id -i ~/.ssh/vps_rsa.pub hutushen222@192.168.200.137 # 将公钥添加到远程服务器的authorized_keys文件中 经过上述的步骤后，再使用SSH远程连接时就可以不输入密码或者输入设置的简单的密钥密码完成登陆。\n注：如果机器只有自己使用可以完全不用密码；如果其他人也可以使用该机器，建议设置简单的密钥密码。\n注2：要保证服务器端~/.ssh(755|700)目录和authorized_keys(600)文件都只有当前用户拥有有写权限，否则会验证无效。\n参考链接 ubuntu远程登录（SSH） -by- xdzone 使用ssh-keygen让ssh登陆无需密码 -by- uchen ",
+  "wordCount" : "81",
+  "inLanguage": "en",
+  "datePublished": "2012-05-23T23:25:00+08:00",
+  "dateModified": "2012-05-23T23:25:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2012/05/23/password-less-ssh-login/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      不用密码进行SSH连接
+    </h1>
+    <div class="post-meta"><span title='2012-05-23 23:25:00 +0800 CST'>May 23, 2012</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>开发测试或维护VPS时，我们会使用SSH远程连接服务器，登陆后进行相关的操作。</p>
+<pre tabindex="0"><code>ssh hutushen222@192.168.200.137
+</code></pre><p>为了保证账户的安全，一般我们会设置一个复杂的密码，这样导致每次连接时输入密码成为很不爽的事情，即使使用了KeePass之类的工具来管理密码。</p>
+<p>其实有一种一劳永逸的方法来解决每次输入密码的痛苦——使用密钥进行安全验证，过程如下：</p>
+<pre tabindex="0"><code>$ ssh-keygen -t rsa  # 选择加密方式 rsa/dsa
+Enter file in whitch to save the key (~/.ssh/id_rsa): vps_rsa # 输入保存密钥的文件名
+Enter passphrase (empty for no passphrase): # 设置密钥密码，可以不设置
+Enter same passphrase again: # 确认密钥密码
+Your identification has been saved in vps_rsa. # 私钥
+Your public key has been saved in vps_rsa.pub. # 公钥
+The key fingerprint is:
+10:e1:02:57:15:7a:b7:37:b3:f3:a7:de:78:6f:ec:ff hutushen222@Sailing
+...
+$ ssh-copy-id -i ~/.ssh/vps_rsa.pub hutushen222@192.168.200.137 # 将公钥添加到远程服务器的authorized_keys文件中
+</code></pre><p>经过上述的步骤后，再使用SSH远程连接时就可以不输入密码或者输入设置的简单的密钥密码完成登陆。</p>
+<p>注：如果机器只有自己使用可以完全不用密码；如果其他人也可以使用该机器，建议设置简单的密钥密码。</p>
+<p>注2：要保证服务器端~/.ssh(755|700)目录和authorized_keys(600)文件都只有当前用户拥有有写权限，否则会验证无效。</p>
+<h4 id="参考链接">参考链接<a hidden class="anchor" aria-hidden="true" href="#参考链接">#</a></h4>
+<ul>
+<li><a href="http://www.cnblogs.com/xdzone/archive/2011/03/09/1978327.html">ubuntu远程登录（SSH）</a> -by- xdzone</li>
+<li><a href="http://hi.baidu.com/ugo5/blog/item/8275b6c8d28aa107bf09e6cc.html">使用ssh-keygen让ssh登陆无需密码</a> -by- uchen</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

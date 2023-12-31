@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>WordPress 再次初体验 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="最近，利用些许业余时间帮助朋友的创业网站搭建网站。在评估基于 Laravel 从零搭建、基于 WordPress、Drupal 等 CMS 进行搭建等多种方案后，最终选择 WordPress 这个平台。
+虽然此前自己做过一段时间 Drupal 定制开发，但是我一直认为其主题开发方面比较坑，D8 在这方面有没有改进，也没有进行关注，即使改进了，也需要自己学习很多新东西。而基于 Laravel 从零搭建，管理后台的搭建就需要耗费太多的精力，如果想要实现较好的交互体验，还需要强力的前端支持，开发成本过高。鉴于朋友的网站是媒体性质的网站，WordPress 比较适合该类型的站点，其具有功能强大的管理后台、丰富的功能插件、够用内容发布流程和较为华丽的主题，最终决定选型 WordPress。
+为了能够按时保质保量完成任务，这一次真心投入精力去学习去了解这个系统，阅读 Codex 文档[1]，阅读 WordPress 英文电子书，编写实验代码了解插件、主题开发。也许是伴随着快速的版本迭代演进，WordPress 变得越来越强大了，底层的结构也变得比较优雅（也许是因为我以前就没有用心去看懂的缘故 -_-!!!）。
+另外，伴随着对 WordPress 的一些概念的理解和实战，更正了自己此前的一些偏见，重新认识了该平台。
+观念一：自己写不写东西，其实和自己使用的是 WordPress、Ghost 亦或者 Jekyll 等等完全没有关系，关键在于自己想不想写，愿不愿意写。 观念二：不是所有的代码都需要自己手动完成，适量投入一些金钱，购买一些优秀的插件，能够帮你节省更多的时间和金钱。 观念三：不要建立太复杂的分类结构，简单的组织一些，写下去就好。以前那些花里胡哨的分类我现在都不知道是为什么创建的了，囧。 最终决定写下这篇文章，并希望以后能够经常记录一些内容，比如学习笔记、生活感悟、WordPress 新认知等。
+[1]： Dash 大赞">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2014/12/01/wordpress-re-experience/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="WordPress 再次初体验" />
+<meta property="og:description" content="最近，利用些许业余时间帮助朋友的创业网站搭建网站。在评估基于 Laravel 从零搭建、基于 WordPress、Drupal 等 CMS 进行搭建等多种方案后，最终选择 WordPress 这个平台。
+虽然此前自己做过一段时间 Drupal 定制开发，但是我一直认为其主题开发方面比较坑，D8 在这方面有没有改进，也没有进行关注，即使改进了，也需要自己学习很多新东西。而基于 Laravel 从零搭建，管理后台的搭建就需要耗费太多的精力，如果想要实现较好的交互体验，还需要强力的前端支持，开发成本过高。鉴于朋友的网站是媒体性质的网站，WordPress 比较适合该类型的站点，其具有功能强大的管理后台、丰富的功能插件、够用内容发布流程和较为华丽的主题，最终决定选型 WordPress。
+为了能够按时保质保量完成任务，这一次真心投入精力去学习去了解这个系统，阅读 Codex 文档[1]，阅读 WordPress 英文电子书，编写实验代码了解插件、主题开发。也许是伴随着快速的版本迭代演进，WordPress 变得越来越强大了，底层的结构也变得比较优雅（也许是因为我以前就没有用心去看懂的缘故 -_-!!!）。
+另外，伴随着对 WordPress 的一些概念的理解和实战，更正了自己此前的一些偏见，重新认识了该平台。
+观念一：自己写不写东西，其实和自己使用的是 WordPress、Ghost 亦或者 Jekyll 等等完全没有关系，关键在于自己想不想写，愿不愿意写。 观念二：不是所有的代码都需要自己手动完成，适量投入一些金钱，购买一些优秀的插件，能够帮你节省更多的时间和金钱。 观念三：不要建立太复杂的分类结构，简单的组织一些，写下去就好。以前那些花里胡哨的分类我现在都不知道是为什么创建的了，囧。 最终决定写下这篇文章，并希望以后能够经常记录一些内容，比如学习笔记、生活感悟、WordPress 新认知等。
+[1]： Dash 大赞" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2014/12/01/wordpress-re-experience/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-12-01T00:08:46+08:00" />
+<meta property="article:modified_time" content="2014-12-01T00:08:46+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="WordPress 再次初体验"/>
+<meta name="twitter:description" content="最近，利用些许业余时间帮助朋友的创业网站搭建网站。在评估基于 Laravel 从零搭建、基于 WordPress、Drupal 等 CMS 进行搭建等多种方案后，最终选择 WordPress 这个平台。
+虽然此前自己做过一段时间 Drupal 定制开发，但是我一直认为其主题开发方面比较坑，D8 在这方面有没有改进，也没有进行关注，即使改进了，也需要自己学习很多新东西。而基于 Laravel 从零搭建，管理后台的搭建就需要耗费太多的精力，如果想要实现较好的交互体验，还需要强力的前端支持，开发成本过高。鉴于朋友的网站是媒体性质的网站，WordPress 比较适合该类型的站点，其具有功能强大的管理后台、丰富的功能插件、够用内容发布流程和较为华丽的主题，最终决定选型 WordPress。
+为了能够按时保质保量完成任务，这一次真心投入精力去学习去了解这个系统，阅读 Codex 文档[1]，阅读 WordPress 英文电子书，编写实验代码了解插件、主题开发。也许是伴随着快速的版本迭代演进，WordPress 变得越来越强大了，底层的结构也变得比较优雅（也许是因为我以前就没有用心去看懂的缘故 -_-!!!）。
+另外，伴随着对 WordPress 的一些概念的理解和实战，更正了自己此前的一些偏见，重新认识了该平台。
+观念一：自己写不写东西，其实和自己使用的是 WordPress、Ghost 亦或者 Jekyll 等等完全没有关系，关键在于自己想不想写，愿不愿意写。 观念二：不是所有的代码都需要自己手动完成，适量投入一些金钱，购买一些优秀的插件，能够帮你节省更多的时间和金钱。 观念三：不要建立太复杂的分类结构，简单的组织一些，写下去就好。以前那些花里胡哨的分类我现在都不知道是为什么创建的了，囧。 最终决定写下这篇文章，并希望以后能够经常记录一些内容，比如学习笔记、生活感悟、WordPress 新认知等。
+[1]： Dash 大赞"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "WordPress 再次初体验",
+      "item": "https://milkythinking.com/blog/2014/12/01/wordpress-re-experience/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WordPress 再次初体验",
+  "name": "WordPress 再次初体验",
+  "description": "最近，利用些许业余时间帮助朋友的创业网站搭建网站。在评估基于 Laravel 从零搭建、基于 WordPress、Drupal 等 CMS 进行搭建等多种方案后，最终选择 WordPress 这个平台。\n虽然此前自己做过一段时间 Drupal 定制开发，但是我一直认为其主题开发方面比较坑，D8 在这方面有没有改进，也没有进行关注，即使改进了，也需要自己学习很多新东西。而基于 Laravel 从零搭建，管理后台的搭建就需要耗费太多的精力，如果想要实现较好的交互体验，还需要强力的前端支持，开发成本过高。鉴于朋友的网站是媒体性质的网站，WordPress 比较适合该类型的站点，其具有功能强大的管理后台、丰富的功能插件、够用内容发布流程和较为华丽的主题，最终决定选型 WordPress。\n为了能够按时保质保量完成任务，这一次真心投入精力去学习去了解这个系统，阅读 Codex 文档[1]，阅读 WordPress 英文电子书，编写实验代码了解插件、主题开发。也许是伴随着快速的版本迭代演进，WordPress 变得越来越强大了，底层的结构也变得比较优雅（也许是因为我以前就没有用心去看懂的缘故 -_-!!!）。\n另外，伴随着对 WordPress 的一些概念的理解和实战，更正了自己此前的一些偏见，重新认识了该平台。\n观念一：自己写不写东西，其实和自己使用的是 WordPress、Ghost 亦或者 Jekyll 等等完全没有关系，关键在于自己想不想写，愿不愿意写。 观念二：不是所有的代码都需要自己手动完成，适量投入一些金钱，购买一些优秀的插件，能够帮你节省更多的时间和金钱。 观念三：不要建立太复杂的分类结构，简单的组织一些，写下去就好。以前那些花里胡哨的分类我现在都不知道是为什么创建的了，囧。 最终决定写下这篇文章，并希望以后能够经常记录一些内容，比如学习笔记、生活感悟、WordPress 新认知等。\n[1]： Dash 大赞",
+  "keywords": [
+    
+  ],
+  "articleBody": "最近，利用些许业余时间帮助朋友的创业网站搭建网站。在评估基于 Laravel 从零搭建、基于 WordPress、Drupal 等 CMS 进行搭建等多种方案后，最终选择 WordPress 这个平台。\n虽然此前自己做过一段时间 Drupal 定制开发，但是我一直认为其主题开发方面比较坑，D8 在这方面有没有改进，也没有进行关注，即使改进了，也需要自己学习很多新东西。而基于 Laravel 从零搭建，管理后台的搭建就需要耗费太多的精力，如果想要实现较好的交互体验，还需要强力的前端支持，开发成本过高。鉴于朋友的网站是媒体性质的网站，WordPress 比较适合该类型的站点，其具有功能强大的管理后台、丰富的功能插件、够用内容发布流程和较为华丽的主题，最终决定选型 WordPress。\n为了能够按时保质保量完成任务，这一次真心投入精力去学习去了解这个系统，阅读 Codex 文档[1]，阅读 WordPress 英文电子书，编写实验代码了解插件、主题开发。也许是伴随着快速的版本迭代演进，WordPress 变得越来越强大了，底层的结构也变得比较优雅（也许是因为我以前就没有用心去看懂的缘故 -_-!!!）。\n另外，伴随着对 WordPress 的一些概念的理解和实战，更正了自己此前的一些偏见，重新认识了该平台。\n观念一：自己写不写东西，其实和自己使用的是 WordPress、Ghost 亦或者 Jekyll 等等完全没有关系，关键在于自己想不想写，愿不愿意写。 观念二：不是所有的代码都需要自己手动完成，适量投入一些金钱，购买一些优秀的插件，能够帮你节省更多的时间和金钱。 观念三：不要建立太复杂的分类结构，简单的组织一些，写下去就好。以前那些花里胡哨的分类我现在都不知道是为什么创建的了，囧。 最终决定写下这篇文章，并希望以后能够经常记录一些内容，比如学习笔记、生活感悟、WordPress 新认知等。\n[1]： Dash 大赞\n",
+  "wordCount" : "39",
+  "inLanguage": "en",
+  "datePublished": "2014-12-01T00:08:46+08:00",
+  "dateModified": "2014-12-01T00:08:46+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2014/12/01/wordpress-re-experience/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      WordPress 再次初体验
+    </h1>
+    <div class="post-meta"><span title='2014-12-01 00:08:46 +0800 CST'>December 1, 2014</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>最近，利用些许业余时间帮助朋友的创业网站搭建网站。在评估基于 Laravel 从零搭建、基于 WordPress、Drupal 等 CMS 进行搭建等多种方案后，最终选择 WordPress 这个平台。</p>
+<p>虽然此前自己做过一段时间 Drupal 定制开发，但是我一直认为其主题开发方面比较坑，D8 在这方面有没有改进，也没有进行关注，即使改进了，也需要自己学习很多新东西。而基于 Laravel 从零搭建，管理后台的搭建就需要耗费太多的精力，如果想要实现较好的交互体验，还需要强力的前端支持，开发成本过高。鉴于朋友的网站是媒体性质的网站，WordPress 比较适合该类型的站点，其具有功能强大的管理后台、丰富的功能插件、够用内容发布流程和较为华丽的主题，最终决定选型 WordPress。</p>
+<p>为了能够按时保质保量完成任务，这一次真心投入精力去学习去了解这个系统，阅读 Codex 文档[1]，阅读 WordPress 英文电子书，编写实验代码了解插件、主题开发。也许是伴随着快速的版本迭代演进，WordPress 变得越来越强大了，底层的结构也变得比较优雅（也许是因为我以前就没有用心去看懂的缘故 -_-!!!）。</p>
+<p>另外，伴随着对 WordPress 的一些概念的理解和实战，更正了自己此前的一些偏见，重新认识了该平台。</p>
+<ul>
+<li>观念一：自己写不写东西，其实和自己使用的是 WordPress、Ghost 亦或者 Jekyll 等等完全没有关系，关键在于自己想不想写，愿不愿意写。</li>
+<li>观念二：不是所有的代码都需要自己手动完成，适量投入一些金钱，购买一些优秀的插件，能够帮你节省更多的时间和金钱。</li>
+<li>观念三：不要建立太复杂的分类结构，简单的组织一些，写下去就好。以前那些花里胡哨的分类我现在都不知道是为什么创建的了，囧。</li>
+</ul>
+<p>最终决定写下这篇文章，并希望以后能够经常记录一些内容，比如学习笔记、生活感悟、WordPress 新认知等。</p>
+<hr>
+<p>[1]： Dash 大赞</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.121.1"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Milky Thinking</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://milkythinking.com/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Milky Thinking" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://milkythinking.com/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Milky Thinking"/>
+<meta name="twitter:description" content=""/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Milky Thinking",
+  "url": "https://milkythinking.com/",
+  "description": "",
+  "thumbnailUrl": "https://milkythinking.com/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="first-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">使用 Chrome 开发者工具校验 XPath
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>使用 XPath 提取页面内容时，如何快速校验规则有效性呢？
+此前曾尝试找寻相关的插件，但是使用的体验很糟糕，于是便使用 PHP 调试校验。
+最近发现原来 Chrome 开发者工具自带 XPath 校验功能。
+方案一：元素面板的查询功能支持 XPath 规则 方案二：控制台中使用内置函数 $x(xpath[, startNode]) 来源：Stack Overflow</p>
+  </div>
+  <footer class="entry-footer"><span title='2018-07-10 23:49:06 +0800 CST'>July 10, 2018</span></footer>
+  <a class="entry-link" aria-label="post link to 使用 Chrome 开发者工具校验 XPath" href="https://milkythinking.com/blog/2018/07/10/verify-xpath-with-chrome-devtools/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">人生的意义-20160616
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>早上骑行上班的路上，听了「流行通信」的「#47 留学和世界眼光——四人醉聊」，其中有听到「人生的意义」这个词汇，四位主播中的「刘佳」是哥大天文系的博士生，也是困惑于这样的问题，在转到天文系前，尝试了很多的专业方向，《圣经》也无法提供寄托，最终觉得天文学对于宇宙的研究可能会帮助解答自己的困惑，以及对天文学感兴趣，进而转系。
+端午节前，在上海逗留了几天，期间和刘白光、Larry Zhao 聊了聊，因缘际会翻看了刘白光在简书的文章，对于「意义」，他也在不停地思考。他的「关于意义」一文汇总了过去几年中，他对于意义的思考。
+前段时间，看了《世界为何存在》前几章，该书对「为什么存在万物而非一无所有？」这个问题进行了探讨。第一章中介绍了不同领域的巨人对于这个问题的看法，并没有一个统一的解答。
+综上，一个终极的准确的解答目前是不存在的。宇宙之谜、生物之谜、存在之谜、知识的边界等等，仍需人们进一步探索、发现和总结。
+在此之前，我们不能因为没有找到答案，而陷入「虚无」（虚无用在这里是否准确不得而知），不要极端、不要轻生、不要颓废，以积极的心态面对生活。
+Don’t Panic
+在这样的背景下，对于意义的探讨将回归到个人，保持好奇心和开放的心态，去「跨过山和大海」，去「穿过人山人海」。
+最后，以胡适在「人生有何意义」中的一句话结尾：
+生命本没有意义，你要能给他什么意义，他就有什么意义。与其终日冥想人生有何意义，不如试用此生作点有意义的事……
+-EOF-</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-06-16 14:28:33 +0800 CST'>June 16, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to 人生的意义-20160616" href="https://milkythinking.com/blog/2016/06/16/meaning-of-life-20160616/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Git – 合并冲突时，撤销合并
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>执行合并操作时，遇到冲突，暂时又不想解决冲突，可以通过以下命令撤销合并：
+最新版本时：
+git merge --abort 版本早于 1.7.4 时：
+git reset --merge 版本早于 1.6.2 时：
+git reset --hard 注： git merge --abort is equivalent to git reset --merge when MERGE_HEAD is present.
+参考链接 StackOverflow – How to undo a git merge with conflicts Pro Git – Reset Demystified </p>
+  </div>
+  <footer class="entry-footer"><span title='2016-03-30 16:59:09 +0800 CST'>March 30, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to Git – 合并冲突时，撤销合并" href="https://milkythinking.com/blog/2016/03/20/git-undo-merge-conflict/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Composer 版本号
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>我们在开发过程中使用到许多第三方库，需要在composer.json中指明依赖库版本规则来安装恰当的包。
+Composer 推荐的版本规则是语义化版本，版本格式：主版本号.次版本号.修订号，版本号递增规则如下：
+主版本号：当你做了不兼容的 API 修改 次版本号：当你做了向下兼容的功能性新增 修订号：当你做了向下兼容的问题修正 基本约束 具体版本 安装指明的具体版本，如果其他依赖包需要不同的版本，安装或更新过程将失败。
+1.2.3 范围 使用比较运算符指明有效版本范围。可用操作符如下：&gt;、&gt;=、&lt;、&lt;=、!=。
+可以定义多个范围，使用空格（ ）或者逗号（,）分隔的范围当做逻辑与操作，使用双管道（||）分隔的范围当做逻辑或操作。
+&gt;=1.0 &gt;=1.0 &lt;2.0 &gt;=1.0 &lt;1.1 || &gt;=1.2 带连字符的范围 非完整的版本号会用通配符补全，比如 2.0 补全为 2.0.*。
+1.0 - 2.0 等价于 &gt;=1.0 &lt;2.1 1.0.0 - 2.1.0 等价于 &gt;=1.0.0 &lt;=2.1.0 通配符 可以在版本号中使用通配符（*）。
+1.0.* 等价于 &gt;=1.0 &lt;1.1 下一个重要版本 对于遵循语义化版本的项目，波浪号和脱字符提供更加简介的表达。
+波浪号（~） 波浪号常用于标记依赖包的最小版本。可以理解为波浪号标记依赖包的最低版本，并允许版本号最后一位数字增加（不适用于主版本号）。
+~1.2 等价于 &gt;=1.2 &lt;2.0.0 ~1.2.3 等价于 &gt;=1.2.3 &lt;1.3.0 脱字符（^） 脱字符的行为和波浪号类似，但更强调语义化版本，总是允许向后兼容的更新。
+^1.2.3 等价于 &gt;=1.2.3 &lt;2.0.0 不过，对于早于1.0的版本，脱字符处理逻辑如下：
+^0.3 等价于 &gt;=0.3 &lt;0.4 注：为了最大化互操作性，对于库类型的项目，推荐使用脱字符声明依赖包的版本。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-02-28 19:09:08 +0800 CST'>February 28, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to Composer 版本号" href="https://milkythinking.com/blog/2016/02/28/composer-versions/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Git Tagging
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>标签是什么？ 标签通常用于标记历史上一些重要的时刻，通常用于记录发布新版本。
+列出所有的标签 git tag 列出匹配模式的标签 使用 Shell 通配符模式
+git tag -l &#39;v1.*&#39; 标签的2种类型与创建 轻量级标签（lightweight） 含注解标签（annotated）推荐 创建轻量级标签 git tag v1.2 创建含注解标签 git tag -a v1.3 -m &#34;commit message&#34; 查看标签详情 git show v1.3 创建指向提交的标签 有时忘记打标签了，不要怕，还有补救的方法。
+git tag -a v1.3.1 &lt;commit&gt; 推送标签至远程仓库 推送单个标签
+git push origin v1.3.1 推送全部标签
+git push origin --tags 删除本地标签 git tag -d v1.3.1 删除远程标签 git push origin --delete tag v1.3.1 git push origin :refs/tags/v1.3.1 重命名标签 将 old 标签重命名为 new...</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-02-25 21:51:08 +0800 CST'>February 25, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to Git Tagging" href="https://milkythinking.com/blog/2016/02/25/git-tagging/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">日志分析时，如何获取匹配行和其后若干行的内容？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>使用 grep 提供行上下文控制（Context Line Control）参数，可以轻松实现上述目标。
+-A NUM, –after-context=NUM
+Print NUM lines of trailing context after matching lines. Places a line containing a group separator (–) between contiguous groups of matches. With the -o or –only-matching option, this has no effect and a warning is given.
+-B NUM, –before-context=NUM
+Print NUM lines of leading context before matching lines. Places a line containing a group separator (–) between contiguous groups of matches. With the -o or –only-matching option, this has no effect and a warning is given....</p>
+  </div>
+  <footer class="entry-footer"><span title='2016-02-25 21:05:58 +0800 CST'>February 25, 2016</span></footer>
+  <a class="entry-link" aria-label="post link to 日志分析时，如何获取匹配行和其后若干行的内容？" href="https://milkythinking.com/blog/2016/02/25/grep-context-line-control/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Quotes About Meaning Of Life
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>“You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.” ― Albert Camus
+“Life has no meaning. Each of us has meaning and we bring it to life. It is a waste to be asking the question when you are the answer.” ― Joseph Campbell
+“I go to seek a Great Perhaps.” ― François Rabelais...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-04-11 16:55:35 +0800 CST'>April 11, 2015</span></footer>
+  <a class="entry-link" aria-label="post link to Quotes About Meaning Of Life" href="https://milkythinking.com/blog/2015/04/11/quotes-about-meaning-of-life/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">systemd
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>systemd 是专为 Linux 内核设计和开发的一组系统管理守护进程、类库和工具。systemd 的开发者们将其定位为操作系统的基础构造单元。
+在使用它的操作系统中，守护进程 systemd 是 Linux 启动过程中用户态执行的第一个进程。因此 systemd 是用户态进程树的根进程。
+命名上，systemd 延续了 Unix 惯例，以 d 结尾来标识守护进程。
+References systemd /wikipedia </p>
+  </div>
+  <footer class="entry-footer"><span title='2014-12-03 23:44:54 +0800 CST'>December 3, 2014</span></footer>
+  <a class="entry-link" aria-label="post link to systemd" href="https://milkythinking.com/blog/2014/12/03/systemd/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">WordPress 再次初体验
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>最近，利用些许业余时间帮助朋友的创业网站搭建网站。在评估基于 Laravel 从零搭建、基于 WordPress、Drupal 等 CMS 进行搭建等多种方案后，最终选择 WordPress 这个平台。
+虽然此前自己做过一段时间 Drupal 定制开发，但是我一直认为其主题开发方面比较坑，D8 在这方面有没有改进，也没有进行关注，即使改进了，也需要自己学习很多新东西。而基于 Laravel 从零搭建，管理后台的搭建就需要耗费太多的精力，如果想要实现较好的交互体验，还需要强力的前端支持，开发成本过高。鉴于朋友的网站是媒体性质的网站，WordPress 比较适合该类型的站点，其具有功能强大的管理后台、丰富的功能插件、够用内容发布流程和较为华丽的主题，最终决定选型 WordPress。
+为了能够按时保质保量完成任务，这一次真心投入精力去学习去了解这个系统，阅读 Codex 文档[1]，阅读 WordPress 英文电子书，编写实验代码了解插件、主题开发。也许是伴随着快速的版本迭代演进，WordPress 变得越来越强大了，底层的结构也变得比较优雅（也许是因为我以前就没有用心去看懂的缘故 -_-!!!）。
+另外，伴随着对 WordPress 的一些概念的理解和实战，更正了自己此前的一些偏见，重新认识了该平台。
+观念一：自己写不写东西，其实和自己使用的是 WordPress、Ghost 亦或者 Jekyll 等等完全没有关系，关键在于自己想不想写，愿不愿意写。 观念二：不是所有的代码都需要自己手动完成，适量投入一些金钱，购买一些优秀的插件，能够帮你节省更多的时间和金钱。 观念三：不要建立太复杂的分类结构，简单的组织一些，写下去就好。以前那些花里胡哨的分类我现在都不知道是为什么创建的了，囧。 最终决定写下这篇文章，并希望以后能够经常记录一些内容，比如学习笔记、生活感悟、WordPress 新认知等。
+[1]： Dash 大赞</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-12-01 00:08:46 +0800 CST'>December 1, 2014</span></footer>
+  <a class="entry-link" aria-label="post link to WordPress 再次初体验" href="https://milkythinking.com/blog/2014/12/01/wordpress-re-experience/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">开启daemon模式：nohup vs. screen
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>通常我们的服务器上一些任务，如邮件发送服务，需要以daemon模式运行。使用nohup和screen都可以实现这个目的，但它们的实现机制是不一样的。
+nohup通过让子进程忽略SIGHUP信号实现。screen通过开启一个新会话实现。因为screen的父进程是初始化进程init（pid=1），所以当我们断开服务器连接时，screen中开启的任务不会收到HUP信号，还会继续运行。
+下面，我们通过一个具体的例子进行演示：首先，写一个死循环脚本（loop.sh）；然后，分别使用nohup和screen实现daemon模式运行；最后，使用命令：ps xafo pid,ppid,command，查看进程的实际运行情况。
+loop.sh代码如下：
+#!/bin/bash while true do echo `date` sleep 1 done nohup 启用命令：
+$ nohup bash loop.sh &amp; 进程信息：
+6458 678 \_ sshd: vagrant [priv] 6475 6458 | \_ sshd: vagrant@pts/1 6476 6475 | \_ -bash 11185 6476 | \_ bash loop.sh screen 启用命令：
+$ screen # &lt;— 开启会话 $ bash loop.sh # &lt;— 运行进程 使用 Ctrl&#43;a d 退出会话。
+进程信息：
+9051 1 SCREEN 9052 9051 \_ /bin/bash 9110 9052 \_ bash loop....</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-04-12 23:36:58 +0800 CST'>April 12, 2014</span></footer>
+  <a class="entry-link" aria-label="post link to 开启daemon模式：nohup vs. screen" href="https://milkythinking.com/blog/2014/04/12/%E5%BC%80%E5%90%AFdaemon%E6%A8%A1%E5%BC%8Fnohup-vs-screen/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://milkythinking.com/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

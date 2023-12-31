@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>使用PHP SimpleXML生成XML文件 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="使用SimpleXML生成XML文件很简单，示例代码如下：
+$xml = new SimpleXMLElement(&#39;&lt;books /&gt;&#39;); $book = $xml-&gt;addChild(&#39;book&#39;); $book-&gt;addChild(&#39;title&#39;, &#39;拖延心理学&#39;); $book-&gt;addChild(&#39;isbn&#39;, &#39;9787300113906&#39;); $rating = $book-&gt;addChild(&#39;rating&#39;, 5); $rating-&gt;addAttribute(&#39;type&#39;, &#39;stars&#39;); // 添加其他节点 echo $xml-&gt;asXML(); 输入结果如下：
+&lt;?xml version=&#34;1.0&#34;?&gt; &lt;books&gt;&lt;book&gt;&lt;title&gt;&amp;#x62D6;&amp;#x5EF6;&amp;#x5FC3;&amp;#x7406;&amp;#x5B66;&lt;/title&gt;&lt;isbn&gt;9787300113906&lt;/isbn&gt;&lt;rating type=&#34;stars&#34;&gt;5&lt;/rating&gt;&lt;/book&gt;&lt;/books&gt; 请注意输出的XML内容，声明中没有encoding=&quot;UTF-8&quot;，汉字也被转换为对应的UTF-8编码。
+如何解决上面遇到的问题呢？
+虽然SimpleXML没有提供设置encoding的接口，但是可以通过以下途径解决：
+使用如下代码初始化SimpleXMLElement对象：
+$xml = new SimpleXMLElement(&#39;&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;&lt;books /&gt;&#39;); PS：网上有建议说在最后生成字符串时使用$xml = str_replace(&#39;&lt;?xml version=&quot;1.0&quot;?&gt;&#39;, &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#39;, $xml);命令进行替换实现添加encoding的目的，但是这种方法无法解决汉字转为UTF-8编码的问题。">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2012/06/05/generate-xml-file-with-php-simplexml/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="使用PHP SimpleXML生成XML文件" />
+<meta property="og:description" content="使用SimpleXML生成XML文件很简单，示例代码如下：
+$xml = new SimpleXMLElement(&#39;&lt;books /&gt;&#39;); $book = $xml-&gt;addChild(&#39;book&#39;); $book-&gt;addChild(&#39;title&#39;, &#39;拖延心理学&#39;); $book-&gt;addChild(&#39;isbn&#39;, &#39;9787300113906&#39;); $rating = $book-&gt;addChild(&#39;rating&#39;, 5); $rating-&gt;addAttribute(&#39;type&#39;, &#39;stars&#39;); // 添加其他节点 echo $xml-&gt;asXML(); 输入结果如下：
+&lt;?xml version=&#34;1.0&#34;?&gt; &lt;books&gt;&lt;book&gt;&lt;title&gt;&amp;#x62D6;&amp;#x5EF6;&amp;#x5FC3;&amp;#x7406;&amp;#x5B66;&lt;/title&gt;&lt;isbn&gt;9787300113906&lt;/isbn&gt;&lt;rating type=&#34;stars&#34;&gt;5&lt;/rating&gt;&lt;/book&gt;&lt;/books&gt; 请注意输出的XML内容，声明中没有encoding=&quot;UTF-8&quot;，汉字也被转换为对应的UTF-8编码。
+如何解决上面遇到的问题呢？
+虽然SimpleXML没有提供设置encoding的接口，但是可以通过以下途径解决：
+使用如下代码初始化SimpleXMLElement对象：
+$xml = new SimpleXMLElement(&#39;&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;&lt;books /&gt;&#39;); PS：网上有建议说在最后生成字符串时使用$xml = str_replace(&#39;&lt;?xml version=&quot;1.0&quot;?&gt;&#39;, &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#39;, $xml);命令进行替换实现添加encoding的目的，但是这种方法无法解决汉字转为UTF-8编码的问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2012/06/05/generate-xml-file-with-php-simplexml/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2012-06-05T21:48:20+08:00" />
+<meta property="article:modified_time" content="2012-06-05T21:48:20+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用PHP SimpleXML生成XML文件"/>
+<meta name="twitter:description" content="使用SimpleXML生成XML文件很简单，示例代码如下：
+$xml = new SimpleXMLElement(&#39;&lt;books /&gt;&#39;); $book = $xml-&gt;addChild(&#39;book&#39;); $book-&gt;addChild(&#39;title&#39;, &#39;拖延心理学&#39;); $book-&gt;addChild(&#39;isbn&#39;, &#39;9787300113906&#39;); $rating = $book-&gt;addChild(&#39;rating&#39;, 5); $rating-&gt;addAttribute(&#39;type&#39;, &#39;stars&#39;); // 添加其他节点 echo $xml-&gt;asXML(); 输入结果如下：
+&lt;?xml version=&#34;1.0&#34;?&gt; &lt;books&gt;&lt;book&gt;&lt;title&gt;&amp;#x62D6;&amp;#x5EF6;&amp;#x5FC3;&amp;#x7406;&amp;#x5B66;&lt;/title&gt;&lt;isbn&gt;9787300113906&lt;/isbn&gt;&lt;rating type=&#34;stars&#34;&gt;5&lt;/rating&gt;&lt;/book&gt;&lt;/books&gt; 请注意输出的XML内容，声明中没有encoding=&quot;UTF-8&quot;，汉字也被转换为对应的UTF-8编码。
+如何解决上面遇到的问题呢？
+虽然SimpleXML没有提供设置encoding的接口，但是可以通过以下途径解决：
+使用如下代码初始化SimpleXMLElement对象：
+$xml = new SimpleXMLElement(&#39;&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;&lt;books /&gt;&#39;); PS：网上有建议说在最后生成字符串时使用$xml = str_replace(&#39;&lt;?xml version=&quot;1.0&quot;?&gt;&#39;, &#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#39;, $xml);命令进行替换实现添加encoding的目的，但是这种方法无法解决汉字转为UTF-8编码的问题。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "使用PHP SimpleXML生成XML文件",
+      "item": "https://milkythinking.com/blog/2012/06/05/generate-xml-file-with-php-simplexml/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "使用PHP SimpleXML生成XML文件",
+  "name": "使用PHP SimpleXML生成XML文件",
+  "description": "使用SimpleXML生成XML文件很简单，示例代码如下：\n$xml = new SimpleXMLElement(\u0026#39;\u0026lt;books /\u0026gt;\u0026#39;); $book = $xml-\u0026gt;addChild(\u0026#39;book\u0026#39;); $book-\u0026gt;addChild(\u0026#39;title\u0026#39;, \u0026#39;拖延心理学\u0026#39;); $book-\u0026gt;addChild(\u0026#39;isbn\u0026#39;, \u0026#39;9787300113906\u0026#39;); $rating = $book-\u0026gt;addChild(\u0026#39;rating\u0026#39;, 5); $rating-\u0026gt;addAttribute(\u0026#39;type\u0026#39;, \u0026#39;stars\u0026#39;); // 添加其他节点 echo $xml-\u0026gt;asXML(); 输入结果如下：\n\u0026lt;?xml version=\u0026#34;1.0\u0026#34;?\u0026gt; \u0026lt;books\u0026gt;\u0026lt;book\u0026gt;\u0026lt;title\u0026gt;\u0026amp;#x62D6;\u0026amp;#x5EF6;\u0026amp;#x5FC3;\u0026amp;#x7406;\u0026amp;#x5B66;\u0026lt;/title\u0026gt;\u0026lt;isbn\u0026gt;9787300113906\u0026lt;/isbn\u0026gt;\u0026lt;rating type=\u0026#34;stars\u0026#34;\u0026gt;5\u0026lt;/rating\u0026gt;\u0026lt;/book\u0026gt;\u0026lt;/books\u0026gt; 请注意输出的XML内容，声明中没有encoding=\u0026quot;UTF-8\u0026quot;，汉字也被转换为对应的UTF-8编码。\n如何解决上面遇到的问题呢？\n虽然SimpleXML没有提供设置encoding的接口，但是可以通过以下途径解决：\n使用如下代码初始化SimpleXMLElement对象：\n$xml = new SimpleXMLElement(\u0026#39;\u0026lt;?xml version=\u0026#34;1.0\u0026#34; encoding=\u0026#34;utf-8\u0026#34;?\u0026gt;\u0026lt;books /\u0026gt;\u0026#39;); PS：网上有建议说在最后生成字符串时使用$xml = str_replace('\u0026lt;?xml version=\u0026quot;1.0\u0026quot;?\u0026gt;', '\u0026lt;?xml version=\u0026quot;1.0\u0026quot; encoding=\u0026quot;UTF-8\u0026quot;?\u0026gt;', $xml);命令进行替换实现添加encoding的目的，但是这种方法无法解决汉字转为UTF-8编码的问题。",
+  "keywords": [
+    
+  ],
+  "articleBody": "使用SimpleXML生成XML文件很简单，示例代码如下：\n$xml = new SimpleXMLElement(''); $book = $xml-\u003eaddChild('book'); $book-\u003eaddChild('title', '拖延心理学'); $book-\u003eaddChild('isbn', '9787300113906'); $rating = $book-\u003eaddChild('rating', 5); $rating-\u003eaddAttribute('type', 'stars'); // 添加其他节点 echo $xml-\u003easXML(); 输入结果如下：\n\u003c?xml version=\"1.0\"?\u003e \u003c/span\u003e\u0026#x62D6;\u0026#x5EF6;\u0026#x5FC3;\u0026#x7406;\u0026#x5B66;9787300113906",
+  "wordCount" : "47",
+  "inLanguage": "en",
+  "datePublished": "2012-06-05T21:48:20+08:00",
+  "dateModified": "2012-06-05T21:48:20+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2012/06/05/generate-xml-file-with-php-simplexml/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      使用PHP SimpleXML生成XML文件
+    </h1>
+    <div class="post-meta"><span title='2012-06-05 21:48:20 +0800 CST'>June 5, 2012</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>使用SimpleXML生成XML文件很简单，示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$xml <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleXMLElement</span>(<span style="color:#e6db74">&#39;&lt;books /&gt;&#39;</span>);
+</span></span><span style="display:flex;"><span>$book <span style="color:#f92672">=</span> $xml<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addChild</span>(<span style="color:#e6db74">&#39;book&#39;</span>);
+</span></span><span style="display:flex;"><span>$book<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addChild</span>(<span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;拖延心理学&#39;</span>);
+</span></span><span style="display:flex;"><span>$book<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addChild</span>(<span style="color:#e6db74">&#39;isbn&#39;</span>, <span style="color:#e6db74">&#39;9787300113906&#39;</span>);
+</span></span><span style="display:flex;"><span>$rating <span style="color:#f92672">=</span> $book<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addChild</span>(<span style="color:#e6db74">&#39;rating&#39;</span>, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>$rating<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addAttribute</span>(<span style="color:#e6db74">&#39;type&#39;</span>, <span style="color:#e6db74">&#39;stars&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 添加其他节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $xml<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">asXML</span>();
+</span></span></code></pre></div><p>输入结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;books&gt;&lt;book&gt;&lt;title&gt;</span>&amp;#x62D6;&amp;#x5EF6;&amp;#x5FC3;&amp;#x7406;&amp;#x5B66;<span style="color:#f92672">&lt;/title&gt;&lt;isbn&gt;</span>9787300113906<span style="color:#f92672">&lt;/isbn&gt;&lt;rating</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;stars&#34;</span><span style="color:#f92672">&gt;</span>5<span style="color:#f92672">&lt;/rating&gt;&lt;/book&gt;&lt;/books&gt;</span>
+</span></span></code></pre></div><p>请注意输出的XML内容，声明中没有<code>encoding=&quot;UTF-8&quot;</code>，汉字也被转换为对应的UTF-8编码。</p>
+<p>如何解决上面遇到的问题呢？</p>
+<p>虽然SimpleXML没有提供设置encoding的接口，但是可以通过以下途径解决：</p>
+<p>使用如下代码初始化SimpleXMLElement对象：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$xml <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SimpleXMLElement</span>(<span style="color:#e6db74">&#39;&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;&lt;books /&gt;&#39;</span>);
+</span></span></code></pre></div><p>PS：网上有建议说在最后生成字符串时使用<code>$xml = str_replace('&lt;?xml version=&quot;1.0&quot;?&gt;', '&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;', $xml);</code>命令进行替换实现添加encoding的目的，但是这种方法无法解决汉字转为UTF-8编码的问题。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

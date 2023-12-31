@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Weekly Digest #1 | Milky Thinking</title>
+<meta name="keywords" content="">
+<meta name="description" content="Weekly Digest是一个新的系列，分享一些我阅读的文章以及我的观点，每周五发布。
+我所信奉的编程哲学 -by- 张砷镓
+本文介绍了一些好的编码习惯，虽然我平时也比较注意编码习惯，但是还是有很多不足的地方，以下几条是我接下来一段时间需要加强的地方：
+Coding for Reading（我的一些代码逻辑需要调整） 用常量代替魔术数 ； 减少逻辑层次：对于复杂的表达式，通过提取中间变量来降低表达式的逻辑层次，保证每个表达式的逻辑层次不超过二层。对于多层条件判断，大多数情况可以用防御式编程将其简化成单层的条件判断，尽早return或者exit。（对于函数是尽早return还是推迟return，一直有些争论，我会在之后的某篇文章里进行探讨。） 请给它 5 分钟的时间 -by- 装傻充愣
+我也有这样的坏毛病，尤其是在他人表达和我不一致的观点时候，我会立即进行反驳，并表现出强烈的“进攻性”，结果往往不是好的结果。看到这篇文章，我要反思一下，学习5分钟的技巧——『5 分钟』代表着『思考』，而不是作出回应。——在以后和他人的交流过程中获得更好的效果。
+TEA上对该文章有不错的讨论，感觉superwa的第4条确实太“恶”了，不过不认同holy的心灵鸡汤的观点，『5分钟』只是个泛数，我们要让他们表达自己的观点（imwilsonxu），不倾听直接武断的下结论的方法不可取。另外心灵鸡汤对某类人还是很有用处的，比如我，疲惫的时候来点心灵鸡汤感觉很不错。
+37Signals成员的工作空间？ -by- 装傻充愣
+工作空间的舒适与否直接影响工作的心情，我喜欢较大的桌面，较安静的空间。之前使用的桌子空间太小，感觉很不爽，上周末终于在淘宝上购买了新的桌椅，现在感觉好多了。
+BattleStations @ Reddit 晒晒你的工作空间 @ V2EX
+Getting Real -by- 37Signals #book
+The smarter, faster, easier way to build a successful web application
+现在Getting Real可以免费下载了，你还在等什么呢？
+37Signals还有一本书：《Rework》，中文版《重来》。
+PS：想注册一下TEA，发现需要邀请码，想了一下也就释然了——邀请机制是社区初期保证内容的质量和社区的氛围的好方法。我目前不是TEA的好用户，再等等吧。">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/blog/2012/05/25/weekly-digest-1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Weekly Digest #1" />
+<meta property="og:description" content="Weekly Digest是一个新的系列，分享一些我阅读的文章以及我的观点，每周五发布。
+我所信奉的编程哲学 -by- 张砷镓
+本文介绍了一些好的编码习惯，虽然我平时也比较注意编码习惯，但是还是有很多不足的地方，以下几条是我接下来一段时间需要加强的地方：
+Coding for Reading（我的一些代码逻辑需要调整） 用常量代替魔术数 ； 减少逻辑层次：对于复杂的表达式，通过提取中间变量来降低表达式的逻辑层次，保证每个表达式的逻辑层次不超过二层。对于多层条件判断，大多数情况可以用防御式编程将其简化成单层的条件判断，尽早return或者exit。（对于函数是尽早return还是推迟return，一直有些争论，我会在之后的某篇文章里进行探讨。） 请给它 5 分钟的时间 -by- 装傻充愣
+我也有这样的坏毛病，尤其是在他人表达和我不一致的观点时候，我会立即进行反驳，并表现出强烈的“进攻性”，结果往往不是好的结果。看到这篇文章，我要反思一下，学习5分钟的技巧——『5 分钟』代表着『思考』，而不是作出回应。——在以后和他人的交流过程中获得更好的效果。
+TEA上对该文章有不错的讨论，感觉superwa的第4条确实太“恶”了，不过不认同holy的心灵鸡汤的观点，『5分钟』只是个泛数，我们要让他们表达自己的观点（imwilsonxu），不倾听直接武断的下结论的方法不可取。另外心灵鸡汤对某类人还是很有用处的，比如我，疲惫的时候来点心灵鸡汤感觉很不错。
+37Signals成员的工作空间？ -by- 装傻充愣
+工作空间的舒适与否直接影响工作的心情，我喜欢较大的桌面，较安静的空间。之前使用的桌子空间太小，感觉很不爽，上周末终于在淘宝上购买了新的桌椅，现在感觉好多了。
+BattleStations @ Reddit 晒晒你的工作空间 @ V2EX
+Getting Real -by- 37Signals #book
+The smarter, faster, easier way to build a successful web application
+现在Getting Real可以免费下载了，你还在等什么呢？
+37Signals还有一本书：《Rework》，中文版《重来》。
+PS：想注册一下TEA，发现需要邀请码，想了一下也就释然了——邀请机制是社区初期保证内容的质量和社区的氛围的好方法。我目前不是TEA的好用户，再等等吧。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://milkythinking.com/blog/2012/05/25/weekly-digest-1/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2012-05-25T21:40:54+08:00" />
+<meta property="article:modified_time" content="2012-05-25T21:40:54+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Weekly Digest #1"/>
+<meta name="twitter:description" content="Weekly Digest是一个新的系列，分享一些我阅读的文章以及我的观点，每周五发布。
+我所信奉的编程哲学 -by- 张砷镓
+本文介绍了一些好的编码习惯，虽然我平时也比较注意编码习惯，但是还是有很多不足的地方，以下几条是我接下来一段时间需要加强的地方：
+Coding for Reading（我的一些代码逻辑需要调整） 用常量代替魔术数 ； 减少逻辑层次：对于复杂的表达式，通过提取中间变量来降低表达式的逻辑层次，保证每个表达式的逻辑层次不超过二层。对于多层条件判断，大多数情况可以用防御式编程将其简化成单层的条件判断，尽早return或者exit。（对于函数是尽早return还是推迟return，一直有些争论，我会在之后的某篇文章里进行探讨。） 请给它 5 分钟的时间 -by- 装傻充愣
+我也有这样的坏毛病，尤其是在他人表达和我不一致的观点时候，我会立即进行反驳，并表现出强烈的“进攻性”，结果往往不是好的结果。看到这篇文章，我要反思一下，学习5分钟的技巧——『5 分钟』代表着『思考』，而不是作出回应。——在以后和他人的交流过程中获得更好的效果。
+TEA上对该文章有不错的讨论，感觉superwa的第4条确实太“恶”了，不过不认同holy的心灵鸡汤的观点，『5分钟』只是个泛数，我们要让他们表达自己的观点（imwilsonxu），不倾听直接武断的下结论的方法不可取。另外心灵鸡汤对某类人还是很有用处的，比如我，疲惫的时候来点心灵鸡汤感觉很不错。
+37Signals成员的工作空间？ -by- 装傻充愣
+工作空间的舒适与否直接影响工作的心情，我喜欢较大的桌面，较安静的空间。之前使用的桌子空间太小，感觉很不爽，上周末终于在淘宝上购买了新的桌椅，现在感觉好多了。
+BattleStations @ Reddit 晒晒你的工作空间 @ V2EX
+Getting Real -by- 37Signals #book
+The smarter, faster, easier way to build a successful web application
+现在Getting Real可以免费下载了，你还在等什么呢？
+37Signals还有一本书：《Rework》，中文版《重来》。
+PS：想注册一下TEA，发现需要邀请码，想了一下也就释然了——邀请机制是社区初期保证内容的质量和社区的氛围的好方法。我目前不是TEA的好用户，再等等吧。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://milkythinking.com/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Weekly Digest #1",
+      "item": "https://milkythinking.com/blog/2012/05/25/weekly-digest-1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Weekly Digest #1",
+  "name": "Weekly Digest #1",
+  "description": "Weekly Digest是一个新的系列，分享一些我阅读的文章以及我的观点，每周五发布。\n我所信奉的编程哲学 -by- 张砷镓\n本文介绍了一些好的编码习惯，虽然我平时也比较注意编码习惯，但是还是有很多不足的地方，以下几条是我接下来一段时间需要加强的地方：\nCoding for Reading（我的一些代码逻辑需要调整） 用常量代替魔术数 ； 减少逻辑层次：对于复杂的表达式，通过提取中间变量来降低表达式的逻辑层次，保证每个表达式的逻辑层次不超过二层。对于多层条件判断，大多数情况可以用防御式编程将其简化成单层的条件判断，尽早return或者exit。（对于函数是尽早return还是推迟return，一直有些争论，我会在之后的某篇文章里进行探讨。） 请给它 5 分钟的时间 -by- 装傻充愣\n我也有这样的坏毛病，尤其是在他人表达和我不一致的观点时候，我会立即进行反驳，并表现出强烈的“进攻性”，结果往往不是好的结果。看到这篇文章，我要反思一下，学习5分钟的技巧——『5 分钟』代表着『思考』，而不是作出回应。——在以后和他人的交流过程中获得更好的效果。\nTEA上对该文章有不错的讨论，感觉superwa的第4条确实太“恶”了，不过不认同holy的心灵鸡汤的观点，『5分钟』只是个泛数，我们要让他们表达自己的观点（imwilsonxu），不倾听直接武断的下结论的方法不可取。另外心灵鸡汤对某类人还是很有用处的，比如我，疲惫的时候来点心灵鸡汤感觉很不错。\n37Signals成员的工作空间？ -by- 装傻充愣\n工作空间的舒适与否直接影响工作的心情，我喜欢较大的桌面，较安静的空间。之前使用的桌子空间太小，感觉很不爽，上周末终于在淘宝上购买了新的桌椅，现在感觉好多了。\nBattleStations @ Reddit 晒晒你的工作空间 @ V2EX\nGetting Real -by- 37Signals #book\nThe smarter, faster, easier way to build a successful web application\n现在Getting Real可以免费下载了，你还在等什么呢？\n37Signals还有一本书：《Rework》，中文版《重来》。\nPS：想注册一下TEA，发现需要邀请码，想了一下也就释然了——邀请机制是社区初期保证内容的质量和社区的氛围的好方法。我目前不是TEA的好用户，再等等吧。",
+  "keywords": [
+    
+  ],
+  "articleBody": "Weekly Digest是一个新的系列，分享一些我阅读的文章以及我的观点，每周五发布。\n我所信奉的编程哲学 -by- 张砷镓\n本文介绍了一些好的编码习惯，虽然我平时也比较注意编码习惯，但是还是有很多不足的地方，以下几条是我接下来一段时间需要加强的地方：\nCoding for Reading（我的一些代码逻辑需要调整） 用常量代替魔术数 ； 减少逻辑层次：对于复杂的表达式，通过提取中间变量来降低表达式的逻辑层次，保证每个表达式的逻辑层次不超过二层。对于多层条件判断，大多数情况可以用防御式编程将其简化成单层的条件判断，尽早return或者exit。（对于函数是尽早return还是推迟return，一直有些争论，我会在之后的某篇文章里进行探讨。） 请给它 5 分钟的时间 -by- 装傻充愣\n我也有这样的坏毛病，尤其是在他人表达和我不一致的观点时候，我会立即进行反驳，并表现出强烈的“进攻性”，结果往往不是好的结果。看到这篇文章，我要反思一下，学习5分钟的技巧——『5 分钟』代表着『思考』，而不是作出回应。——在以后和他人的交流过程中获得更好的效果。\nTEA上对该文章有不错的讨论，感觉superwa的第4条确实太“恶”了，不过不认同holy的心灵鸡汤的观点，『5分钟』只是个泛数，我们要让他们表达自己的观点（imwilsonxu），不倾听直接武断的下结论的方法不可取。另外心灵鸡汤对某类人还是很有用处的，比如我，疲惫的时候来点心灵鸡汤感觉很不错。\n37Signals成员的工作空间？ -by- 装傻充愣\n工作空间的舒适与否直接影响工作的心情，我喜欢较大的桌面，较安静的空间。之前使用的桌子空间太小，感觉很不爽，上周末终于在淘宝上购买了新的桌椅，现在感觉好多了。\nBattleStations @ Reddit 晒晒你的工作空间 @ V2EX\nGetting Real -by- 37Signals #book\nThe smarter, faster, easier way to build a successful web application\n现在Getting Real可以免费下载了，你还在等什么呢？\n37Signals还有一本书：《Rework》，中文版《重来》。\nPS：想注册一下TEA，发现需要邀请码，想了一下也就释然了——邀请机制是社区初期保证内容的质量和社区的氛围的好方法。我目前不是TEA的好用户，再等等吧。\n",
+  "wordCount" : "50",
+  "inLanguage": "en",
+  "datePublished": "2012-05-25T21:40:54+08:00",
+  "dateModified": "2012-05-25T21:40:54+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://milkythinking.com/blog/2012/05/25/weekly-digest-1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Milky Thinking",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://milkythinking.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Weekly Digest #1
+    </h1>
+    <div class="post-meta"><span title='2012-05-25 21:40:54 +0800 CST'>May 25, 2012</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Weekly Digest是一个新的系列，分享一些我阅读的文章以及我的观点，每周五发布。</p>
+<p><strong><a href="http://www.cnblogs.com/zhangshenjia/archive/2012/04/22/programming_rules.html">我所信奉的编程哲学</a> -by- 张砷镓</strong></p>
+<p>本文介绍了一些好的编码习惯，虽然我平时也比较注意编码习惯，但是还是有很多不足的地方，以下几条是我接下来一段时间需要加强的地方：</p>
+<ul>
+<li>Coding for Reading（我的一些代码逻辑需要调整）</li>
+<li>用常量代替魔术数 ；</li>
+<li>减少逻辑层次：对于复杂的表达式，通过提取中间变量来降低表达式的逻辑层次，保证每个表达式的逻辑层次不超过二层。对于多层条件判断，大多数情况可以用防御式编程将其简化成单层的条件判断，尽早return或者exit。（对于函数是尽早return还是推迟return，一直有些争论，我会在之后的某篇文章里进行探讨。）</li>
+</ul>
+<p><strong><a href="http://www.nooidea.com/2012/04/give-it-five-minutes.html">请给它 5 分钟的时间</a> -by- 装傻充愣</strong></p>
+<p>我也有这样的坏毛病，尤其是在他人表达和我不一致的观点时候，我会立即进行反驳，并表现出强烈的“进攻性”，结果往往不是好的结果。看到这篇文章，我要反思一下，学习5分钟的技巧——『5 分钟』代表着『思考』，而不是作出回应。——在以后和他人的交流过程中获得更好的效果。</p>
+<p><a href="http://tea.tisiwi.com/news/278">TEA</a>上对该文章有不错的讨论，感觉<a href="http://tea.tisiwi.com/user/superwa">superwa</a>的第4条确实太“恶”了，不过不认同<a href="http://tea.tisiwi.com/news/278#278-6">holy</a>的心灵鸡汤的观点，『5分钟』只是个泛数，我们要让他们表达自己的观点（<a href="http://tea.tisiwi.com/news/278#278-1">imwilsonxu</a>），不倾听直接武断的下结论的方法不可取。另外心灵鸡汤对某类人还是很有用处的，比如我，疲惫的时候来点心灵鸡汤感觉很不错。</p>
+<p><strong><a href="http://www.nooidea.com/2012/05/all-hands-battlestations.html">37Signals成员的工作空间？</a> -by- 装傻充愣</strong></p>
+<p>工作空间的舒适与否直接影响工作的心情，我喜欢较大的桌面，较安静的空间。之前使用的桌子空间太小，感觉很不爽，上周末终于在淘宝上购买了新的桌椅，现在感觉好多了。</p>
+<p><a href="http://www.reddit.com/r/battlestations">BattleStations @ Reddit</a> <a href="http://www.v2ex.com/t/37225">晒晒你的工作空间 @ V2EX</a></p>
+<p><strong><a href="http://gettingreal.37signals.com/">Getting Real</a> -by- <a href="http://37signals.com/">37Signals</a> #book</strong></p>
+<blockquote>
+<p>The smarter, faster, easier way to build a successful web application</p>
+</blockquote>
+<p>现在Getting Real可以免费下载了，你还在等什么呢？</p>
+<p>37Signals还有一本书：《Rework》，中文版<a href="http://www.amazon.cn/%E9%87%8D%E6%9D%A5-%E6%9B%B4%E4%B8%BA%E7%AE%80%E5%8D%95%E6%9C%89%E6%95%88%E7%9A%84%E5%95%86%E4%B8%9A%E6%80%9D%E7%BB%B4-%E8%B4%BE%E6%A3%AE%E2%80%A2%E5%BC%97%E9%87%8C%E5%BE%B7/dp/B0048EKQS0">《重来》</a>。</p>
+<p>PS：想注册一下<a href="http://tea.tisiwi.com/">TEA</a>，发现需要邀请码，想了一下也就释然了——邀请机制是社区初期保证内容的质量和社区的氛围的好方法。我目前不是TEA的好用户，再等等吧。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

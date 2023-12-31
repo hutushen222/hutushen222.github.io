@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.121.1"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Milky Thinking</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://milkythinking.com/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://milkythinking.com/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Milky Thinking" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://milkythinking.com/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Milky Thinking"/>
+<meta name="twitter:description" content=""/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Milky Thinking",
+  "url": "https://milkythinking.com/",
+  "description": "",
+  "thumbnailUrl": "https://milkythinking.com/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">我是个黑客吗？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>前两天，阿敏亲戚公司的网站管理后台无法登陆了，老是提示“验证码错误”，于是向阿敏求助。不想写毕设论文的我，就去凑了个热闹。最终解决了问题，下面描述一下详细的过程：
+使用提供的帐号和密码在本地进行了多次尝试，遇到同样的错误。
+查看验证码图片的生成路径，猜测其验证码生成方式和我们自己做项目时生成验证码的方式是一样的，单独的一个文件，调用PHP的GD库生成包含随机字符串的图片，每次生成的时候将随机字符串存储在SESSION中，与用户提交表单后的验证码进行比对，相同的话继续执行登陆过程。
+怀疑是否是在存储随机字符串到SESSION中的时数据出错（我们此前曾遇到这个问题），但是我们没有托管空间的帐号，无法接触到代码，不可能进行调试验证猜测。
+尝试单独刷新验证码，输入前一次验证码的字符串，还是提示“验证码错误”。
+使用Firebug查看页面源码，发现该站点的登陆页面不是表单（Form），而是在点击登陆按钮的时候，通过JS获取相应字段的数据，然后发送Ajax请求执行登陆过程。
+查找处理登陆过程的JS代码，分析后感觉可以绕过其验证码的登陆过程，但是怎样绕过呢？于是将该页面下载到本地，修改对应的JS文件，屏蔽了其验证码验证的过程，尝试了几次登陆过程，最终还是失败。难道分析结果不对？
+在JS代码中添加alert语句，确认代码停止执行的位置，结果是，代码都执行了呀。
+意识到可以在Firebug中执行JS代码，于是将处理用户名和密码验证的JS代码复制过去执行，发现返回的数据有警告信息，大意是磁盘空间不够，SESSION文件无法写入，这应该就是症结所在了。
+获取站点的IP地址，咨询万网（网站托管在万网机房）的技术支持，的确是磁盘空间已满造成的，需要升级服务或者删除一些文件腾出些空间。
+因为站点很久没人维护，就花费了些时间获取万网会员的账户和密码，然后登陆进去。通过FTP访问并不能茶找到报错信息中显示的文件夹，但是既然是空间满了，阿敏决定删除写文件来释放些空间。
+找到一个比较大的文件，备份到本地，然后删除掉线上的数据，此时能够登陆进去了。阿敏和其亲戚交流了下，事情告一段落。
+我手痒，在Firebug下跑了下此前分析的可能绕过验证码验证过程的JS登陆过程。刚开始一直停留在登陆页面，以为自己的设想是错误的呢，看代码，发现是漏掉了一条跳转语句，添加后，成功登陆到后台。当然这是在我们知道用户名和密码的过程中。
+既然这样可以绕过，那么在不知道密码的情况下，写个脚本暴力破解是可能的。（突然想到也许该站点还存在注入漏洞，当时没有尝试，找时间可以尝试一下，不过我是不会做坏事的啦^_^）
+以上就是这次事件的经过了，哈好，我是个黑客了吗？
+另外，在登陆到空间管理后台时，我查看了下数据库数据，发现所有的密码都是明文存放的，网站的代码也是乱七八糟的，和我们初学PHP时的项目有的一拼的说。
+我提议阿敏建议他亲戚对重新开发一下站点，外包给我，基于Drupal实现一个更优秀与健壮的站点，但是没有下文了。不过这确提醒了我，以后确实可以通过接些外包的活连连手，赚点外快的说。
+PS：站点就不说出来了，免得他人过去进行破坏，不过很希望他们愿意进行再次开发，外快啊！！！
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-06-09 01:02:01 +0800 CST'>June 9, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 我是个黑客吗？" href="https://milkythinking.com/blog/2011/06/09/am_i_a_hacker/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">去你妈的“没有状态”
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>又是一次很久没有写博客的经历，现在都不知道写些什么东西了——此前给自己的更新博客的计划又流产了。
+回学校之后，一直为毕设论文的事情忙着，终于在前天晚上将论文初稿交了出去，现在还差翻译没有搞定。其实我一直在逃避写论文这件事情，感觉是件没什么意义的事情，还不如花时间去完善我的项目呢。但是这又是件不得不做的事情，我必须将它们完成，并顺利地毕业。
+如果自己能够认真对待毕设，我完全可以很快搞定它们，但是我却没有去做，而是给自己找了个借口——“没有状态”。看到这句话，我的内心充满了对自己的不满——因为自己的不节制，导致自己这段时间的生活乱七八糟的，却用“没有状态”来欺骗自己，让自己在放纵的时候心安理得。
+每天无聊地去看人人有没有更新、点点有没有更新、GR有没有更新，仿佛只有它们有更新了自己才能够找到“充实”的感觉。我要的不是这样的“充实”，我要真正的充实。
+我该采取怎样的行动呢？
+规律自己的作息，践行前两天制定的作息计划。 信任自己的GTD系统，并坚持执行其中的任务。 不能只做个信息的收集者，还应该做个信息的处理者，让信息变得有价值。 减少自己关注的事物的数量，让自己更加专注起来。 给自己认为重要的事情，安排固定的时间。Do It！ 不再用“没有状态”来欺骗自己，累了就去休息，然后继续工作。 上面列出的几条都不是具体的行动，那么我现在该做些什么呢？将自己要做的事情列出一个清单，整理到自己的GTD系统中，然后坚持去做。磨刀不误砍柴工！
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-06-06 13:10:57 +0800 CST'>June 6, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 去你妈的“没有状态”" href="https://milkythinking.com/blog/2011/06/06/fuck_not_in_the_mood/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">由news:yc想开去
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今天Hacker News置顶的链接是“news:yc”，一个iPhone App，用来阅读Hacker News的。该App几乎具有Hacker News站点所有的功能，如阅读热门链接、投票、评论等，还整合了Instapaper。news:yc创建者是一个美国高中生。
+刺激我的是“创建者是一个美国高中生”，每当看到他人创建了一个App或一个站点，我就会对自己有些许的不满意，我创造的产品在哪里呢？我什么时候能够将自己的产品拿出来供他人使用呢？我为什么就不能够做到专注地完成一个优秀的产品呢？
+No chance for interludes or pauses or moments where you build up for the big finish. If the passerby doesn’t stop, it’s all for nought. — Seth Godin(Busker’s dilemma)
+Seth Godin这句话和前一段时间《黑客与画家》中Paul Graham的说法是一致的。因为我的一些做法，现在的我就是什么都没有获得。有的只是在看到他人完成了产品时的羡慕。
+我想获得一些东西——荣誉感、认同感、激情、金钱等等，我想通过自己创造的产品来获得这些东西。但是我夫的一些行为却是在给自己设限，妨碍自己去实现它们。不能再这样下去了，我应该积极的接受《黑客与画家》等传达的想法，快速创造并推出我的产品。
+下面是我想对自己说的一些话：
+没有使用VPS搭建过服务器，不熟悉Ubuntu Server，不知道怎么搭建一个安全的站点，不知道怎样的结构才是一个好的结构，……这些统统都扔掉。大胆地去做，去尝试，去学习，没有谁能够一下子就学会这些东西，但是如果你连尝试都不愿意的话，你永远都不可能学会这些东西。不要说现在没有时间，你每天浪费的大量的时间完全可以压缩过来做这些更加有意义的事情。那么行动起来，将自己开个头的产品坚持做下去，然后快速地推出来。
+Do it!
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-05-22 09:58:30 +0800 CST'>May 22, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 由news:yc想开去" href="https://milkythinking.com/blog/2011/05/22/thinking_on_news_yc/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">我的Google Reader体验01
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今天在我的Google Reader中看到一篇关于Google Reader的文章，该文章介绍了几个更好的使用Google Reader的小技巧。有些是我经常使用的，如文件夹(Folder)和标签(Tag)功能，快捷键(Shortcuts)操作；有些是我曾体验过但没深入了解的，如趋势(Trends)；还有些是我初次接触到的，如Next小书签(booklet)。结合文章的描述，逐一体验了下那些对我来说新的功能，在这个过程中又发现另一些新功能，感觉很不错。这个过程中唯一有些不爽的是：由于某些原因，Google Reader不能够时刻正常访问。
+我的Google Reader中订阅了100多个博客，如果不使用Google Reader而是逐个去访问它们，也太耗费精力了。订阅到Google Reader后，我只用打开Google Reader一个站点就可以了，Google Reader可以帮我定期扫描博客的更新，极大程度的方便了我，节省了一定的时间。当然有些不好的地方就是不能看到针对这些文章的精彩的评论了。
+由于订阅的源过多，有些源每天还会更新大量的文章，聚集在一起后，将是个很大的量。刚开始，我不知道取舍，同时还想每天清空所有更新的条目，结果搞得自己疲惫不堪。过了一段时间后，反思了下，发现这样每天忙忙碌碌，却没什么效果，每天接收大量的信息，真正有用的没有多少，转化为自己的知识的就更少了——忙于清空，哪来时间思考。
+在看了月光博客等一些关于Google Reader的使用技巧的文章后，我开始清理自己的订阅源。删除了一批，剩余的使用文件夹和标签进行归类，并对它们进行了重要性划分，查看更新的时候，会根据重要程度按照文件夹进行查看。也不再一味的坚持每天要清空所有的未读条目，现在看到1000&#43;未读时已经没有丝毫焦躁的感觉了。在查看更新时，首先会快速地浏览所有的条目，对认为比较有意思的内容，加“星”，然后再逐条阅读这些加“星”的条目。每隔一段时间，我会清理一下Google Reader的未读条目，有时只是简单的“全部标为已读”，这种感觉还不错。
+但是，现有的习惯也有不好的地方，主要体现在两个方面：1. 即使自己进行了初次过滤，由于总量很大，还是有不少条目需要阅读，而自己并不能分配充足的时间逐条看完，于是这些内容积压起来，一段时间后，量还挺大的；2. 由于阅读英文的成本较高，往往需要花费更多的时间，于是就本能的逃避阅读它们，虽然我认为它们很有价值，但是却阅读的量却十分地少，久而久之，就更少看了。今天在看了我的Google趋势(Trend)数据后，我意识到我应该投入一些时间去耐心地读一读这些优秀的文章，否则就没有必要订阅它们，还不如取消订阅呢。
+前一段时间，我还意识到，只单纯地追逐最新的文章并不是很好的做法，有些优秀的博客值得自己花时间去更多的阅读，特别是那些“老”的文章，目前已选定了几个要深入阅读的博客，但是还没有采取进一步的行动。
+以上就是我使用Google Reader的一些经历与想法，接下来的一段时间里，我将着手改进自己使用Google Reader的习惯，让自己能够更好的使用这个工具。
+PS：自5.1会学校一趟之后，就没发布新的博文了，前几天也写了一些，但是没有完成，现在停留在草稿箱中。发现如果自己不能一口气完成，就会一直拖延下去。
+PPS：有时我也会想在这个博客该写些什么内容呢？不想太技术化，偶尔写些自己的碎碎念是个不错的想法。同时近来我的更新频率十分低，只因懒惰的原因。希望从这周起自己能够坚持更新，初步定为每周2篇，一篇技术贴，一篇碎碎念。
+PPPS：如果你偶尔路过这里，请通过评论留下足迹，你的评论将激励我更有激情地坚持下去，就像前一段时间我迷恋Google统计中每天的博客访问量一样。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-05-21 19:19:19 +0800 CST'>May 21, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 我的Google Reader体验01" href="https://milkythinking.com/blog/2011/05/21/thinking_on_google_reader_01/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">移除Ubuntu 10.04的Ubuntu One
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Ubuntu One是集成到Ubuntu 10.04里的一个文件同步服务，但是我没有学会使用，同时我还有更好的替代者Dropbox，那么还留着Ubuntu One做甚呢？！那么就果断移除它吧。
+如果你从来没有曾经尝试使用过Ubuntu One，那么前两步操作可以省略掉，当然为了确保安全你最好将所有的流程过一遍。
+确认Ubuntu One没有运行。打开系统监视器(System-&gt;Administration-&gt;System Monitor)，在Process标签页中，搜索“UbuntuOne”，选中并杀死这些进程。 保证没有保存Ubuntu One的验证字段。打开密码管理器(Applications-&gt;Accessories-&gt;Passwords and Encryption Keys)，如果存在与Ubuntu One相关的密码，删除它们。 移除所有Ubuntu One使用到的文件夹。打开终端窗口(Applications-&gt;Accessories-&gt;Terminal)，使用如下命令移除相应的文件夹： rm –rf ~/.local/share/ubuntuone rm –rf ~/.cache/ubuntuone rm –rf ~/.config/ubuntuone rm –rf ~/Ubuntu\ One 当然你也可以依次找到它们并手动删除。在Nautilus中，Ctrl-H显示隐藏文件夹，接下来，你知道的。
+彻底删除所有与Ubuntu One相关的包。 sudo apt-get purge ubuntuone-client* python-ubuntuone-storage* 好了，以上就是彻底删除Ubuntu One的过程!
+via How-To Geek
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-05-03 09:06:27 +0800 CST'>May 3, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 移除Ubuntu 10.04的Ubuntu One" href="https://milkythinking.com/blog/2011/05/03/remove_ubuntu_one_from_ubuntu_10_04/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ubuntu下的剪贴板Diodon和Parcellite
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今天起晚了，但是还是想坚持一下，写一篇。
+剪贴板是什么？ 我的理解就是一个保存你最近复制、剪切的内容的容器，如果你需要多次使用几段内容，就不用每次都去复制，只要在剪贴板里选择对应的记录，粘贴过去就好，极大的节省了时间。
+Ubuntu下的剪贴板 Ubuntu下的剪贴板有很多，但是我认为大部分都不好用，此前最好用的是Parcellite，但在我的笔记本上Parcellite不知和什么程序冲突，一直无法使用，每次使用时都会“死”掉。试用了其他的一些剪贴板，但感觉还不如自己一条条去复制呢，操作太不爽了，直到前两天遇到了Diodon，一个和 Parcellite十分类似的剪贴板，安装后，使用体验不错。
+安装PARCELLITE 打开Ubuntu软件中心，搜索Parcellite，安装即可 去Parcellite的站点下载最新的安装包进行安装，下载页面。 安装DIODON Diodon目前并没有集成到Ubuntu的软件中心中，所以通过如下命令进行安装：
+sudo add-apt-repository ppa:diodon-team/stable sudo apt-get update sudo apt-get install diodon PS：刚刚看到Parcellite已经更新了，不知道最新版怎么样，还会不会有我遇到的问题。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-29 07:17:24 +0800 CST'>April 29, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to Ubuntu下的剪贴板Diodon和Parcellite" href="https://milkythinking.com/blog/2011/04/29/ubuntu_clipboards_diodon_and_parcellite/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">4小时睡眠与早晨工作
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>昨天看了阮一峰的新文章詹宏志谈教育、阅读和创业，并跟着阅读了一些《詹宏志谈读书》，后者太长了，没看完呢。现在的感觉是詹宏志对看书太入迷了，我可能永远达不到那种境界，而且对看书的理解也有些不同，不过等完整的看完《詹宏志谈读书》在考虑这个问题吧。也许他的读书的方式能够在一定程度上影响我接下来的读书习惯。
+不过最令我感触的是，詹宏志的作息习惯，十二点睡，四点起来，一直维持了二十年。这让我想起来前一段时间看到的程序员参加奥运会的故事，故事中的主人公“夸”为了参加奥运会每天也只睡4个小时，也坚持了很久，并最终也如愿得参加了奥运会。我于是想人到底要不要8个小时的睡眠呢？也许不吧。虽然我目前做不来4个小时，但是压缩下我的睡眠时间还是可以做到的，果断将闹钟调早了半小时，至6：00。
+詹宏志对于早晨和晚上的时间的描述吸引了我。
+晚上读书是“渐入困境”，早上读书则是“渐入佳境”，有一种开展中的状态。
+早上也是比晚上好的写稿时间。我现在觉得，晚上需要咖啡、克补，需要一些搏斗，早上就不需要，是在慢慢打开的状态。早上的时间最完整充实，一出门，时间就支离破碎，连回家的时间都不可预测。
+我也应该尝试一下早晨做点什么。于是就写了这篇文章，目前感觉还不错的说，可以坚持一段时间。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-28 07:08:37 +0800 CST'>April 28, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 4小时睡眠与早晨工作" href="https://milkythinking.com/blog/2011/04/28/4_hours_sleep_and_morning_work/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">由工资引起的碎碎念
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>两天前和世则聊天，谈到了工资；今天中午吃饭，大伯提起了我的工资。这就勾起了我的碎碎念。
+前一段时间在《非你莫属》的节目中的“谈钱不伤感情”环节，一个应聘者说自己的每月开销有多少，所以希望能够拿到多少的工资。已经灭灯的湛庐文化的老总立刻说道，这是个错误的观点，在谈工资的环节，应当从自己给公司创造了多少价值的角度进行，如果你能够给公司创造40万的价值，公司会愿意支付你4万的工资，至于你每月的花销有多少完全是你个人的事情。
+我最近将要和公司谈工资，我此前的计算方式也是那个求职者采用方式。看完那期《非你莫属》的节目后，我立刻摒弃了以前的做法，开始思考自己能够创造多少价值。但是我却不是很清楚，尤其是在没有参考标准的前提下，但不是任何事情都是有参考标准的，在这种情况下我该怎样做呢？
+世则的工资是挺高的，和他比起来，我现在的工资是挺低的。但百度是家大公司啊，我们丁香园是个小公司，同等水平不可能提供那么高的工资，再说世则也确实挺厉害的。我够不够厉害还得另说了。
+去年淘宝西安校园招聘的时候，我去做了一天的招聘兼职，期间和一些淘宝的员工聊了会儿，其中一哥们叫江枫，淘宝的DBA，那时也聊到了工资的事情，江枫的观点是刚开始的两三年的工资多点少点并没有什么。这个观点我比较认同。
+对于现在的我来说，最重要的不是工资多少。同时对于工资，公司有个大致的标准在那里，当初我既然接受了这个标准，那么还多想什么呢？我现在最重要的事情是提升自己的技能，等这两三年过去了，技术达到一定的水准，到那时有足够的筹码去谈工资或者做自己感兴趣的事情。
+好了，碎碎念结束了，继续提升技能的旅程！
+PS：《非你莫属》中灭灯代表该公司不能为你提供合适的职位。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-24 13:30:59 +0800 CST'>April 24, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 由工资引起的碎碎念" href="https://milkythinking.com/blog/2011/04/24/on_wage/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ubuntu下安装Git以及Git帮助手册
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Git简介 Git是一个分布式版本控制系统，对应的是SVN、CVS这样的集中式版本控制系统。
+虽然知晓并安装Git是很久以前的事情了，但是我却没怎么用过，一直使用的是SVN。在《Pro Git》中看到的Git的好处有：
+本地完整地镜像了代码仓库的所有内容，如果服务器出现故障，可以使用任何一个本地镜像进行恢复。而使用SVN，如果没有对服务器端的数据进行安全悲愤，出现故障后，以前的所有记录数据将会丢失，无法恢复。 本地完整地镜像了代码仓库的所有内容，当由于某些原因，不能连接到中心服务器的时候，你可以在本地继续工作、提交代码，等到网络连通，再将更新同步到中心服务器。 当然还有其他的好处，但是我没有体验过，无法很好得描述，等以后有经验了在补充吧。
+安装Git Git 的工作需要调用 curl,zlib,openssl,expat,libiconv 等库的代码,所以需要先安装这些依赖工具。
+apt-get install curl-devel expat-devel gettext-devel openssl-devel zlib-devel 从源代码安装 到Git官方站点下载最新的源代码，如当前最新版 1.7.4.4。 编译安装命令
+tar -zxf git-1.7.4.4.tar.gz cd git-1.7.4.4 make prefix=/usr/local all sudo make prefix=/usr/local install 二进制包安装 这种方法安装方便，我使用的就是这个方法，但往往不是最新版本的Git，如我的版本就是1.7.2.1。
+apt-get install git-core 安装Git帮助手册 使用二进制包安装后，发现并没有安装Git的帮助手册，源代码安装后是否有类似的情形就不知道了，如果有也可以用以下的方法进行安装。 使用git --version查看自己安装的Git版本。 然后现在对应的帮助手册，并解压到相应的位置：
+curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-1.7.2.1.tar.bz2&#34; sudo tar xjv -C /usr/local/share/man -f git-manpages-1.7.2.1.tar.bz2 你还可以复制执行下面的脚本，轻松搞定手册安装：
+cd /tmp curl -O &#34;http://kernel.org/pub/software/scm/git/git-manpages-`git --version | awk &#39;{print $3}&#39;`.tar.bz2&#34; sudo mkdir -p /usr/local/share/man sudo tar xjv -C /usr/local/share/man -f git-manpages-`git --version | awk &#39;{print $3}&#39;`....</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-17 09:04:53 +0800 CST'>April 17, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to Ubuntu下安装Git以及Git帮助手册" href="https://milkythinking.com/blog/2011/04/17/install_git_and_manual/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">《非你莫属》碎碎念
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>话说，今天由校内的一个视频分享引起，接连看了好几期《非你莫属》这个求职节目，就像此前的看《非诚勿扰》那个节目一样——同样是从最新的一期开始，一期一期地往前看n期；同样是由于想了解一下参与嘉宾的故事，而勾起的看下去的欲望；同样感觉节目还不错，值得多看几期；最后，也许同样会像《非诚勿扰》，接下来会再追几期然后遗忘。
+看过几期《非你莫属》之后我的感触是什么呢？
+眼睛太累了，不能这么放纵下去了 该借助《非你莫属》来反思一下自己 不能再放纵下去了 我好像有一个周期，一段时间斗志满满，然后突然倦了、泄气了，经过一段时间的调整之后，又会斗志昂扬，周而复始。
+前一段时间人一直紧绷着，内心中某个东西（可以说是梦想也可以说是欲望）在不断地督促自己前进，努力再努力，坚持了一段时间后，疲了倦了，就松懈下来。前几天的一个晚上，翻出来此前看的一个小说，接连几天晚上将它的更新看完。然后今天又接连看了6、7期《非你莫属》。
+眼睛看累了，人也更疲倦了，是该恢复过来了，下周的工作上还有挑战呢。
+《非你莫属》引起的碎碎念 这几期《非你莫属》中，有男有女，有老有少；有很牛的人，也有很衰的人；有很纠结的人，也有很简单的人；最后的结局，有成功，当然也有失败。
+我现在正在公司实习，已经一个多月了。这段实习经历，加之其几天的一个讨论会，让我学习了很多，了解了更多的工作相关的知识，认识到了自身的不足。在那个讨论会上，我说出了这样一句话“我想成为一个有想法并能够实现自己想法的人”，虽然此前有模糊的一些念想，但还是第一次明确表达出来自己的念想，会后总结的时候才发现这句话就是对我的此前的想法很好的总结。
+每个人都有梦想，但是只有一部分人用行动去追逐自己的梦想。同样是那个讨论会，让我意识到一味的空想并不能带来什么，往往考虑一些不存在的东西，除了消耗经历，拖慢速度，最终什么都得不到。我现阶段最重要的事情是技术的积累与经验的积累，我目前还太嫩，我需要快点成长起来，当然这个成长过程中也不能太贪心太急躁。毕竟人不能一口吃成胖子，虽然可以选择打肿脸的方式。
+准备好了吗？再次起航吧！Gonna Sailing!
+PS：在写“不能再放纵下去了”这一小节的时候，迟疑要不要将自己做的事情写出来呢，最后还是写了，自己应当学会直面自己的缺点，而不是掩盖、逃避。
+PPS：在写这篇博文的时候，眼睛好像不那么难受了。
+Gonna Sailing 😉 ==END==</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-04-16 18:48:10 +0800 CST'>April 16, 2011</span></footer>
+  <a class="entry-link" aria-label="post link to 《非你莫属》碎碎念" href="https://milkythinking.com/blog/2011/04/16/only_you_scrawl/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://milkythinking.com/page/7/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://milkythinking.com/page/9/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
