@@ -11,15 +11,15 @@
 $white_set = array(11, 13, 16); $var = $_GET[&#39;var&#39;]; if (in_array($var, $white_set)) { $query = ‘ … column = ‘ . $var . ‘ … ‘; … } 访问 http://www.example.com/path/to?var=16′ and ‘x’=&#39; 时，$var=16′ and ‘x’=&#39;，使用in_array($var, $white_set) 判断会得到 true，因为 in_array 的第三个参数默认为 false，此时在依次比较 $var 和 $white_set 中的元素会进行类型转换，相当于使用 == 进行比较；如果第三个参数为 true，则相当于使用 === 进行比较，两个变量只有完全一致才会返回 true。
 总结：in_array() 第三个参数决定变量和数组中元素如何进行比较。 值为 false 时（默认），相当于 ==；值为true时，相当于 ===。">
 <meta name="author" content="">
-<link rel="canonical" href="http://milkythinking.com/blog/2013/03/13/php-is_array/">
+<link rel="canonical" href="https://milkythinking.com/blog/2013/03/13/php-is_array/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="http://milkythinking.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://milkythinking.com/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://milkythinking.com/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://milkythinking.com/apple-touch-icon.png">
-<link rel="mask-icon" href="http://milkythinking.com/safari-pinned-tab.svg">
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -63,7 +63,7 @@ $white_set = array(11, 13, 16); $var = $_GET[&#39;var&#39;]; if (in_array($var, 
 $white_set = array(11, 13, 16); $var = $_GET[&#39;var&#39;]; if (in_array($var, $white_set)) { $query = ‘ … column = ‘ . $var . ‘ … ‘; … } 访问 http://www.example.com/path/to?var=16′ and ‘x’=&#39; 时，$var=16′ and ‘x’=&#39;，使用in_array($var, $white_set) 判断会得到 true，因为 in_array 的第三个参数默认为 false，此时在依次比较 $var 和 $white_set 中的元素会进行类型转换，相当于使用 == 进行比较；如果第三个参数为 true，则相当于使用 === 进行比较，两个变量只有完全一致才会返回 true。
 总结：in_array() 第三个参数决定变量和数组中元素如何进行比较。 值为 false 时（默认），相当于 ==；值为true时，相当于 ===。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://milkythinking.com/blog/2013/03/13/php-is_array/" /><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://milkythinking.com/blog/2013/03/13/php-is_array/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2013-03-13T00:23:32+08:00" />
 <meta property="article:modified_time" content="2013-03-13T00:23:32+08:00" />
 
@@ -83,13 +83,13 @@ $white_set = array(11, 13, 16); $var = $_GET[&#39;var&#39;]; if (in_array($var, 
       "@type": "ListItem",
       "position":  1 ,
       "name": "Blogs",
-      "item": "http://milkythinking.com/blog/"
+      "item": "https://milkythinking.com/blog/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "PHP is_array()",
-      "item": "http://milkythinking.com/blog/2013/03/13/php-is_array/"
+      "item": "https://milkythinking.com/blog/2013/03/13/php-is_array/"
     }
   ]
 }
@@ -111,14 +111,14 @@ $white_set = array(11, 13, 16); $var = $_GET[&#39;var&#39;]; if (in_array($var, 
   "dateModified": "2013-03-13T00:23:32+08:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://milkythinking.com/blog/2013/03/13/php-is_array/"
+    "@id": "https://milkythinking.com/blog/2013/03/13/php-is_array/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Milky Thinking",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://milkythinking.com/favicon.ico"
+      "url": "https://milkythinking.com/favicon.ico"
     }
   }
 }
@@ -140,7 +140,7 @@ $white_set = array(11, 13, 16); $var = $_GET[&#39;var&#39;]; if (in_array($var, 
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -202,7 +202,7 @@ $white_set = array(11, 13, 16); $var = $_GET[&#39;var&#39;]; if (in_array($var, 
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="http://milkythinking.com/">Milky Thinking</a></span>
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

@@ -13,15 +13,15 @@
 首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G&#43;的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？
 使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） ">
 <meta name="author" content="">
-<link rel="canonical" href="http://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/">
+<link rel="canonical" href="https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="http://milkythinking.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://milkythinking.com/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://milkythinking.com/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://milkythinking.com/apple-touch-icon.png">
-<link rel="mask-icon" href="http://milkythinking.com/safari-pinned-tab.svg">
+<link rel="icon" href="https://milkythinking.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://milkythinking.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://milkythinking.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://milkythinking.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://milkythinking.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -67,7 +67,7 @@
 首先，确认了这台机器只是作为Job机器，没有其他的服务。那么问题在哪里呢？ 使用du -sh /path命令逐级缩小查找范围，期间也删除了一些小的日志文件，最终发现了一个16G&#43;的nohup.out日志文件。 终于找到罪魁祸首了，果断rm nohup.out删除掉它。咔，发现磁盘空间并没有被释放掉。这是什么情况？ 分析后发现，因为写入这个日志文件的进程还在执行导致的。那么，怎样定位这个进程呢？ 我首先尝试使用ps aux | grep _cmd_命令，发现没有与该目录下文件名匹配的进程；接着我尝试遍历/proc目录下所有进程的fd目录，命令：find /proc -name fd -type d | grep nohup.out，方法可行。 这时瞄一眼同事的屏幕，神器出厂，lsof，lsof | grep nohup.out即可，还可以显示文件的状态，被我删除的文件后缀有(deleted)。 定位到进程pid后，在使用ps -p pid查看进程的命令；kill关闭进程，nohup重启命令，日志文件重定向到/dev/null，磁盘空间瞬间释放了 😉 lsof命令的结果显示，还有很多其他的nohup.out文件存在，它们也将被逐个清理掉。 反思 虽然上面的过程可以在解决问题，但是这是一个折腾的过程，我们需要如何避免类似的问题？
 使用nohup启用命令时，将日志重定向到指定的目录下或者/dev/null； 对于Job的日志，最好是在代码中调用日志接口，写入到指定目录，同时按照日期进行分割，这样方便以后的清理。 遗留问题 使用ls -al查看/proc下的文件描述符（fd），发现它们是软连接（lr-x——），为什么删除掉文件后，磁盘空间没有被释放呢？（SegmentFault） " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/" /><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2014-04-12T10:03:14+08:00" />
 <meta property="article:modified_time" content="2014-04-12T10:03:14+08:00" />
 
@@ -89,13 +89,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Blogs",
-      "item": "http://milkythinking.com/blog/"
+      "item": "https://milkythinking.com/blog/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "记一次磁盘清理的过程",
-      "item": "http://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/"
+      "item": "https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/"
     }
   ]
 }
@@ -117,14 +117,14 @@
   "dateModified": "2014-04-12T10:03:14+08:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/"
+    "@id": "https://milkythinking.com/blog/2014/04/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A3%81%E7%9B%98%E6%B8%85%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Milky Thinking",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://milkythinking.com/favicon.ico"
+      "url": "https://milkythinking.com/favicon.ico"
     }
   }
 }
@@ -146,7 +146,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
+            <a href="https://milkythinking.com/" accesskey="h" title="Milky Thinking (Alt + H)">Milky Thinking</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -223,7 +223,7 @@
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="http://milkythinking.com/">Milky Thinking</a></span>
+    <span>&copy; 2023 <a href="https://milkythinking.com/">Milky Thinking</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
